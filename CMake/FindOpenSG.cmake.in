@@ -20,7 +20,7 @@
 #
 #  You can control where this module attempts to locate libraries and headers:
 #  you can use the following input variables:
-#  @CMAKE_PROJECT_NAME_UP@_ROOT          root of an installed @CMAKE_PROJECT_NAME@ with include/OpenSG and lib below it
+#  @CMAKE_PROJECT_NAME_UP@_ROOT          root of an installed @CMAKE_PROJECT_NAME@ with include/@PROJECT_FIND_INC_DIR@ and lib below it
 #  @CMAKE_PROJECT_NAME_UP@_INCLUDE_DIR   header directory
 #  @CMAKE_PROJECT_NAME_UP@_LIBRARY_DIR   library directory
 
@@ -214,7 +214,7 @@ IF(__@CMAKE_PROJECT_NAME@_IN_CACHE)
         ENDIF(NOT TARGET ${COMPONENT})
     ENDFOREACH(COMPONENT)
 
-    SET(@CMAKE_PROJECT_NAME@_INCLUDE_DIRS "${@CMAKE_PROJECT_NAME@_INCLUDE_DIR}" "${@CMAKE_PROJECT_NAME@_INCLUDE_DIR}/OpenSG")
+    SET(@CMAKE_PROJECT_NAME@_INCLUDE_DIRS "${@CMAKE_PROJECT_NAME@_INCLUDE_DIR}" "${@CMAKE_PROJECT_NAME@_INCLUDE_DIR}/@PROJECT_FIND_INC_DIR@")
 
 ELSE(__@CMAKE_PROJECT_NAME@_IN_CACHE)
     # need to search for libs
@@ -273,7 +273,7 @@ ELSE(__@CMAKE_PROJECT_NAME@_IN_CACHE)
         # try to find include dirrectory by searching for @CMAKE_PROJECT_NAME_SHORT@Configured.h
 
         FIND_PATH(@CMAKE_PROJECT_NAME@_INCLUDE_DIR
-            NAMES         OpenSG/@CMAKE_PROJECT_NAME_SHORT@Configured.h
+            NAMES         @PROJECT_FIND_INC_DIR@/@CMAKE_PROJECT_NAME_SHORT@Configured.h
             HINTS         ${__@CMAKE_PROJECT_NAME@_INCLUDE_SEARCH_DIRS})
     ENDIF(NOT @CMAKE_PROJECT_NAME@_INCLUDE_DIR)
 
@@ -330,7 +330,7 @@ ELSE(__@CMAKE_PROJECT_NAME@_IN_CACHE)
     #  End finding @CMAKE_PROJECT_NAME@ libraries
     # ------------------------------------------------------------------------
 
-    SET(@CMAKE_PROJECT_NAME@_INCLUDE_DIRS "${@CMAKE_PROJECT_NAME@_INCLUDE_DIR}" "${@CMAKE_PROJECT_NAME@_INCLUDE_DIR}/OpenSG")
+    SET(@CMAKE_PROJECT_NAME@_INCLUDE_DIRS "${@CMAKE_PROJECT_NAME@_INCLUDE_DIR}" "${@CMAKE_PROJECT_NAME@_INCLUDE_DIR}/@PROJECT_FIND_INC_DIR@")
 
     SET(@CMAKE_PROJECT_NAME@_FOUND FALSE)
 
