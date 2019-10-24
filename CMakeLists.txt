@@ -112,6 +112,8 @@ OSG_SET_CACHE(OSG_AVX_VARIANT        ""    STRING "")
 OSG_OPTION   (OSG_ENABLE_ABI6        ""    OFF      )
 OSG_OPTION   (OSG_USE_OSG2_NAMESPACE ""    OFF      )
 OSG_OPTION   (OSG_ENABLE_C++11       ""    ON       )
+OSG_OPTION   (OSG_ENABLE_C++14       ""    OFF      )
+OSG_OPTION   (OSG_ENABLE_C++17       ""    OFF      )
 
 OSG_OPTION(OSG_ENABLE_BOOST_C++11_STD_ATOMICS "" OFF)
 
