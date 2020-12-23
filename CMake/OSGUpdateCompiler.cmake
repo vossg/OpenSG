@@ -34,7 +34,8 @@ IF(CMAKE_COMPILER_IS_GNUCC)
             ENDIF(CMAKE_C_FLAGS)
 
             IF(NOT SSE2_CXX_RES)
-                SET(TMP_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse2 ${OSG_GCC_FPMATHOPT}")
+                SET(TMP_CXX_FLAGS 
+                       "${CMAKE_CXX_FLAGS} -msse2 ${OSG_GCC_FPMATHOPT}")
 
 
                 SET(CMAKE_CXX_FLAGS ${TMP_CXX_FLAGS} 
@@ -73,7 +74,7 @@ IF(CMAKE_COMPILER_IS_GNUCC)
 
         IF(OSG_ENABLE_SSE4)
 
-            MESSAGE(STATUS "Apply sse4 settings")
+            MESSAGE(STATUS "Apply sse4 settings (${OSG_SSE4_VARIANT})")
 
             IF(NOT OSG_SSE4_VARIANT)
               SET(OSG_SSE4_VARIANT "4.1" CACHE STRING "")

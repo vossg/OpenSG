@@ -168,6 +168,7 @@ IF(MSVC)
       SET(CMAKE_CONFIGURATION_TYPES "Debug;Release;DebugOpt;ReleaseNoOpt" 
                                     CACHE STRING "OpenSG Build Types" FORCE )
 
+      # Shared Linker Flags
       IF(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER "19")
        SET(OSG_ADD_MSVC_STD_LIBS_DEBUG   "vcruntimed.lib ucrtd.lib")
        SET(OSG_ADD_MSVC_STD_LIBS_RELEASE "vcruntime.lib ucrt.lib")
