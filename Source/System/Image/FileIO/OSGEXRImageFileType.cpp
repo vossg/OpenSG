@@ -36,6 +36,8 @@
  *                                                                           *
 \*---------------------------------------------------------------------------*/
 
+#if __cplusplus < 201703L
+
 //-------------------------------
 //      Includes
 //-------------------------------
@@ -769,3 +771,5 @@ bool EXRImageFileType::isOpenExrFile(std::istream &is)
 }
 
 OSG_END_NAMESPACE
+
+#endif // __cplusplus
