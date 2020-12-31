@@ -113,86 +113,83 @@ void Inline::initMethod(InitPhase ePhase)
  
 void Inline::postOSGLoading(FileContextAttachment * const pContext)
 {
-    Inherited::postOSGLoading(pContext);
+    OSG::Char8 *szIgnoreInline = getenv("OSG_IGNORE_INLINE");
 
-    UInt32 i = 0;
-
-    for(; i < _mfUrl.size(); ++i)
+    if(szIgnoreInline == nullptr)
     {
-        std::string szFilenameResolved = 
-            SceneFileHandler::the()->getPathHandler()->findFile(
-                _mfUrl[i].c_str());
+        Inherited::postOSGLoading(pContext);
 
+        UInt32 i = 0;
 
-        SceneFileHandler::the()->getPathHandler()->pushState();
-
-        // could be a real url with a relative inline path.
-        if(szFilenameResolved.empty() == true)
+        for(; i < _mfUrl.size(); ++i)
         {
-            szFilenameResolved = _mfUrl[i];
-        }
+            std::string szFilenameResolved = 
+                SceneFileHandler::the()->getPathHandler()->findFile(
+                    _mfUrl[i].c_str());
 
-        SceneFileHandler::the()->getPathHandler()->setBaseFile(
-            szFilenameResolved.c_str());
+            SceneFileHandler::the()->getPathHandler()->pushState();
 
-        std::string szFName = 
-            SceneFileHandler::the()->getPathHandler()->extractFilename(
-                _mfUrl[i].c_str());
-
-        GraphOpSeqRefPtr pGraphOp = NULL;
-        
-        if(_sfGraphOp.getValue().compare("none") == 0)
-        {
-            // leave it NULL
-        }
-        else if(_sfGraphOp.getValue().compare("default") == 0)
-        {
-            pGraphOp = SceneFileHandler::the()->getDefaultGraphOp();
-        }
-        else
-        {
-            pGraphOp = GraphOpSeq::create(_sfGraphOp.getValue());
-        }
-
-        std::string urlExt;
-
-        if(_mfOptions.size() != 0)
-        {
-            boost::filesystem::path urlPath(_mfUrl[i]);
-            urlExt = OSGBP2STR(urlPath.extension());
-
-            if(urlExt.empty() == false)
+            // could be a real url with a relative inline path.
+            if(szFilenameResolved.empty() == true)
             {
-                SceneFileHandler::the()->pushOptions(urlExt);
+                szFilenameResolved = _mfUrl[i];
+            }
 
-                for(UInt32 j = 0; j < _mfOptions.size(); ++j)
+            SceneFileHandler::the()->getPathHandler()->setBaseFile(
+                szFilenameResolved.c_str());
+
+            std::string szFName = 
+                SceneFileHandler::the()->getPathHandler()->extractFilename(
+                    _mfUrl[i].c_str());
+
+            GraphOpSeqRefPtr pGraphOp = NULL;
+        
+            if(_sfGraphOp.getValue().compare("none") == 0)
+            {
+                // leave it NULL
+            }
+            else if(_sfGraphOp.getValue().compare("default") == 0)
+            {
+                pGraphOp = SceneFileHandler::the()->getDefaultGraphOp();
+            }
+            else
+            {
+                pGraphOp = GraphOpSeq::create(_sfGraphOp.getValue());
+            }
+
+            std::string urlExt;
+
+            if(_mfOptions.size() != 0)
+            {
+                boost::filesystem::path urlPath(_mfUrl[i]);
+                urlExt = OSGBP2STR(urlPath.extension());
+
+                if(urlExt.empty() == false)
                 {
-                    SizeT uiSplit = _mfOptions[j].find('=');
+                    SceneFileHandler::the()->pushOptions(urlExt);
 
-                    if(uiSplit != std::string::npos)
+                    for(UInt32 j = 0; j < _mfOptions.size(); ++j)
                     {
-                        std::string name  = _mfOptions[j].substr(0,
-                                                                 uiSplit    );
-                        std::string value = _mfOptions[j].substr(uiSplit + 1);
+                        SizeT uiSplit = _mfOptions[j].find('=');
 
-                        SceneFileHandler::the()->setOption(urlExt,
-                                                           name,
-                                                           value );
+                        if(uiSplit != std::string::npos)
+                        {
+                            std::string name  = 
+                                _mfOptions[j].substr(0,
+                                                     uiSplit    );
+                            std::string value = 
+                                _mfOptions[j].substr(uiSplit + 1);
+                            
+                            SceneFileHandler::the()->setOption(urlExt,
+                                                               name,
+                                                               value );
+                        }
                     }
                 }
             }
-        }
 
-        NodeUnrecPtr pFile = SceneFileHandler::the()->read(
-            szFName.c_str(),
-            pGraphOp,
-            NULL,
-            false);
-
-        if(pFile == NULL)
-        {
-            pFile = SceneFileHandler::the()->read(
-                szFilenameResolved.c_str(),
+            NodeUnrecPtr pFile = SceneFileHandler::the()->read(
+                szFName.c_str(),
                 pGraphOp,
                 NULL,
                 false);
@@ -200,45 +197,67 @@ void Inline::postOSGLoading(FileContextAttachment * const pContext)
             if(pFile == NULL)
             {
                 pFile = SceneFileHandler::the()->read(
-                    _mfUrl[i].c_str(),
+                    szFilenameResolved.c_str(),
                     pGraphOp,
                     NULL,
                     false);
+
+                if(pFile == NULL)
+                {
+                    pFile = SceneFileHandler::the()->read(
+                        _mfUrl[i].c_str(),
+                         pGraphOp,
+                         NULL,
+                         false);
+                }
             }
-        }
 
-        if(_mfOptions.size() != 0 && urlExt.empty() == false)
-            SceneFileHandler::the()->popOptions(urlExt);
+            if(_mfOptions.size() != 0 && urlExt.empty() == false)
+                SceneFileHandler::the()->popOptions(urlExt);
 
-        if(pFile != NULL)
-        {
-            pFile->addChangedFunctor(
-                boost::bind(&Inline::rootChanged, this, _1, _2, _3),
-                "");
+            if(pFile != NULL)
+            {
+                pFile->addChangedFunctor(
+                    boost::bind(&Inline::rootChanged, this, _1, _2, _3),
+                    "");
 
-            setRoot(pFile);
+                setRoot(pFile);
+
+                SceneFileHandler::the()->getPathHandler()->popState();
+
+                break;
+            }
+            else
+            {
+                SWARNING << "could not read " 
+                         << _mfUrl[i] 
+                         << std::endl;
+            }
 
             SceneFileHandler::the()->getPathHandler()->popState();
-
-            break;
         }
-        else
+
+        if(i == _mfUrl.size() && _sfRoot.getValue() != NULL)
         {
-            SWARNING << "could not read " 
-                     << _mfUrl[i] 
-                     << std::endl;
+            _sfRoot.getValue()->subChangedFunctor(
+                boost::bind(&Inline::rootChanged, this, _1, _2, _3));
+
+            setRoot(NULL);
         }
-
-        SceneFileHandler::the()->getPathHandler()->popState();
     }
-
-    if(i == _mfUrl.size() && _sfRoot.getValue() != NULL)
+#if 0
+    else
     {
-        _sfRoot.getValue()->subChangedFunctor(
-            boost::bind(&Inline::rootChanged, this, _1, _2, _3));
+        fprintf(stderr, "ignore inline\n");
 
-        setRoot(NULL);
+        for(UInt32 i = 0; i < _mfUrl.size(); ++i)
+        {
+            fprintf(stderr, "[%d] : %s\n",
+                   i,
+                   _mfUrl[i].c_str()     );
+        }
     }
+#endif
 }
 
 void Inline::moveRootTo(Node *pTarget)
