@@ -151,7 +151,7 @@
 /*-------------------------------------------------------------------------*/
 /*                              gcc general                                */
 
-# ifdef __GNUC__
+#ifdef __GNUC__
 
 
 /*! \brief stream->rdbuf get the new buffer as a parameter
@@ -221,14 +221,18 @@
 #     endif
 # endif
 
-# if __GNUC__ >= 8
+# if __GNUC__ >= 8 || __cplusplus > 201402L
 #  define OSG_THROW(X) 
 # else
 #  define OSG_THROW(X) throw(X)
 # endif
-# else // __GNUC__
+#else // __GNUC__
+# if __cplusplus > 201402L
+#  define OSG_THROW(X)
+# else
 #  define OSG_THROW(X) throw(X)
 # endif
+#endif
 
 
 /*-------------------------------------------------------------------------*/
