@@ -67,7 +67,7 @@
 #include "OSGHDRStageBase.h"
 #include "OSGHDRStage.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -717,6 +717,9 @@ GetFieldHandlePtr HDRStageBase::getHandleExposure        (void) const
 
 EditFieldHandlePtr HDRStageBase::editHandleExposure       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfExposure,
@@ -742,6 +745,9 @@ GetFieldHandlePtr HDRStageBase::getHandleBlurWidth       (void) const
 
 EditFieldHandlePtr HDRStageBase::editHandleBlurWidth      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBlurWidth,
@@ -767,6 +773,9 @@ GetFieldHandlePtr HDRStageBase::getHandleBlurAmount      (void) const
 
 EditFieldHandlePtr HDRStageBase::editHandleBlurAmount     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBlurAmount,
@@ -792,6 +801,9 @@ GetFieldHandlePtr HDRStageBase::getHandleEffectAmount    (void) const
 
 EditFieldHandlePtr HDRStageBase::editHandleEffectAmount   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfEffectAmount,
@@ -817,6 +829,9 @@ GetFieldHandlePtr HDRStageBase::getHandleGamma           (void) const
 
 EditFieldHandlePtr HDRStageBase::editHandleGamma          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfGamma,
@@ -842,6 +857,9 @@ GetFieldHandlePtr HDRStageBase::getHandleBufferFormat    (void) const
 
 EditFieldHandlePtr HDRStageBase::editHandleBufferFormat   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfBufferFormat,
@@ -867,6 +885,9 @@ GetFieldHandlePtr HDRStageBase::getHandleCombineBlend    (void) const
 
 EditFieldHandlePtr HDRStageBase::editHandleCombineBlend   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCombineBlend,

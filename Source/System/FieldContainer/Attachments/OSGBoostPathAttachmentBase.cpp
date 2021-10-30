@@ -66,7 +66,7 @@
 #include "OSGBoostPathAttachmentBase.h"
 #include "OSGBoostPathAttachment.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -400,6 +400,9 @@ GetFieldHandlePtr BoostPathAttachmentBase::getHandlePath            (void) const
 
 EditFieldHandlePtr BoostPathAttachmentBase::editHandlePath           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBoostPath::EditHandlePtr returnValue(
         new  SFBoostPath::EditHandle(
              &_sfPath,

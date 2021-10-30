@@ -67,7 +67,7 @@
 #include "OSGVariantMaterialBase.h"
 #include "OSGVariantMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -423,6 +423,9 @@ GetFieldHandlePtr VariantMaterialBase::getHandleFallbackMaterial (void) const
 
 EditFieldHandlePtr VariantMaterialBase::editHandleFallbackMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecPrimeMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecPrimeMaterialPtr::EditHandle(
              &_sfFallbackMaterial,

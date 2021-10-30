@@ -69,7 +69,7 @@
 #include "OSGShaderProgramChunkBase.h"
 #include "OSGShaderProgramChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1153,6 +1153,9 @@ GetFieldHandlePtr ShaderProgramChunkBase::getHandleVertexShader    (void) const
 
 EditFieldHandlePtr ShaderProgramChunkBase::editHandleVertexShader   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramPtr::EditHandle(
              &_mfVertexShader,
@@ -1190,6 +1193,9 @@ GetFieldHandlePtr ShaderProgramChunkBase::getHandleTessControlShader (void) cons
 
 EditFieldHandlePtr ShaderProgramChunkBase::editHandleTessControlShader(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramPtr::EditHandle(
              &_mfTessControlShader,
@@ -1227,6 +1233,9 @@ GetFieldHandlePtr ShaderProgramChunkBase::getHandleTessEvaluationShader (void) c
 
 EditFieldHandlePtr ShaderProgramChunkBase::editHandleTessEvaluationShader(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramPtr::EditHandle(
              &_mfTessEvaluationShader,
@@ -1264,6 +1273,9 @@ GetFieldHandlePtr ShaderProgramChunkBase::getHandleGeometryShader  (void) const
 
 EditFieldHandlePtr ShaderProgramChunkBase::editHandleGeometryShader (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramPtr::EditHandle(
              &_mfGeometryShader,
@@ -1301,6 +1313,9 @@ GetFieldHandlePtr ShaderProgramChunkBase::getHandleFragmentShader  (void) const
 
 EditFieldHandlePtr ShaderProgramChunkBase::editHandleFragmentShader (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramPtr::EditHandle(
              &_mfFragmentShader,
@@ -1338,6 +1353,9 @@ GetFieldHandlePtr ShaderProgramChunkBase::getHandleGeometryVerticesOut (void) co
 
 EditFieldHandlePtr ShaderProgramChunkBase::editHandleGeometryVerticesOut(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGeometryVerticesOut,
@@ -1363,6 +1381,9 @@ GetFieldHandlePtr ShaderProgramChunkBase::getHandleGeometryInputType (void) cons
 
 EditFieldHandlePtr ShaderProgramChunkBase::editHandleGeometryInputType(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGeometryInputType,
@@ -1388,6 +1409,9 @@ GetFieldHandlePtr ShaderProgramChunkBase::getHandleGeometryOutputType (void) con
 
 EditFieldHandlePtr ShaderProgramChunkBase::editHandleGeometryOutputType(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGeometryOutputType,

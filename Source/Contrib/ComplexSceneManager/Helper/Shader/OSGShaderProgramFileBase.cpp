@@ -66,7 +66,7 @@
 #include "OSGShaderProgramFileBase.h"
 #include "OSGShaderProgramFile.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -392,6 +392,9 @@ GetFieldHandlePtr ShaderProgramFileBase::getHandleProgramUrl      (void) const
 
 EditFieldHandlePtr ShaderProgramFileBase::editHandleProgramUrl     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfProgramUrl,

@@ -66,7 +66,7 @@
 #include "OSGComputeCallbackAlgorithmBase.h"
 #include "OSGComputeCallbackAlgorithm.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -382,6 +382,9 @@ GetFieldHandlePtr ComputeCallbackAlgorithmBase::getHandleCallback        (void) 
 
 EditFieldHandlePtr ComputeCallbackAlgorithmBase::editHandleCallback       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;

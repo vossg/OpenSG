@@ -67,7 +67,7 @@
 #include "OSGMapHelperBase.h"
 #include "OSGMapHelper.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -475,6 +475,9 @@ GetFieldHandlePtr MapHelperBase::getHandleKeys            (void) const
 
 EditFieldHandlePtr MapHelperBase::editHandleKeys           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfKeys,
@@ -500,6 +503,9 @@ GetFieldHandlePtr MapHelperBase::getHandleContainer       (void) const
 
 EditFieldHandlePtr MapHelperBase::editHandleContainer      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFieldContainerPtr::EditHandlePtr returnValue(
         new  SFUnrecFieldContainerPtr::EditHandle(
              &_sfContainer,

@@ -67,7 +67,7 @@
 #include "OSGVisitSubTreeBase.h"
 #include "OSGVisitSubTree.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -535,6 +535,9 @@ GetFieldHandlePtr VisitSubTreeBase::getHandleSubTreeRoot     (void) const
 
 EditFieldHandlePtr VisitSubTreeBase::editHandleSubTreeRoot    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfSubTreeRoot,
@@ -563,6 +566,9 @@ GetFieldHandlePtr VisitSubTreeBase::getHandleSubTreeTravMask (void) const
 
 EditFieldHandlePtr VisitSubTreeBase::editHandleSubTreeTravMask(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSubTreeTravMask,
@@ -588,6 +594,9 @@ GetFieldHandlePtr VisitSubTreeBase::getHandleTravMaskMode    (void) const
 
 EditFieldHandlePtr VisitSubTreeBase::editHandleTravMaskMode   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTravMaskMode,

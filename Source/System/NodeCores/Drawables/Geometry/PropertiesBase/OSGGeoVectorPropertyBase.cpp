@@ -66,7 +66,7 @@
 #include "OSGGeoVectorPropertyBase.h"
 #include "OSGGeoVectorProperty.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -309,6 +309,9 @@ GetFieldHandlePtr GeoVectorPropertyBase::getHandleDivisor         (void) const
 
 EditFieldHandlePtr GeoVectorPropertyBase::editHandleDivisor        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDivisor,

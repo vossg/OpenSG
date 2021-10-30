@@ -67,7 +67,7 @@
 #include "OSGGrabForegroundBase.h"
 #include "OSGGrabForeground.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -484,6 +484,9 @@ GetFieldHandlePtr GrabForegroundBase::getHandleImage           (void) const
 
 EditFieldHandlePtr GrabForegroundBase::editHandleImage          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfImage,
@@ -512,6 +515,9 @@ GetFieldHandlePtr GrabForegroundBase::getHandleAutoResize      (void) const
 
 EditFieldHandlePtr GrabForegroundBase::editHandleAutoResize     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAutoResize,

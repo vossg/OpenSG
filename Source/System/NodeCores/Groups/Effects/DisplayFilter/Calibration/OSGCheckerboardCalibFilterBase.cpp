@@ -66,7 +66,7 @@
 #include "OSGCheckerboardCalibFilterBase.h"
 #include "OSGCheckerboardCalibFilter.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -563,6 +563,9 @@ GetFieldHandlePtr CheckerboardCalibFilterBase::getHandleColorBlack      (void) c
 
 EditFieldHandlePtr CheckerboardCalibFilterBase::editHandleColorBlack     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfColorBlack,
@@ -588,6 +591,9 @@ GetFieldHandlePtr CheckerboardCalibFilterBase::getHandleColorWhite      (void) c
 
 EditFieldHandlePtr CheckerboardCalibFilterBase::editHandleColorWhite     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfColorWhite,
@@ -613,6 +619,9 @@ GetFieldHandlePtr CheckerboardCalibFilterBase::getHandleResolution      (void) c
 
 EditFieldHandlePtr CheckerboardCalibFilterBase::editHandleResolution     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfResolution,
@@ -638,6 +647,9 @@ GetFieldHandlePtr CheckerboardCalibFilterBase::getHandleCenter          (void) c
 
 EditFieldHandlePtr CheckerboardCalibFilterBase::editHandleCenter         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCenter,

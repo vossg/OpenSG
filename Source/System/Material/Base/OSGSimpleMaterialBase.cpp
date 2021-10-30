@@ -67,7 +67,7 @@
 #include "OSGSimpleMaterialBase.h"
 #include "OSGSimpleMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -796,6 +796,9 @@ GetFieldHandlePtr SimpleMaterialBase::getHandleAmbient         (void) const
 
 EditFieldHandlePtr SimpleMaterialBase::editHandleAmbient        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfAmbient,
@@ -821,6 +824,9 @@ GetFieldHandlePtr SimpleMaterialBase::getHandleDiffuse         (void) const
 
 EditFieldHandlePtr SimpleMaterialBase::editHandleDiffuse        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfDiffuse,
@@ -846,6 +852,9 @@ GetFieldHandlePtr SimpleMaterialBase::getHandleSpecular        (void) const
 
 EditFieldHandlePtr SimpleMaterialBase::editHandleSpecular       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfSpecular,
@@ -871,6 +880,9 @@ GetFieldHandlePtr SimpleMaterialBase::getHandleShininess       (void) const
 
 EditFieldHandlePtr SimpleMaterialBase::editHandleShininess      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShininess,
@@ -896,6 +908,9 @@ GetFieldHandlePtr SimpleMaterialBase::getHandleEmission        (void) const
 
 EditFieldHandlePtr SimpleMaterialBase::editHandleEmission       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfEmission,
@@ -921,6 +936,9 @@ GetFieldHandlePtr SimpleMaterialBase::getHandleTransparency    (void) const
 
 EditFieldHandlePtr SimpleMaterialBase::editHandleTransparency   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTransparency,
@@ -946,6 +964,9 @@ GetFieldHandlePtr SimpleMaterialBase::getHandleLit             (void) const
 
 EditFieldHandlePtr SimpleMaterialBase::editHandleLit            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLit,
@@ -971,6 +992,9 @@ GetFieldHandlePtr SimpleMaterialBase::getHandleColorMaterial   (void) const
 
 EditFieldHandlePtr SimpleMaterialBase::editHandleColorMaterial  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfColorMaterial,

@@ -69,7 +69,7 @@
 #include "OSGCSMWindowBase.h"
 #include "OSGCSMWindow.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1692,6 +1692,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleParent          (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleParent         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -1710,6 +1713,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleViewports       (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleViewports      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecCSMViewportPtr::EditHandlePtr returnValue(
         new  MFUnrecCSMViewportPtr::EditHandle(
              &_mfViewports,
@@ -1747,6 +1753,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleMouseData       (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleMouseData      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMouseData::EditHandlePtr returnValue(
         new  SFMouseData::EditHandle(
              &_sfMouseData,
@@ -1772,6 +1781,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleMTouchData      (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleMTouchData     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMTouchData::EditHandlePtr returnValue(
         new  SFMTouchData::EditHandle(
              &_sfMTouchData,
@@ -1797,6 +1809,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleMTouchDataWC    (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleMTouchDataWC   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMTouchData::EditHandlePtr returnValue(
         new  SFMTouchData::EditHandle(
              &_sfMTouchDataWC,
@@ -1822,6 +1837,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleGestureData     (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleGestureData    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGestureData::EditHandlePtr returnValue(
         new  SFGestureData::EditHandle(
              &_sfGestureData,
@@ -1847,6 +1865,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleMouseAsMTouch   (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleMouseAsMTouch  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfMouseAsMTouch,
@@ -1872,6 +1893,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleSize            (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleSize           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfSize,
@@ -1897,6 +1921,9 @@ GetFieldHandlePtr CSMWindowBase::getHandlePosition        (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandlePosition       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfPosition,
@@ -1922,6 +1949,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleDecorEnabled    (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleDecorEnabled   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDecorEnabled,
@@ -1947,6 +1977,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleRequestMajor    (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleRequestMajor   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfRequestMajor,
@@ -1972,6 +2005,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleRequestMinor    (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleRequestMinor   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfRequestMinor,
@@ -1997,6 +2033,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleEnableForwardCompatContext (void) cons
 
 EditFieldHandlePtr CSMWindowBase::editHandleEnableForwardCompatContext(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnableForwardCompatContext,
@@ -2022,6 +2061,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleEnableDebugContext (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleEnableDebugContext(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnableDebugContext,
@@ -2047,6 +2089,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleIgnoreExtensions (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleIgnoreExtensions(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfIgnoreExtensions,
@@ -2072,6 +2117,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleIgnoreAllExtensions (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleIgnoreAllExtensions(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIgnoreAllExtensions,
@@ -2097,6 +2145,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleRequestSamples  (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleRequestSamples (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfRequestSamples,
@@ -2122,6 +2173,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleEnableFSAA      (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleEnableFSAA     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnableFSAA,
@@ -2147,6 +2201,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleFsaaHint        (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleFsaaHint       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFsaaHint,
@@ -2172,6 +2229,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleRenderOptions   (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleRenderOptions  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecRenderOptionsPtr::EditHandlePtr returnValue(
         new  SFUnrecRenderOptionsPtr::EditHandle(
              &_sfRenderOptions,
@@ -2200,6 +2260,9 @@ GetFieldHandlePtr CSMWindowBase::getHandlePartitionDrawMode (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandlePartitionDrawMode(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfPartitionDrawMode,
@@ -2225,6 +2288,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleRegisterMainLoop (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleRegisterMainLoop(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfRegisterMainLoop,
@@ -2250,6 +2316,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleDumpContainer   (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleDumpContainer  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDumpContainer,
@@ -2275,6 +2344,9 @@ GetFieldHandlePtr CSMWindowBase::getHandleWindowState     (void) const
 
 EditFieldHandlePtr CSMWindowBase::editHandleWindowState    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWindowState,

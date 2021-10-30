@@ -67,7 +67,7 @@
 #include "OSGAnimTemplateBase.h"
 #include "OSGAnimTemplate.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -473,6 +473,9 @@ GetFieldHandlePtr AnimTemplateBase::getHandleName            (void) const
 
 EditFieldHandlePtr AnimTemplateBase::editHandleName           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfName,
@@ -498,6 +501,9 @@ GetFieldHandlePtr AnimTemplateBase::getHandleSources         (void) const
 
 EditFieldHandlePtr AnimTemplateBase::editHandleSources        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecAnimDataSourcePtr::EditHandlePtr returnValue(
         new  MFUnrecAnimDataSourcePtr::EditHandle(
              &_mfSources,
@@ -535,6 +541,9 @@ GetFieldHandlePtr AnimTemplateBase::getHandleTargetIds       (void) const
 
 EditFieldHandlePtr AnimTemplateBase::editHandleTargetIds      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfTargetIds,

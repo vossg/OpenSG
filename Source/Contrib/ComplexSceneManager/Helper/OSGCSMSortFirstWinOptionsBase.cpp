@@ -66,7 +66,7 @@
 #include "OSGCSMSortFirstWinOptionsBase.h"
 #include "OSGCSMSortFirstWinOptions.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -525,6 +525,9 @@ GetFieldHandlePtr CSMSortFirstWinOptionsBase::getHandleCompression     (void) co
 
 EditFieldHandlePtr CSMSortFirstWinOptionsBase::editHandleCompression    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfCompression,
@@ -550,6 +553,9 @@ GetFieldHandlePtr CSMSortFirstWinOptionsBase::getHandleSubtileSize     (void) co
 
 EditFieldHandlePtr CSMSortFirstWinOptionsBase::editHandleSubtileSize    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSubtileSize,
@@ -575,6 +581,9 @@ GetFieldHandlePtr CSMSortFirstWinOptionsBase::getHandleCompose         (void) co
 
 EditFieldHandlePtr CSMSortFirstWinOptionsBase::editHandleCompose        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCompose,
@@ -600,6 +609,9 @@ GetFieldHandlePtr CSMSortFirstWinOptionsBase::getHandleUseFaceDistribution (void
 
 EditFieldHandlePtr CSMSortFirstWinOptionsBase::editHandleUseFaceDistribution(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseFaceDistribution,

@@ -66,7 +66,7 @@
 #include "OSGPipelineComposerBase.h"
 #include "OSGPipelineComposer.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -550,6 +550,9 @@ GetFieldHandlePtr PipelineComposerBase::getHandleShort           (void) const
 
 EditFieldHandlePtr PipelineComposerBase::editHandleShort          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShort,
@@ -575,6 +578,9 @@ GetFieldHandlePtr PipelineComposerBase::getHandleAlpha           (void) const
 
 EditFieldHandlePtr PipelineComposerBase::editHandleAlpha          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAlpha,
@@ -600,6 +606,9 @@ GetFieldHandlePtr PipelineComposerBase::getHandleTileSize        (void) const
 
 EditFieldHandlePtr PipelineComposerBase::editHandleTileSize       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTileSize,
@@ -625,6 +634,9 @@ GetFieldHandlePtr PipelineComposerBase::getHandlePipelined       (void) const
 
 EditFieldHandlePtr PipelineComposerBase::editHandlePipelined      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPipelined,

@@ -67,7 +67,7 @@
 #include "OSGTextureObjRefChunkBase.h"
 #include "OSGTextureObjRefChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -515,6 +515,9 @@ GetFieldHandlePtr TextureObjRefChunkBase::getHandleOsgGLId         (void) const
 
 EditFieldHandlePtr TextureObjRefChunkBase::editHandleOsgGLId        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfOsgGLId,
@@ -540,6 +543,9 @@ GetFieldHandlePtr TextureObjRefChunkBase::getHandleOglGLId         (void) const
 
 EditFieldHandlePtr TextureObjRefChunkBase::editHandleOglGLId        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfOglGLId,
@@ -565,6 +571,9 @@ GetFieldHandlePtr TextureObjRefChunkBase::getHandleInternalFormat  (void) const
 
 EditFieldHandlePtr TextureObjRefChunkBase::editHandleInternalFormat (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfInternalFormat,

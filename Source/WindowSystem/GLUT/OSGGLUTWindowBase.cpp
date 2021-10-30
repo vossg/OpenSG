@@ -66,7 +66,7 @@
 #include "OSGGLUTWindowBase.h"
 #include "OSGGLUTWindow.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -400,6 +400,9 @@ GetFieldHandlePtr GLUTWindowBase::getHandleGlutId          (void) const
 
 EditFieldHandlePtr GLUTWindowBase::editHandleGlutId         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfGlutId,

@@ -69,7 +69,7 @@
 #include "OSGAnimationBase.h"
 #include "OSGAnimation.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -813,6 +813,9 @@ GetFieldHandlePtr AnimationBase::getHandleTimeSensor      (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleTimeSensor     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecAnimTimeSensorPtr::EditHandlePtr returnValue(
         new  SFUnrecAnimTimeSensorPtr::EditHandle(
              &_sfTimeSensor,
@@ -841,6 +844,9 @@ GetFieldHandlePtr AnimationBase::getHandleTemplate        (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleTemplate       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecAnimTemplatePtr::EditHandlePtr returnValue(
         new  SFUnrecAnimTemplatePtr::EditHandle(
              &_sfTemplate,
@@ -869,6 +875,9 @@ GetFieldHandlePtr AnimationBase::getHandleChannels        (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleChannels       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChildAnimChannelPtr::EditHandlePtr returnValue(
         new  MFUnrecChildAnimChannelPtr::EditHandle(
              &_mfChannels,
@@ -906,6 +915,9 @@ GetFieldHandlePtr AnimationBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleEnabled        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -931,6 +943,9 @@ GetFieldHandlePtr AnimationBase::getHandleWeight          (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleWeight         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfWeight,

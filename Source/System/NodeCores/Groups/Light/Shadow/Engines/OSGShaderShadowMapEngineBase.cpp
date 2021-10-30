@@ -67,7 +67,7 @@
 #include "OSGShaderShadowMapEngineBase.h"
 #include "OSGShaderShadowMapEngine.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -681,6 +681,9 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleShadowVertexProgram (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleShadowVertexProgram(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramPtr::EditHandle(
              &_sfShadowVertexProgram,
@@ -709,6 +712,9 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleShadowFragmentProgram (voi
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleShadowFragmentProgram(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramPtr::EditHandle(
              &_sfShadowFragmentProgram,
@@ -737,6 +743,9 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleForceTextureUnit (void) co
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleForceTextureUnit(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfForceTextureUnit,
@@ -762,6 +771,9 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleShadowNear      (void) con
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleShadowNear     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShadowNear,
@@ -787,6 +799,9 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleShadowFar       (void) con
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleShadowFar      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShadowFar,

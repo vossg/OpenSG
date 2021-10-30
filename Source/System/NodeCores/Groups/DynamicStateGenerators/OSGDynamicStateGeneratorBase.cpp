@@ -67,7 +67,7 @@
 #include "OSGDynamicStateGeneratorBase.h"
 #include "OSGDynamicStateGenerator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -432,6 +432,9 @@ GetFieldHandlePtr DynamicStateGeneratorBase::getHandleRenderTarget    (void) con
 
 EditFieldHandlePtr DynamicStateGeneratorBase::editHandleRenderTarget   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfRenderTarget,

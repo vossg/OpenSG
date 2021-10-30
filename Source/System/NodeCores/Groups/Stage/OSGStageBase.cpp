@@ -67,7 +67,7 @@
 #include "OSGStageBase.h"
 #include "OSGStage.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -489,6 +489,9 @@ GetFieldHandlePtr StageBase::getHandleRenderTarget    (void) const
 
 EditFieldHandlePtr StageBase::editHandleRenderTarget   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfRenderTarget,
@@ -517,6 +520,9 @@ GetFieldHandlePtr StageBase::getHandleInheritedTarget (void) const
 
 EditFieldHandlePtr StageBase::editHandleInheritedTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfInheritedTarget,

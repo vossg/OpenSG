@@ -67,7 +67,7 @@
 #include "OSGStateBase.h"
 #include "OSGState.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -446,6 +446,9 @@ GetFieldHandlePtr StateBase::getHandleTransparencyMode (void) const
 
 EditFieldHandlePtr StateBase::editHandleTransparencyMode(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfTransparencyMode,
@@ -467,6 +470,9 @@ GetFieldHandlePtr StateBase::getHandleChunks          (void) const
 
 EditFieldHandlePtr StateBase::editHandleChunks         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;

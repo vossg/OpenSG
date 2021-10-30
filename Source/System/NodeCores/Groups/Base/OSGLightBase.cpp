@@ -68,7 +68,7 @@
 #include "OSGLightBase.h"
 #include "OSGLight.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -883,6 +883,9 @@ GetFieldHandlePtr LightBase::getHandleAmbient         (void) const
 
 EditFieldHandlePtr LightBase::editHandleAmbient        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfAmbient,
@@ -908,6 +911,9 @@ GetFieldHandlePtr LightBase::getHandleDiffuse         (void) const
 
 EditFieldHandlePtr LightBase::editHandleDiffuse        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfDiffuse,
@@ -933,6 +939,9 @@ GetFieldHandlePtr LightBase::getHandleSpecular        (void) const
 
 EditFieldHandlePtr LightBase::editHandleSpecular       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfSpecular,
@@ -958,6 +967,9 @@ GetFieldHandlePtr LightBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr LightBase::editHandleBeacon         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfBeacon,
@@ -986,6 +998,9 @@ GetFieldHandlePtr LightBase::getHandleOn              (void) const
 
 EditFieldHandlePtr LightBase::editHandleOn             (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfOn,
@@ -1011,6 +1026,9 @@ GetFieldHandlePtr LightBase::getHandleConstantAttenuation (void) const
 
 EditFieldHandlePtr LightBase::editHandleConstantAttenuation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfConstantAttenuation,
@@ -1036,6 +1054,9 @@ GetFieldHandlePtr LightBase::getHandleLinearAttenuation (void) const
 
 EditFieldHandlePtr LightBase::editHandleLinearAttenuation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLinearAttenuation,
@@ -1061,6 +1082,9 @@ GetFieldHandlePtr LightBase::getHandleQuadraticAttenuation (void) const
 
 EditFieldHandlePtr LightBase::editHandleQuadraticAttenuation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfQuadraticAttenuation,
@@ -1086,6 +1110,9 @@ GetFieldHandlePtr LightBase::getHandleLightEngine     (void) const
 
 EditFieldHandlePtr LightBase::editHandleLightEngine    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecLightEnginePtr::EditHandlePtr returnValue(
         new  SFUnrecLightEnginePtr::EditHandle(
              &_sfLightEngine,
@@ -1114,6 +1141,9 @@ GetFieldHandlePtr LightBase::getHandleShadowIntensity (void) const
 
 EditFieldHandlePtr LightBase::editHandleShadowIntensity(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShadowIntensity,
@@ -1139,6 +1169,9 @@ GetFieldHandlePtr LightBase::getHandleShadowMode      (void) const
 
 EditFieldHandlePtr LightBase::editHandleShadowMode     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfShadowMode,

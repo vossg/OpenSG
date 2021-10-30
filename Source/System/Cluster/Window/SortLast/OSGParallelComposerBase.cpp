@@ -66,7 +66,7 @@
 #include "OSGParallelComposerBase.h"
 #include "OSGParallelComposer.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -497,6 +497,9 @@ GetFieldHandlePtr ParallelComposerBase::getHandleShort           (void) const
 
 EditFieldHandlePtr ParallelComposerBase::editHandleShort          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShort,
@@ -522,6 +525,9 @@ GetFieldHandlePtr ParallelComposerBase::getHandleAlpha           (void) const
 
 EditFieldHandlePtr ParallelComposerBase::editHandleAlpha          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAlpha,
@@ -547,6 +553,9 @@ GetFieldHandlePtr ParallelComposerBase::getHandlePcLibPath       (void) const
 
 EditFieldHandlePtr ParallelComposerBase::editHandlePcLibPath      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfPcLibPath,

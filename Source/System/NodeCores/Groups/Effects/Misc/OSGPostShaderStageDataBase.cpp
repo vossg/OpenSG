@@ -69,7 +69,7 @@
 #include "OSGPostShaderStageDataBase.h"
 #include "OSGPostShaderStageData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -774,6 +774,9 @@ GetFieldHandlePtr PostShaderStageDataBase::getHandleShaderMaterials (void) const
 
 EditFieldHandlePtr PostShaderStageDataBase::editHandleShaderMaterials(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecChunkMaterialPtr::EditHandle(
              &_mfShaderMaterials,
@@ -811,6 +814,9 @@ GetFieldHandlePtr PostShaderStageDataBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr PostShaderStageDataBase::editHandleWidth          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -836,6 +842,9 @@ GetFieldHandlePtr PostShaderStageDataBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr PostShaderStageDataBase::editHandleHeight         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -861,6 +870,9 @@ GetFieldHandlePtr PostShaderStageDataBase::getHandleRenderTargets   (void) const
 
 EditFieldHandlePtr PostShaderStageDataBase::editHandleRenderTargets  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  MFUnrecFrameBufferObjectPtr::EditHandle(
              &_mfRenderTargets,
@@ -898,6 +910,9 @@ GetFieldHandlePtr PostShaderStageDataBase::getHandleCamera          (void) const
 
 EditFieldHandlePtr PostShaderStageDataBase::editHandleCamera         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,

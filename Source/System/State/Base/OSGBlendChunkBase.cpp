@@ -70,7 +70,7 @@
 #include "OSGBlendChunkBase.h"
 #include "OSGBlendChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -828,6 +828,9 @@ GetFieldHandlePtr BlendChunkBase::getHandleSrcFactor       (void) const
 
 EditFieldHandlePtr BlendChunkBase::editHandleSrcFactor      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfSrcFactor,
@@ -853,6 +856,9 @@ GetFieldHandlePtr BlendChunkBase::getHandleDestFactor      (void) const
 
 EditFieldHandlePtr BlendChunkBase::editHandleDestFactor     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfDestFactor,
@@ -878,6 +884,9 @@ GetFieldHandlePtr BlendChunkBase::getHandleEquation        (void) const
 
 EditFieldHandlePtr BlendChunkBase::editHandleEquation       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEquation,
@@ -903,6 +912,9 @@ GetFieldHandlePtr BlendChunkBase::getHandleColor           (void) const
 
 EditFieldHandlePtr BlendChunkBase::editHandleColor          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfColor,
@@ -928,6 +940,9 @@ GetFieldHandlePtr BlendChunkBase::getHandleAlphaFunc       (void) const
 
 EditFieldHandlePtr BlendChunkBase::editHandleAlphaFunc      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfAlphaFunc,
@@ -953,6 +968,9 @@ GetFieldHandlePtr BlendChunkBase::getHandleAlphaValue      (void) const
 
 EditFieldHandlePtr BlendChunkBase::editHandleAlphaValue     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAlphaValue,
@@ -978,6 +996,9 @@ GetFieldHandlePtr BlendChunkBase::getHandleAlphaSrcFactor  (void) const
 
 EditFieldHandlePtr BlendChunkBase::editHandleAlphaSrcFactor (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfAlphaSrcFactor,
@@ -1003,6 +1024,9 @@ GetFieldHandlePtr BlendChunkBase::getHandleAlphaDestFactor (void) const
 
 EditFieldHandlePtr BlendChunkBase::editHandleAlphaDestFactor(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfAlphaDestFactor,

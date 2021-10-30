@@ -67,7 +67,7 @@
 #include "OSGInlineBase.h"
 #include "OSGInline.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -635,6 +635,9 @@ GetFieldHandlePtr InlineBase::getHandleUrl             (void) const
 
 EditFieldHandlePtr InlineBase::editHandleUrl            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfUrl,
@@ -660,6 +663,9 @@ GetFieldHandlePtr InlineBase::getHandleLoaded          (void) const
 
 EditFieldHandlePtr InlineBase::editHandleLoaded         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLoaded,
@@ -685,6 +691,9 @@ GetFieldHandlePtr InlineBase::getHandleRoot            (void) const
 
 EditFieldHandlePtr InlineBase::editHandleRoot           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfRoot,
@@ -713,6 +722,9 @@ GetFieldHandlePtr InlineBase::getHandleGraphOp         (void) const
 
 EditFieldHandlePtr InlineBase::editHandleGraphOp        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfGraphOp,
@@ -738,6 +750,9 @@ GetFieldHandlePtr InlineBase::getHandleOptions         (void) const
 
 EditFieldHandlePtr InlineBase::editHandleOptions        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfOptions,

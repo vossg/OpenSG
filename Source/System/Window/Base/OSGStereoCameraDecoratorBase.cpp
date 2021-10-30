@@ -66,7 +66,7 @@
 #include "OSGStereoCameraDecoratorBase.h"
 #include "OSGStereoCameraDecorator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -346,6 +346,9 @@ GetFieldHandlePtr StereoCameraDecoratorBase::getHandleLeftEye         (void) con
 
 EditFieldHandlePtr StereoCameraDecoratorBase::editHandleLeftEye        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLeftEye,
@@ -371,6 +374,9 @@ GetFieldHandlePtr StereoCameraDecoratorBase::getHandleEyeSeparation   (void) con
 
 EditFieldHandlePtr StereoCameraDecoratorBase::editHandleEyeSeparation  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfEyeSeparation,

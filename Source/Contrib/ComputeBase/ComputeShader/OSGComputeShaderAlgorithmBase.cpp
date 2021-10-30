@@ -69,7 +69,7 @@
 #include "OSGComputeShaderAlgorithmBase.h"
 #include "OSGComputeShaderAlgorithm.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -938,6 +938,9 @@ GetFieldHandlePtr ComputeShaderAlgorithmBase::getHandleTextureImages   (void) co
 
 EditFieldHandlePtr ComputeShaderAlgorithmBase::editHandleTextureImages  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecTextureImageChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecTextureImageChunkPtr::EditHandle(
              &_mfTextureImages,
@@ -975,6 +978,9 @@ GetFieldHandlePtr ComputeShaderAlgorithmBase::getHandleChunkMaterial   (void) co
 
 EditFieldHandlePtr ComputeShaderAlgorithmBase::editHandleChunkMaterial  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfChunkMaterial,
@@ -1003,6 +1009,9 @@ GetFieldHandlePtr ComputeShaderAlgorithmBase::getHandleComputeShader   (void) co
 
 EditFieldHandlePtr ComputeShaderAlgorithmBase::editHandleComputeShader  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecComputeShaderChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecComputeShaderChunkPtr::EditHandle(
              &_sfComputeShader,
@@ -1031,6 +1040,9 @@ GetFieldHandlePtr ComputeShaderAlgorithmBase::getHandleDispatchConfig  (void) co
 
 EditFieldHandlePtr ComputeShaderAlgorithmBase::editHandleDispatchConfig (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3i::EditHandlePtr returnValue(
         new  SFVec3i::EditHandle(
              &_sfDispatchConfig,
@@ -1056,6 +1068,9 @@ GetFieldHandlePtr ComputeShaderAlgorithmBase::getHandleWorkGroupSize   (void) co
 
 EditFieldHandlePtr ComputeShaderAlgorithmBase::editHandleWorkGroupSize  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3i::EditHandlePtr returnValue(
         new  SFVec3i::EditHandle(
              &_sfWorkGroupSize,
@@ -1081,6 +1096,9 @@ GetFieldHandlePtr ComputeShaderAlgorithmBase::getHandleUseMemoryBarrier (void) c
 
 EditFieldHandlePtr ComputeShaderAlgorithmBase::editHandleUseMemoryBarrier(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseMemoryBarrier,
@@ -1106,6 +1124,9 @@ GetFieldHandlePtr ComputeShaderAlgorithmBase::getHandleUseVariableWorkGroupSize 
 
 EditFieldHandlePtr ComputeShaderAlgorithmBase::editHandleUseVariableWorkGroupSize(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseVariableWorkGroupSize,
@@ -1131,6 +1152,9 @@ GetFieldHandlePtr ComputeShaderAlgorithmBase::getHandleMemoryBarrier   (void) co
 
 EditFieldHandlePtr ComputeShaderAlgorithmBase::editHandleMemoryBarrier  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfMemoryBarrier,

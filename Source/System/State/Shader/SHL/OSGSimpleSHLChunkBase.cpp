@@ -67,7 +67,7 @@
 #include "OSGSimpleSHLChunkBase.h"
 #include "OSGSimpleSHLChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1013,6 +1013,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleVertexProgram   (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleVertexProgram  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfVertexProgram,
@@ -1038,6 +1041,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleTessControlProgram (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleTessControlProgram(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfTessControlProgram,
@@ -1063,6 +1069,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleTessEvaluationProgram (void) cons
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleTessEvaluationProgram(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfTessEvaluationProgram,
@@ -1088,6 +1097,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleGeometryProgram (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleGeometryProgram(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfGeometryProgram,
@@ -1113,6 +1125,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleFragmentProgram (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleFragmentProgram(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfFragmentProgram,
@@ -1138,6 +1153,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleCgFrontEnd      (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleCgFrontEnd     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCgFrontEnd,
@@ -1163,6 +1181,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleVariables       (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleVariables      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildShaderProgramVariablesPtr::EditHandlePtr returnValue(
         new  SFUnrecChildShaderProgramVariablesPtr::EditHandle(
              &_sfVariables,
@@ -1191,6 +1212,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleVariableLocations (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleVariableLocations(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfVariableLocations,
@@ -1216,6 +1240,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleProceduralVariableLocations (void
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleProceduralVariableLocations(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfProceduralVariableLocations,
@@ -1241,6 +1268,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandleGLId            (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandleGLId           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGLId,
@@ -1266,6 +1296,9 @@ GetFieldHandlePtr SimpleSHLChunkBase::getHandlePointSize       (void) const
 
 EditFieldHandlePtr SimpleSHLChunkBase::editHandlePointSize      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPointSize,

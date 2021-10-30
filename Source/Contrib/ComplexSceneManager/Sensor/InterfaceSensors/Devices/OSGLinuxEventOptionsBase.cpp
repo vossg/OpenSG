@@ -66,7 +66,7 @@
 #include "OSGLinuxEventOptionsBase.h"
 #include "OSGLinuxEventOptions.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -493,6 +493,9 @@ GetFieldHandlePtr LinuxEventOptionsBase::getHandleDevice          (void) const
 
 EditFieldHandlePtr LinuxEventOptionsBase::editHandleDevice         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfDevice,
@@ -518,6 +521,9 @@ GetFieldHandlePtr LinuxEventOptionsBase::getHandleTRange          (void) const
 
 EditFieldHandlePtr LinuxEventOptionsBase::editHandleTRange         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfTRange,
@@ -543,6 +549,9 @@ GetFieldHandlePtr LinuxEventOptionsBase::getHandleRRange          (void) const
 
 EditFieldHandlePtr LinuxEventOptionsBase::editHandleRRange         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfRRange,

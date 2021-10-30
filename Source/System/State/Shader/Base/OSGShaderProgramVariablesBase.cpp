@@ -68,7 +68,7 @@
 #include "OSGShaderProgramVariablesBase.h"
 #include "OSGShaderProgramVariables.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -613,6 +613,9 @@ GetFieldHandlePtr ShaderProgramVariablesBase::getHandleVariables       (void) co
 
 EditFieldHandlePtr ShaderProgramVariablesBase::editHandleVariables      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecShaderValueVariablePtr::EditHandlePtr returnValue(
         new  MFUnrecShaderValueVariablePtr::EditHandle(
              &_mfVariables,
@@ -647,6 +650,9 @@ GetFieldHandlePtr ShaderProgramVariablesBase::getHandleProceduralVariables (void
 
 EditFieldHandlePtr ShaderProgramVariablesBase::editHandleProceduralVariables(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChildShaderProcVariablePtr::EditHandlePtr returnValue(
         new  MFUnrecChildShaderProcVariablePtr::EditHandle(
              &_mfProceduralVariables,
@@ -681,6 +687,9 @@ GetFieldHandlePtr ShaderProgramVariablesBase::getHandleVariableChanged (void) co
 
 EditFieldHandlePtr ShaderProgramVariablesBase::editHandleVariableChanged(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfVariableChanged,

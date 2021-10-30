@@ -66,7 +66,7 @@
 #include "OSGPointLightBase.h"
 #include "OSGPointLight.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -402,6 +402,9 @@ GetFieldHandlePtr PointLightBase::getHandlePosition        (void) const
 
 EditFieldHandlePtr PointLightBase::editHandlePosition       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfPosition,

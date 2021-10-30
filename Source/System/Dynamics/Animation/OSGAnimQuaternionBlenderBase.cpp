@@ -67,7 +67,7 @@
 #include "OSGAnimQuaternionBlenderBase.h"
 #include "OSGAnimQuaternionBlender.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -535,6 +535,9 @@ GetFieldHandlePtr AnimQuaternionBlenderBase::getHandleChannels        (void) con
 
 EditFieldHandlePtr AnimQuaternionBlenderBase::editHandleChannels       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecAnimQuaternionChannelPtr::EditHandlePtr returnValue(
         new  MFUnrecAnimQuaternionChannelPtr::EditHandle(
              &_mfChannels,
@@ -572,6 +575,9 @@ GetFieldHandlePtr AnimQuaternionBlenderBase::getHandleOutValue        (void) con
 
 EditFieldHandlePtr AnimQuaternionBlenderBase::editHandleOutValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfOutValue,

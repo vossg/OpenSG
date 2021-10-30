@@ -66,7 +66,7 @@
 #include "OSGVRMLOrientationInterpolatorBase.h"
 #include "OSGVRMLOrientationInterpolator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -450,6 +450,9 @@ GetFieldHandlePtr VRMLOrientationInterpolatorBase::getHandleKeyValue        (voi
 
 EditFieldHandlePtr VRMLOrientationInterpolatorBase::editHandleKeyValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFQuaternion::EditHandlePtr returnValue(
         new  MFQuaternion::EditHandle(
              &_mfKeyValue,
@@ -475,6 +478,9 @@ GetFieldHandlePtr VRMLOrientationInterpolatorBase::getHandleOutValue        (voi
 
 EditFieldHandlePtr VRMLOrientationInterpolatorBase::editHandleOutValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfOutValue,

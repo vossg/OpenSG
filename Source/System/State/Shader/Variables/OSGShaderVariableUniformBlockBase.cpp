@@ -66,7 +66,7 @@
 #include "OSGShaderVariableUniformBlockBase.h"
 #include "OSGShaderVariableUniformBlock.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -399,6 +399,9 @@ GetFieldHandlePtr ShaderVariableUniformBlockBase::getHandleValue           (void
 
 EditFieldHandlePtr ShaderVariableUniformBlockBase::editHandleValue          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfValue,

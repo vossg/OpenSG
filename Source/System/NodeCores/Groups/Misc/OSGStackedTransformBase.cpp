@@ -67,7 +67,7 @@
 #include "OSGStackedTransformBase.h"
 #include "OSGStackedTransform.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -569,6 +569,9 @@ GetFieldHandlePtr StackedTransformBase::getHandleTransformElements (void) const
 
 EditFieldHandlePtr StackedTransformBase::editHandleTransformElements(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChildTransformationElementPtr::EditHandlePtr returnValue(
         new  MFUnrecChildTransformationElementPtr::EditHandle(
              &_mfTransformElements,

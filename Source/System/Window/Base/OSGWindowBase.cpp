@@ -69,7 +69,7 @@
 #include "OSGWindowBase.h"
 #include "OSGWindow.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1275,6 +1275,9 @@ GetFieldHandlePtr WindowBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr WindowBase::editHandleWidth          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfWidth,
@@ -1300,6 +1303,9 @@ GetFieldHandlePtr WindowBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr WindowBase::editHandleHeight         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfHeight,
@@ -1325,6 +1331,9 @@ GetFieldHandlePtr WindowBase::getHandlePort            (void) const
 
 EditFieldHandlePtr WindowBase::editHandlePort           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChildViewportPtr::EditHandlePtr returnValue(
         new  MFUnrecChildViewportPtr::EditHandle(
              &_mfPort,
@@ -1371,6 +1380,9 @@ GetFieldHandlePtr WindowBase::getHandleGlObjectEventCounter (void) const
 
 EditFieldHandlePtr WindowBase::editHandleGlObjectEventCounter(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGlObjectEventCounter,
@@ -1396,6 +1408,9 @@ GetFieldHandlePtr WindowBase::getHandleGlObjectLastRefresh (void) const
 
 EditFieldHandlePtr WindowBase::editHandleGlObjectLastRefresh(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfGlObjectLastRefresh,
@@ -1421,6 +1436,9 @@ GetFieldHandlePtr WindowBase::getHandleGlObjectLastReinitialize (void) const
 
 EditFieldHandlePtr WindowBase::editHandleGlObjectLastReinitialize(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfGlObjectLastReinitialize,
@@ -1446,6 +1464,9 @@ GetFieldHandlePtr WindowBase::getHandleDrawerId        (void) const
 
 EditFieldHandlePtr WindowBase::editHandleDrawerId       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDrawerId,
@@ -1471,6 +1492,9 @@ GetFieldHandlePtr WindowBase::getHandleRequestMajor    (void) const
 
 EditFieldHandlePtr WindowBase::editHandleRequestMajor   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfRequestMajor,
@@ -1496,6 +1520,9 @@ GetFieldHandlePtr WindowBase::getHandleRequestMinor    (void) const
 
 EditFieldHandlePtr WindowBase::editHandleRequestMinor   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfRequestMinor,
@@ -1521,6 +1548,9 @@ GetFieldHandlePtr WindowBase::getHandleContextFlags    (void) const
 
 EditFieldHandlePtr WindowBase::editHandleContextFlags   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfContextFlags,
@@ -1546,6 +1576,9 @@ GetFieldHandlePtr WindowBase::getHandleRenderOptions   (void) const
 
 EditFieldHandlePtr WindowBase::editHandleRenderOptions  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecRenderOptionsPtr::EditHandlePtr returnValue(
         new  SFUnrecRenderOptionsPtr::EditHandle(
              &_sfRenderOptions,
@@ -1574,6 +1607,9 @@ GetFieldHandlePtr WindowBase::getHandleIgnoreAllExtensions (void) const
 
 EditFieldHandlePtr WindowBase::editHandleIgnoreAllExtensions(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIgnoreAllExtensions,
@@ -1599,6 +1635,9 @@ GetFieldHandlePtr WindowBase::getHandleDrawMode        (void) const
 
 EditFieldHandlePtr WindowBase::editHandleDrawMode       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDrawMode,
@@ -1624,6 +1663,9 @@ GetFieldHandlePtr WindowBase::getHandleRendererInfo    (void) const
 
 EditFieldHandlePtr WindowBase::editHandleRendererInfo   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfRendererInfo,
@@ -1649,6 +1691,9 @@ GetFieldHandlePtr WindowBase::getHandleDrawTasks       (void) const
 
 EditFieldHandlePtr WindowBase::editHandleDrawTasks      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFDrawTask::EditHandlePtr returnValue(
         new  MFDrawTask::EditHandle(
              &_mfDrawTasks,

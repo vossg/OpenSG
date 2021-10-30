@@ -67,7 +67,7 @@
 #include "OSGNodeCoreBase.h"
 #include "OSGNodeCore.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -394,6 +394,9 @@ GetFieldHandlePtr NodeCoreBase::getHandleParents         (void) const
 
 EditFieldHandlePtr NodeCoreBase::editHandleParents        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;

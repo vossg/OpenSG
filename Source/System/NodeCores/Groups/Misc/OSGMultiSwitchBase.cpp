@@ -66,7 +66,7 @@
 #include "OSGMultiSwitchBase.h"
 #include "OSGMultiSwitch.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -462,6 +462,9 @@ GetFieldHandlePtr MultiSwitchBase::getHandleChoices         (void) const
 
 EditFieldHandlePtr MultiSwitchBase::editHandleChoices        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfChoices,
@@ -487,6 +490,9 @@ GetFieldHandlePtr MultiSwitchBase::getHandleSwitchMode      (void) const
 
 EditFieldHandlePtr MultiSwitchBase::editHandleSwitchMode     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfSwitchMode,

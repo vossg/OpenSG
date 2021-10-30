@@ -68,7 +68,7 @@
 #include "OSGSkinningAlgorithmBase.h"
 #include "OSGSkinningAlgorithm.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -448,6 +448,9 @@ GetFieldHandlePtr SkinningAlgorithmBase::getHandleSkin            (void) const
 
 EditFieldHandlePtr SkinningAlgorithmBase::editHandleSkin           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -466,6 +469,9 @@ GetFieldHandlePtr SkinningAlgorithmBase::getHandleSkeleton        (void) const
 
 EditFieldHandlePtr SkinningAlgorithmBase::editHandleSkeleton       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSkeletonPtr::EditHandlePtr returnValue(
         new  SFUnrecSkeletonPtr::EditHandle(
              &_sfSkeleton,

@@ -67,7 +67,7 @@
 #include "OSGChunkListHelperBase.h"
 #include "OSGChunkListHelper.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -475,6 +475,9 @@ GetFieldHandlePtr ChunkListHelperBase::getHandleSlot            (void) const
 
 EditFieldHandlePtr ChunkListHelperBase::editHandleSlot           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfSlot,
@@ -500,6 +503,9 @@ GetFieldHandlePtr ChunkListHelperBase::getHandleChunk           (void) const
 
 EditFieldHandlePtr ChunkListHelperBase::editHandleChunk          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecStateChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecStateChunkPtr::EditHandle(
              &_sfChunk,

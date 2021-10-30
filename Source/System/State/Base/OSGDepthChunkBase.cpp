@@ -67,7 +67,7 @@
 #include "OSGDepthChunkBase.h"
 #include "OSGDepthChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -634,6 +634,9 @@ GetFieldHandlePtr DepthChunkBase::getHandleEnable          (void) const
 
 EditFieldHandlePtr DepthChunkBase::editHandleEnable         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnable,
@@ -659,6 +662,9 @@ GetFieldHandlePtr DepthChunkBase::getHandleFunc            (void) const
 
 EditFieldHandlePtr DepthChunkBase::editHandleFunc           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfFunc,
@@ -684,6 +690,9 @@ GetFieldHandlePtr DepthChunkBase::getHandleNear            (void) const
 
 EditFieldHandlePtr DepthChunkBase::editHandleNear           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfNear,
@@ -709,6 +718,9 @@ GetFieldHandlePtr DepthChunkBase::getHandleFar             (void) const
 
 EditFieldHandlePtr DepthChunkBase::editHandleFar            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFar,
@@ -734,6 +746,9 @@ GetFieldHandlePtr DepthChunkBase::getHandleReadOnly        (void) const
 
 EditFieldHandlePtr DepthChunkBase::editHandleReadOnly       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfReadOnly,

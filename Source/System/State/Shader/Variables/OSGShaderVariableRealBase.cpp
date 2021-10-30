@@ -66,7 +66,7 @@
 #include "OSGShaderVariableRealBase.h"
 #include "OSGShaderVariableReal.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -399,6 +399,9 @@ GetFieldHandlePtr ShaderVariableRealBase::getHandleValue           (void) const
 
 EditFieldHandlePtr ShaderVariableRealBase::editHandleValue          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfValue,

@@ -67,7 +67,7 @@
 #include "OSGAnimMatrixBlenderBase.h"
 #include "OSGAnimMatrixBlender.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -535,6 +535,9 @@ GetFieldHandlePtr AnimMatrixBlenderBase::getHandleChannels        (void) const
 
 EditFieldHandlePtr AnimMatrixBlenderBase::editHandleChannels       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecAnimMatrixChannelPtr::EditHandlePtr returnValue(
         new  MFUnrecAnimMatrixChannelPtr::EditHandle(
              &_mfChannels,
@@ -572,6 +575,9 @@ GetFieldHandlePtr AnimMatrixBlenderBase::getHandleOutValue        (void) const
 
 EditFieldHandlePtr AnimMatrixBlenderBase::editHandleOutValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfOutValue,

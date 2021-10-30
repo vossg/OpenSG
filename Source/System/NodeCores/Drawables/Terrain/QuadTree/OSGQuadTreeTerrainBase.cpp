@@ -68,7 +68,7 @@
 #include "OSGQuadTreeTerrainBase.h"
 #include "OSGQuadTreeTerrain.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1686,6 +1686,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleHeightData      (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleHeightData     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfHeightData,
@@ -1714,6 +1717,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleHeightScale     (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleHeightScale    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfHeightScale,
@@ -1739,6 +1745,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleHeightError     (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleHeightError    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfHeightError,
@@ -1764,6 +1773,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleHeightQuad      (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleHeightQuad     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfHeightQuad,
@@ -1789,6 +1801,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleWidth          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -1814,6 +1829,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleLevel           (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleLevel          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfLevel,
@@ -1839,6 +1857,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleDetail          (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleDetail         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfDetail,
@@ -1864,6 +1885,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleBorderDetail    (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleBorderDetail   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfBorderDetail,
@@ -1889,6 +1913,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleVertexSpacing   (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleVertexSpacing  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfVertexSpacing,
@@ -1914,6 +1941,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleHeightVertices  (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleHeightVertices (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecGeoVectorPropertyPtr::EditHandle(
              &_sfHeightVertices,
@@ -1942,6 +1972,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleGeoMorphing     (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleGeoMorphing    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfGeoMorphing,
@@ -1967,6 +2000,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleBoundMin        (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleBoundMin       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfBoundMin,
@@ -1992,6 +2028,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleBoundMax        (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleBoundMax       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfBoundMax,
@@ -2017,6 +2056,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleEyePoint        (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleEyePoint       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfEyePoint,
@@ -2042,6 +2084,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleEyeHeight       (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleEyeHeight      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfEyeHeight,
@@ -2067,6 +2112,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleEyePointValid   (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleEyePointValid  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEyePointValid,
@@ -2092,6 +2140,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleOriginX         (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleOriginX        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOriginX,
@@ -2117,6 +2168,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleOriginY         (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleOriginY        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOriginY,
@@ -2142,6 +2196,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleOriginTexX      (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleOriginTexX     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOriginTexX,
@@ -2167,6 +2224,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleOriginTexY      (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleOriginTexY     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOriginTexY,
@@ -2192,6 +2252,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleTexSpacing      (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleTexSpacing     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTexSpacing,
@@ -2217,6 +2280,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleTexYSpacing     (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleTexYSpacing    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTexYSpacing,
@@ -2242,6 +2308,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandleUpdateTerrain   (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandleUpdateTerrain  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUpdateTerrain,
@@ -2267,6 +2336,9 @@ GetFieldHandlePtr QuadTreeTerrainBase::getHandlePerPixelLighting (void) const
 
 EditFieldHandlePtr QuadTreeTerrainBase::editHandlePerPixelLighting(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPerPixelLighting,

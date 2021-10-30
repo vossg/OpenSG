@@ -67,7 +67,7 @@
 #include "OSGChunkBlockBase.h"
 #include "OSGChunkBlock.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -419,6 +419,9 @@ GetFieldHandlePtr ChunkBlockBase::getHandleChunks          (void) const
 
 EditFieldHandlePtr ChunkBlockBase::editHandleChunks         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecStateChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecStateChunkPtr::EditHandle(
              &_mfChunks,

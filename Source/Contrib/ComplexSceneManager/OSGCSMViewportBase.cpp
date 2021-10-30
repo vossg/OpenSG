@@ -71,7 +71,7 @@
 #include "OSGCSMViewportBase.h"
 #include "OSGCSMViewport.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1168,6 +1168,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleRoot            (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleRoot           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfRoot,
@@ -1196,6 +1199,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleCamera          (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleCamera         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,
@@ -1224,6 +1230,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleBackground      (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleBackground     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfBackground,
@@ -1252,6 +1261,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleForegrounds     (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleForegrounds    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecForegroundPtr::EditHandlePtr returnValue(
         new  MFUnrecForegroundPtr::EditHandle(
              &_mfForegrounds,
@@ -1289,6 +1301,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleLeftBottom      (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleLeftBottom     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfLeftBottom,
@@ -1314,6 +1329,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleRightTop        (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleRightTop       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfRightTop,
@@ -1339,6 +1357,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleTravMask        (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleTravMask       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTravMask,
@@ -1364,6 +1385,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleRenderOptions   (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleRenderOptions  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecRenderOptionsPtr::EditHandlePtr returnValue(
         new  SFUnrecRenderOptionsPtr::EditHandle(
              &_sfRenderOptions,
@@ -1392,6 +1416,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleStereoMode      (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleStereoMode     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfStereoMode,
@@ -1417,6 +1444,9 @@ GetFieldHandlePtr CSMViewportBase::getHandlePassive         (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandlePassive        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPassive,
@@ -1442,6 +1472,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleServerId        (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleServerId       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfServerId,
@@ -1467,6 +1500,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleMouseDataVC     (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleMouseDataVC    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMouseData::EditHandlePtr returnValue(
         new  SFMouseData::EditHandle(
              &_sfMouseDataVC,
@@ -1492,6 +1528,9 @@ GetFieldHandlePtr CSMViewportBase::getHandleMTouchDataVC    (void) const
 
 EditFieldHandlePtr CSMViewportBase::editHandleMTouchDataVC   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMTouchData::EditHandlePtr returnValue(
         new  SFMTouchData::EditHandle(
              &_sfMTouchDataVC,

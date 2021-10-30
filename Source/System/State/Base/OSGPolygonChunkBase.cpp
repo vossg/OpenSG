@@ -74,7 +74,7 @@
 #include "OSGPolygonChunkBase.h"
 #include "OSGPolygonChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -994,6 +994,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleCullFace        (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleCullFace       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfCullFace,
@@ -1019,6 +1022,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleFrontFace       (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleFrontFace      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfFrontFace,
@@ -1044,6 +1050,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleFrontMode       (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleFrontMode      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfFrontMode,
@@ -1069,6 +1078,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleBackMode        (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleBackMode       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfBackMode,
@@ -1094,6 +1106,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleSmooth          (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleSmooth         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfSmooth,
@@ -1119,6 +1134,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleOffsetFactor    (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleOffsetFactor   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOffsetFactor,
@@ -1144,6 +1162,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleOffsetBias      (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleOffsetBias     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOffsetBias,
@@ -1169,6 +1190,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleOffsetPoint     (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleOffsetPoint    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfOffsetPoint,
@@ -1194,6 +1218,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleOffsetLine      (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleOffsetLine     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfOffsetLine,
@@ -1219,6 +1246,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleOffsetFill      (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleOffsetFill     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfOffsetFill,
@@ -1244,6 +1274,9 @@ GetFieldHandlePtr PolygonChunkBase::getHandleStipple         (void) const
 
 EditFieldHandlePtr PolygonChunkBase::editHandleStipple        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfStipple,

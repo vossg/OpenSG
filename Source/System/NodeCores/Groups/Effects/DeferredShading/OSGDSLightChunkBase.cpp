@@ -66,7 +66,7 @@
 #include "OSGDSLightChunkBase.h"
 #include "OSGDSLightChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -398,6 +398,9 @@ GetFieldHandlePtr DSLightChunkBase::getHandleEffectiveRange  (void) const
 
 EditFieldHandlePtr DSLightChunkBase::editHandleEffectiveRange (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfEffectiveRange,

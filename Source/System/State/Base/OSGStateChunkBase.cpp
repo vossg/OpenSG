@@ -66,7 +66,7 @@
 #include "OSGStateChunkBase.h"
 #include "OSGStateChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -285,6 +285,9 @@ GetFieldHandlePtr StateChunkBase::getHandleIgnore          (void) const
 
 EditFieldHandlePtr StateChunkBase::editHandleIgnore         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIgnore,

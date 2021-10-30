@@ -66,7 +66,7 @@
 #include "OSGForegroundBase.h"
 #include "OSGForeground.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -312,6 +312,9 @@ GetFieldHandlePtr ForegroundBase::getHandleActive          (void) const
 
 EditFieldHandlePtr ForegroundBase::editHandleActive         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfActive,

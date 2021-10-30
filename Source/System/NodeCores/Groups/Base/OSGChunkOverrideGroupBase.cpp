@@ -67,7 +67,7 @@
 #include "OSGChunkOverrideGroupBase.h"
 #include "OSGChunkOverrideGroup.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -499,6 +499,9 @@ GetFieldHandlePtr ChunkOverrideGroupBase::getHandleFallbackChunkBlock (void) con
 
 EditFieldHandlePtr ChunkOverrideGroupBase::editHandleFallbackChunkBlock(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkBlockPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkBlockPtr::EditHandle(
              &_sfFallbackChunkBlock,
@@ -527,6 +530,9 @@ GetFieldHandlePtr ChunkOverrideGroupBase::getHandleSubOverride     (void) const
 
 EditFieldHandlePtr ChunkOverrideGroupBase::editHandleSubOverride    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfSubOverride,

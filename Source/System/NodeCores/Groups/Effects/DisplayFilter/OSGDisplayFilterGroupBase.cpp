@@ -70,7 +70,7 @@
 #include "OSGDisplayFilterGroupBase.h"
 #include "OSGDisplayFilterGroup.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -749,6 +749,9 @@ GetFieldHandlePtr DisplayFilterGroupBase::getHandleCalibrationPatternFilter (voi
 
 EditFieldHandlePtr DisplayFilterGroupBase::editHandleCalibrationPatternFilter(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCalibrationPatternFilterPtr::EditHandlePtr returnValue(
         new  SFUnrecCalibrationPatternFilterPtr::EditHandle(
              &_sfCalibrationPatternFilter,
@@ -777,6 +780,9 @@ GetFieldHandlePtr DisplayFilterGroupBase::getHandleResolutionFilter (void) const
 
 EditFieldHandlePtr DisplayFilterGroupBase::editHandleResolutionFilter(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecResolutionDisplayFilterPtr::EditHandlePtr returnValue(
         new  SFUnrecResolutionDisplayFilterPtr::EditHandle(
              &_sfResolutionFilter,
@@ -805,6 +811,9 @@ GetFieldHandlePtr DisplayFilterGroupBase::getHandleColorFilter     (void) const
 
 EditFieldHandlePtr DisplayFilterGroupBase::editHandleColorFilter    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecColorDisplayFilterPtr::EditHandlePtr returnValue(
         new  SFUnrecColorDisplayFilterPtr::EditHandle(
              &_sfColorFilter,
@@ -833,6 +842,9 @@ GetFieldHandlePtr DisplayFilterGroupBase::getHandleDistortionFilter (void) const
 
 EditFieldHandlePtr DisplayFilterGroupBase::editHandleDistortionFilter(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecDistortionDisplayFilterPtr::EditHandlePtr returnValue(
         new  SFUnrecDistortionDisplayFilterPtr::EditHandle(
              &_sfDistortionFilter,
@@ -861,6 +873,9 @@ GetFieldHandlePtr DisplayFilterGroupBase::getHandleDrawerId        (void) const
 
 EditFieldHandlePtr DisplayFilterGroupBase::editHandleDrawerId       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDrawerId,
@@ -886,6 +901,9 @@ GetFieldHandlePtr DisplayFilterGroupBase::getHandleDrawableId      (void) const
 
 EditFieldHandlePtr DisplayFilterGroupBase::editHandleDrawableId     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDrawableId,

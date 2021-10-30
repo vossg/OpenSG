@@ -66,7 +66,7 @@
 #include "OSGQT4WindowBase.h"
 #include "OSGQT4Window.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -160,7 +160,8 @@ QT4WindowBase::TypeObject QT4WindowBase::_type(
     reinterpret_cast<PrototypeCreateF>(&QT4WindowBase::createEmptyLocal),
     reinterpret_cast<InitContainerF>(&QT4Window::initMethod),
     reinterpret_cast<ExitContainerF>(&QT4Window::exitMethod),
-    reinterpret_cast<InitalInsertDescFunc>(&QT4Window::classDescInserter),
+    reinterpret_cast<InitalInsertDescFunc>(
+        reinterpret_cast<void *>(&QT4Window::classDescInserter)),
     false,
     0,
     "<?xml version=\"1.0\"?>\n"
@@ -464,6 +465,9 @@ GetFieldHandlePtr QT4WindowBase::getHandleGlWidget        (void) const
 
 EditFieldHandlePtr QT4WindowBase::editHandleGlWidget       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFOSGQGLWidgetP::EditHandlePtr returnValue(
         new  SFOSGQGLWidgetP::EditHandle(
              &_sfGlWidget,
@@ -489,6 +493,9 @@ GetFieldHandlePtr QT4WindowBase::getHandlePrivateOSGContext (void) const
 
 EditFieldHandlePtr QT4WindowBase::editHandlePrivateOSGContext(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPrivateOSGContext,

@@ -66,7 +66,7 @@
 #include "OSGDirectionalLightBase.h"
 #include "OSGDirectionalLight.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -393,6 +393,9 @@ GetFieldHandlePtr DirectionalLightBase::getHandleDirection       (void) const
 
 EditFieldHandlePtr DirectionalLightBase::editHandleDirection      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfDirection,

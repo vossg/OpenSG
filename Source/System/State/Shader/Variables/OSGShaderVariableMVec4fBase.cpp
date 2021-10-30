@@ -66,7 +66,7 @@
 #include "OSGShaderVariableMVec4fBase.h"
 #include "OSGShaderVariableMVec4f.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -399,6 +399,9 @@ GetFieldHandlePtr ShaderVariableMVec4fBase::getHandleValue           (void) cons
 
 EditFieldHandlePtr ShaderVariableMVec4fBase::editHandleValue          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec4f::EditHandlePtr returnValue(
         new  MFVec4f::EditHandle(
              &_mfValue,

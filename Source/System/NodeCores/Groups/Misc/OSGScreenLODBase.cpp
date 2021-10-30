@@ -66,7 +66,7 @@
 #include "OSGScreenLODBase.h"
 #include "OSGScreenLOD.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -412,6 +412,9 @@ GetFieldHandlePtr ScreenLODBase::getHandleCoverageOverride (void) const
 
 EditFieldHandlePtr ScreenLODBase::editHandleCoverageOverride(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfCoverageOverride,

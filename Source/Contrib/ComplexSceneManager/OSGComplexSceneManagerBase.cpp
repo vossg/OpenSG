@@ -68,7 +68,7 @@
 #include "OSGComplexSceneManagerBase.h"
 #include "OSGComplexSceneManager.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1063,6 +1063,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleGlobals         (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleGlobals        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFRecFieldContainerPtr::EditHandlePtr returnValue(
         new  MFRecFieldContainerPtr::EditHandle(
              &_mfGlobals,
@@ -1100,6 +1103,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleDrawManager     (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleDrawManager    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCSMDrawManagerPtr::EditHandlePtr returnValue(
         new  SFUnrecCSMDrawManagerPtr::EditHandle(
              &_sfDrawManager,
@@ -1128,6 +1134,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleStartTime       (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleStartTime      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfStartTime,
@@ -1153,6 +1162,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleTimeScale       (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleTimeScale      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfTimeScale,
@@ -1178,6 +1190,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleConstantTimeStep (void) cons
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleConstantTimeStep(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfConstantTimeStep,
@@ -1203,6 +1218,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleConstantTime    (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleConstantTime   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfConstantTime,
@@ -1228,6 +1246,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandlePaused          (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandlePaused         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPaused,
@@ -1253,6 +1274,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleDumpFrameStart  (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleDumpFrameStart (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDumpFrameStart,
@@ -1278,6 +1302,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleEnableWebService (void) cons
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleEnableWebService(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnableWebService,
@@ -1303,6 +1330,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleWebServicePort  (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleWebServicePort (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfWebServicePort,
@@ -1328,6 +1358,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleWebServiceRoot  (void) const
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleWebServiceRoot (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfWebServiceRoot,
@@ -1353,6 +1386,9 @@ GetFieldHandlePtr ComplexSceneManagerBase::getHandleWaitKeyAfterFrame (void) con
 
 EditFieldHandlePtr ComplexSceneManagerBase::editHandleWaitKeyAfterFrame(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfWaitKeyAfterFrame,

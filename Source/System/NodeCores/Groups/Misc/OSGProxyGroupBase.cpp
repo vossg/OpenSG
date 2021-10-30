@@ -67,7 +67,7 @@
 #include "OSGProxyGroupBase.h"
 #include "OSGProxyGroup.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1012,6 +1012,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleEnabled        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -1037,6 +1040,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleUrl             (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleUrl            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfUrl,
@@ -1062,6 +1068,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleRoot            (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleRoot           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfRoot,
@@ -1090,6 +1099,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleState           (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleState          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfState,
@@ -1115,6 +1127,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleConcurrentLoad  (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleConcurrentLoad (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfConcurrentLoad,
@@ -1140,6 +1155,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleVolume          (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleVolume         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBoxVolume::EditHandlePtr returnValue(
         new  SFBoxVolume::EditHandle(
              &_sfVolume,
@@ -1165,6 +1183,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleIndices         (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleIndices        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfIndices,
@@ -1190,6 +1211,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleTriangles       (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleTriangles      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTriangles,
@@ -1215,6 +1239,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandlePositions       (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandlePositions      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfPositions,
@@ -1240,6 +1267,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleGeometries      (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleGeometries     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGeometries,
@@ -1265,6 +1295,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleAbsoluteUrl     (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleAbsoluteUrl    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfAbsoluteUrl,
@@ -1290,6 +1323,9 @@ GetFieldHandlePtr ProxyGroupBase::getHandleInline          (void) const
 
 EditFieldHandlePtr ProxyGroupBase::editHandleInline         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfInline,

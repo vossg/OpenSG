@@ -66,7 +66,7 @@
 #include "OSGVRMLCoordinateInterpolatorBase.h"
 #include "OSGVRMLCoordinateInterpolator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -450,6 +450,9 @@ GetFieldHandlePtr VRMLCoordinateInterpolatorBase::getHandleKeyValue        (void
 
 EditFieldHandlePtr VRMLCoordinateInterpolatorBase::editHandleKeyValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFPnt3f::EditHandlePtr returnValue(
         new  MFPnt3f::EditHandle(
              &_mfKeyValue,
@@ -475,6 +478,9 @@ GetFieldHandlePtr VRMLCoordinateInterpolatorBase::getHandleOutValue        (void
 
 EditFieldHandlePtr VRMLCoordinateInterpolatorBase::editHandleOutValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFPnt3f::EditHandlePtr returnValue(
         new  MFPnt3f::EditHandle(
              &_mfOutValue,

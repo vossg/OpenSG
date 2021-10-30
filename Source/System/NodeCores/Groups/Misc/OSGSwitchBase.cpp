@@ -66,7 +66,7 @@
 #include "OSGSwitchBase.h"
 #include "OSGSwitch.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -406,6 +406,9 @@ GetFieldHandlePtr SwitchBase::getHandleChoice          (void) const
 
 EditFieldHandlePtr SwitchBase::editHandleChoice         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfChoice,

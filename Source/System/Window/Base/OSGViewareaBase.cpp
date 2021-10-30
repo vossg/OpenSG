@@ -68,7 +68,7 @@
 #include "OSGViewareaBase.h"
 #include "OSGViewarea.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -960,6 +960,9 @@ GetFieldHandlePtr ViewareaBase::getHandleLeft            (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleLeft           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLeft,
@@ -985,6 +988,9 @@ GetFieldHandlePtr ViewareaBase::getHandleRight           (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleRight          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfRight,
@@ -1010,6 +1016,9 @@ GetFieldHandlePtr ViewareaBase::getHandleBottom          (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleBottom         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBottom,
@@ -1035,6 +1044,9 @@ GetFieldHandlePtr ViewareaBase::getHandleTop             (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleTop            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTop,
@@ -1060,6 +1072,9 @@ GetFieldHandlePtr ViewareaBase::getHandleTravMask        (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleTravMask       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTravMask,
@@ -1085,6 +1100,9 @@ GetFieldHandlePtr ViewareaBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleEnabled        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -1110,6 +1128,9 @@ GetFieldHandlePtr ViewareaBase::getHandleDrawTime        (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleDrawTime       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfDrawTime,
@@ -1135,6 +1156,9 @@ GetFieldHandlePtr ViewareaBase::getHandleDrawableId      (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleDrawableId     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDrawableId,
@@ -1160,6 +1184,9 @@ GetFieldHandlePtr ViewareaBase::getHandleRenderOptions   (void) const
 
 EditFieldHandlePtr ViewareaBase::editHandleRenderOptions  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecRenderOptionsPtr::EditHandlePtr returnValue(
         new  SFUnrecRenderOptionsPtr::EditHandle(
              &_sfRenderOptions,

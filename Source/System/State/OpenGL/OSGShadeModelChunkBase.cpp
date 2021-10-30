@@ -66,7 +66,7 @@
 #include "OSGShadeModelChunkBase.h"
 #include "OSGShadeModelChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -396,6 +396,9 @@ GetFieldHandlePtr ShadeModelChunkBase::getHandleShadeModel      (void) const
 
 EditFieldHandlePtr ShadeModelChunkBase::editHandleShadeModel     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfShadeModel,

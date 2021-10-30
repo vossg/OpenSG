@@ -67,7 +67,7 @@
 #include "OSGAnimChannelBase.h"
 #include "OSGAnimChannel.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -480,6 +480,9 @@ GetFieldHandlePtr AnimChannelBase::getHandleAnimation       (void) const
 
 EditFieldHandlePtr AnimChannelBase::editHandleAnimation      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -498,6 +501,9 @@ GetFieldHandlePtr AnimChannelBase::getHandleWeight          (void) const
 
 EditFieldHandlePtr AnimChannelBase::editHandleWeight         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfWeight,
@@ -523,6 +529,9 @@ GetFieldHandlePtr AnimChannelBase::getHandleInValue         (void) const
 
 EditFieldHandlePtr AnimChannelBase::editHandleInValue        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfInValue,

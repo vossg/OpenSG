@@ -66,7 +66,7 @@
 #include "OSGGeoMultiPropertyDataBase.h"
 #include "OSGGeoMultiPropertyData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -453,6 +453,9 @@ GetFieldHandlePtr GeoMultiPropertyDataBase::getHandleIData           (void) cons
 
 EditFieldHandlePtr GeoMultiPropertyDataBase::editHandleIData          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfIData,
@@ -478,6 +481,9 @@ GetFieldHandlePtr GeoMultiPropertyDataBase::getHandleGLId            (void) cons
 
 EditFieldHandlePtr GeoMultiPropertyDataBase::editHandleGLId           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGLId,

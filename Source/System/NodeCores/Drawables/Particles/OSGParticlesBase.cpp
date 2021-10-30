@@ -67,7 +67,7 @@
 #include "OSGParticlesBase.h"
 #include "OSGParticles.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1326,6 +1326,9 @@ GetFieldHandlePtr ParticlesBase::getHandleMode            (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleMode           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMode,
@@ -1351,6 +1354,9 @@ GetFieldHandlePtr ParticlesBase::getHandlePositions       (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandlePositions      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeoVectorPropertyPtr::EditHandle(
              &_sfPositions,
@@ -1379,6 +1385,9 @@ GetFieldHandlePtr ParticlesBase::getHandleSizes           (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleSizes          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfSizes,
@@ -1404,6 +1413,9 @@ GetFieldHandlePtr ParticlesBase::getHandleSecPositions    (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleSecPositions   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeoVectorPropertyPtr::EditHandle(
              &_sfSecPositions,
@@ -1432,6 +1444,9 @@ GetFieldHandlePtr ParticlesBase::getHandleColors          (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleColors         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeoVectorPropertyPtr::EditHandle(
              &_sfColors,
@@ -1460,6 +1475,9 @@ GetFieldHandlePtr ParticlesBase::getHandleNormals         (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleNormals        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeoVectorPropertyPtr::EditHandle(
              &_sfNormals,
@@ -1488,6 +1506,9 @@ GetFieldHandlePtr ParticlesBase::getHandleIndices         (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleIndices        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfIndices,
@@ -1513,6 +1534,9 @@ GetFieldHandlePtr ParticlesBase::getHandleTextureZs       (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleTextureZs      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfTextureZs,
@@ -1538,6 +1562,9 @@ GetFieldHandlePtr ParticlesBase::getHandleDrawOrder       (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleDrawOrder      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDrawOrder,
@@ -1563,6 +1590,9 @@ GetFieldHandlePtr ParticlesBase::getHandleDynamic         (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleDynamic        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDynamic,
@@ -1588,6 +1618,9 @@ GetFieldHandlePtr ParticlesBase::getHandlePump            (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandlePump           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfPump,
@@ -1613,6 +1646,9 @@ GetFieldHandlePtr ParticlesBase::getHandleBsp             (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleBsp            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFParticleBSPTree::EditHandlePtr returnValue(
         new  SFParticleBSPTree::EditHandle(
              &_sfBsp,
@@ -1638,6 +1674,9 @@ GetFieldHandlePtr ParticlesBase::getHandleNumParticles    (void) const
 
 EditFieldHandlePtr ParticlesBase::editHandleNumParticles   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfNumParticles,

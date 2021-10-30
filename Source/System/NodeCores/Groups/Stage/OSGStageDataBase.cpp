@@ -66,7 +66,7 @@
 #include "OSGStageDataBase.h"
 #include "OSGStageData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -473,6 +473,9 @@ GetFieldHandlePtr StageDataBase::getHandlePartitionRangeBegin (void) const
 
 EditFieldHandlePtr StageDataBase::editHandlePartitionRangeBegin(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfPartitionRangeBegin,
@@ -498,6 +501,9 @@ GetFieldHandlePtr StageDataBase::getHandlePartitionRangeEnd (void) const
 
 EditFieldHandlePtr StageDataBase::editHandlePartitionRangeEnd(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfPartitionRangeEnd,
@@ -523,6 +529,9 @@ GetFieldHandlePtr StageDataBase::getHandleGroupMode       (void) const
 
 EditFieldHandlePtr StageDataBase::editHandleGroupMode      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfGroupMode,

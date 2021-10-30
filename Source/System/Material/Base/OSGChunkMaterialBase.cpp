@@ -67,7 +67,7 @@
 #include "OSGChunkMaterialBase.h"
 #include "OSGChunkMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -497,6 +497,9 @@ GetFieldHandlePtr ChunkMaterialBase::getHandleChunks          (void) const
 
 EditFieldHandlePtr ChunkMaterialBase::editHandleChunks         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecStateChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecStateChunkPtr::EditHandle(
              &_mfChunks,
@@ -534,6 +537,9 @@ GetFieldHandlePtr ChunkMaterialBase::getHandleSlots           (void) const
 
 EditFieldHandlePtr ChunkMaterialBase::editHandleSlots          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfSlots,

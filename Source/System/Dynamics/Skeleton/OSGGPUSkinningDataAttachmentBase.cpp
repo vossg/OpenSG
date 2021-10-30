@@ -67,7 +67,7 @@
 #include "OSGGPUSkinningDataAttachmentBase.h"
 #include "OSGGPUSkinningDataAttachment.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -483,6 +483,9 @@ GetFieldHandlePtr GPUSkinningDataAttachmentBase::getHandleShaderCode      (void)
 
 EditFieldHandlePtr GPUSkinningDataAttachmentBase::editHandleShaderCode     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramChunkPtr::EditHandle(
              &_sfShaderCode,
@@ -511,6 +514,9 @@ GetFieldHandlePtr GPUSkinningDataAttachmentBase::getHandleDataValid       (void)
 
 EditFieldHandlePtr GPUSkinningDataAttachmentBase::editHandleDataValid      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDataValid,

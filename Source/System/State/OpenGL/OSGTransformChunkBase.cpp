@@ -66,7 +66,7 @@
 #include "OSGTransformChunkBase.h"
 #include "OSGTransformChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -402,6 +402,9 @@ GetFieldHandlePtr TransformChunkBase::getHandleMatrix          (void) const
 
 EditFieldHandlePtr TransformChunkBase::editHandleMatrix         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfMatrix,

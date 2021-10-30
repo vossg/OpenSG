@@ -69,7 +69,7 @@
 #include "OSGFogStageDataBase.h"
 #include "OSGFogStageData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -672,6 +672,9 @@ GetFieldHandlePtr FogStageDataBase::getHandleFogMaterial     (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleFogMaterial    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfFogMaterial,
@@ -700,6 +703,9 @@ GetFieldHandlePtr FogStageDataBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleWidth          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -725,6 +731,9 @@ GetFieldHandlePtr FogStageDataBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleHeight         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -750,6 +759,9 @@ GetFieldHandlePtr FogStageDataBase::getHandleRenderTarget    (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleRenderTarget   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfRenderTarget,
@@ -778,6 +790,9 @@ GetFieldHandlePtr FogStageDataBase::getHandleCamera          (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleCamera         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,

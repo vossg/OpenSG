@@ -70,7 +70,7 @@
 #include "OSGSimpleTexturedMaterialBase.h"
 #include "OSGSimpleTexturedMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -696,6 +696,9 @@ GetFieldHandlePtr SimpleTexturedMaterialBase::getHandleImage           (void) co
 
 EditFieldHandlePtr SimpleTexturedMaterialBase::editHandleImage          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfImage,
@@ -724,6 +727,9 @@ GetFieldHandlePtr SimpleTexturedMaterialBase::getHandleMinFilter       (void) co
 
 EditFieldHandlePtr SimpleTexturedMaterialBase::editHandleMinFilter      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfMinFilter,
@@ -749,6 +755,9 @@ GetFieldHandlePtr SimpleTexturedMaterialBase::getHandleMagFilter       (void) co
 
 EditFieldHandlePtr SimpleTexturedMaterialBase::editHandleMagFilter      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfMagFilter,
@@ -774,6 +783,9 @@ GetFieldHandlePtr SimpleTexturedMaterialBase::getHandleEnvMode         (void) co
 
 EditFieldHandlePtr SimpleTexturedMaterialBase::editHandleEnvMode        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvMode,
@@ -799,6 +811,9 @@ GetFieldHandlePtr SimpleTexturedMaterialBase::getHandleEnvMap          (void) co
 
 EditFieldHandlePtr SimpleTexturedMaterialBase::editHandleEnvMap         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnvMap,

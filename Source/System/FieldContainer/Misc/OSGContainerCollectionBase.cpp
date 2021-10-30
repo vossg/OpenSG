@@ -67,7 +67,7 @@
 #include "OSGContainerCollectionBase.h"
 #include "OSGContainerCollection.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -529,6 +529,9 @@ GetFieldHandlePtr ContainerCollectionBase::getHandleName            (void) const
 
 EditFieldHandlePtr ContainerCollectionBase::editHandleName           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfName,
@@ -554,6 +557,9 @@ GetFieldHandlePtr ContainerCollectionBase::getHandleContainers      (void) const
 
 EditFieldHandlePtr ContainerCollectionBase::editHandleContainers     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecFieldContainerPtr::EditHandlePtr returnValue(
         new  MFUnrecFieldContainerPtr::EditHandle(
              &_mfContainers,

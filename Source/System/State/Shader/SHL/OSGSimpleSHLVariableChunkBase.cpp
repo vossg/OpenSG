@@ -67,7 +67,7 @@
 #include "OSGSimpleSHLVariableChunkBase.h"
 #include "OSGSimpleSHLVariableChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -539,6 +539,9 @@ GetFieldHandlePtr SimpleSHLVariableChunkBase::getHandleVariables       (void) co
 
 EditFieldHandlePtr SimpleSHLVariableChunkBase::editHandleVariables      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildShaderProgramVariablesPtr::EditHandlePtr returnValue(
         new  SFUnrecChildShaderProgramVariablesPtr::EditHandle(
              &_sfVariables,
@@ -567,6 +570,9 @@ GetFieldHandlePtr SimpleSHLVariableChunkBase::getHandleVariableLocations (void) 
 
 EditFieldHandlePtr SimpleSHLVariableChunkBase::editHandleVariableLocations(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfVariableLocations,

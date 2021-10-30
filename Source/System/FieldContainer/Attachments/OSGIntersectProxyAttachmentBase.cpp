@@ -66,7 +66,7 @@
 #include "OSGIntersectProxyAttachmentBase.h"
 #include "OSGIntersectProxyAttachment.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -303,6 +303,9 @@ GetFieldHandlePtr IntersectProxyAttachmentBase::getHandleVisitChildren   (void) 
 
 EditFieldHandlePtr IntersectProxyAttachmentBase::editHandleVisitChildren  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfVisitChildren,

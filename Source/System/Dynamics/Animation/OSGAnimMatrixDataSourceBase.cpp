@@ -66,7 +66,7 @@
 #include "OSGAnimMatrixDataSourceBase.h"
 #include "OSGAnimMatrixDataSource.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -402,6 +402,9 @@ GetFieldHandlePtr AnimMatrixDataSourceBase::getHandleValues          (void) cons
 
 EditFieldHandlePtr AnimMatrixDataSourceBase::editHandleValues         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfValues,

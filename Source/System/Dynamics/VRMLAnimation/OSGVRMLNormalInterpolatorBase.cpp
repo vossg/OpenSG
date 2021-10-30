@@ -66,7 +66,7 @@
 #include "OSGVRMLNormalInterpolatorBase.h"
 #include "OSGVRMLNormalInterpolator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -450,6 +450,9 @@ GetFieldHandlePtr VRMLNormalInterpolatorBase::getHandleKeyValue        (void) co
 
 EditFieldHandlePtr VRMLNormalInterpolatorBase::editHandleKeyValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfKeyValue,
@@ -475,6 +478,9 @@ GetFieldHandlePtr VRMLNormalInterpolatorBase::getHandleOutValue        (void) co
 
 EditFieldHandlePtr VRMLNormalInterpolatorBase::editHandleOutValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfOutValue,

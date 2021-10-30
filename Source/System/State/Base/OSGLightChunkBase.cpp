@@ -67,7 +67,7 @@
 #include "OSGLightChunkBase.h"
 #include "OSGLightChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -989,6 +989,9 @@ GetFieldHandlePtr LightChunkBase::getHandleDiffuse         (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleDiffuse        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfDiffuse,
@@ -1014,6 +1017,9 @@ GetFieldHandlePtr LightChunkBase::getHandleAmbient         (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleAmbient        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfAmbient,
@@ -1039,6 +1045,9 @@ GetFieldHandlePtr LightChunkBase::getHandleSpecular        (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleSpecular       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfSpecular,
@@ -1064,6 +1073,9 @@ GetFieldHandlePtr LightChunkBase::getHandlePosition        (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandlePosition       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec4f::EditHandlePtr returnValue(
         new  SFVec4f::EditHandle(
              &_sfPosition,
@@ -1089,6 +1101,9 @@ GetFieldHandlePtr LightChunkBase::getHandleDirection       (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleDirection      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfDirection,
@@ -1114,6 +1129,9 @@ GetFieldHandlePtr LightChunkBase::getHandleExponent        (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleExponent       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfExponent,
@@ -1139,6 +1157,9 @@ GetFieldHandlePtr LightChunkBase::getHandleCutoff          (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleCutoff         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfCutoff,
@@ -1164,6 +1185,9 @@ GetFieldHandlePtr LightChunkBase::getHandleConstantAttenuation (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleConstantAttenuation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfConstantAttenuation,
@@ -1189,6 +1213,9 @@ GetFieldHandlePtr LightChunkBase::getHandleLinearAttenuation (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleLinearAttenuation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLinearAttenuation,
@@ -1214,6 +1241,9 @@ GetFieldHandlePtr LightChunkBase::getHandleQuadraticAttenuation (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleQuadraticAttenuation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfQuadraticAttenuation,
@@ -1239,6 +1269,9 @@ GetFieldHandlePtr LightChunkBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr LightChunkBase::editHandleBeacon         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfBeacon,

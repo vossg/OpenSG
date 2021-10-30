@@ -66,7 +66,7 @@
 #include "OSGSkeletonSkinningAlgorithmBase.h"
 #include "OSGSkeletonSkinningAlgorithm.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -454,6 +454,9 @@ GetFieldHandlePtr SkeletonSkinningAlgorithmBase::getHandleDrawPositions   (void)
 
 EditFieldHandlePtr SkeletonSkinningAlgorithmBase::editHandleDrawPositions  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFPnt3f::EditHandlePtr returnValue(
         new  MFPnt3f::EditHandle(
              &_mfDrawPositions,
@@ -479,6 +482,9 @@ GetFieldHandlePtr SkeletonSkinningAlgorithmBase::getHandleDrawIndex       (void)
 
 EditFieldHandlePtr SkeletonSkinningAlgorithmBase::editHandleDrawIndex      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfDrawIndex,

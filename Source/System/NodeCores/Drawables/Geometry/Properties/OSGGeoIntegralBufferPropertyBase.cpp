@@ -66,7 +66,7 @@
 #include "OSGGeoIntegralBufferPropertyBase.h"
 #include "OSGGeoIntegralBufferProperty.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -629,6 +629,9 @@ GetFieldHandlePtr GeoIntegralBufferPropertyBase::getHandleStride          (void)
 
 EditFieldHandlePtr GeoIntegralBufferPropertyBase::editHandleStride         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfStride,
@@ -654,6 +657,9 @@ GetFieldHandlePtr GeoIntegralBufferPropertyBase::getHandleFormat          (void)
 
 EditFieldHandlePtr GeoIntegralBufferPropertyBase::editHandleFormat         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFormat,
@@ -679,6 +685,9 @@ GetFieldHandlePtr GeoIntegralBufferPropertyBase::getHandleFormatSize      (void)
 
 EditFieldHandlePtr GeoIntegralBufferPropertyBase::editHandleFormatSize     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFormatSize,
@@ -704,6 +713,9 @@ GetFieldHandlePtr GeoIntegralBufferPropertyBase::getHandleDimension       (void)
 
 EditFieldHandlePtr GeoIntegralBufferPropertyBase::editHandleDimension      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDimension,
@@ -729,6 +741,9 @@ GetFieldHandlePtr GeoIntegralBufferPropertyBase::getHandleSize            (void)
 
 EditFieldHandlePtr GeoIntegralBufferPropertyBase::editHandleSize           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSize,

@@ -68,7 +68,7 @@
 #include "OSGImageBase.h"
 #include "OSGImage.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1777,6 +1777,9 @@ GetFieldHandlePtr ImageBase::getHandleParents         (void) const
 
 EditFieldHandlePtr ImageBase::editHandleParents        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -1795,6 +1798,9 @@ GetFieldHandlePtr ImageBase::getHandleDimension       (void) const
 
 EditFieldHandlePtr ImageBase::editHandleDimension      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDimension,
@@ -1820,6 +1826,9 @@ GetFieldHandlePtr ImageBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr ImageBase::editHandleWidth          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -1845,6 +1854,9 @@ GetFieldHandlePtr ImageBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr ImageBase::editHandleHeight         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -1870,6 +1882,9 @@ GetFieldHandlePtr ImageBase::getHandleDepth           (void) const
 
 EditFieldHandlePtr ImageBase::editHandleDepth          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDepth,
@@ -1895,6 +1910,9 @@ GetFieldHandlePtr ImageBase::getHandleBpp             (void) const
 
 EditFieldHandlePtr ImageBase::editHandleBpp            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfBpp,
@@ -1920,6 +1938,9 @@ GetFieldHandlePtr ImageBase::getHandleMipMapCount     (void) const
 
 EditFieldHandlePtr ImageBase::editHandleMipMapCount    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfMipMapCount,
@@ -1945,6 +1966,9 @@ GetFieldHandlePtr ImageBase::getHandleFrameCount      (void) const
 
 EditFieldHandlePtr ImageBase::editHandleFrameCount     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfFrameCount,
@@ -1970,6 +1994,9 @@ GetFieldHandlePtr ImageBase::getHandleFrameDelay      (void) const
 
 EditFieldHandlePtr ImageBase::editHandleFrameDelay     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfFrameDelay,
@@ -1995,6 +2022,9 @@ GetFieldHandlePtr ImageBase::getHandlePixelFormat     (void) const
 
 EditFieldHandlePtr ImageBase::editHandlePixelFormat    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfPixelFormat,
@@ -2020,6 +2050,9 @@ GetFieldHandlePtr ImageBase::getHandlePixel           (void) const
 
 EditFieldHandlePtr ImageBase::editHandlePixel          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfPixel,
@@ -2045,6 +2078,9 @@ GetFieldHandlePtr ImageBase::getHandleFrameSize       (void) const
 
 EditFieldHandlePtr ImageBase::editHandleFrameSize      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfFrameSize,
@@ -2070,6 +2106,9 @@ GetFieldHandlePtr ImageBase::getHandleName            (void) const
 
 EditFieldHandlePtr ImageBase::editHandleName           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfName,
@@ -2095,6 +2134,9 @@ GetFieldHandlePtr ImageBase::getHandleDataType        (void) const
 
 EditFieldHandlePtr ImageBase::editHandleDataType       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDataType,
@@ -2120,6 +2162,9 @@ GetFieldHandlePtr ImageBase::getHandleComponentSize   (void) const
 
 EditFieldHandlePtr ImageBase::editHandleComponentSize  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfComponentSize,
@@ -2145,6 +2190,9 @@ GetFieldHandlePtr ImageBase::getHandleSideCount       (void) const
 
 EditFieldHandlePtr ImageBase::editHandleSideCount      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfSideCount,
@@ -2170,6 +2218,9 @@ GetFieldHandlePtr ImageBase::getHandleSideSize        (void) const
 
 EditFieldHandlePtr ImageBase::editHandleSideSize       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfSideSize,
@@ -2195,6 +2246,9 @@ GetFieldHandlePtr ImageBase::getHandleForceCompressedData (void) const
 
 EditFieldHandlePtr ImageBase::editHandleForceCompressedData(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfForceCompressedData,
@@ -2220,6 +2274,9 @@ GetFieldHandlePtr ImageBase::getHandleForceAlphaChannel (void) const
 
 EditFieldHandlePtr ImageBase::editHandleForceAlphaChannel(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfForceAlphaChannel,
@@ -2245,6 +2302,9 @@ GetFieldHandlePtr ImageBase::getHandleForceColorChannel (void) const
 
 EditFieldHandlePtr ImageBase::editHandleForceColorChannel(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfForceColorChannel,
@@ -2270,6 +2330,9 @@ GetFieldHandlePtr ImageBase::getHandleForceAlphaBinary (void) const
 
 EditFieldHandlePtr ImageBase::editHandleForceAlphaBinary(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfForceAlphaBinary,
@@ -2295,6 +2358,9 @@ GetFieldHandlePtr ImageBase::getHandleResX            (void) const
 
 EditFieldHandlePtr ImageBase::editHandleResX           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfResX,
@@ -2320,6 +2386,9 @@ GetFieldHandlePtr ImageBase::getHandleResY            (void) const
 
 EditFieldHandlePtr ImageBase::editHandleResY           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfResY,
@@ -2345,6 +2414,9 @@ GetFieldHandlePtr ImageBase::getHandleResUnit         (void) const
 
 EditFieldHandlePtr ImageBase::editHandleResUnit        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfResUnit,
@@ -2370,6 +2442,9 @@ GetFieldHandlePtr ImageBase::getHandleClearOnLoad     (void) const
 
 EditFieldHandlePtr ImageBase::editHandleClearOnLoad    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfClearOnLoad,

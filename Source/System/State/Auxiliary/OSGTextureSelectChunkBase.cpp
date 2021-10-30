@@ -67,7 +67,7 @@
 #include "OSGTextureSelectChunkBase.h"
 #include "OSGTextureSelectChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -542,6 +542,9 @@ GetFieldHandlePtr TextureSelectChunkBase::getHandleChoice          (void) const
 
 EditFieldHandlePtr TextureSelectChunkBase::editHandleChoice         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfChoice,
@@ -567,6 +570,9 @@ GetFieldHandlePtr TextureSelectChunkBase::getHandleTextures        (void) const
 
 EditFieldHandlePtr TextureSelectChunkBase::editHandleTextures       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecTextureBaseChunkPtr::EditHandle(
              &_mfTextures,

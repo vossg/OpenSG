@@ -70,7 +70,7 @@
 #include "OSGShaderProgramBase.h"
 #include "OSGShaderProgram.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1120,6 +1120,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleShaderType      (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleShaderType     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfShaderType,
@@ -1145,6 +1148,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleProgram         (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleProgram        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfProgram,
@@ -1170,6 +1176,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleDefines         (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleDefines        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfDefines,
@@ -1195,6 +1204,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleGLId            (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleGLId           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGLId,
@@ -1220,6 +1232,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleVariables       (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleVariables      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildShaderProgramVariablesPtr::EditHandlePtr returnValue(
         new  SFUnrecChildShaderProgramVariablesPtr::EditHandle(
              &_sfVariables,
@@ -1248,6 +1263,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleFeedbackVaryings (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleFeedbackVaryings(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfFeedbackVaryings,
@@ -1273,6 +1291,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleParameter       (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleParameter      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFShaderParameter::EditHandlePtr returnValue(
         new  MFShaderParameter::EditHandle(
              &_mfParameter,
@@ -1298,6 +1319,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleAttributes      (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleAttributes     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFShaderAttribute::EditHandlePtr returnValue(
         new  MFShaderAttribute::EditHandle(
              &_mfAttributes,
@@ -1323,6 +1347,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleCgFrontEnd      (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleCgFrontEnd     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCgFrontEnd,
@@ -1348,6 +1375,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandlePointSize       (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandlePointSize      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPointSize,
@@ -1369,6 +1399,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleParents         (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleParents        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -1383,6 +1416,9 @@ GetFieldHandlePtr ShaderProgramBase::getHandleDestroyedFunctors (void) const
 
 EditFieldHandlePtr ShaderProgramBase::editHandleDestroyedFunctors(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;

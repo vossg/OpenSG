@@ -66,7 +66,7 @@
 #include "OSGGeoVectorBufferPropertyBase.h"
 #include "OSGGeoVectorBufferProperty.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -682,6 +682,9 @@ GetFieldHandlePtr GeoVectorBufferPropertyBase::getHandleStride          (void) c
 
 EditFieldHandlePtr GeoVectorBufferPropertyBase::editHandleStride         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfStride,
@@ -707,6 +710,9 @@ GetFieldHandlePtr GeoVectorBufferPropertyBase::getHandleFormat          (void) c
 
 EditFieldHandlePtr GeoVectorBufferPropertyBase::editHandleFormat         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFormat,
@@ -732,6 +738,9 @@ GetFieldHandlePtr GeoVectorBufferPropertyBase::getHandleFormatSize      (void) c
 
 EditFieldHandlePtr GeoVectorBufferPropertyBase::editHandleFormatSize     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFormatSize,
@@ -757,6 +766,9 @@ GetFieldHandlePtr GeoVectorBufferPropertyBase::getHandleDimension       (void) c
 
 EditFieldHandlePtr GeoVectorBufferPropertyBase::editHandleDimension      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDimension,
@@ -782,6 +794,9 @@ GetFieldHandlePtr GeoVectorBufferPropertyBase::getHandleVectorType      (void) c
 
 EditFieldHandlePtr GeoVectorBufferPropertyBase::editHandleVectorType     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfVectorType,
@@ -807,6 +822,9 @@ GetFieldHandlePtr GeoVectorBufferPropertyBase::getHandleSize            (void) c
 
 EditFieldHandlePtr GeoVectorBufferPropertyBase::editHandleSize           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSize,

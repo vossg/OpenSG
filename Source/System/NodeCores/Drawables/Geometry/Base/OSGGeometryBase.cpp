@@ -68,7 +68,7 @@
 #include "OSGGeometryBase.h"
 #include "OSGGeometry.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1385,6 +1385,9 @@ GetFieldHandlePtr GeometryBase::getHandleTypes           (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleTypes          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildGeoIntegralPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeoIntegralPropertyPtr::EditHandle(
              &_sfTypes,
@@ -1413,6 +1416,9 @@ GetFieldHandlePtr GeometryBase::getHandleLengths         (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleLengths        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildGeoIntegralPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeoIntegralPropertyPtr::EditHandle(
              &_sfLengths,
@@ -1441,6 +1447,9 @@ GetFieldHandlePtr GeometryBase::getHandleProperties      (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleProperties     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChildGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  MFUnrecChildGeoVectorPropertyPtr::EditHandle(
              &_mfProperties,
@@ -1478,6 +1487,9 @@ GetFieldHandlePtr GeometryBase::getHandlePropIndices     (void) const
 
 EditFieldHandlePtr GeometryBase::editHandlePropIndices    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChildGeoIntegralPropertyPtr::EditHandlePtr returnValue(
         new  MFUnrecChildGeoIntegralPropertyPtr::EditHandle(
              &_mfPropIndices,
@@ -1515,6 +1527,9 @@ GetFieldHandlePtr GeometryBase::getHandlePatchVertices   (void) const
 
 EditFieldHandlePtr GeometryBase::editHandlePatchVertices  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfPatchVertices,
@@ -1540,6 +1555,9 @@ GetFieldHandlePtr GeometryBase::getHandleDlistCache      (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleDlistCache     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDlistCache,
@@ -1565,6 +1583,9 @@ GetFieldHandlePtr GeometryBase::getHandleUseVAO          (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleUseVAO         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseVAO,
@@ -1590,6 +1611,9 @@ GetFieldHandlePtr GeometryBase::getHandleUseAttribCalls  (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleUseAttribCalls (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseAttribCalls,
@@ -1615,6 +1639,9 @@ GetFieldHandlePtr GeometryBase::getHandleClassicGLId     (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleClassicGLId    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfClassicGLId,
@@ -1640,6 +1667,9 @@ GetFieldHandlePtr GeometryBase::getHandleAttGLId         (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleAttGLId        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfAttGLId,
@@ -1665,6 +1695,9 @@ GetFieldHandlePtr GeometryBase::getHandleClassicVaoGLId  (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleClassicVaoGLId (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfClassicVaoGLId,
@@ -1690,6 +1723,9 @@ GetFieldHandlePtr GeometryBase::getHandleAttribVaoGLId   (void) const
 
 EditFieldHandlePtr GeometryBase::editHandleAttribVaoGLId  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfAttribVaoGLId,

@@ -66,7 +66,7 @@
 #include "OSGScaleManipulatorBase.h"
 #include "OSGScaleManipulator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -393,6 +393,9 @@ GetFieldHandlePtr ScaleManipulatorBase::getHandleUniform         (void) const
 
 EditFieldHandlePtr ScaleManipulatorBase::editHandleUniform        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUniform,

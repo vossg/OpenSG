@@ -68,7 +68,7 @@
 #include "OSGClipPlaneChunkBase.h"
 #include "OSGClipPlaneChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -556,6 +556,9 @@ GetFieldHandlePtr ClipPlaneChunkBase::getHandleEquation        (void) const
 
 EditFieldHandlePtr ClipPlaneChunkBase::editHandleEquation       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec4f::EditHandlePtr returnValue(
         new  SFVec4f::EditHandle(
              &_sfEquation,
@@ -581,6 +584,9 @@ GetFieldHandlePtr ClipPlaneChunkBase::getHandleEnable          (void) const
 
 EditFieldHandlePtr ClipPlaneChunkBase::editHandleEnable         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnable,
@@ -606,6 +612,9 @@ GetFieldHandlePtr ClipPlaneChunkBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr ClipPlaneChunkBase::editHandleBeacon         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfBeacon,

@@ -66,7 +66,7 @@
 #include "OSGDistanceLODBase.h"
 #include "OSGDistanceLOD.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -549,6 +549,9 @@ GetFieldHandlePtr DistanceLODBase::getHandleCenter          (void) const
 
 EditFieldHandlePtr DistanceLODBase::editHandleCenter         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfCenter,
@@ -574,6 +577,9 @@ GetFieldHandlePtr DistanceLODBase::getHandleRange           (void) const
 
 EditFieldHandlePtr DistanceLODBase::editHandleRange          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfRange,

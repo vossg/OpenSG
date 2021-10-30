@@ -66,7 +66,7 @@
 #include "OSGAnimQuaternionDataSourceBase.h"
 #include "OSGAnimQuaternionDataSource.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -834,6 +834,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleValues          (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleValues         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFQuaternion::EditHandlePtr returnValue(
         new  MFQuaternion::EditHandle(
              &_mfValues,
@@ -859,6 +862,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleInTangentsX     (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleInTangentsX    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfInTangentsX,
@@ -884,6 +890,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleInTangentsY     (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleInTangentsY    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfInTangentsY,
@@ -909,6 +918,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleInTangentsZ     (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleInTangentsZ    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfInTangentsZ,
@@ -934,6 +946,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleInTangentsW     (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleInTangentsW    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfInTangentsW,
@@ -959,6 +974,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleOutTangentsX    (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleOutTangentsX   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfOutTangentsX,
@@ -984,6 +1002,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleOutTangentsY    (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleOutTangentsY   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfOutTangentsY,
@@ -1009,6 +1030,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleOutTangentsZ    (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleOutTangentsZ   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfOutTangentsZ,
@@ -1034,6 +1058,9 @@ GetFieldHandlePtr AnimQuaternionDataSourceBase::getHandleOutTangentsW    (void) 
 
 EditFieldHandlePtr AnimQuaternionDataSourceBase::editHandleOutTangentsW   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfOutTangentsW,

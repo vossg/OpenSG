@@ -66,7 +66,7 @@
 #include "OSGSkeletonJointBase.h"
 #include "OSGSkeletonJoint.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -558,6 +558,9 @@ GetFieldHandlePtr SkeletonJointBase::getHandleInvBindMatrix   (void) const
 
 EditFieldHandlePtr SkeletonJointBase::editHandleInvBindMatrix  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfInvBindMatrix,
@@ -583,6 +586,9 @@ GetFieldHandlePtr SkeletonJointBase::getHandleMatrix          (void) const
 
 EditFieldHandlePtr SkeletonJointBase::editHandleMatrix         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfMatrix,
@@ -608,6 +614,9 @@ GetFieldHandlePtr SkeletonJointBase::getHandleOffsetMatrix    (void) const
 
 EditFieldHandlePtr SkeletonJointBase::editHandleOffsetMatrix   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfOffsetMatrix,

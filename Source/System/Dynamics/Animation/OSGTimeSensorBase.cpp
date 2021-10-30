@@ -66,7 +66,7 @@
 #include "OSGTimeSensorBase.h"
 #include "OSGTimeSensor.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -891,6 +891,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleEnabled        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -916,6 +919,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleIsActive        (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleIsActive       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIsActive,
@@ -941,6 +947,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleLoop            (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleLoop           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLoop,
@@ -966,6 +975,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleFraction        (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleFraction       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFraction,
@@ -991,6 +1003,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleStartTime       (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleStartTime      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfStartTime,
@@ -1016,6 +1031,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleStopTime        (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleStopTime       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfStopTime,
@@ -1041,6 +1059,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleCycleTime       (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleCycleTime      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfCycleTime,
@@ -1066,6 +1087,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleTime            (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleTime           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfTime,
@@ -1091,6 +1115,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleCycleInterval   (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleCycleInterval  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfCycleInterval,
@@ -1116,6 +1143,9 @@ GetFieldHandlePtr TimeSensorBase::getHandleChangeFractionBy (void) const
 
 EditFieldHandlePtr TimeSensorBase::editHandleChangeFractionBy(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfChangeFractionBy,

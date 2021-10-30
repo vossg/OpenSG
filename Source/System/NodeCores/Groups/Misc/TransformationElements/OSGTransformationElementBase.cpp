@@ -67,7 +67,7 @@
 #include "OSGTransformationElementBase.h"
 #include "OSGTransformationElement.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -363,6 +363,9 @@ GetFieldHandlePtr TransformationElementBase::getHandleParentStack     (void) con
 
 EditFieldHandlePtr TransformationElementBase::editHandleParentStack    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;

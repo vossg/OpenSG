@@ -68,7 +68,7 @@
 #include "OSGDeferredShadingStageBase.h"
 #include "OSGDeferredShadingStage.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -865,6 +865,9 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandlePixelFormats    (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandlePixelFormats   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfPixelFormats,
@@ -890,6 +893,9 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandlePixelTypes      (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandlePixelTypes     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfPixelTypes,
@@ -915,6 +921,9 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandleGBufferProgram  (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandleGBufferProgram (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramChunkPtr::EditHandle(
              &_sfGBufferProgram,
@@ -943,6 +952,9 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandleAmbientProgram  (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandleAmbientProgram (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramChunkPtr::EditHandle(
              &_sfAmbientProgram,
@@ -971,6 +983,9 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandleLightPrograms   (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandleLightPrograms  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramChunkPtr::EditHandle(
              &_mfLightPrograms,
@@ -1008,6 +1023,9 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandleLights          (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandleLights         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecLightPtr::EditHandlePtr returnValue(
         new  MFUnrecLightPtr::EditHandle(
              &_mfLights,

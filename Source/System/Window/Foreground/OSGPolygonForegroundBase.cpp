@@ -67,7 +67,7 @@
 #include "OSGPolygonForegroundBase.h"
 #include "OSGPolygonForeground.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -878,6 +878,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandleMaterial        (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandleMaterial       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecPrimeMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecPrimeMaterialPtr::EditHandle(
              &_sfMaterial,
@@ -906,6 +909,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandlePositions       (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandlePositions      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFPnt2f::EditHandlePtr returnValue(
         new  MFPnt2f::EditHandle(
              &_mfPositions,
@@ -931,6 +937,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandleTexCoords       (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandleTexCoords      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfTexCoords,
@@ -956,6 +965,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandleNormalizedX     (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandleNormalizedX    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfNormalizedX,
@@ -981,6 +993,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandleNormalizedY     (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandleNormalizedY    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfNormalizedY,
@@ -1006,6 +1021,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandleAspectHeight    (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandleAspectHeight   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfAspectHeight,
@@ -1031,6 +1049,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandleAspectWidth     (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandleAspectWidth    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfAspectWidth,
@@ -1056,6 +1077,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandleScale           (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandleScale          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfScale,
@@ -1081,6 +1105,9 @@ GetFieldHandlePtr PolygonForegroundBase::getHandleTile            (void) const
 
 EditFieldHandlePtr PolygonForegroundBase::editHandleTile           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfTile,

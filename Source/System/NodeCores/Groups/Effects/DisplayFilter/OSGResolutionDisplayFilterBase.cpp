@@ -66,7 +66,7 @@
 #include "OSGResolutionDisplayFilterBase.h"
 #include "OSGResolutionDisplayFilter.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -398,6 +398,9 @@ GetFieldHandlePtr ResolutionDisplayFilterBase::getHandleDownScale       (void) c
 
 EditFieldHandlePtr ResolutionDisplayFilterBase::editHandleDownScale      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfDownScale,

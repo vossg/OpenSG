@@ -66,7 +66,7 @@
 #include "OSGRenderCallbackStageBase.h"
 #include "OSGRenderCallbackStage.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -422,6 +422,9 @@ GetFieldHandlePtr RenderCallbackStageBase::getHandlePreRenderCallbacks (void) co
 
 EditFieldHandlePtr RenderCallbackStageBase::editHandlePreRenderCallbacks(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -436,6 +439,9 @@ GetFieldHandlePtr RenderCallbackStageBase::getHandlePostRenderCallbacks (void) c
 
 EditFieldHandlePtr RenderCallbackStageBase::editHandlePostRenderCallbacks(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;

@@ -66,7 +66,7 @@
 #include "OSGShaderStorageBufferObjStdLayoutChunkBase.h"
 #include "OSGShaderStorageBufferObjStdLayoutChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -541,6 +541,9 @@ GetFieldHandlePtr ShaderStorageBufferObjStdLayoutChunkBase::getHandleGLId       
 
 EditFieldHandlePtr ShaderStorageBufferObjStdLayoutChunkBase::editHandleGLId           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGLId,
@@ -566,6 +569,9 @@ GetFieldHandlePtr ShaderStorageBufferObjStdLayoutChunkBase::getHandleUsage      
 
 EditFieldHandlePtr ShaderStorageBufferObjStdLayoutChunkBase::editHandleUsage          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfUsage,
@@ -591,6 +597,9 @@ GetFieldHandlePtr ShaderStorageBufferObjStdLayoutChunkBase::getHandleBuffer     
 
 EditFieldHandlePtr ShaderStorageBufferObjStdLayoutChunkBase::editHandleBuffer         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfBuffer,

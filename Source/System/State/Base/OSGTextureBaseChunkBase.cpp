@@ -67,7 +67,7 @@
 #include "OSGTextureBaseChunkBase.h"
 #include "OSGTextureBaseChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -297,6 +297,9 @@ GetFieldHandlePtr TextureBaseChunkBase::getHandleTarget          (void) const
 
 EditFieldHandlePtr TextureBaseChunkBase::editHandleTarget         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfTarget,

@@ -72,7 +72,7 @@
 #include "OSGDisplayFilterStageBase.h"
 #include "OSGDisplayFilterStage.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1160,6 +1160,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleCalibrationPatternFilter (voi
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleCalibrationPatternFilter(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCalibrationPatternFilterPtr::EditHandlePtr returnValue(
         new  SFUnrecCalibrationPatternFilterPtr::EditHandle(
              &_sfCalibrationPatternFilter,
@@ -1188,6 +1191,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleResolutionFilter (void) const
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleResolutionFilter(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecResolutionDisplayFilterPtr::EditHandlePtr returnValue(
         new  SFUnrecResolutionDisplayFilterPtr::EditHandle(
              &_sfResolutionFilter,
@@ -1216,6 +1222,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleColorFilter     (void) const
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleColorFilter    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecColorDisplayFilterPtr::EditHandlePtr returnValue(
         new  SFUnrecColorDisplayFilterPtr::EditHandle(
              &_sfColorFilter,
@@ -1244,6 +1253,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleDistortionFilter (void) const
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleDistortionFilter(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecDistortionDisplayFilterPtr::EditHandlePtr returnValue(
         new  SFUnrecDistortionDisplayFilterPtr::EditHandle(
              &_sfDistortionFilter,
@@ -1272,6 +1284,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleFilterGroups    (void) const
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleFilterGroups   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecDisplayFilterGroupPtr::EditHandlePtr returnValue(
         new  MFUnrecDisplayFilterGroupPtr::EditHandle(
              &_mfFilterGroups,
@@ -1309,6 +1324,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleActiveGroup     (void) const
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleActiveGroup    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfActiveGroup,
@@ -1334,6 +1352,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleEnableMultiSample (void) cons
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleEnableMultiSample(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnableMultiSample,
@@ -1359,6 +1380,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleColorSamples    (void) const
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleColorSamples   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfColorSamples,
@@ -1384,6 +1408,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleCoverageSamples (void) const
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleCoverageSamples(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfCoverageSamples,
@@ -1409,6 +1436,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleFixedSampleLocation (void) co
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleFixedSampleLocation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfFixedSampleLocation,
@@ -1434,6 +1464,9 @@ GetFieldHandlePtr DisplayFilterStageBase::getHandleForegrounds     (void) const
 
 EditFieldHandlePtr DisplayFilterStageBase::editHandleForegrounds    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecForegroundPtr::EditHandlePtr returnValue(
         new  MFUnrecForegroundPtr::EditHandle(
              &_mfForegrounds,

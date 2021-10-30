@@ -67,7 +67,7 @@
 #include "OSGCubeTextureObjChunkBase.h"
 #include "OSGCubeTextureObjChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -736,6 +736,9 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandlePosZImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandlePosZImage      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfPosZImage,
@@ -764,6 +767,9 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandlePosXImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandlePosXImage      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfPosXImage,
@@ -792,6 +798,9 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandleNegXImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandleNegXImage      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfNegXImage,
@@ -820,6 +829,9 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandlePosYImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandlePosYImage      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfPosYImage,
@@ -848,6 +860,9 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandleNegYImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandleNegYImage      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfNegYImage,

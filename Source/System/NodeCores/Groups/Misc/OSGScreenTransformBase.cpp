@@ -67,7 +67,7 @@
 #include "OSGScreenTransformBase.h"
 #include "OSGScreenTransform.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -694,6 +694,9 @@ GetFieldHandlePtr ScreenTransformBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr ScreenTransformBase::editHandleBeacon         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfBeacon,
@@ -722,6 +725,9 @@ GetFieldHandlePtr ScreenTransformBase::getHandleInvertWorldTransform (void) cons
 
 EditFieldHandlePtr ScreenTransformBase::editHandleInvertWorldTransform(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfInvertWorldTransform,
@@ -747,6 +753,9 @@ GetFieldHandlePtr ScreenTransformBase::getHandleInvertViewTransform (void) const
 
 EditFieldHandlePtr ScreenTransformBase::editHandleInvertViewTransform(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfInvertViewTransform,
@@ -772,6 +781,9 @@ GetFieldHandlePtr ScreenTransformBase::getHandleApplyBeaconRotation (void) const
 
 EditFieldHandlePtr ScreenTransformBase::editHandleApplyBeaconRotation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfApplyBeaconRotation,
@@ -797,6 +809,9 @@ GetFieldHandlePtr ScreenTransformBase::getHandleApplyBeaconScreenTranslation (vo
 
 EditFieldHandlePtr ScreenTransformBase::editHandleApplyBeaconScreenTranslation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfApplyBeaconScreenTranslation,
@@ -822,6 +837,9 @@ GetFieldHandlePtr ScreenTransformBase::getHandleView            (void) const
 
 EditFieldHandlePtr ScreenTransformBase::editHandleView           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfView,

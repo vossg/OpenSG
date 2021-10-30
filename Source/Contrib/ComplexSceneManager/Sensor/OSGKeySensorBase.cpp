@@ -66,7 +66,7 @@
 #include "OSGKeySensorBase.h"
 #include "OSGKeySensor.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -581,6 +581,9 @@ GetFieldHandlePtr KeySensorBase::getHandleKey             (void) const
 
 EditFieldHandlePtr KeySensorBase::editHandleKey            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfKey,
@@ -606,6 +609,9 @@ GetFieldHandlePtr KeySensorBase::getHandleStateRaw        (void) const
 
 EditFieldHandlePtr KeySensorBase::editHandleStateRaw       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfStateRaw,
@@ -631,6 +637,9 @@ GetFieldHandlePtr KeySensorBase::getHandleStateFlipFlop   (void) const
 
 EditFieldHandlePtr KeySensorBase::editHandleStateFlipFlop  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfStateFlipFlop,
@@ -656,6 +665,9 @@ GetFieldHandlePtr KeySensorBase::getHandleSignalPressed   (void) const
 
 EditFieldHandlePtr KeySensorBase::editHandleSignalPressed  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFOSGAny::EditHandlePtr returnValue(
         new  SFOSGAny::EditHandle(
              &_sfSignalPressed,
@@ -681,6 +693,9 @@ GetFieldHandlePtr KeySensorBase::getHandleSignalReleased  (void) const
 
 EditFieldHandlePtr KeySensorBase::editHandleSignalReleased (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFOSGAny::EditHandlePtr returnValue(
         new  SFOSGAny::EditHandle(
              &_sfSignalReleased,

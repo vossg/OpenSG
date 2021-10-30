@@ -66,7 +66,7 @@
 #include "OSGShaderVariableOSGBase.h"
 #include "OSGShaderVariableOSG.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -400,6 +400,9 @@ GetFieldHandlePtr ShaderVariableOSGBase::getHandleOsgVarType      (void) const
 
 EditFieldHandlePtr ShaderVariableOSGBase::editHandleOsgVarType     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfOsgVarType,

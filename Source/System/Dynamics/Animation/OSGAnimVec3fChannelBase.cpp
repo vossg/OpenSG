@@ -67,7 +67,7 @@
 #include "OSGAnimVec3fChannelBase.h"
 #include "OSGAnimVec3fChannel.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -485,6 +485,9 @@ GetFieldHandlePtr AnimVec3fChannelBase::getHandleData            (void) const
 
 EditFieldHandlePtr AnimVec3fChannelBase::editHandleData           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecAnimVec3fDataSourcePtr::EditHandlePtr returnValue(
         new  SFUnrecAnimVec3fDataSourcePtr::EditHandle(
              &_sfData,
@@ -513,6 +516,9 @@ GetFieldHandlePtr AnimVec3fChannelBase::getHandleOutValue        (void) const
 
 EditFieldHandlePtr AnimVec3fChannelBase::editHandleOutValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfOutValue,

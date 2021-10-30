@@ -66,7 +66,7 @@
 #include "OSGOrthographicCameraBase.h"
 #include "OSGOrthographicCamera.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -509,6 +509,9 @@ GetFieldHandlePtr OrthographicCameraBase::getHandleVerticalSize    (void) const
 
 EditFieldHandlePtr OrthographicCameraBase::editHandleVerticalSize   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfVerticalSize,
@@ -534,6 +537,9 @@ GetFieldHandlePtr OrthographicCameraBase::getHandleHorizontalSize  (void) const
 
 EditFieldHandlePtr OrthographicCameraBase::editHandleHorizontalSize (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfHorizontalSize,
@@ -559,6 +565,9 @@ GetFieldHandlePtr OrthographicCameraBase::getHandleAspect          (void) const
 
 EditFieldHandlePtr OrthographicCameraBase::editHandleAspect         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAspect,

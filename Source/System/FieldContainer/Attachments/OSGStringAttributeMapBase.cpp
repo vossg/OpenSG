@@ -66,7 +66,7 @@
 #include "OSGStringAttributeMapBase.h"
 #include "OSGStringAttributeMap.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -454,6 +454,9 @@ GetFieldHandlePtr StringAttributeMapBase::getHandleKeys            (void) const
 
 EditFieldHandlePtr StringAttributeMapBase::editHandleKeys           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfKeys,
@@ -479,6 +482,9 @@ GetFieldHandlePtr StringAttributeMapBase::getHandleValues          (void) const
 
 EditFieldHandlePtr StringAttributeMapBase::editHandleValues         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfValues,

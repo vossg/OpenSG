@@ -66,7 +66,7 @@
 #include "OSGSolidBackgroundBase.h"
 #include "OSGSolidBackground.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -458,6 +458,9 @@ GetFieldHandlePtr SolidBackgroundBase::getHandleColor           (void) const
 
 EditFieldHandlePtr SolidBackgroundBase::editHandleColor          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfColor,
@@ -483,6 +486,9 @@ GetFieldHandlePtr SolidBackgroundBase::getHandleAlpha           (void) const
 
 EditFieldHandlePtr SolidBackgroundBase::editHandleAlpha          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAlpha,

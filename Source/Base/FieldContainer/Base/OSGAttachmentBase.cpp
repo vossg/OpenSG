@@ -67,7 +67,7 @@
 #include "OSGAttachmentBase.h"
 #include "OSGAttachment.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -454,6 +454,9 @@ GetFieldHandlePtr AttachmentBase::getHandleParents         (void) const
 
 EditFieldHandlePtr AttachmentBase::editHandleParents        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -472,6 +475,9 @@ GetFieldHandlePtr AttachmentBase::getHandleInternal        (void) const
 
 EditFieldHandlePtr AttachmentBase::editHandleInternal       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfInternal,

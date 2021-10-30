@@ -67,7 +67,7 @@
 #include "OSGRenderOptionsBase.h"
 #include "OSGRenderOptions.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1996,6 +1996,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleRenderProperties (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleRenderProperties(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMaterialMapKey::EditHandlePtr returnValue(
         new  SFMaterialMapKey::EditHandle(
              &_sfRenderProperties,
@@ -2021,6 +2024,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleUseGLFinish     (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleUseGLFinish    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseGLFinish,
@@ -2046,6 +2052,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleStatistic       (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleStatistic      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfStatistic,
@@ -2071,6 +2080,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandlePolygonMode     (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandlePolygonMode    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfPolygonMode,
@@ -2096,6 +2108,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleTwoSidedLighting (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleTwoSidedLighting(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfTwoSidedLighting,
@@ -2121,6 +2136,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleSpecTexLighting (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleSpecTexLighting(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfSpecTexLighting,
@@ -2146,6 +2164,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleSortTrans       (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleSortTrans      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfSortTrans,
@@ -2171,6 +2192,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleZWriteTrans     (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleZWriteTrans    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfZWriteTrans,
@@ -2196,6 +2220,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleLocalLights     (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleLocalLights    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLocalLights,
@@ -2221,6 +2248,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleCorrectTwoSidedLighting (void) con
 
 EditFieldHandlePtr RenderOptionsBase::editHandleCorrectTwoSidedLighting(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCorrectTwoSidedLighting,
@@ -2246,6 +2276,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleOcclusionCulling (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleOcclusionCulling(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfOcclusionCulling,
@@ -2271,6 +2304,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleOcclusionCullingMode (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleOcclusionCullingMode(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfOcclusionCullingMode,
@@ -2296,6 +2332,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleOcclusionCullingPixels (void) cons
 
 EditFieldHandlePtr RenderOptionsBase::editHandleOcclusionCullingPixels(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfOcclusionCullingPixels,
@@ -2321,6 +2360,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleAntialiasing    (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleAntialiasing   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAntialiasing,
@@ -2346,6 +2388,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleAntialiasingDistance (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleAntialiasingDistance(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAntialiasingDistance,
@@ -2371,6 +2416,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleAntialiasingScale (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleAntialiasingScale(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAntialiasingScale,
@@ -2396,6 +2444,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleAntialiasingTrigger (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleAntialiasingTrigger(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfAntialiasingTrigger,
@@ -2421,6 +2472,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleFrustumCulling  (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleFrustumCulling (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfFrustumCulling,
@@ -2446,6 +2500,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleBackfaceCulling (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleBackfaceCulling(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBackfaceCulling,
@@ -2471,6 +2528,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleSmallFeatureCulling (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleSmallFeatureCulling(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfSmallFeatureCulling,
@@ -2496,6 +2556,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleSmallFeaturePixels (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleSmallFeaturePixels(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSmallFeaturePixels,
@@ -2521,6 +2584,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleSmallFeatureThreshold (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleSmallFeatureThreshold(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSmallFeatureThreshold,
@@ -2546,6 +2612,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleFirstFrame      (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleFirstFrame     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfFirstFrame,
@@ -2571,6 +2640,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleDepthOnlyPass   (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleDepthOnlyPass  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDepthOnlyPass,
@@ -2596,6 +2668,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleLightModelAmbient (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleLightModelAmbient(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfLightModelAmbient,
@@ -2621,6 +2696,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleFogColor        (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleFogColor       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfFogColor,
@@ -2646,6 +2724,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleFogRange        (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleFogRange       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfFogRange,
@@ -2671,6 +2752,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleFogDensity      (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleFogDensity     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFogDensity,
@@ -2696,6 +2780,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleFogMode         (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleFogMode        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfFogMode,
@@ -2721,6 +2808,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleMultiSample     (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleMultiSample    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMultiSample,
@@ -2746,6 +2836,9 @@ GetFieldHandlePtr RenderOptionsBase::getHandleMultiSampleFilterMode (void) const
 
 EditFieldHandlePtr RenderOptionsBase::editHandleMultiSampleFilterMode(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMultiSampleFilterMode,

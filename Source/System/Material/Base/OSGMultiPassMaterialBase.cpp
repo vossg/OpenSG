@@ -67,7 +67,7 @@
 #include "OSGMultiPassMaterialBase.h"
 #include "OSGMultiPassMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -485,6 +485,9 @@ GetFieldHandlePtr MultiPassMaterialBase::getHandleMaterials       (void) const
 
 EditFieldHandlePtr MultiPassMaterialBase::editHandleMaterials      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecPrimeMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecPrimeMaterialPtr::EditHandle(
              &_mfMaterials,

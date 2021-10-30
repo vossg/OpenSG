@@ -66,7 +66,7 @@
 #include "OSGFileGrabForegroundBase.h"
 #include "OSGFileGrabForeground.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -529,6 +529,9 @@ GetFieldHandlePtr FileGrabForegroundBase::getHandleName            (void) const
 
 EditFieldHandlePtr FileGrabForegroundBase::editHandleName           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfName,
@@ -554,6 +557,9 @@ GetFieldHandlePtr FileGrabForegroundBase::getHandleFrame           (void) const
 
 EditFieldHandlePtr FileGrabForegroundBase::editHandleFrame          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFrame,
@@ -579,6 +585,9 @@ GetFieldHandlePtr FileGrabForegroundBase::getHandleIncrement       (void) const
 
 EditFieldHandlePtr FileGrabForegroundBase::editHandleIncrement      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIncrement,

@@ -66,7 +66,7 @@
 #include "OSGSimpleTextForegroundBase.h"
 #include "OSGSimpleTextForeground.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1075,6 +1075,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleLines           (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleLines          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfLines,
@@ -1100,6 +1103,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleSize            (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleSize           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSize,
@@ -1125,6 +1131,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleColor           (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleColor          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfColor,
@@ -1150,6 +1159,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleShadowColor     (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleShadowColor    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfShadowColor,
@@ -1175,6 +1187,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleBgColor         (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleBgColor        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBgColor,
@@ -1200,6 +1215,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleFamily          (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleFamily         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfFamily,
@@ -1225,6 +1243,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleShadowOffset    (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleShadowOffset   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfShadowOffset,
@@ -1250,6 +1271,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleHorizontalAlign (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleHorizontalAlign(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt8::EditHandlePtr returnValue(
         new  SFUInt8::EditHandle(
              &_sfHorizontalAlign,
@@ -1275,6 +1299,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleVerticalAlign   (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleVerticalAlign  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt8::EditHandlePtr returnValue(
         new  SFUInt8::EditHandle(
              &_sfVerticalAlign,
@@ -1300,6 +1327,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleBorderColor     (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleBorderColor    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBorderColor,
@@ -1325,6 +1355,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleBorderOffset    (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleBorderOffset   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfBorderOffset,
@@ -1350,6 +1383,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleTextMargin      (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleTextMargin     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfTextMargin,
@@ -1375,6 +1411,9 @@ GetFieldHandlePtr SimpleTextForegroundBase::getHandleTile            (void) cons
 
 EditFieldHandlePtr SimpleTextForegroundBase::editHandleTile           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfTile,

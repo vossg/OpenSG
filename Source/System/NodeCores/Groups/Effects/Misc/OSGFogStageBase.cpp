@@ -67,7 +67,7 @@
 #include "OSGFogStageBase.h"
 #include "OSGFogStage.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -677,6 +677,9 @@ GetFieldHandlePtr FogStageBase::getHandleBufferFormat    (void) const
 
 EditFieldHandlePtr FogStageBase::editHandleBufferFormat   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfBufferFormat,
@@ -702,6 +705,9 @@ GetFieldHandlePtr FogStageBase::getHandleFogColor        (void) const
 
 EditFieldHandlePtr FogStageBase::editHandleFogColor       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfFogColor,
@@ -727,6 +733,9 @@ GetFieldHandlePtr FogStageBase::getHandleFogMode         (void) const
 
 EditFieldHandlePtr FogStageBase::editHandleFogMode        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfFogMode,
@@ -752,6 +761,9 @@ GetFieldHandlePtr FogStageBase::getHandleFogStart        (void) const
 
 EditFieldHandlePtr FogStageBase::editHandleFogStart       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFogStart,
@@ -777,6 +789,9 @@ GetFieldHandlePtr FogStageBase::getHandleFogEnd          (void) const
 
 EditFieldHandlePtr FogStageBase::editHandleFogEnd         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFogEnd,
@@ -802,6 +817,9 @@ GetFieldHandlePtr FogStageBase::getHandleFogDensity      (void) const
 
 EditFieldHandlePtr FogStageBase::editHandleFogDensity     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFogDensity,

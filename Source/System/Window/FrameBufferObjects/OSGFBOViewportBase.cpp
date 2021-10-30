@@ -67,7 +67,7 @@
 #include "OSGFBOViewportBase.h"
 #include "OSGFBOViewport.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -432,6 +432,9 @@ GetFieldHandlePtr FBOViewportBase::getHandleFrameBufferObject (void) const
 
 EditFieldHandlePtr FBOViewportBase::editHandleFrameBufferObject(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfFrameBufferObject,

@@ -66,7 +66,7 @@
 #include "OSGShaderVariableMatrixBase.h"
 #include "OSGShaderVariableMatrix.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -399,6 +399,9 @@ GetFieldHandlePtr ShaderVariableMatrixBase::getHandleValue           (void) cons
 
 EditFieldHandlePtr ShaderVariableMatrixBase::editHandleValue          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfValue,

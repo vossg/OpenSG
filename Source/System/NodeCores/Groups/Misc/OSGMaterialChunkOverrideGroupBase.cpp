@@ -67,7 +67,7 @@
 #include "OSGMaterialChunkOverrideGroupBase.h"
 #include "OSGMaterialChunkOverrideGroup.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -437,6 +437,9 @@ GetFieldHandlePtr MaterialChunkOverrideGroupBase::getHandleMaterial        (void
 
 EditFieldHandlePtr MaterialChunkOverrideGroupBase::editHandleMaterial       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterial,

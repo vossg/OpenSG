@@ -67,7 +67,7 @@
 #include "OSGRenderBufferBase.h"
 #include "OSGRenderBuffer.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -706,6 +706,9 @@ GetFieldHandlePtr RenderBufferBase::getHandleGLId            (void) const
 
 EditFieldHandlePtr RenderBufferBase::editHandleGLId           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGLId,
@@ -731,6 +734,9 @@ GetFieldHandlePtr RenderBufferBase::getHandleInternalFormat  (void) const
 
 EditFieldHandlePtr RenderBufferBase::editHandleInternalFormat (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfInternalFormat,
@@ -756,6 +762,9 @@ GetFieldHandlePtr RenderBufferBase::getHandleImage           (void) const
 
 EditFieldHandlePtr RenderBufferBase::editHandleImage          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfImage,
@@ -784,6 +793,9 @@ GetFieldHandlePtr RenderBufferBase::getHandleColorSamples    (void) const
 
 EditFieldHandlePtr RenderBufferBase::editHandleColorSamples   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfColorSamples,
@@ -809,6 +821,9 @@ GetFieldHandlePtr RenderBufferBase::getHandleCoverageSamples (void) const
 
 EditFieldHandlePtr RenderBufferBase::editHandleCoverageSamples(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfCoverageSamples,
@@ -834,6 +849,9 @@ GetFieldHandlePtr RenderBufferBase::getHandleFixedSampleLocation (void) const
 
 EditFieldHandlePtr RenderBufferBase::editHandleFixedSampleLocation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfFixedSampleLocation,

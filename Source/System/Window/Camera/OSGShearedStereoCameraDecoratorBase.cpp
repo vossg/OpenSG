@@ -66,7 +66,7 @@
 #include "OSGShearedStereoCameraDecoratorBase.h"
 #include "OSGShearedStereoCameraDecorator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -457,6 +457,9 @@ GetFieldHandlePtr ShearedStereoCameraDecoratorBase::getHandleZeroParallaxDistanc
 
 EditFieldHandlePtr ShearedStereoCameraDecoratorBase::editHandleZeroParallaxDistance(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfZeroParallaxDistance,
@@ -482,6 +485,9 @@ GetFieldHandlePtr ShearedStereoCameraDecoratorBase::getHandleOverlap         (vo
 
 EditFieldHandlePtr ShearedStereoCameraDecoratorBase::editHandleOverlap        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOverlap,

@@ -68,7 +68,7 @@
 #include "OSGFresnelMaterialBase.h"
 #include "OSGFresnelMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1009,6 +1009,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleAmbient         (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleAmbient        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfAmbient,
@@ -1034,6 +1037,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleDiffuse         (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleDiffuse        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfDiffuse,
@@ -1059,6 +1065,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleSpecular        (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleSpecular       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfSpecular,
@@ -1084,6 +1093,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleShininess       (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleShininess      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShininess,
@@ -1109,6 +1121,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleEmission        (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleEmission       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor3f::EditHandlePtr returnValue(
         new  SFColor3f::EditHandle(
              &_sfEmission,
@@ -1134,6 +1149,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleTransparency    (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleTransparency   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTransparency,
@@ -1159,6 +1177,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleLit             (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleLit            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLit,
@@ -1184,6 +1205,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleColorMaterial   (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleColorMaterial  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfColorMaterial,
@@ -1209,6 +1233,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleIndex           (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleIndex          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfIndex,
@@ -1234,6 +1261,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleScale           (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleScale          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfScale,
@@ -1259,6 +1289,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleBias            (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleBias           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBias,
@@ -1284,6 +1317,9 @@ GetFieldHandlePtr FresnelMaterialBase::getHandleImage           (void) const
 
 EditFieldHandlePtr FresnelMaterialBase::editHandleImage          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfImage,

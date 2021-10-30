@@ -67,7 +67,7 @@
 #include "OSGLogicOpChunkBase.h"
 #include "OSGLogicOpChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -411,6 +411,9 @@ GetFieldHandlePtr LogicOpChunkBase::getHandleLogicOp         (void) const
 
 EditFieldHandlePtr LogicOpChunkBase::editHandleLogicOp        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfLogicOp,

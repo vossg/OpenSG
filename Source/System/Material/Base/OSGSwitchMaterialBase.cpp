@@ -67,7 +67,7 @@
 #include "OSGSwitchMaterialBase.h"
 #include "OSGSwitchMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -535,6 +535,9 @@ GetFieldHandlePtr SwitchMaterialBase::getHandleMaterials       (void) const
 
 EditFieldHandlePtr SwitchMaterialBase::editHandleMaterials      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecMaterialPtr::EditHandle(
              &_mfMaterials,
@@ -572,6 +575,9 @@ GetFieldHandlePtr SwitchMaterialBase::getHandleChoice          (void) const
 
 EditFieldHandlePtr SwitchMaterialBase::editHandleChoice         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfChoice,

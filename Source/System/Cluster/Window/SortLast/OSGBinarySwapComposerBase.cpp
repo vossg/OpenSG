@@ -66,7 +66,7 @@
 #include "OSGBinarySwapComposerBase.h"
 #include "OSGBinarySwapComposer.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -497,6 +497,9 @@ GetFieldHandlePtr BinarySwapComposerBase::getHandleShort           (void) const
 
 EditFieldHandlePtr BinarySwapComposerBase::editHandleShort          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShort,
@@ -522,6 +525,9 @@ GetFieldHandlePtr BinarySwapComposerBase::getHandleAlpha           (void) const
 
 EditFieldHandlePtr BinarySwapComposerBase::editHandleAlpha          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAlpha,
@@ -547,6 +553,9 @@ GetFieldHandlePtr BinarySwapComposerBase::getHandleTileSize        (void) const
 
 EditFieldHandlePtr BinarySwapComposerBase::editHandleTileSize       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTileSize,

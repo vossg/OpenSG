@@ -67,7 +67,7 @@
 #include "OSGImageForegroundBase.h"
 #include "OSGImageForeground.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -595,6 +595,9 @@ GetFieldHandlePtr ImageForegroundBase::getHandleImages          (void) const
 
 EditFieldHandlePtr ImageForegroundBase::editHandleImages         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecImagePtr::EditHandlePtr returnValue(
         new  MFUnrecImagePtr::EditHandle(
              &_mfImages,
@@ -632,6 +635,9 @@ GetFieldHandlePtr ImageForegroundBase::getHandlePositions       (void) const
 
 EditFieldHandlePtr ImageForegroundBase::editHandlePositions      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFPnt2f::EditHandlePtr returnValue(
         new  MFPnt2f::EditHandle(
              &_mfPositions,
@@ -657,6 +663,9 @@ GetFieldHandlePtr ImageForegroundBase::getHandleScales          (void) const
 
 EditFieldHandlePtr ImageForegroundBase::editHandleScales         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFPnt2f::EditHandlePtr returnValue(
         new  MFPnt2f::EditHandle(
              &_mfScales,

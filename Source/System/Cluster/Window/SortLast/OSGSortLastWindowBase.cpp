@@ -67,7 +67,7 @@
 #include "OSGSortLastWindowBase.h"
 #include "OSGSortLastWindow.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -574,6 +574,9 @@ GetFieldHandlePtr SortLastWindowBase::getHandleGroupNodes      (void) const
 
 EditFieldHandlePtr SortLastWindowBase::editHandleGroupNodes     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecNodePtr::EditHandlePtr returnValue(
         new  MFUnrecNodePtr::EditHandle(
              &_mfGroupNodes,
@@ -611,6 +614,9 @@ GetFieldHandlePtr SortLastWindowBase::getHandleGroupLengths    (void) const
 
 EditFieldHandlePtr SortLastWindowBase::editHandleGroupLengths   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfGroupLengths,
@@ -636,6 +642,9 @@ GetFieldHandlePtr SortLastWindowBase::getHandleGroupsChanged   (void) const
 
 EditFieldHandlePtr SortLastWindowBase::editHandleGroupsChanged  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfGroupsChanged,

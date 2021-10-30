@@ -66,7 +66,7 @@
 #include "OSGCSMMultiWinOptionsBase.h"
 #include "OSGCSMMultiWinOptions.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -629,6 +629,9 @@ GetFieldHandlePtr CSMMultiWinOptionsBase::getHandleXOverlap        (void) const
 
 EditFieldHandlePtr CSMMultiWinOptionsBase::editHandleXOverlap       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfXOverlap,
@@ -654,6 +657,9 @@ GetFieldHandlePtr CSMMultiWinOptionsBase::getHandleYOverlap        (void) const
 
 EditFieldHandlePtr CSMMultiWinOptionsBase::editHandleYOverlap       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfYOverlap,
@@ -679,6 +685,9 @@ GetFieldHandlePtr CSMMultiWinOptionsBase::getHandleManageClientViewports (void) 
 
 EditFieldHandlePtr CSMMultiWinOptionsBase::editHandleManageClientViewports(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfManageClientViewports,
@@ -704,6 +713,9 @@ GetFieldHandlePtr CSMMultiWinOptionsBase::getHandleBalance         (void) const
 
 EditFieldHandlePtr CSMMultiWinOptionsBase::editHandleBalance        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBalance,
@@ -729,6 +741,9 @@ GetFieldHandlePtr CSMMultiWinOptionsBase::getHandleBestCut         (void) const
 
 EditFieldHandlePtr CSMMultiWinOptionsBase::editHandleBestCut        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBestCut,
@@ -754,6 +769,9 @@ GetFieldHandlePtr CSMMultiWinOptionsBase::getHandleShowBalancing   (void) const
 
 EditFieldHandlePtr CSMMultiWinOptionsBase::editHandleShowBalancing  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShowBalancing,

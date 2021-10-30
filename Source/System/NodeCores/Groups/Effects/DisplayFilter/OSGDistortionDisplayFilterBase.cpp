@@ -66,7 +66,7 @@
 #include "OSGDistortionDisplayFilterBase.h"
 #include "OSGDistortionDisplayFilter.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -502,6 +502,9 @@ GetFieldHandlePtr DistortionDisplayFilterBase::getHandleRows            (void) c
 
 EditFieldHandlePtr DistortionDisplayFilterBase::editHandleRows           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfRows,
@@ -527,6 +530,9 @@ GetFieldHandlePtr DistortionDisplayFilterBase::getHandleColumns         (void) c
 
 EditFieldHandlePtr DistortionDisplayFilterBase::editHandleColumns        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfColumns,
@@ -552,6 +558,9 @@ GetFieldHandlePtr DistortionDisplayFilterBase::getHandlePositions       (void) c
 
 EditFieldHandlePtr DistortionDisplayFilterBase::editHandlePositions      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfPositions,

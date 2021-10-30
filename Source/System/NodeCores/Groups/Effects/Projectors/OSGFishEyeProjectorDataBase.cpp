@@ -70,7 +70,7 @@
 #include "OSGFishEyeProjectorDataBase.h"
 #include "OSGFishEyeProjectorData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -723,6 +723,9 @@ GetFieldHandlePtr FishEyeProjectorDataBase::getHandleRenderTarget    (void) cons
 
 EditFieldHandlePtr FishEyeProjectorDataBase::editHandleRenderTarget   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfRenderTarget,
@@ -751,6 +754,9 @@ GetFieldHandlePtr FishEyeProjectorDataBase::getHandleTextures        (void) cons
 
 EditFieldHandlePtr FishEyeProjectorDataBase::editHandleTextures       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecTextureObjChunkPtr::EditHandle(
              &_mfTextures,
@@ -788,6 +794,9 @@ GetFieldHandlePtr FishEyeProjectorDataBase::getHandleTextureRes      (void) cons
 
 EditFieldHandlePtr FishEyeProjectorDataBase::editHandleTextureRes     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTextureRes,
@@ -813,6 +822,9 @@ GetFieldHandlePtr FishEyeProjectorDataBase::getHandleTextureFormat   (void) cons
 
 EditFieldHandlePtr FishEyeProjectorDataBase::editHandleTextureFormat  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfTextureFormat,
@@ -838,6 +850,9 @@ GetFieldHandlePtr FishEyeProjectorDataBase::getHandleCamera          (void) cons
 
 EditFieldHandlePtr FishEyeProjectorDataBase::editHandleCamera         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,

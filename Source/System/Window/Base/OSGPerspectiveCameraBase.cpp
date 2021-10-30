@@ -66,7 +66,7 @@
 #include "OSGPerspectiveCameraBase.h"
 #include "OSGPerspectiveCamera.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -520,6 +520,9 @@ GetFieldHandlePtr PerspectiveCameraBase::getHandleFov             (void) const
 
 EditFieldHandlePtr PerspectiveCameraBase::editHandleFov            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFov,
@@ -545,6 +548,9 @@ GetFieldHandlePtr PerspectiveCameraBase::getHandleFovMode         (void) const
 
 EditFieldHandlePtr PerspectiveCameraBase::editHandleFovMode        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFovMode,
@@ -570,6 +576,9 @@ GetFieldHandlePtr PerspectiveCameraBase::getHandleAspect          (void) const
 
 EditFieldHandlePtr PerspectiveCameraBase::editHandleAspect         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAspect,

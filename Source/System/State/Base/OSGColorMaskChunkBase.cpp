@@ -66,7 +66,7 @@
 #include "OSGColorMaskChunkBase.h"
 #include "OSGColorMaskChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -563,6 +563,9 @@ GetFieldHandlePtr ColorMaskChunkBase::getHandleMaskR           (void) const
 
 EditFieldHandlePtr ColorMaskChunkBase::editHandleMaskR          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfMaskR,
@@ -588,6 +591,9 @@ GetFieldHandlePtr ColorMaskChunkBase::getHandleMaskG           (void) const
 
 EditFieldHandlePtr ColorMaskChunkBase::editHandleMaskG          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfMaskG,
@@ -613,6 +619,9 @@ GetFieldHandlePtr ColorMaskChunkBase::getHandleMaskB           (void) const
 
 EditFieldHandlePtr ColorMaskChunkBase::editHandleMaskB          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfMaskB,
@@ -638,6 +647,9 @@ GetFieldHandlePtr ColorMaskChunkBase::getHandleMaskA           (void) const
 
 EditFieldHandlePtr ColorMaskChunkBase::editHandleMaskA          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfMaskA,

@@ -72,7 +72,7 @@
 #include "OSGHDR2StageDataBase.h"
 #include "OSGHDR2StageData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -2949,6 +2949,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleLuminanceMapShader (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleLuminanceMapShader(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfLuminanceMapShader,
@@ -2977,6 +2980,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleAdaptLuminanceShader (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleAdaptLuminanceShader(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfAdaptLuminanceShader,
@@ -3005,6 +3011,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleThresholdShader (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleThresholdShader(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfThresholdShader,
@@ -3033,6 +3042,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleScaleShader     (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleScaleShader    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfScaleShader,
@@ -3061,6 +3073,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleBlurHorizShader (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleBlurHorizShader(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfBlurHorizShader,
@@ -3089,6 +3104,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleBlurVertShader  (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleBlurVertShader (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfBlurVertShader,
@@ -3117,6 +3135,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleCompositeShader (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleCompositeShader(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfCompositeShader,
@@ -3145,6 +3166,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleFinalScreenShader (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleFinalScreenShader(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfFinalScreenShader,
@@ -3173,6 +3197,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleSharedTextureEnvChunk (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleSharedTextureEnvChunk(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecTextureEnvChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureEnvChunkPtr::EditHandle(
              &_sfSharedTextureEnvChunk,
@@ -3201,6 +3228,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleSharedMaterialChunk (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleSharedMaterialChunk(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecMaterialChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialChunkPtr::EditHandle(
              &_sfSharedMaterialChunk,
@@ -3229,6 +3259,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleSceneMaterial   (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleSceneMaterial  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfSceneMaterial,
@@ -3257,6 +3290,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleLuminanceMapMaterial (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleLuminanceMapMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfLuminanceMapMaterial,
@@ -3285,6 +3321,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleAdaptLuminanceMaterial (void) cons
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleAdaptLuminanceMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfAdaptLuminanceMaterial,
@@ -3313,6 +3352,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleThresholdMaterial (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleThresholdMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfThresholdMaterial,
@@ -3341,6 +3383,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleScaleMaterial   (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleScaleMaterial  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecChunkMaterialPtr::EditHandle(
              &_mfScaleMaterial,
@@ -3378,6 +3423,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleBlurHorizMaterial (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleBlurHorizMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfBlurHorizMaterial,
@@ -3406,6 +3454,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleBlurVertMaterial (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleBlurVertMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfBlurVertMaterial,
@@ -3434,6 +3485,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleCompositeMaterial (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleCompositeMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfCompositeMaterial,
@@ -3462,6 +3516,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleFinalScreenMaterial (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleFinalScreenMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfFinalScreenMaterial,
@@ -3490,6 +3547,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleCurrentAdaptLuminanceIdx (void) co
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleCurrentAdaptLuminanceIdx(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfCurrentAdaptLuminanceIdx,
@@ -3515,6 +3575,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleWidth          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -3540,6 +3603,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleHeight         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -3565,6 +3631,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleSceneRenderTarget (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleSceneRenderTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfSceneRenderTarget,
@@ -3593,6 +3662,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleLuminanceRenderTarget (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleLuminanceRenderTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfLuminanceRenderTarget,
@@ -3621,6 +3693,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleAdaptLuminanceRenderTarget (void) 
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleAdaptLuminanceRenderTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  MFUnrecFrameBufferObjectPtr::EditHandle(
              &_mfAdaptLuminanceRenderTarget,
@@ -3658,6 +3733,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleThresholdRenderTarget (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleThresholdRenderTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfThresholdRenderTarget,
@@ -3686,6 +3764,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleBlurHorizRenderTarget (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleBlurHorizRenderTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfBlurHorizRenderTarget,
@@ -3714,6 +3795,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleBlurVertRenderTarget (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleBlurVertRenderTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfBlurVertRenderTarget,
@@ -3742,6 +3826,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleScaleRenderTarget (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleScaleRenderTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  MFUnrecFrameBufferObjectPtr::EditHandle(
              &_mfScaleRenderTarget,
@@ -3779,6 +3866,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleCompositeRenderTarget (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleCompositeRenderTarget(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfCompositeRenderTarget,
@@ -3807,6 +3897,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleHdrShaderData   (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleHdrShaderData  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecUniformBufferObjStd140ChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecUniformBufferObjStd140ChunkPtr::EditHandle(
              &_sfHdrShaderData,
@@ -3835,6 +3928,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleLastTime        (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleLastTime       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal64::EditHandlePtr returnValue(
         new  SFReal64::EditHandle(
              &_sfLastTime,
@@ -3860,6 +3956,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleCurrentTime     (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleCurrentTime    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal64::EditHandlePtr returnValue(
         new  SFReal64::EditHandle(
              &_sfCurrentTime,
@@ -3885,6 +3984,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleZNear           (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleZNear          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfZNear,
@@ -3910,6 +4012,9 @@ GetFieldHandlePtr HDR2StageDataBase::getHandleZFar            (void) const
 
 EditFieldHandlePtr HDR2StageDataBase::editHandleZFar           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfZFar,

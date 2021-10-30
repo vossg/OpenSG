@@ -67,7 +67,7 @@
 #include "OSGAlgorithmComputeElementBase.h"
 #include "OSGAlgorithmComputeElement.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -427,6 +427,9 @@ GetFieldHandlePtr AlgorithmComputeElementBase::getHandleAlgorithm       (void) c
 
 EditFieldHandlePtr AlgorithmComputeElementBase::editHandleAlgorithm      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecComputeAlgorithmPtr::EditHandlePtr returnValue(
         new  SFUnrecComputeAlgorithmPtr::EditHandle(
              &_sfAlgorithm,

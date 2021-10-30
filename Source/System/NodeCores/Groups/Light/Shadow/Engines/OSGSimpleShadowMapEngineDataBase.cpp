@@ -74,7 +74,7 @@
 #include "OSGSimpleShadowMapEngineDataBase.h"
 #include "OSGSimpleShadowMapEngineData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -892,6 +892,9 @@ GetFieldHandlePtr SimpleShadowMapEngineDataBase::getHandleCamera          (void)
 
 EditFieldHandlePtr SimpleShadowMapEngineDataBase::editHandleCamera         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,
@@ -920,6 +923,9 @@ GetFieldHandlePtr SimpleShadowMapEngineDataBase::getHandleRenderTarget    (void)
 
 EditFieldHandlePtr SimpleShadowMapEngineDataBase::editHandleRenderTarget   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfRenderTarget,
@@ -948,6 +954,9 @@ GetFieldHandlePtr SimpleShadowMapEngineDataBase::getHandleTexChunk        (void)
 
 EditFieldHandlePtr SimpleShadowMapEngineDataBase::editHandleTexChunk       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfTexChunk,
@@ -976,6 +985,9 @@ GetFieldHandlePtr SimpleShadowMapEngineDataBase::getHandleTexBuffer       (void)
 
 EditFieldHandlePtr SimpleShadowMapEngineDataBase::editHandleTexBuffer      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecTextureBufferPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBufferPtr::EditHandle(
              &_sfTexBuffer,
@@ -1004,6 +1016,9 @@ GetFieldHandlePtr SimpleShadowMapEngineDataBase::getHandleLightChunk      (void)
 
 EditFieldHandlePtr SimpleShadowMapEngineDataBase::editHandleLightChunk     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecLightChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecLightChunkPtr::EditHandle(
              &_sfLightChunk,
@@ -1032,6 +1047,9 @@ GetFieldHandlePtr SimpleShadowMapEngineDataBase::getHandleBlendChunk      (void)
 
 EditFieldHandlePtr SimpleShadowMapEngineDataBase::editHandleBlendChunk     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecBlendChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecBlendChunkPtr::EditHandle(
              &_sfBlendChunk,
@@ -1060,6 +1078,9 @@ GetFieldHandlePtr SimpleShadowMapEngineDataBase::getHandleTexGenChunk     (void)
 
 EditFieldHandlePtr SimpleShadowMapEngineDataBase::editHandleTexGenChunk    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecTexGenChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTexGenChunkPtr::EditHandle(
              &_sfTexGenChunk,
@@ -1088,6 +1109,9 @@ GetFieldHandlePtr SimpleShadowMapEngineDataBase::getHandlePolyChunk       (void)
 
 EditFieldHandlePtr SimpleShadowMapEngineDataBase::editHandlePolyChunk      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecPolygonChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecPolygonChunkPtr::EditHandle(
              &_sfPolyChunk,

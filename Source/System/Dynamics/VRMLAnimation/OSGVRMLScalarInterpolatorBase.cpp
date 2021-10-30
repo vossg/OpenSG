@@ -66,7 +66,7 @@
 #include "OSGVRMLScalarInterpolatorBase.h"
 #include "OSGVRMLScalarInterpolator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -450,6 +450,9 @@ GetFieldHandlePtr VRMLScalarInterpolatorBase::getHandleKeyValue        (void) co
 
 EditFieldHandlePtr VRMLScalarInterpolatorBase::editHandleKeyValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfKeyValue,
@@ -475,6 +478,9 @@ GetFieldHandlePtr VRMLScalarInterpolatorBase::getHandleOutValue        (void) co
 
 EditFieldHandlePtr VRMLScalarInterpolatorBase::editHandleOutValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOutValue,

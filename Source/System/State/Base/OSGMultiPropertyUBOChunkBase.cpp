@@ -66,7 +66,7 @@
 #include "OSGMultiPropertyUBOChunkBase.h"
 #include "OSGMultiPropertyUBOChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1015,6 +1015,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleTypes           (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleTypes          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfTypes,
@@ -1040,6 +1043,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleCardinality     (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleCardinality    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfCardinality,
@@ -1065,6 +1071,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleCardinalities   (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleCardinalities  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfCardinalities,
@@ -1090,6 +1099,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleNumProperties   (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleNumProperties  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfNumProperties,
@@ -1115,6 +1127,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleFloatValues     (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleFloatValues    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfFloatValues,
@@ -1140,6 +1155,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleDoubleValues    (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleDoubleValues   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFReal64::EditHandlePtr returnValue(
         new  MFReal64::EditHandle(
              &_mfDoubleValues,
@@ -1165,6 +1183,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleIntValues       (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleIntValues      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfIntValues,
@@ -1190,6 +1211,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleUIntValues      (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleUIntValues     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfUIntValues,
@@ -1215,6 +1239,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleBoolValues      (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleBoolValues     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFBool::EditHandlePtr returnValue(
         new  MFBool::EditHandle(
              &_mfBoolValues,
@@ -1240,6 +1267,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleVec3Values      (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleVec3Values     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfVec3Values,
@@ -1265,6 +1295,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleVec4Values      (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleVec4Values     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFVec4f::EditHandlePtr returnValue(
         new  MFVec4f::EditHandle(
              &_mfVec4Values,
@@ -1290,6 +1323,9 @@ GetFieldHandlePtr MultiPropertyUBOChunkBase::getHandleMatrixValues    (void) con
 
 EditFieldHandlePtr MultiPropertyUBOChunkBase::editHandleMatrixValues   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfMatrixValues,

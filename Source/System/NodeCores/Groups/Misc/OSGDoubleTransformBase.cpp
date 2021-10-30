@@ -66,7 +66,7 @@
 #include "OSGDoubleTransformBase.h"
 #include "OSGDoubleTransform.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -401,6 +401,9 @@ GetFieldHandlePtr DoubleTransformBase::getHandleMatrix          (void) const
 
 EditFieldHandlePtr DoubleTransformBase::editHandleMatrix         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMatrix4d::EditHandlePtr returnValue(
         new  SFMatrix4d::EditHandle(
              &_sfMatrix,

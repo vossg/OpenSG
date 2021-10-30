@@ -69,7 +69,7 @@
 #include "OSGManipulatorBase.h"
 #include "OSGManipulator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1628,6 +1628,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleTarget          (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleTarget         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTarget,
@@ -1656,6 +1659,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleEnablePivot     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleEnablePivot    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnablePivot,
@@ -1681,6 +1687,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleActiveSubHandle (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleActiveSubHandle(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfActiveSubHandle,
@@ -1709,6 +1718,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleLastMousePos    (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleLastMousePos   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFPnt2f::EditHandlePtr returnValue(
         new  SFPnt2f::EditHandle(
              &_sfLastMousePos,
@@ -1734,6 +1746,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleViewport        (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleViewport       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecViewportPtr::EditHandlePtr returnValue(
         new  SFUnrecViewportPtr::EditHandle(
              &_sfViewport,
@@ -1762,6 +1777,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleActive          (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleActive         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfActive,
@@ -1787,6 +1805,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleLength          (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleLength         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfLength,
@@ -1812,6 +1833,9 @@ GetFieldHandlePtr ManipulatorBase::getHandlePivot           (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandlePivot          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfPivot,
@@ -1837,6 +1861,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleHandleXNode     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleHandleXNode    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfHandleXNode,
@@ -1865,6 +1892,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleHandleYNode     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleHandleYNode    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfHandleYNode,
@@ -1893,6 +1923,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleHandleZNode     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleHandleZNode    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfHandleZNode,
@@ -1921,6 +1954,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleHandlePNode     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleHandlePNode    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfHandlePNode,
@@ -1949,6 +1985,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleTransXNode      (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleTransXNode     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTransXNode,
@@ -1977,6 +2016,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleTransYNode      (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleTransYNode     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTransYNode,
@@ -2005,6 +2047,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleTransZNode      (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleTransZNode     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTransZNode,
@@ -2033,6 +2078,9 @@ GetFieldHandlePtr ManipulatorBase::getHandlePivotNode       (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandlePivotNode      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfPivotNode,
@@ -2061,6 +2109,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleMaterialX       (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleMaterialX      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterialX,
@@ -2089,6 +2140,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleMaterialY       (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleMaterialY      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterialY,
@@ -2117,6 +2171,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleMaterialZ       (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleMaterialZ      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterialZ,
@@ -2145,6 +2202,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleMaterialPivot   (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleMaterialPivot  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterialPivot,
@@ -2173,6 +2233,9 @@ GetFieldHandlePtr ManipulatorBase::getHandleAxisLinesN      (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleAxisLinesN     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfAxisLinesN,

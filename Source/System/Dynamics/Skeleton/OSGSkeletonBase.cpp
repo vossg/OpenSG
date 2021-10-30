@@ -68,7 +68,7 @@
 #include "OSGSkeletonBase.h"
 #include "OSGSkeleton.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1203,6 +1203,9 @@ GetFieldHandlePtr SkeletonBase::getHandleRoots           (void) const
 
 EditFieldHandlePtr SkeletonBase::editHandleRoots          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecNodePtr::EditHandlePtr returnValue(
         new  MFUnrecNodePtr::EditHandle(
              &_mfRoots,
@@ -1240,6 +1243,9 @@ GetFieldHandlePtr SkeletonBase::getHandleJoints          (void) const
 
 EditFieldHandlePtr SkeletonBase::editHandleJoints         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChildBaseSkeletonJointPtr::EditHandlePtr returnValue(
         new  MFUnrecChildBaseSkeletonJointPtr::EditHandle(
              &_mfJoints,
@@ -1277,6 +1283,9 @@ GetFieldHandlePtr SkeletonBase::getHandleParentJoints    (void) const
 
 EditFieldHandlePtr SkeletonBase::editHandleParentJoints   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecBaseSkeletonJointPtr::EditHandlePtr returnValue(
         new  MFUnrecBaseSkeletonJointPtr::EditHandle(
              &_mfParentJoints,
@@ -1314,6 +1323,9 @@ GetFieldHandlePtr SkeletonBase::getHandleJointMatrices   (void) const
 
 EditFieldHandlePtr SkeletonBase::editHandleJointMatrices  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfJointMatrices,
@@ -1339,6 +1351,9 @@ GetFieldHandlePtr SkeletonBase::getHandleJointNormalMatrices (void) const
 
 EditFieldHandlePtr SkeletonBase::editHandleJointNormalMatrices(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfJointNormalMatrices,
@@ -1364,6 +1379,9 @@ GetFieldHandlePtr SkeletonBase::getHandleUseInvBindMatrix (void) const
 
 EditFieldHandlePtr SkeletonBase::editHandleUseInvBindMatrix(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseInvBindMatrix,
@@ -1389,6 +1407,9 @@ GetFieldHandlePtr SkeletonBase::getHandleCalcNormalMatrices (void) const
 
 EditFieldHandlePtr SkeletonBase::editHandleCalcNormalMatrices(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCalcNormalMatrices,
@@ -1414,6 +1435,9 @@ GetFieldHandlePtr SkeletonBase::getHandleJointsChanged   (void) const
 
 EditFieldHandlePtr SkeletonBase::editHandleJointsChanged  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFOSGAny::EditHandlePtr returnValue(
         new  SFOSGAny::EditHandle(
              &_sfJointsChanged,

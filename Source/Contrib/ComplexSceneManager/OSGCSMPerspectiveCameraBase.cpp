@@ -67,7 +67,7 @@
 #include "OSGCSMPerspectiveCameraBase.h"
 #include "OSGCSMPerspectiveCamera.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -532,6 +532,9 @@ GetFieldHandlePtr CSMPerspectiveCameraBase::getHandleEyeSeparation   (void) cons
 
 EditFieldHandlePtr CSMPerspectiveCameraBase::editHandleEyeSeparation  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfEyeSeparation,
@@ -557,6 +560,9 @@ GetFieldHandlePtr CSMPerspectiveCameraBase::getHandleZeroParallax    (void) cons
 
 EditFieldHandlePtr CSMPerspectiveCameraBase::editHandleZeroParallax   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfZeroParallax,
@@ -582,6 +588,9 @@ GetFieldHandlePtr CSMPerspectiveCameraBase::getHandleHeadBeacon      (void) cons
 
 EditFieldHandlePtr CSMPerspectiveCameraBase::editHandleHeadBeacon     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfHeadBeacon,

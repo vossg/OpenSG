@@ -67,7 +67,7 @@
 #include "OSGMultiCoreBase.h"
 #include "OSGMultiCore.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -588,6 +588,9 @@ GetFieldHandlePtr MultiCoreBase::getHandleCores           (void) const
 
 EditFieldHandlePtr MultiCoreBase::editHandleCores          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChildNodeCorePtr::EditHandlePtr returnValue(
         new  MFUnrecChildNodeCorePtr::EditHandle(
              &_mfCores,
@@ -625,6 +628,9 @@ GetFieldHandlePtr MultiCoreBase::getHandleExitOnSkip      (void) const
 
 EditFieldHandlePtr MultiCoreBase::editHandleExitOnSkip     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfExitOnSkip,

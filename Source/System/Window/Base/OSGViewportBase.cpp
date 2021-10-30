@@ -71,7 +71,7 @@
 #include "OSGViewportBase.h"
 #include "OSGViewport.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -886,6 +886,9 @@ GetFieldHandlePtr ViewportBase::getHandleParent          (void) const
 
 EditFieldHandlePtr ViewportBase::editHandleParent         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -904,6 +907,9 @@ GetFieldHandlePtr ViewportBase::getHandleCamera          (void) const
 
 EditFieldHandlePtr ViewportBase::editHandleCamera         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,
@@ -932,6 +938,9 @@ GetFieldHandlePtr ViewportBase::getHandleRoot            (void) const
 
 EditFieldHandlePtr ViewportBase::editHandleRoot           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfRoot,
@@ -960,6 +969,9 @@ GetFieldHandlePtr ViewportBase::getHandleBackground      (void) const
 
 EditFieldHandlePtr ViewportBase::editHandleBackground     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfBackground,
@@ -988,6 +1000,9 @@ GetFieldHandlePtr ViewportBase::getHandleForegrounds     (void) const
 
 EditFieldHandlePtr ViewportBase::editHandleForegrounds    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecForegroundPtr::EditHandlePtr returnValue(
         new  MFUnrecForegroundPtr::EditHandle(
              &_mfForegrounds,

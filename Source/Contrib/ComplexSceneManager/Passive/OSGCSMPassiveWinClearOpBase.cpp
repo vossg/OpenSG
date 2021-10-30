@@ -66,7 +66,7 @@
 #include "OSGCSMPassiveWinClearOpBase.h"
 #include "OSGCSMPassiveWinClearOp.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -372,6 +372,9 @@ GetFieldHandlePtr CSMPassiveWinClearOpBase::getHandleEnabled         (void) cons
 
 EditFieldHandlePtr CSMPassiveWinClearOpBase::editHandleEnabled        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,

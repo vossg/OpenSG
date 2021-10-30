@@ -69,7 +69,7 @@
 #include "OSGCSMClusterWindowBase.h"
 #include "OSGCSMClusterWindow.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -964,6 +964,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleClientWindow    (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleClientWindow   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildCSMWindowPtr::EditHandlePtr returnValue(
         new  SFUnrecChildCSMWindowPtr::EditHandle(
              &_sfClientWindow,
@@ -992,6 +995,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleRenderClient    (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleRenderClient   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfRenderClient,
@@ -1017,6 +1023,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleServers         (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleServers        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfServers,
@@ -1042,6 +1051,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleServerIds       (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleServerIds      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfServerIds,
@@ -1067,6 +1079,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleServerRows      (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleServerRows     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfServerRows,
@@ -1092,6 +1107,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleConnectionType  (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleConnectionType (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfConnectionType,
@@ -1117,6 +1135,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleClusterMode     (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleClusterMode    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfClusterMode,
@@ -1142,6 +1163,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleComposer        (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleComposer       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImageComposerPtr::EditHandlePtr returnValue(
         new  SFUnrecImageComposerPtr::EditHandle(
              &_sfComposer,
@@ -1170,6 +1194,9 @@ GetFieldHandlePtr CSMClusterWindowBase::getHandleOptions         (void) const
 
 EditFieldHandlePtr CSMClusterWindowBase::editHandleOptions        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildCSMClusterWinOptionsPtr::EditHandlePtr returnValue(
         new  SFUnrecChildCSMClusterWinOptionsPtr::EditHandle(
              &_sfOptions,

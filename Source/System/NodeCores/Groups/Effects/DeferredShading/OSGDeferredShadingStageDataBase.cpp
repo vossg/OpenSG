@@ -72,7 +72,7 @@
 #include "OSGDeferredShadingStageDataBase.h"
 #include "OSGDeferredShadingStageData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1008,6 +1008,9 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleGBufferTarget   (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleGBufferTarget  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfGBufferTarget,
@@ -1036,6 +1039,9 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleGBufferBackground (void
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleGBufferBackground(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfGBufferBackground,
@@ -1064,6 +1070,9 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleShadingTarget   (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleShadingTarget  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfShadingTarget,
@@ -1092,6 +1101,9 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleShadingStates   (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleShadingStates  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecStatePtr::EditHandlePtr returnValue(
         new  MFUnrecStatePtr::EditHandle(
              &_mfShadingStates,
@@ -1129,6 +1141,9 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleShadingProgramChunks (v
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleShadingProgramChunks(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramChunkPtr::EditHandle(
              &_mfShadingProgramChunks,
@@ -1166,6 +1181,9 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleLightChunks     (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleLightChunks    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecDSLightChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecDSLightChunkPtr::EditHandle(
              &_mfLightChunks,
@@ -1203,6 +1221,9 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleBlendChunk      (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleBlendChunk     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecBlendChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecBlendChunkPtr::EditHandle(
              &_sfBlendChunk,

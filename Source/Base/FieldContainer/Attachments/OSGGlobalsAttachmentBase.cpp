@@ -67,7 +67,7 @@
 #include "OSGGlobalsAttachmentBase.h"
 #include "OSGGlobalsAttachment.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -530,6 +530,9 @@ GetFieldHandlePtr GlobalsAttachmentBase::getHandleElements        (void) const
 
 EditFieldHandlePtr GlobalsAttachmentBase::editHandleElements       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecFieldContainerPtr::EditHandlePtr returnValue(
         new  MFUnrecFieldContainerPtr::EditHandle(
              &_mfElements,

@@ -67,7 +67,7 @@
 #include "OSGCSMClusterWinOptionsBase.h"
 #include "OSGCSMClusterWinOptions.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -447,6 +447,9 @@ GetFieldHandlePtr CSMClusterWinOptionsBase::getHandleParent          (void) cons
 
 EditFieldHandlePtr CSMClusterWinOptionsBase::editHandleParent         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     EditFieldHandlePtr returnValue;
 
     return returnValue;

@@ -67,7 +67,7 @@
 #include "OSGGeoInstancerBase.h"
 #include "OSGGeoInstancer.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -527,6 +527,9 @@ GetFieldHandlePtr GeoInstancerBase::getHandleNumInstances    (void) const
 
 EditFieldHandlePtr GeoInstancerBase::editHandleNumInstances   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfNumInstances,
@@ -552,6 +555,9 @@ GetFieldHandlePtr GeoInstancerBase::getHandleBaseGeometry    (void) const
 
 EditFieldHandlePtr GeoInstancerBase::editHandleBaseGeometry   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecChildGeometryPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeometryPtr::EditHandle(
              &_sfBaseGeometry,

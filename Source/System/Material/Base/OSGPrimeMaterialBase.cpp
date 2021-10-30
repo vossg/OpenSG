@@ -66,7 +66,7 @@
 #include "OSGPrimeMaterialBase.h"
 #include "OSGPrimeMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -283,6 +283,9 @@ GetFieldHandlePtr PrimeMaterialBase::getHandleCoreGLChunkLimit (void) const
 
 EditFieldHandlePtr PrimeMaterialBase::editHandleCoreGLChunkLimit(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfCoreGLChunkLimit,

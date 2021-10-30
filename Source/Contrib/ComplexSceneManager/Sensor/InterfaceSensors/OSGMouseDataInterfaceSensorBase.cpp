@@ -66,7 +66,7 @@
 #include "OSGMouseDataInterfaceSensorBase.h"
 #include "OSGMouseDataInterfaceSensor.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -392,6 +392,9 @@ GetFieldHandlePtr MouseDataInterfaceSensorBase::getHandleMouseData       (void) 
 
 EditFieldHandlePtr MouseDataInterfaceSensorBase::editHandleMouseData      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFMouseData::EditHandlePtr returnValue(
         new  SFMouseData::EditHandle(
              &_sfMouseData,

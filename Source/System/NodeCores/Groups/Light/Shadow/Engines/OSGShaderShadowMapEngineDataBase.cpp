@@ -72,7 +72,7 @@
 #include "OSGShaderShadowMapEngineDataBase.h"
 #include "OSGShaderShadowMapEngineData.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -912,6 +912,9 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleRenderTargets   (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleRenderTargets  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  MFUnrecFrameBufferObjectPtr::EditHandle(
              &_mfRenderTargets,
@@ -949,6 +952,9 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleShadowTexBuffers (void
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleShadowTexBuffers(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecTextureBufferPtr::EditHandlePtr returnValue(
         new  MFUnrecTextureBufferPtr::EditHandle(
              &_mfShadowTexBuffers,
@@ -986,6 +992,9 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleShadowTexChunk  (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleShadowTexChunk (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfShadowTexChunk,
@@ -1014,6 +1023,9 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleShadowTexImage  (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleShadowTexImage (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfShadowTexImage,
@@ -1042,6 +1054,9 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleLightPassMaterials (vo
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleLightPassMaterials(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecChunkMaterialPtr::EditHandle(
              &_mfLightPassMaterials,
@@ -1079,6 +1094,9 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleBackground      (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleBackground     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfBackground,

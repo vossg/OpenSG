@@ -67,7 +67,7 @@
 #include "OSGCSMPassiveWindowBase.h"
 #include "OSGCSMPassiveWindow.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -454,6 +454,9 @@ GetFieldHandlePtr CSMPassiveWindowBase::getHandleViewportScale   (void) const
 
 EditFieldHandlePtr CSMPassiveWindowBase::editHandleViewportScale  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfViewportScale,
@@ -479,6 +482,9 @@ GetFieldHandlePtr CSMPassiveWindowBase::getHandleClearOp         (void) const
 
 EditFieldHandlePtr CSMPassiveWindowBase::editHandleClearOp        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecCSMPassiveWinClearOpPtr::EditHandlePtr returnValue(
         new  SFUnrecCSMPassiveWinClearOpPtr::EditHandle(
              &_sfClearOp,

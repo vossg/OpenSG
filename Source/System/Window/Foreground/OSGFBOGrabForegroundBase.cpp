@@ -67,7 +67,7 @@
 #include "OSGFBOGrabForegroundBase.h"
 #include "OSGFBOGrabForeground.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -484,6 +484,9 @@ GetFieldHandlePtr FBOGrabForegroundBase::getHandleFrameBufferObject (void) const
 
 EditFieldHandlePtr FBOGrabForegroundBase::editHandleFrameBufferObject(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfFrameBufferObject,
@@ -512,6 +515,9 @@ GetFieldHandlePtr FBOGrabForegroundBase::getHandleAutoResize      (void) const
 
 EditFieldHandlePtr FBOGrabForegroundBase::editHandleAutoResize     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAutoResize,

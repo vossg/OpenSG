@@ -67,7 +67,7 @@
 #include "OSGCSMLoggerBase.h"
 #include "OSGCSMLogger.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -549,6 +549,9 @@ GetFieldHandlePtr CSMLoggerBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr CSMLoggerBase::editHandleEnabled        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -574,6 +577,9 @@ GetFieldHandlePtr CSMLoggerBase::getHandleContainers      (void) const
 
 EditFieldHandlePtr CSMLoggerBase::editHandleContainers     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecFieldContainerPtr::EditHandlePtr returnValue(
         new  MFUnrecFieldContainerPtr::EditHandle(
              &_mfContainers,
@@ -611,6 +617,9 @@ GetFieldHandlePtr CSMLoggerBase::getHandleFields          (void) const
 
 EditFieldHandlePtr CSMLoggerBase::editHandleFields         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfFields,

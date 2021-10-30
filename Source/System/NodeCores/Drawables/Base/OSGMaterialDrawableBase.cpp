@@ -67,7 +67,7 @@
 #include "OSGMaterialDrawableBase.h"
 #include "OSGMaterialDrawable.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -310,6 +310,9 @@ GetFieldHandlePtr MaterialDrawableBase::getHandleMaterial        (void) const
 
 EditFieldHandlePtr MaterialDrawableBase::editHandleMaterial       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterial,

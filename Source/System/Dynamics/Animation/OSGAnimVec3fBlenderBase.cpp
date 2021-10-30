@@ -67,7 +67,7 @@
 #include "OSGAnimVec3fBlenderBase.h"
 #include "OSGAnimVec3fBlender.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -535,6 +535,9 @@ GetFieldHandlePtr AnimVec3fBlenderBase::getHandleChannels        (void) const
 
 EditFieldHandlePtr AnimVec3fBlenderBase::editHandleChannels       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecAnimVec3fChannelPtr::EditHandlePtr returnValue(
         new  MFUnrecAnimVec3fChannelPtr::EditHandle(
              &_mfChannels,
@@ -572,6 +575,9 @@ GetFieldHandlePtr AnimVec3fBlenderBase::getHandleOutValue        (void) const
 
 EditFieldHandlePtr AnimVec3fBlenderBase::editHandleOutValue       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfOutValue,

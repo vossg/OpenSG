@@ -67,7 +67,7 @@
 #include "OSGCameraDecoratorBase.h"
 #include "OSGCameraDecorator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -385,6 +385,8 @@ GetFieldHandlePtr  CameraDecoratorBase::getHandleDecoratee (void) const
 
 EditFieldHandlePtr CameraDecoratorBase::editHandleDecoratee(void)
 {
+    using boost::placeholders::_1;
+
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new SFUnrecCameraPtr::EditHandle(
             &_sfDecoratee,
@@ -412,6 +414,9 @@ GetFieldHandlePtr CameraDecoratorBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr CameraDecoratorBase::editHandleBeacon         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfBeacon,
@@ -440,6 +445,9 @@ GetFieldHandlePtr CameraDecoratorBase::getHandleNear            (void) const
 
 EditFieldHandlePtr CameraDecoratorBase::editHandleNear           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfNear,
@@ -465,6 +473,9 @@ GetFieldHandlePtr CameraDecoratorBase::getHandleFar             (void) const
 
 EditFieldHandlePtr CameraDecoratorBase::editHandleFar            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFar,

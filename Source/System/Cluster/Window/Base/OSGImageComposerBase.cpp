@@ -66,7 +66,7 @@
 #include "OSGImageComposerBase.h"
 #include "OSGImageComposer.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -338,6 +338,9 @@ GetFieldHandlePtr ImageComposerBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr ImageComposerBase::editHandleEnabled        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -363,6 +366,9 @@ GetFieldHandlePtr ImageComposerBase::getHandleStatistics      (void) const
 
 EditFieldHandlePtr ImageComposerBase::editHandleStatistics     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfStatistics,

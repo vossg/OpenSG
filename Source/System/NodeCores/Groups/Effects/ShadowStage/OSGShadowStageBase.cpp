@@ -72,7 +72,7 @@
 #include "OSGShadowStageBase.h"
 #include "OSGShadowStage.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1911,6 +1911,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleBufferFormat    (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleBufferFormat   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfBufferFormat,
@@ -1936,6 +1939,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleOffBias         (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleOffBias        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOffBias,
@@ -1961,6 +1967,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleOffFactor       (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleOffFactor      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOffFactor,
@@ -1986,6 +1995,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleMapSize         (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleMapSize        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMapSize,
@@ -2011,6 +2023,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleLightNodes      (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleLightNodes     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecNodePtr::EditHandlePtr returnValue(
         new  MFUnrecNodePtr::EditHandle(
              &_mfLightNodes,
@@ -2048,6 +2063,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleExcludeNodes    (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleExcludeNodes   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     MFUnrecNodePtr::EditHandlePtr returnValue(
         new  MFUnrecNodePtr::EditHandle(
              &_mfExcludeNodes,
@@ -2085,6 +2103,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleMapAutoUpdate   (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleMapAutoUpdate  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfMapAutoUpdate,
@@ -2110,6 +2131,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleShadowMode      (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleShadowMode     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfShadowMode,
@@ -2135,6 +2159,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleShadowSmoothness (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleShadowSmoothness(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShadowSmoothness,
@@ -2160,6 +2187,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleShadowOn        (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleShadowOn       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShadowOn,
@@ -2185,6 +2215,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleAutoSearchForLights (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleAutoSearchForLights(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAutoSearchForLights,
@@ -2210,6 +2243,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleGlobalShadowIntensity (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleGlobalShadowIntensity(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfGlobalShadowIntensity,
@@ -2235,6 +2271,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleFboOn           (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleFboOn          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfFboOn,
@@ -2260,6 +2299,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleAutoExcludeTransparentNodes (void) c
 
 EditFieldHandlePtr ShadowStageBase::editHandleAutoExcludeTransparentNodes(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAutoExcludeTransparentNodes,
@@ -2285,6 +2327,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleDisableOccludedLights (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleDisableOccludedLights(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDisableOccludedLights,
@@ -2310,6 +2355,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleRed             (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleRed            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfRed,
@@ -2335,6 +2383,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleBlue            (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleBlue           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBlue,
@@ -2360,6 +2411,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleGreen           (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleGreen          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfGreen,
@@ -2385,6 +2439,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleAlpha           (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleAlpha          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAlpha,
@@ -2410,6 +2467,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleBlitZBuffer     (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleBlitZBuffer    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBlitZBuffer,
@@ -2435,6 +2495,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleCombineBlend    (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleCombineBlend   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCombineBlend,
@@ -2460,6 +2523,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleRenderPropertyMask (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleRenderPropertyMask(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFRenderPropBitVector::EditHandlePtr returnValue(
         new  SFRenderPropBitVector::EditHandle(
              &_sfRenderPropertyMask,
@@ -2485,6 +2551,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleEnableMultiSample (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleEnableMultiSample(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnableMultiSample,
@@ -2510,6 +2579,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleColorSamples    (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleColorSamples   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfColorSamples,
@@ -2535,6 +2607,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleCoverageSamples (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleCoverageSamples(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfCoverageSamples,
@@ -2560,6 +2635,9 @@ GetFieldHandlePtr ShadowStageBase::getHandleFixedSampleLocation (void) const
 
 EditFieldHandlePtr ShadowStageBase::editHandleFixedSampleLocation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfFixedSampleLocation,

@@ -67,7 +67,7 @@
 #include "OSGHeadTrackedStereoCameraDecoratorBase.h"
 #include "OSGHeadTrackedStereoCameraDecorator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -436,6 +436,9 @@ GetFieldHandlePtr HeadTrackedStereoCameraDecoratorBase::getHandleUser           
 
 EditFieldHandlePtr HeadTrackedStereoCameraDecoratorBase::editHandleUser           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfUser,

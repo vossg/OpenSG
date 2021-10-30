@@ -67,7 +67,7 @@
 #include "OSGLightModelChunkBase.h"
 #include "OSGLightModelChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -517,6 +517,9 @@ GetFieldHandlePtr LightModelChunkBase::getHandleAmbient         (void) const
 
 EditFieldHandlePtr LightModelChunkBase::editHandleAmbient        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfAmbient,
@@ -542,6 +545,9 @@ GetFieldHandlePtr LightModelChunkBase::getHandleColorControl    (void) const
 
 EditFieldHandlePtr LightModelChunkBase::editHandleColorControl   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfColorControl,
@@ -567,6 +573,9 @@ GetFieldHandlePtr LightModelChunkBase::getHandleLocalViewer     (void) const
 
 EditFieldHandlePtr LightModelChunkBase::editHandleLocalViewer    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLocalViewer,

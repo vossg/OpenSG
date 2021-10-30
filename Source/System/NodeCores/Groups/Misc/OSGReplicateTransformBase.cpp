@@ -67,7 +67,7 @@
 #include "OSGReplicateTransformBase.h"
 #include "OSGReplicateTransform.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -434,6 +434,9 @@ GetFieldHandlePtr ReplicateTransformBase::getHandleTarget          (void) const
 
 EditFieldHandlePtr ReplicateTransformBase::editHandleTarget         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTarget,

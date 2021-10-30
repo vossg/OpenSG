@@ -68,7 +68,7 @@
 #include "OSGMaterialChunkBase.h"
 #include "OSGMaterialChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1108,6 +1108,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleDiffuse         (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleDiffuse        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfDiffuse,
@@ -1133,6 +1136,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleAmbient         (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleAmbient        (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfAmbient,
@@ -1158,6 +1164,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleSpecular        (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleSpecular       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfSpecular,
@@ -1183,6 +1192,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleEmission        (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleEmission       (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfEmission,
@@ -1208,6 +1220,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleShininess       (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleShininess      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShininess,
@@ -1233,6 +1248,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleLit             (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleLit            (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLit,
@@ -1258,6 +1276,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleColorMaterial   (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleColorMaterial  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfColorMaterial,
@@ -1283,6 +1304,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleBackMaterial    (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleBackMaterial   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBackMaterial,
@@ -1308,6 +1332,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleBackDiffuse     (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleBackDiffuse    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBackDiffuse,
@@ -1333,6 +1360,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleBackAmbient     (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleBackAmbient    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBackAmbient,
@@ -1358,6 +1388,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleBackSpecular    (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleBackSpecular   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBackSpecular,
@@ -1383,6 +1416,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleBackEmission    (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleBackEmission   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBackEmission,
@@ -1408,6 +1444,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleBackShininess   (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleBackShininess  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBackShininess,
@@ -1433,6 +1472,9 @@ GetFieldHandlePtr MaterialChunkBase::getHandleBackColorMaterial (void) const
 
 EditFieldHandlePtr MaterialChunkBase::editHandleBackColorMaterial(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfBackColorMaterial,

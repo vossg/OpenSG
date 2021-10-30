@@ -66,7 +66,7 @@
 #include "OSGGeoReferenceAttachmentBase.h"
 #include "OSGGeoReferenceAttachment.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -610,6 +610,9 @@ GetFieldHandlePtr GeoReferenceAttachmentBase::getHandleDatum           (void) co
 
 EditFieldHandlePtr GeoReferenceAttachmentBase::editHandleDatum          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDatum,
@@ -635,6 +638,9 @@ GetFieldHandlePtr GeoReferenceAttachmentBase::getHandleEllipsoidAxis   (void) co
 
 EditFieldHandlePtr GeoReferenceAttachmentBase::editHandleEllipsoidAxis  (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfEllipsoidAxis,
@@ -660,6 +666,9 @@ GetFieldHandlePtr GeoReferenceAttachmentBase::getHandleOrigin          (void) co
 
 EditFieldHandlePtr GeoReferenceAttachmentBase::editHandleOrigin         (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfOrigin,
@@ -685,6 +694,9 @@ GetFieldHandlePtr GeoReferenceAttachmentBase::getHandlePixelSize       (void) co
 
 EditFieldHandlePtr GeoReferenceAttachmentBase::editHandlePixelSize      (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfPixelSize,
@@ -710,6 +722,9 @@ GetFieldHandlePtr GeoReferenceAttachmentBase::getHandleNoDataValue     (void) co
 
 EditFieldHandlePtr GeoReferenceAttachmentBase::editHandleNoDataValue    (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFReal64::EditHandlePtr returnValue(
         new  SFReal64::EditHandle(
              &_sfNoDataValue,

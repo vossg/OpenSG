@@ -66,7 +66,7 @@
 #include "OSGPlaneMoveManipulatorBase.h"
 #include "OSGPlaneMoveManipulator.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -551,6 +551,9 @@ GetFieldHandlePtr PlaneMoveManipulatorBase::getHandleAxis            (void) cons
 
 EditFieldHandlePtr PlaneMoveManipulatorBase::editHandleAxis           (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfAxis,
@@ -576,6 +579,9 @@ GetFieldHandlePtr PlaneMoveManipulatorBase::getHandleBaseTranslation (void) cons
 
 EditFieldHandlePtr PlaneMoveManipulatorBase::editHandleBaseTranslation(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfBaseTranslation,
@@ -601,6 +607,9 @@ GetFieldHandlePtr PlaneMoveManipulatorBase::getHandleBaseRotation    (void) cons
 
 EditFieldHandlePtr PlaneMoveManipulatorBase::editHandleBaseRotation   (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfBaseRotation,
@@ -626,6 +635,9 @@ GetFieldHandlePtr PlaneMoveManipulatorBase::getHandleClickPoint      (void) cons
 
 EditFieldHandlePtr PlaneMoveManipulatorBase::editHandleClickPoint     (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfClickPoint,

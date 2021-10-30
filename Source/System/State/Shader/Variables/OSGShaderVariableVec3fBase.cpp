@@ -66,7 +66,7 @@
 #include "OSGShaderVariableVec3fBase.h"
 #include "OSGShaderVariableVec3f.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -399,6 +399,9 @@ GetFieldHandlePtr ShaderVariableVec3fBase::getHandleValue           (void) const
 
 EditFieldHandlePtr ShaderVariableVec3fBase::editHandleValue          (void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfValue,
