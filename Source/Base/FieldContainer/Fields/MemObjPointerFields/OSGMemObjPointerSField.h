@@ -208,6 +208,8 @@ class MemObjPointerSField :
     /*==========================  PRIVATE  ================================*/
 
   private:
+
+    friend class FieldType;
 };
 
 OSG_END_NAMESPACE

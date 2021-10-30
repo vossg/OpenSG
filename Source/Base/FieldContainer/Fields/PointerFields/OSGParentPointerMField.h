@@ -574,6 +574,8 @@ class ParentPointerMField :
 
   private:
 
+    friend class FieldType;
+
     typedef PtrMFieldTraits MFieldTraits;
 };
 

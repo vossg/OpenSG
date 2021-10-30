@@ -755,6 +755,8 @@ class ChildPointerMField :
 
   private:
 
+    friend class FieldType;
+
     ChildPointerMField(const Self &other);
 };
 

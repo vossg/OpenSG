@@ -180,6 +180,8 @@ class ChildPointerSField :
 
   private:
 
+    friend class FieldType;
+
     /*!\brief prohibit default function (move to 'public' if needed) */
     ChildPointerSField(const Self &source);
     /*!\brief prohibit default function (move to 'public' if needed) */

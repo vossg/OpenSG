@@ -201,6 +201,8 @@ class ParentPointerSField :
              enum     FieldType::Class       eFieldClass>
     friend class FieldDescription;
 
+    friend class FieldType;
+
     /*!\brief prohibit default function (move to 'public' if needed) */
     ParentPointerSField(const ParentPointerSField &source);
     /*!\brief prohibit default function (move to 'public' if needed) */

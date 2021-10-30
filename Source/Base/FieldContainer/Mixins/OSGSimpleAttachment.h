@@ -64,8 +64,10 @@ class SimpleAttachment : public Attachment
     typedef          Attachment                        Inherited;
     typedef          Attachment                        ParentContainer;
 
+    typedef Inherited               ::TypeObject       TypeObject;
+
     typedef          AttachmentDescT                   SimpleDesc;
-    typedef typename SimpleDesc::FieldTypeT            StoredFieldType;
+    typedef typename SimpleDesc     ::FieldTypeT       StoredFieldType;
     typedef typename StoredFieldType::ArgumentType     ArgumentType;
 
     typedef          SimpleAttachment<AttachmentDescT> Self;
@@ -80,7 +82,6 @@ class SimpleAttachment : public Attachment
 
   protected:
 
-    typedef Inherited::TypeObject TypeObject;
     typedef TypeObject::InitPhase InitPhase;
 
     /*! \nohierarchy */
