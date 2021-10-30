@@ -580,6 +580,8 @@ void PCF2ShadowMapHandler::createColorMapFBO(RenderAction *a,
 void PCF2ShadowMapHandler::createShadowFactorMapFBO(RenderAction *a,
                                                     DrawEnv      *pEnv)
 {
+    using boost::placeholders::_1;
+
     _activeFactorMap = 0;
 
     const ShadowStageData::LightStore  &vLights      =

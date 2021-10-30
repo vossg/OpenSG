@@ -48,7 +48,7 @@
 #include "OSGShaderProgram.h"
 #include "OSGGLFuncProtos.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -514,6 +514,11 @@ ShaderProgram::~ShaderProgram(void)
 
 void ShaderProgram::onCreate(const ShaderProgram *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(source);
 
     // ignore prototypes.

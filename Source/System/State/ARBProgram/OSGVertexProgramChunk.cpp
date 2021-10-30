@@ -43,7 +43,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -110,6 +110,11 @@ VertexProgramChunk::~VertexProgramChunk(void)
 
 void VertexProgramChunk::onCreate(const VertexProgramChunk *chunk)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(chunk); 
 
     if(GlobalSystemState == Startup)

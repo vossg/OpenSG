@@ -42,7 +42,7 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -169,6 +169,8 @@ void
 MaterialDrawable::onCreateAspect(const MaterialDrawable *createAspect,
                                  const MaterialDrawable *source       )
 {
+    using boost::placeholders::_1;
+
     Inherited::onCreateAspect(createAspect, source);
 
     _drawFunc = boost::bind(&MaterialDrawable::drawPrimitives, this, _1);

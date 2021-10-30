@@ -290,6 +290,9 @@ void MapCacheHandlerMixin<Desc>::dump(      UInt32    uiIndent,
 template <class Desc> inline
 EditFieldHandlePtr MapCacheHandlerMixin<Desc>::editHandleMapCache(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     typename MapCacheField::EditHandlePtr returnValue(
         new  typename MapCacheField::EditHandle(
              &_fMapCache,

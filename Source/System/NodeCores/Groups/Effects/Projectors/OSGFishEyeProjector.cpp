@@ -394,6 +394,8 @@ FishEyeProjector::~FishEyeProjector(void)
 
 Action::ResultE FishEyeProjector::renderEnter(Action *action)
 {
+    using boost::placeholders::_1;
+
     static Matrix transforms[] = 
         { 
             // left

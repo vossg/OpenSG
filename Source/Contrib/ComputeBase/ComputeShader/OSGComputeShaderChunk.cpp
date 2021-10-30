@@ -51,7 +51,7 @@
 #include "OSGShaderVariables.h"
 #include "OSGConceptPropertyChecks.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -315,6 +315,11 @@ ComputeShaderChunk::~ComputeShaderChunk(void)
 
 void ComputeShaderChunk::onCreate(const ComputeShaderChunk *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(source);
 
     // ignore prototypes.

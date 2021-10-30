@@ -600,6 +600,8 @@ void ShadowTreeHandler::configureShadowMaps(void)
 
 void ShadowTreeHandler::setupDrawCombineMap2(Action  *pAction)
 {
+    using boost::placeholders::_1;
+
     RenderAction *a = dynamic_cast<RenderAction *>(pAction);
     
     _pStage->pushPartition(a,
@@ -703,6 +705,8 @@ void ShadowTreeHandler::doDrawCombineMap2(DrawEnv *pEnv)
 
 void ShadowTreeHandler::setupDrawCombineMap1(Action  *pAction)
 {
+    using boost::placeholders::_1;
+
     RenderAction *a = dynamic_cast<RenderAction *>(pAction);
     
     _pStage->pushPartition(a,

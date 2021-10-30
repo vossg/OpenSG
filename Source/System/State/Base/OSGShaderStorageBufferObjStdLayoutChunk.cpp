@@ -43,7 +43,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -193,6 +193,11 @@ void ShaderStorageBufferObjStdLayoutChunk::changed(ConstFieldMaskArg whichField,
 
 void ShaderStorageBufferObjStdLayoutChunk::onCreate(const ShaderStorageBufferObjStdLayoutChunk *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(source);
 
     if(GlobalSystemState == Startup)

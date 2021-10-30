@@ -77,6 +77,9 @@ void ComputeElementHandlerMixin<ParentT>::setData(
     Int32                iDataSlotId,
     HardwareContext     *pContext   )
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     HardwareContextData *pStoredData = 
         pContext->template getData<HardwareContextData *>(this->_iDataSlotId);
 

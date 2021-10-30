@@ -54,7 +54,7 @@ OSG_USING_NAMESPACE
     \ingroup GrpSystemFileIO
 */
 
-const Char8 *VRMLSceneFileType::_suffixA[] =  { "wrl", "wrz" };
+const Char8 *VRMLSceneFileType::_suffixA[] =  { "wrl", "wrz", "x3dv", "vrml" };
 
 VRMLSceneFileType VRMLSceneFileType::_the(_suffixA,
                                           sizeof(_suffixA),

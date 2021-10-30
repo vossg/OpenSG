@@ -215,6 +215,9 @@ template<class DataSlotHandlerT> inline
 void TraversalValidationHandlerMixin<ParentT>::clearDestroyedFunctorFor(
     DataSlotHandlerT *pHandler)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     this->subDestroyedFunctor(boost::bind(&DataSlotHandlerT::clearData,
                                             pHandler,
                                            _1,

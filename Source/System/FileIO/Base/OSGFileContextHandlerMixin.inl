@@ -47,6 +47,9 @@ void FileContextHandlerMixin<ParentT, ContainerT>::initMethod(
     if(ePhase == Inherited::TypeObject::SystemPost)
     {
 #ifdef WIN32
+        using boost::placeholders::_1;
+        using boost::placeholders::_2;
+
         typedef OSGSceneFileType::PostLoadingDispatcher<
                   ContainerT> PLDOSGSceneItem;
 

@@ -448,6 +448,8 @@ SimpleSHLChunkTransitPtr FogStage::generateFogFragmentProgram(void)
 
 Action::ResultE FogStage::renderEnter(Action *action)
 {
+    using boost::placeholders::_1;
+
     RenderAction *a = dynamic_cast<RenderAction *>(action);
 
     a->disableDefaultPartition();

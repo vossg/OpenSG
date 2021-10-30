@@ -133,6 +133,8 @@ HDRStage::~HDRStage(void)
 
 Action::ResultE HDRStage::renderEnter(Action *action)
 {
+    using boost::placeholders::_1;
+
     RenderAction *a = dynamic_cast<RenderAction *>(action);
 
     a->disableDefaultPartition();

@@ -117,6 +117,10 @@ void CSMLogger::dump(      UInt32    ,
 
 void CSMLogger::postOSGLoading(FileContextAttachment * const pContext)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
         MFContainersType::const_iterator cIt  = _mfContainers.begin();
         MFContainersType::const_iterator cEnd = _mfContainers.end  ();
 

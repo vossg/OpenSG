@@ -90,7 +90,7 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 #include "OSGGL.h"
@@ -298,6 +298,11 @@ void FrameBufferObject::initMethod(InitPhase ePhase)
 
 void FrameBufferObject::onCreate(const FrameBufferObject *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     if(GlobalSystemState == Startup)
         return;
 

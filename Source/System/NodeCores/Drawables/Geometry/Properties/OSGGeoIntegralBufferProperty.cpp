@@ -103,6 +103,11 @@ GeoIntegralBufferProperty::~GeoIntegralBufferProperty(void)
 void GeoIntegralBufferProperty::onCreate(
     const GeoIntegralBufferProperty *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(source);
 
     if(GlobalSystemState == Startup)

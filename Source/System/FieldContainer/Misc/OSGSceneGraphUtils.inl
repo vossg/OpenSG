@@ -88,6 +88,8 @@ template<class CoreT> inline
 void collectCoresByType(Node                 *pRoot, 
                         std::vector<CoreT *> &result)
 {
+    using boost::placeholders::_1;
+
     CoreCollector<CoreT> oCoreColl(result);
 
     traverse(pRoot, boost::bind(&CoreCollector<CoreT>::travEnter,

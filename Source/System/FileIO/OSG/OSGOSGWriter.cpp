@@ -47,7 +47,7 @@
 #include "OSGAttachment.h"
 #include "OSGNameAttachment.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_USING_NAMESPACE
 
@@ -219,6 +219,8 @@ void OSGWriter::visitContainer(FieldContainer * const pFC)
 
 void OSGWriter::visitField(GetFieldHandlePtr hF)
 {
+    using boost::placeholders::_1;
+
     if(hF->isValid() == false)
     {
         return;

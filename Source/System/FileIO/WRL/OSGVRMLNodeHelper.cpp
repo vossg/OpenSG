@@ -4389,6 +4389,82 @@ VRMLNodeHelperFactoryBase::RegisterHelper VRMLInlineHelper::_regHelper(
 
 
 
+//---------------------------------------------------------------------------
+//  Class
+//---------------------------------------------------------------------------
+
+VRMLNodeHelper *VRMLMatrixTransformHelper::create(void)
+{
+    return new VRMLMatrixTransformHelper();
+}
+
+/*-------------------------------------------------------------------------*/
+/*                            Constructors                                 */
+
+VRMLMatrixTransformHelper::VRMLMatrixTransformHelper(void) :
+    Inherited()
+{
+}
+
+/*-------------------------------------------------------------------------*/
+/*                             Destructor                                  */
+
+VRMLMatrixTransformHelper::~VRMLMatrixTransformHelper(void)
+{
+}
+
+/*-------------------------------------------------------------------------*/
+/*                               Helper                                    */
+
+void VRMLMatrixTransformHelper::init(const Char8 *szName)
+{
+    Inherited::init(szName);
+
+#ifdef OSG_DEBUG_VRML
+    indentLog(getIndent(), PINFO);
+    PINFO << "MatrixTransformHelper::init : " << szName << std::endl;
+#endif
+
+    _pNodeProto     = Node     ::create();
+    _pNodeCoreProto = Transform::create();
+
+    _pGenAttProto   = VRMLGenericAtt::createLocal(FCLocal::Cluster);
+    _pGenAttProto->setInternal(true);
+}
+
+/*-------------------------------------------------------------------------*/
+/*                               Field                                     */
+
+void VRMLMatrixTransformHelper::endNode(FieldContainer *pFC)
+{
+    Node *pNode = dynamic_cast<Node *>(pFC);
+
+    if(pNode != NULL)
+    {
+        Transform *pTransform = dynamic_cast<Transform *>(pNode->getCore());
+
+        if(pTransform != NULL)
+        {
+            pTransform->editMatrix().transpose();
+        }
+    }
+}
+
+/*-------------------------------------------------------------------------*/
+/*                                Dump                                     */
+
+void VRMLMatrixTransformHelper::dump(const Char8 *)
+{
+}
+
+
+VRMLNodeHelperFactoryBase::RegisterHelper VRMLMatrixTransformHelper::_regHelper(
+    &VRMLMatrixTransformHelper::create,
+    "MatrixTransform",
+    NULL);
+
+
+
 
 //---------------------------------------------------------------------------
 //  Class

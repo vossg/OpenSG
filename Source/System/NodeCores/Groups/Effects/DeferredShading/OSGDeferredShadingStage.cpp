@@ -706,6 +706,8 @@ void DeferredShadingStage::scheduleGBufferPass(RenderAction *ract)
 
 void DeferredShadingStage::scheduleShadingPass(RenderAction *ract)
 {
+    using boost::placeholders::_1;
+
 #if 0
     RenderPartition *parentPart = ract->getActivePartition    (            );
 #endif

@@ -40,7 +40,7 @@
 #include "OSGShaderCache.h"
 #include "OSGShaderProgramVariableChunk.h"
 
-#include "boost/bind.hpp"
+#include "boost/bind/bind.hpp"
 
 
 OSG_BEGIN_NAMESPACE
@@ -290,6 +290,8 @@ void ShaderCache::addShaderVar(const IdStore                  &vIds,
 
 void ShaderCache::clear(void)
 {
+    using boost::placeholders::_1;
+
 #ifdef OSG_SHC_USE_REF
     ShaderStore::const_iterator sIt  = _vShaderStore.begin();
     ShaderStore::const_iterator sEnd = _vShaderStore.end  ();
@@ -374,6 +376,9 @@ void ShaderCache::dump(void)
 
 void ShaderCache::updateRemoveCallback(ShaderExecutableChunk *pShader)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     if(pShader == NULL)
         return;
 
@@ -456,6 +461,9 @@ void ShaderCache::updateRemoveCallback(ShaderExecutableChunk *pShader)
 
 void ShaderCache::clearShRemoveCallback(ShaderExecutableChunk *pShader)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     if(pShader == NULL)
         return;
 
@@ -516,6 +524,9 @@ void ShaderCache::clearShRemoveCallback(ShaderExecutableChunk *pShader)
 
 void ShaderCache::updateRemoveCallback(ShaderExecutableVarChunk *pVar)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     if(pVar == NULL)
         return;
 
@@ -547,6 +558,9 @@ void ShaderCache::updateRemoveCallback(ShaderExecutableVarChunk *pVar)
 
 void ShaderCache::clearVaRemoveCallback(ShaderExecutableVarChunk *pVar)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     if(pVar == NULL)
         return;
 

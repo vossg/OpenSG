@@ -73,7 +73,7 @@
 #endif
 */
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGBSplineTrimmedSurface.h"
 #include "OSGNurbsPatchSurface.h"
@@ -1843,6 +1843,11 @@ void Surface::dump(            UInt32,
 
 void Surface::onCreate(const Surface *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     // if we're in startup this is the prototype, which shouldn't have an id
     if(GlobalSystemState == Startup)
         return;

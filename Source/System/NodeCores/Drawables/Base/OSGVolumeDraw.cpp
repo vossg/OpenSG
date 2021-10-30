@@ -41,7 +41,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -292,7 +292,8 @@ class VolumeDrawWrapper
                      const BoxVolume         &volume, 
                            Color3f           col   )
     {
-        
+        using boost::placeholders::_1;
+    
         VolumeDrawWrapper * vdw = new VolumeDrawWrapper(volume, 
                                                         col   );
 
@@ -321,6 +322,7 @@ class VolumeDrawWrapper
                      const BoxVolume        &volume, 
                            Color3f           col   )
     {
+        using boost::placeholders::_1;
         
         VolumeDrawWrapper * vdw = new VolumeDrawWrapper(volume, 
                                                         col   );

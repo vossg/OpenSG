@@ -42,7 +42,7 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -230,6 +230,11 @@ Geometry::~Geometry(void)
 
 void Geometry::onCreate(const Geometry *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(source);
 
     // if we're in startup this is the prototype, which shouldn't have an id
@@ -1123,6 +1128,11 @@ void Geometry::changed(ConstFieldMaskArg whichField,
                        BitVector         details)
 {
 #if !defined(OSG_OGL_COREONLY)
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     // Handle change to the display list cache field.
     if(whichField & DlistCacheFieldMask)
     {

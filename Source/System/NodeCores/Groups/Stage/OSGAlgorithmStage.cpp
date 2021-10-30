@@ -120,6 +120,8 @@ void AlgorithmStage::execute(DrawEnv *pDrawEnv)
 
 Action::ResultE AlgorithmStage::renderEnter(Action *action)
 {
+    using boost::placeholders::_1;
+
     RenderAction *a = dynamic_cast<RenderAction *>(action);
 
 

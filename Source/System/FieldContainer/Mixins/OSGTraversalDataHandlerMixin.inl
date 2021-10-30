@@ -52,6 +52,10 @@ void TraversalDataHandlerMixin<ParentT>::setData(
     Int32             iDataSlotId,
     RenderActionBase *pAction)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     TraversalData *pStoredData = 
         pAction->template getData<TraversalData *>(this->_iDataSlotId);
 
@@ -172,6 +176,10 @@ void TraversalDataHandlerMixin<ParentT>::dataDestroyed(
     BitVector       whichField,
     UInt32          origin    )
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     if(whichField == 0x0000)
     {
         this->subChangedFunctor(

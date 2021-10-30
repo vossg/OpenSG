@@ -102,6 +102,11 @@ GeoVectorBufferProperty::~GeoVectorBufferProperty(void)
 
 void GeoVectorBufferProperty::onCreate(const GeoVectorBufferProperty *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(source);
 
     if(GlobalSystemState == Startup)

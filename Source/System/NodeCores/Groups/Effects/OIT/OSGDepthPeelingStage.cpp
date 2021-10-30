@@ -418,6 +418,8 @@ DepthPeelingStage::setupRenderScene(RenderAction* a,
 void
 DepthPeelingStage::setupPostProcess(RenderAction* a, bool isFinal, bool isPing)
 {
+    using boost::placeholders::_1;
+
     this->pushPartition(a,
                         (RenderPartition::CopyWindow      |
                          RenderPartition::CopyViewportSize),

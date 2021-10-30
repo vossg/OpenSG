@@ -259,6 +259,8 @@ void DisplayFilterStage::resizeStageData(DisplayFilterStageData *pData,
 
 Action::ResultE DisplayFilterStage::renderEnter(Action *action)
 {
+    using boost::placeholders::_1;
+
     RenderAction *ract = dynamic_cast<RenderAction *>(action);
 
     if(ract == NULL)

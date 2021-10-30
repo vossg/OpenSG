@@ -42,7 +42,7 @@
 
 #include <set>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 /*! \class OSG::TransformPushGraphOp
     \ingroup GrpSystemNodeCoresDrawablesGeometry
@@ -134,6 +134,8 @@ Action::ResultE TransformPushGraphOp::traverseEnter(Node * const node)
 Action::ResultE TransformPushGraphOp::traverseLeave(
     Node * const node, Action::ResultE res)
 {
+    using boost::placeholders::_1;
+
     if(isInExcludeList(node))
         return Action::Skip;
     

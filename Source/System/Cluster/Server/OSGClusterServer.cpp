@@ -38,7 +38,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 #include "OSGThread.h"
@@ -239,6 +239,9 @@ ClusterServer::~ClusterServer(void)
 
 void ClusterServer::start(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     OSG::FieldContainerType *fct;
 
     // reset conneciton

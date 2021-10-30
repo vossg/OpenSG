@@ -126,6 +126,9 @@ void ChunkListHandlerMixin<Desc>::dump(      UInt32    uiIndent,
 template <class Desc> inline
 EditFieldHandlePtr ChunkListHandlerMixin<Desc>::editHandleChunks(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     typedef ListEditHandle    ChunksEditHandle;
     typedef ListEditHandlePtr ChunksEditHandlePtr;
 

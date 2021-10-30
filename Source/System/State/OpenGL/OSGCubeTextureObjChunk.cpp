@@ -42,7 +42,7 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -118,6 +118,11 @@ void CubeTextureObjChunk::changed(ConstFieldMaskArg whichField,
 
 void CubeTextureObjChunk::onCreate(const CubeTextureObjChunk *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     // skip TextureObjChunk::onCreate
     TextureBaseChunk::onCreate(source);
 

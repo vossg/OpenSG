@@ -43,7 +43,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -196,6 +196,8 @@ FieldContainer *ComplexSceneManager::resolveStatic(
           FieldContainer *pDestContainer,
           Int32           iDestFieldId)
 {
+    using boost::placeholders::_1;
+
     std::vector<FieldContainerUnrecPtr>::const_iterator gIt  = 
         _vStaticGlobals.begin();
 
@@ -264,6 +266,10 @@ FieldContainer *ComplexSceneManager::resolveStatic(
 
 void ComplexSceneManager::addStaticGlobals(const Char8 *szFilename)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     std::string szFilenameResolved = _oPathHandler.findFile(szFilename);
 
     if(szFilenameResolved.empty() == true)
@@ -494,6 +500,10 @@ FieldContainer *ComplexSceneManager::resolve(
 
 void ComplexSceneManager::addGlobals(const std::string &filename)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     if(_sfDrawManager.getValue() == NULL)
     {
         return;
@@ -543,6 +553,10 @@ void ComplexSceneManager::addGlobals(const std::string &filename)
 
 void ComplexSceneManager::addData(const std::string &filename)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     Node *pModelRoot = findNode("ModelRoot");
 
     if(pModelRoot == NULL)
@@ -593,6 +607,8 @@ void ComplexSceneManager::addData(const std::string &filename)
 
 Node *ComplexSceneManager::findNode(const std::string &filename) const
 {
+    using boost::placeholders::_1;
+
     MFGlobalsType::const_iterator gIt  = _mfGlobals.begin();
     MFGlobalsType::const_iterator gEnd = _mfGlobals.end  ();
 
@@ -705,6 +721,8 @@ FieldContainerTransitPtr ComplexSceneManager::readOSGFile(
 FieldContainer *ComplexSceneManager::findNamedComponent(
     const Char8 *szName)
 {
+    using boost::placeholders::_1;
+
     MFGlobalsType::const_iterator gIt  = _mfGlobals.begin();
     MFGlobalsType::const_iterator gEnd = _mfGlobals.end  ();
 
@@ -863,6 +881,10 @@ bool ComplexSceneManager::startFrom(int argc, char **argv)
 
 bool ComplexSceneManager::startUp(std::vector<std::string> &vParams)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     setVBOUsageOnPropertyProtos(true);
 
     scanPreSystem(vParams);

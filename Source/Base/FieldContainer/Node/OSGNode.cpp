@@ -52,7 +52,7 @@
 #include "OSGTypeBasePredicates.h"
 #include "OSGReflexiveContainerTypePredicates.h"
 
-#include "boost/bind.hpp"
+#include "boost/bind/bind.hpp"
 
 #ifdef WIN32 // turn of 'this' : used in base member initializer lits warning
 #pragma warning(disable:4355)
@@ -948,6 +948,8 @@ GetFieldHandlePtr Node::getHandleParent(void) const
 
 EditFieldHandlePtr Node::editHandleCore(void)
 {
+    using boost::placeholders::_1;
+
     SFUnrecChildNodeCorePtr::EditHandlePtr returnValue(
         new SFUnrecChildNodeCorePtr::EditHandle(
              &_sfCore, 
@@ -978,6 +980,8 @@ GetFieldHandlePtr Node::getHandleCore(void) const
 
 EditFieldHandlePtr Node::editHandleChildren(void)
 {
+    using boost::placeholders::_1;
+
     MFUnrecChildNodePtr::EditHandlePtr returnValue(
         new  MFUnrecChildNodePtr::EditHandle(
              &_mfChildren, 

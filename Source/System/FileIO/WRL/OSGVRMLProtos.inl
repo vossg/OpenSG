@@ -1897,6 +1897,32 @@ PROTO Transform [
  endProtoInterface();
  endProto  ();
 
+ beginProto("MatrixTransform");
+ {
+     beginEventInDecl     ("MFNode", Self::OSGsfNode, "addChildren");
+     endEventDecl         ();
+
+     beginEventInDecl     ("MFNode", Self::OSGsfNode, "removeChildren");
+     endEventDecl         ();
+
+     beginExposedFieldDecl("MFNode", Self::OSGmfNode, "children");
+     endExposedFieldDecl  ();
+
+     beginExposedFieldDecl("SFVec3f", Self::OSGsfMatrix, "matrix");
+     addFieldValue        ("1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1");
+     endExposedFieldDecl  ();
+
+     beginFieldDecl       ("SFVec3f", Self::OSGsfVec3f, "bboxCenter");
+     addFieldValue        ("0 0 0");
+     endFieldDecl         ();
+
+     beginFieldDecl       ("SFVec3f", Self::OSGsfVec3f, "bboxSize");
+     addFieldValue        ("-1 -1 -1");
+     endFieldDecl         ();
+ }
+ endProtoInterface();
+ endProto  ();
+
 #if 0
 PROTO Viewpoint [
   eventIn      SFBool     set_bind

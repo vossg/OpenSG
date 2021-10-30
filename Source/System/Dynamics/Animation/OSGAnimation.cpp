@@ -48,7 +48,7 @@
 #include "OSGAnimation.h"
 #include "OSGAnimChannel.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -129,6 +129,10 @@ void Animation::dump(      UInt32    ,
 
 void Animation::setTimeSensor(AnimTimeSensor *value)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     if(_sfTimeSensor.getValue() == value)
         return;
 

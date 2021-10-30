@@ -43,7 +43,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <boost/algorithm/string.hpp>
 #include <boost/range/iterator_range_core.hpp>
 #include <boost/unordered_map.hpp>
@@ -264,6 +264,11 @@ void ShaderStorageBufferObjChunk::changed(ConstFieldMaskArg whichField,
 
 void ShaderStorageBufferObjChunk::onCreate(const ShaderStorageBufferObjChunk *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(source);
 
     if(GlobalSystemState == Startup)

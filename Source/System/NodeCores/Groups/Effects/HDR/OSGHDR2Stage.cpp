@@ -167,6 +167,8 @@ void HDR2Stage::dump(      UInt32    OSG_CHECK_ARG(uiIndent),
 
 Action::ResultE HDR2Stage::renderEnter(Action* action)
 {
+    using boost::placeholders::_1;
+
     RenderAction* a = dynamic_cast<RenderAction*>(action);
 
     a->disableDefaultPartition();

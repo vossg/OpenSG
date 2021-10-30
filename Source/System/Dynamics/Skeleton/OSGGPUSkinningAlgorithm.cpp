@@ -303,6 +303,10 @@ void GPUSkinningAlgorithm::changed(ConstFieldMaskArg whichField,
                             UInt32            origin,
                             BitVector         details)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     if((SkeletonFieldMask & whichField) != 0    &&
        _sfSkeleton.getValue()           != NULL   )
     {
@@ -353,6 +357,10 @@ GPUSkinningAlgorithm::skeletonChanged(FieldContainer    *fc,
 void
 GPUSkinningAlgorithm::resolveLinks(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     if(_sfSkeleton.getValue() != NULL)
     {
         _sfSkeleton.getValue()->subChangedFunctor(boost::bind(

@@ -39,7 +39,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -113,6 +113,10 @@ void Inline::initMethod(InitPhase ePhase)
  
 void Inline::postOSGLoading(FileContextAttachment * const pContext)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     OSG::Char8 *szIgnoreInline = getenv("OSG_IGNORE_INLINE");
 
     if(szIgnoreInline == nullptr)
@@ -312,6 +316,10 @@ void Inline::rootChanged(FieldContainer    *pFC,
 
 void Inline::resolveLinks(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     if(_sfRoot.getValue() != NULL)
     {
         _sfRoot.getValue()->subChangedFunctor(

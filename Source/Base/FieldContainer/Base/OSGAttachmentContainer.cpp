@@ -52,7 +52,7 @@
 #include "OSGNameAttachment.h"
 #include "OSGStringUtils.h"
 
-#include "boost/bind.hpp"
+#include "boost/bind/bind.hpp"
 
 #include "OSGPointerSField.h"
 
@@ -507,6 +507,9 @@ void AttachmentContainer::resolveLinks(void)
 
 EditFieldHandlePtr AttachmentContainer::editHandleAttachments(void) 
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     SFAttachmentObjPtrMap::EditHandlePtr returnValue(
         new  SFAttachmentObjPtrMap::EditHandle(
              &_sfAttachments, 

@@ -41,7 +41,7 @@
 #include "OSGAction.h"
 #include "OSGMaterialDrawable.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 /*! \class OSG::MaterialGroupPushGraphOp
     \ingroup GrpSystemNodeCoresDrawablesGeometry
@@ -125,6 +125,8 @@ Action::ResultE MaterialGroupPushGraphOp::traverseEnter(Node * const node)
 Action::ResultE MaterialGroupPushGraphOp::traverseLeave(
     Node * const node, Action::ResultE res)
 {
+    using boost::placeholders::_1;
+
     if(isInExcludeList(node))
         return Action::Skip;
     

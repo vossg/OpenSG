@@ -90,7 +90,7 @@
 #endif
 
 #include "OSGRenderAction.h"
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include "OSGTextureBuffer.h"
 
 //--------------------------------------------------------------------
@@ -285,6 +285,8 @@ void ShadowStage::onDestroy(UInt32 uiContainerId)
 
 Action::ResultE ShadowStage::renderEnter(Action *action)
 {
+    using boost::placeholders::_1;
+
     Action::ResultE returnValue = Action::Continue;
 
     RenderAction *ract = dynamic_cast<RenderAction *>(action);
@@ -737,6 +739,8 @@ Action::ResultE ShadowStage::findTransparent(ShadowStageData *       pData,
 void ShadowStage::checkLights(RenderActionBase *action,
                               ShadowStageData  *pData )
 {
+    using boost::placeholders::_1;
+
           ShadowStageData::LightStore  &vLights      = pData->getLights();
     const ShadowStageData::LightStore  &vOldLights   = pData->getOldLights();
           ShadowStageData::LStateStore &vLightStates = pData->getLightStates();

@@ -574,6 +574,11 @@ template <class GeoPropertyDesc> inline
 void TypedGeoVectorProperty<GeoPropertyDesc>::onCreate(
     const Self *source)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+    using boost::placeholders::_4;
+
     Inherited::onCreate(source);
     
     editSField(UsageFieldMask);

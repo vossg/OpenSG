@@ -53,7 +53,7 @@
 // debug only
 #include "OSGFieldContainerUtils.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <boost/cast.hpp>
 
 OSG_BEGIN_NAMESPACE
@@ -131,6 +131,9 @@ void Skeleton::changed(ConstFieldMaskArg whichField,
 Action::ResultE
 Skeleton::renderEnter(Action *action, NodeCore *parent)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     if(_jointMatricesValid == false)
     {
         BaseSkeletonJoint::JointTraverser jt(this);
@@ -161,6 +164,9 @@ Skeleton::renderLeave(Action *action, NodeCore *parent)
 Action::ResultE
 Skeleton::intersectEnter(Action *action, NodeCore *parent)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     if(_jointMatricesValid == false)
     {
         BaseSkeletonJoint::JointTraverser jt(this);
@@ -220,6 +226,8 @@ void Skeleton::dump(      UInt32    ,
 void
 Skeleton::updateJoints(void)
 {
+    using boost::placeholders::_1;
+
     editMFJoints             ()->clear();
     editMFParentJoints       ()->clear();
     editMFJointMatrices      ()->clear();

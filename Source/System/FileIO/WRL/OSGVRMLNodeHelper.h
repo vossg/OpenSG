@@ -1978,6 +1978,96 @@ class OSG_FILEIO_DLLMAPPING VRMLSwitchHelper : public VRMLNodeHelper
     void operator =(const VRMLSwitchHelper &source);
 };
 
+
+//---------------------------------------------------------------------------
+//  Class
+//---------------------------------------------------------------------------
+
+/*! \brief VRML Group Helper
+    \ingroup GrpFileIOWRLObj
+    \nohierarchy
+ */
+
+class OSG_FILEIO_DLLMAPPING VRMLMatrixTransformHelper : public VRMLNodeHelper
+{
+    /*==========================  PUBLIC  =================================*/
+  public :
+
+    /*---------------------------------------------------------------------*/
+    /*! \name                   Destructor                                 */
+    /*! \{                                                                 */
+
+    virtual ~VRMLMatrixTransformHelper(void);
+
+    /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name                    Helper                                    */
+    /*! \{                                                                 */
+
+    virtual void init(const Char8 *szName);
+
+    /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name                     Field                                    */
+    /*! \{                                                                 */
+
+    /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name                     Node                                     */
+    /*! \{                                                                 */
+
+    virtual void endNode(FieldContainer *pFC);
+
+    /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name                        Dump                                  */
+    /*! \{                                                                 */
+
+    virtual void dump(const Char8 *szNodeName);
+
+    /*! \}                                                                 */
+    /*=========================  PROTECTED  ===============================*/
+
+  protected:
+
+    /*---------------------------------------------------------------------*/
+    /*! \name                   Destructor                                 */
+    /*! \{                                                                 */
+
+    static VRMLNodeHelper *create(void);
+
+    /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name                   Constructors                               */
+    /*! \{                                                                 */
+
+    VRMLMatrixTransformHelper(void);
+
+    /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name                      Member                                  */
+    /*! \{                                                                 */
+
+    /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name                        Dump                                  */
+    /*! \{                                                                 */
+
+    static VRMLNodeHelperFactoryBase::RegisterHelper _regHelper;
+
+    /*! \}                                                                 */
+    /*==========================  PRIVATE  ================================*/
+
+  private:
+
+    typedef VRMLNodeHelper Inherited;
+
+    /*!\brief prohibit default function (move to 'public' if needed) */
+    VRMLMatrixTransformHelper(const VRMLMatrixTransformHelper &source);
+    /*!\brief prohibit default function (move to 'public' if needed) */
+    void operator =(const VRMLMatrixTransformHelper &source);
+};
+
 OSG_END_NAMESPACE
 
 #include "OSGVRMLNodeHelper.inl"

@@ -116,6 +116,8 @@ SkeletonSkinningAlgorithm::adjustVolume(Volume &volume)
 Action::ResultE
 SkeletonSkinningAlgorithm::renderEnter(Action *action)
 {
+    using boost::placeholders::_1;
+
     Action::ResultE  res  = Action::Continue;
     RenderAction    *ract =
         boost::polymorphic_downcast<RenderAction *>(action);

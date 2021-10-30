@@ -109,6 +109,8 @@ VarianceShadowMapHandler::~VarianceShadowMapHandler(void)
 void VarianceShadowMapHandler::createShadowMapsFBO(RenderAction *a,
                                                    DrawEnv      *pEnv)
 {
+    using boost::placeholders::_1;
+
     UInt32  mSize = _pStage->getMapSize();
 
     if(mSize > 2048)

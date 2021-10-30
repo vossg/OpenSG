@@ -399,6 +399,9 @@ void CPUSkinningAlgorithm::changed(ConstFieldMaskArg whichField,
                                    UInt32            origin,
                                    BitVector         details)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     if((SkeletonFieldMask & whichField) != 0    &&
        _sfSkeleton.getValue()           != NULL   )
     {
@@ -779,6 +782,8 @@ void CPUSkinningAlgorithm::renderGeometry(
     SkinnedGeometry           *skinGeo,
     CPUSkinningDataAttachment *data   )
 {
+    using boost::placeholders::_1;
+
     Material      *pMat      = ract->getMaterial();
     PrimeMaterial *pPrimeMat = NULL;
 
@@ -913,6 +918,9 @@ void CPUSkinningAlgorithm::skeletonChanged(FieldContainer    *fc,
 
 void CPUSkinningAlgorithm::resolveLinks(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     if(_sfSkeleton.getValue() != NULL)
     {
         _sfSkeleton.getValue()->subChangedFunctor(boost::bind(

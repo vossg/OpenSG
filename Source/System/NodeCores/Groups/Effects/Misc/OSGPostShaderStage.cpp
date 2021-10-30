@@ -371,6 +371,8 @@ void PostShaderStage::postProcess(DrawEnv *pEnv)
 
 Action::ResultE PostShaderStage::renderEnter(Action *action)
 {
+    using boost::placeholders::_1;
+
     RenderAction *a = dynamic_cast<RenderAction *>(action);
 
     a->disableDefaultPartition();

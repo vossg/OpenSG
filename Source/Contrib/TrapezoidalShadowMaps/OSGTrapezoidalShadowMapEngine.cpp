@@ -511,6 +511,8 @@ void TrapezoidalShadowMapEngine::handleEnter(
 void TrapezoidalShadowMapEngine::handlePointLightEnter(
     PointLight *pointL, RenderAction *ract, TSMEngineData *data)
 {
+    using boost::placeholders::_1;
+
     RenderPartition *parentPart = ract->getActivePartition();
     
     Matrix  matEyeToWorld(parentPart->getCameraToWorld());  

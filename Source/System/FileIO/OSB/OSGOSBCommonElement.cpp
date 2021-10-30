@@ -773,6 +773,8 @@ OSBCommonElement::preWritePtrMultiField(const UInt32 fieldId)
  */
 void OSBCommonElement::preWriteAttachmentMapField(const UInt32 fieldId)
 {
+    using boost::placeholders::_1;
+
     OSG_OSB_LOG(("OSBCommonElement::preWriteAttachmentMapField: "
                  "fieldId: [%u]\n", fieldId));
 
@@ -799,6 +801,8 @@ void OSBCommonElement::preWriteAttachmentMapField(const UInt32 fieldId)
  */
 void OSBCommonElement::preWriteMapField(const UInt32 fieldId)
 {
+    using boost::placeholders::_1;
+
     OSG_OSB_LOG(("OSBCommonElement::preWriteMapField: "
                  "fieldId: [%u]\n", fieldId));
 

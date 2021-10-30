@@ -906,6 +906,8 @@ void OSGLoader::addRoute(const Char8  *szOutNodename,
                          const Char8  *szInNodename,
                          const Char8  *szInFieldname)
 {
+    using boost::placeholders::_1;
+
     if(szOutNodename == NULL || szOutFieldname == NULL ||
        szInNodename  == NULL || szInFieldname  == NULL  )
     {

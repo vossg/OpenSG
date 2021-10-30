@@ -43,7 +43,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -199,6 +199,10 @@ void ConnectorAttachment::removeConnections(      BitVector       bSrcMask,
                                             const FieldContainer *pDst,
                                                   BitVector       bDstMask)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     ConnectionStore::iterator       cIt  = _vConnections.begin();
     ConnectionStore::const_iterator cEnd = _vConnections.end  ();
 
@@ -271,6 +275,10 @@ void ConnectorAttachment::countConnections(ConnectionCount &mCount)
 bool ConnectorAttachment::unlinkParent(FieldContainer * const pParent,
                                        UInt16           const parentFieldId)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     pParent->subChangedFunctor(
         boost::bind(&ConnectorAttachment::processChanged, 
                     this, 
@@ -283,6 +291,10 @@ bool ConnectorAttachment::unlinkParent(FieldContainer * const pParent,
 
 void ConnectorAttachment::resolveLinks(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     for(UInt32 i = 0; i < _vConnections.size(); ++i)
     {
         FieldContainer *pDst = _vConnections[i]->getDst();
@@ -311,6 +323,10 @@ void ConnectorAttachment::resolveLinks(void)
 void addConnector(OSG::AttachmentContainer *pContainer,
                   OSG::BasicFieldConnector *pConn     )
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     if(pContainer == NULL)
     {
         FFATAL(("addConnector: no container?!?"));

@@ -42,7 +42,7 @@
 #include <sstream>
 #include <fstream>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include "OSGConfig.h"
 
@@ -80,6 +80,10 @@ void VisitSubTree::changed(ConstFieldMaskArg whichField,
 //! Set the value of the VisitSubTree::_sfSubTreeRoot field.
 void VisitSubTree::setSubTreeRoot(Node * const value)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+    using boost::placeholders::_3;
+
     editSField(SubTreeRootFieldMask);
 
     if(_sfSubTreeRoot.getValue() != NULL)

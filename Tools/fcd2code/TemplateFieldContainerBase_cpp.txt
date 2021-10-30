@@ -84,7 +84,7 @@
 #include "OSG@!nsFilePrefix!@@!Classname!@Base.h"
 #include "OSG@!nsFilePrefix!@@!Classname!@.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1156,6 +1156,8 @@ GetFieldHandlePtr  @!Classname!@Base::getHandleDecoratee (void) const
 
 EditFieldHandlePtr @!Classname!@Base::editHandleDecoratee(void)
 {
+    using boost::placeholders::_1;
+
     SFUnrec@!Parent!@Ptr::EditHandlePtr returnValue(
         new SFUnrec@!Parent!@Ptr::EditHandle(
             &_sfDecoratee,
@@ -1195,6 +1197,9 @@ GetFieldHandlePtr @!Classname!@Base::getHandle@!field.Name:15!@ (void) const
 
 EditFieldHandlePtr @!Classname!@Base::editHandle@!field.Name:15!@(void)
 {
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
  @@if !field.noAccess
   @@if !field.isParentField
     @!field.CARD!@@!field.FieldTypeCaps!@::EditHandlePtr returnValue(
