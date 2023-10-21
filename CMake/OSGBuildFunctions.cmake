@@ -783,6 +783,16 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
         LIST(REMOVE_ITEM LOCAL_SRC ${LOCAL_UNITTEST_SRC})
     ENDIF(LOCAL_UNITTEST_SRC)
 
+    # filter test sources out of library sources
+    IF(LOCAL_TEST_SRC)
+        LIST(REMOVE_ITEM LOCAL_SRC ${LOCAL_TEST_SRC})
+    ENDIF(LOCAL_TEST_SRC)
+
+    # filter test sources out of library sources
+    IF(LOCAL_APP_SRC)
+        LIST(REMOVE_ITEM LOCAL_SRC ${LOCAL_APP_SRC})
+    ENDIF(LOCAL_APP_SRC)
+
     # store file lists
     FILE(APPEND ${${PROJECT_NAME}_BUILD_FILE} "# File lists for ${DIRNAME}\n\n")
 

@@ -61,11 +61,7 @@ RefCountStore osgAtomicExchangeAndAdd(RefCountStore *pValue,
                                       RefCountStore  rcDelta)
 {
 //    return boost::detail::atomic_exchange_and_add(pValue, rcDelta);
-#if defined(__clang__) || (__GNUC__ >= 4 && __GNUC_MINOR__ >=2)
     return __sync_fetch_and_add(pValue, rcDelta);
-#else
-# error unsupported platform/compiler
-#endif
 }
 
 /*! \ingroup GrpBaseBaseAtomicFn
@@ -107,13 +103,9 @@ void osgAtomicDecrement(RefCountStore *pValue)
 inline
 void osgSpinLock(UInt32 *pLock, UInt32 uiMask)
 {
-#if defined(__clang__) || (__GNUC__ >= 4 && __GNUC_MINOR__ >=2)
     for(UInt32 tmpVal = __sync_fetch_and_or(pLock, uiMask); 
         (tmpVal & uiMask) != 0x0000; 
         tmpVal = __sync_fetch_and_or(pLock, uiMask)) ;
-#else
-# error unsupported platform/compiler
-#endif
 }
 
 /*! \ingroup GrpBaseBaseAtomicFn
@@ -122,11 +114,7 @@ void osgSpinLock(UInt32 *pLock, UInt32 uiMask)
 inline
 void osgSpinLockRelease(UInt32 *pLock, UInt32 uiInvMask)
 {
-#if defined(__clang__) || (__GNUC__ >= 4 && __GNUC_MINOR__ >=2)
     __sync_and_and_fetch(pLock, uiInvMask);
-#else
-# error unsupported platform/compiler
-#endif
 }
 
 #else // !defined(WIN32)
