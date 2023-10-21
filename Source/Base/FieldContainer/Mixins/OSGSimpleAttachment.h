@@ -302,9 +302,10 @@ class SimpleAttachment : public Attachment
     /*==========================  PRIVATE  ================================*/
 
   private:
-
+  
     friend class FieldContainer;
-    
+    friend       TypeObject;
+  
     /*! \brief prohibit default functions (move to 'public' if needed) */
     SimpleAttachment &operator =(const SimpleAttachment &source);
 

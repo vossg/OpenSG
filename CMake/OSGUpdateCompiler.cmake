@@ -1,13 +1,23 @@
 
 MESSAGE(STATUS "Update Compiler Settings")
 
-IF(OSG_ENABLE_C++17)
+IF(OSG_ENABLE_C++20)
+    SET(CMAKE_CXX_STANDARD 20)
+ELSEIF(OSG_ENABLE_C++17)
     SET(CMAKE_CXX_STANDARD 17)
 ELSEIF(OSG_ENABLE_C++14)
     SET(CMAKE_CXX_STANDARD 14)
 ELSE()
     SET(CMAKE_CXX_STANDARD 11)
 ENDIF()
+
+MESSAGE(STATUS "===========================================================")
+MESSAGE(STATUS "===========================================================")
+
+MESSAGE(STATUS "-${OSG_ENABLE_C++11}-${OSG_ENABLE_C++14}-${OSG_ENABLE_C++17}-${OSG_ENABLE_C++20} -> ${CMAKE_CXX_STANDARD}")
+
+MESSAGE(STATUS "===========================================================")
+MESSAGE(STATUS "===========================================================")
 
 IF(CMAKE_COMPILER_IS_GNUCC)
 
@@ -306,7 +316,15 @@ IF(CMAKE_COMPILER_IS_GNUCC)
         STRING(REGEX REPLACE "\n$" "" OSG_GCC_VERSION "${GCC_VERSION}")
         MESSAGE("GOT gcc ${OSG_GCC_VERSION}")
 
-        IF(OSG_ENABLE_C++17 AND OSG_GCC_VERSION LESS_EQUAL 8)
+        SET(_OSG_ADD_FSLIB FALSE)
+
+        IF(OSG_GCC_VERSION LESS_EQUAL 8)
+          IF(OSG_ENABLE_C++17 OR OSG_ENABLE_C++20)
+            SET(_OSG_ADD_FSLIB TRUE)
+          ENDIF()
+        ENDIF()      
+
+        IF(_OSG_ADD_FSLIB)
           LIST(FIND OSG_GLOBAL_DEP_LIBS CXX_FS_LIB _CPPFSFOUND)
   
           IF(_CPPFSFOUND EQUAL -1)

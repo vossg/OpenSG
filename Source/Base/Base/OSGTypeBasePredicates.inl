@@ -73,8 +73,15 @@ bool TypePredicates::typeDerivedFromAll(      InIteratorTypeT  begin,
                                               InIteratorTypeT  end,
                                         const OSG::TypeBase   &type  )
 {
+    auto fNotBaseOf = 
+        [ oCmp = TypePredicates::IsBaseOf(type) ](const TypeBase *pTestType)
+        {
+            return !oCmp(pTestType);
+        };
+
     return (std::find_if(begin, end,
-                         std::not1(TypePredicates::IsBaseOf(type))) == end);
+                         /*std::not1(TypePredicates::IsBaseOf(type))*/
+                         fNotBaseOf) == end);
 }
 
 /*! Tests if \a type is a base type any of the types in the sequence
@@ -112,9 +119,16 @@ bool TypePredicates::typeBaseOfAll(      InIteratorTypeT  begin,
                                          InIteratorTypeT  end,
                                    const OSG::TypeBase   &type  )
 {
+    auto fNotDerivedFrom = 
+        [ oCmp = TypePredicates::IsDerivedFrom(type) ](const TypeBase *pTestType)
+        {
+            return !oCmp(pTestType);
+        };
+
     return (
         std::find_if(begin, end,
-                     std::not1(TypePredicates::IsDerivedFrom(type))) == end);
+                     /*std::not1(TypePredicates::IsDerivedFrom(type))*/
+                     fNotDerivedFrom(type)) == end);
 }
 
 OSG_END_NAMESPACE

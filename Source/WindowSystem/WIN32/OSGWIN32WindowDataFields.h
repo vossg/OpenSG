@@ -76,19 +76,19 @@ struct FieldTraits<HWND> :
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWWIN32_DLLMAPPING
-    static DataType &getType (void);
+    static       DataType &getType (void);
 
-    static char     *getSName(void) { return "SFHWND"; }
-    static char     *getMName(void) { return "MFHWND"; }
+    static const char     *getSName(void) { return "SFHWND"; }
+    static const char     *getMName(void) { return "MFHWND"; }
 
-    static bool      getFromCString(      HWND          &,
-                                    const Char8         *)
+    static       bool      getFromCString(      HWND          &,
+                                          const Char8         *)
     {
         return true;
     }
 
-    static void      putToString  (const      HWND   &,
-                                         std::string &outStr)
+    static       void      putToString   (const      HWND   &,
+                                                std::string &outStr)
     {
         outStr.assign("HWND");
     }
@@ -108,19 +108,19 @@ struct FieldTraits<HDC> :
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWWIN32_DLLMAPPING
-    static DataType &getType (void);
+    static       DataType &getType (void);
 
-    static char     *getSName(void) { return "SFHDC"; }
-    static char     *getMName(void) { return "MFHDC"; }
+    static const char     *getSName(void) { return "SFHDC"; }
+    static const char     *getMName(void) { return "MFHDC"; }
 
-    static bool      getFromCString(      HDC           &,
-                                    const Char8         *)
+    static       bool      getFromCString(      HDC           &,
+                                          const Char8         *)
     {
         return true;
     }
 
-    static void      putToString  (const      HDC    &,
-                                         std::string &outStr)
+    static       void      putToString   (const      HDC    &,
+                                                std::string &outStr)
     {
         outStr.assign("HDC");
     }
@@ -140,19 +140,19 @@ struct FieldTraits<HGLRC> :
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWWIN32_DLLMAPPING
-    static DataType &getType (void);
+    static       DataType &getType (void);
 
-    static char     *getSName(void) { return "SFHGLRC"; }
-    static char     *getMName(void) { return "MFHGLRC"; }
+    static const char     *getSName(void) { return "SFHGLRC"; }
+    static const char     *getMName(void) { return "MFHGLRC"; }
 
-    static bool      getFromCString(      HGLRC         &,
-                                    const Char8         *)
+    static       bool      getFromCString(      HGLRC         &,
+                                          const Char8         *)
     {
         return true;
     }
 
-    static void      putToString  (const       HGLRC &,
-                                         std::string &outStr)
+    static       void      putToString   (const       HGLRC &,
+                                                std::string &outStr)
     {
         outStr.assign("HGLRC");
     }
@@ -172,19 +172,19 @@ struct FieldTraits<PAINTSTRUCT> :
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWWIN32_DLLMAPPING
-    static DataType &getType (void);
+    static       DataType &getType (void);
 
-    static char     *getSName(void) { return "SFPAINTSTRUCT"; }
-    static char     *getMName(void) { return "MFPAINTSTRUCT"; }
+    static const char     *getSName(void) { return "SFPAINTSTRUCT"; }
+    static const char     *getMName(void) { return "MFPAINTSTRUCT"; }
 
-    static bool      getFromCString(      PAINTSTRUCT   &,
-                                    const Char8         *)
+    static       bool      getFromCString(      PAINTSTRUCT   &,
+                                          const Char8         *)
     {
         return true;
     }
 
-    static void      putToString  (const      PAINTSTRUCT &,
-                                         std::string      &outStr)
+    static       void      putToString   (const      PAINTSTRUCT &,
+                                                std::string      &outStr)
     {
         outStr.assign("PAINTSTRUCT");
     }

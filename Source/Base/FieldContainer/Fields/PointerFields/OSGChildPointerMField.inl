@@ -525,7 +525,8 @@ bool ChildMFieldConstIterator<PtrTypeT,
                               iNamespace    >::operator == (
                                   const Self &rhs) const
 {
-    return *(static_cast<const Inherited *>(this)) == rhs;
+    return *(static_cast<const Inherited *>(this)) == 
+             static_cast<const Inherited &>(rhs );
 }
 
 template <class PtrTypeT, typename RefCountPolicy, Int32 iNamespace> inline

@@ -190,6 +190,13 @@ OutStream &OutStream::operator<<(std::__iom_t3 __f)
 # endif
 #else
 template <class Arg> inline
+OutStream &OutStream::operator<<(std::_Smanip<Arg> __f)
+{
+    (*_pBaseStream) << __f;
+    
+    return *this;
+}
+template <class Arg> inline
 OutStream &OutStream::operator<<(std::_Smanip<Arg> &__f)
 {
     (*_pBaseStream) << __f;

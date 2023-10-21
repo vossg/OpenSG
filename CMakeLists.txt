@@ -113,6 +113,7 @@ OSG_OPTION   (OSG_USE_OSG2_NAMESPACE ""    OFF      )
 OSG_OPTION   (OSG_ENABLE_C++11       ""    OFF      )
 OSG_OPTION   (OSG_ENABLE_C++14       ""    OFF      )
 OSG_OPTION   (OSG_ENABLE_C++17       ""    ON       )
+OSG_OPTION   (OSG_ENABLE_C++20       ""    OFF      )
 
 OSG_OPTION(OSG_ENABLE_BOOST_C++11_STD_ATOMICS "" ON )
 
@@ -365,6 +366,17 @@ IF(OSG_EXTERNAL_PREPARE)
   LIST(REMOVE_DUPLICATES OSG_EXTERNAL_PREPARE)
 ENDIF()
 
+##############################################################################
+# DEPENDENCIES RESET
+##############################################################################
+
+# Global include/library dirs, libs and definitions
+SET(OSG_GLOBAL_DEP_INCDIR "")
+SET(OSG_SYSTEM_DEP_INCDIR "")
+SET(OSG_GLOBAL_DEP_LIBDIR "")
+SET(OSG_GLOBAL_DEP_LIBS   "")
+SET(OSG_GLOBAL_DEP_DEFS   "")
+
 ##############
 # Compiler
 ##############
@@ -469,13 +481,6 @@ OSG_CHECK_INSTALL()
 ##############################################################################
 # DEPENDENCIES
 ##############################################################################
-
-# Global include/library dirs, libs and definitions
-SET(OSG_GLOBAL_DEP_INCDIR "")
-SET(OSG_SYSTEM_DEP_INCDIR "")
-SET(OSG_GLOBAL_DEP_LIBDIR "")
-SET(OSG_GLOBAL_DEP_LIBS   "")
-SET(OSG_GLOBAL_DEP_DEFS   "")
 
 IF(NOT WIN32)
   SET(OSG_SUPPORT_INC_SUBDIR "/OpenSG")

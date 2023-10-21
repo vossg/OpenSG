@@ -21,6 +21,7 @@ MACRO(OSG_COMMON_OPTIONS)
   OPTION(OSG_ENABLE_FMA                     ""    OFF            )
   OPTION(OSG_ENABLE_ABI6                    ""    OFF            )
   OPTION(OSG_ENABLE_C++17                   ""    ON             )
+  OPTION(OSG_ENABLE_C++20                   ""    OFF            )
   OPTION(OSG_ENABLE_BOOST_C++11_STD_ATOMICS ""    ON             )
 
 ENDMACRO()
