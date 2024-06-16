@@ -187,9 +187,9 @@ class OSG_SYSTEM_DLLMAPPING TextureBaseChunk : public TextureBaseChunkBase
 
     // class. Used for indexing in State
     // protected to give CubeTextureChunk access
-    static StateChunkClass _class;
+    static StateChunkClass     _class;
 
-    static volatile UInt16 _uiChunkCounter;
+    static std::atomic<UInt16> _uiChunkCounter;
 
     /*==========================  PRIVATE  ================================*/
 

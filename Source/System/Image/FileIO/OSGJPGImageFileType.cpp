@@ -70,11 +70,15 @@ extern "C"
 #    define OSG_JPG_ARG(ARG) ARG
 #endif
 
+namespace {
+
 // Static Class Varible implementations:
 static const OSG::Char8 *suffixArray[] = { "jpg", 
                                            "jpeg", 
                                            "jpe", 
                                            "jfif" };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

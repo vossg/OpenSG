@@ -63,10 +63,14 @@
 #include <climits>
 #endif
 
+namespace {
+
 static const OSG::Char8 *suffixArray[] = 
 {
     "rgb", "rgba", "sgi", "bw", "int", "inta"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

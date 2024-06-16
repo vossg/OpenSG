@@ -199,9 +199,9 @@ class SimpleReusePool<Int32, PoolTag, LockPolicy>
     /*! \name                      Member                                  */
     /*! \{                                                                 */
 
-    volatile Int32             _currentValue;
-             LockPolicy        _oLockPolicy;
-             std::deque<Int32> _vFreeValueStore;
+    std::atomic<Int32> _currentValue;
+         LockPolicy    _oLockPolicy;
+    std::deque<Int32>  _vFreeValueStore;
 
     /*! \}                                                                 */
     /*==========================  PRIVATE  ================================*/

@@ -127,7 +127,7 @@ VecLightsT initialize_lights()         // helper to create lights
     return lights;
 }
 
-VecLightsT lights = initialize_lights();    // the lights
+VecLightsT vLights = initialize_lights();    // the lights
 
 /*---- Material -----------------------------------------------------------*/
 
@@ -425,6 +425,8 @@ Example::~Example()
 
 void Example::initialize(int argc, char *argv[])
 {
+    using boost::placeholders::_1;
+
     _pExample = this;
 
     //

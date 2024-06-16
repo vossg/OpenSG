@@ -255,6 +255,8 @@ doPrintGeoInfoFunc(OSG::Node *node)
 void
 doPrintGeoInfo(OSG::Node *pScene)
 {
+    using boost::placeholders::_1;
+
     OSG::traverse(pScene,
                   boost::bind(&doPrintGeoInfoFunc, _1));
 }
@@ -277,6 +279,8 @@ doMakeSingleIndexedFunc(OSG::Node *node)
 void
 doMakeSingleIndexed(OSG::Node *pScene)
 {
+    using boost::placeholders::_1;
+
     OSG::Time start = OSG::getSystemTime();
 
     OSG::traverse(pScene,
@@ -304,6 +308,8 @@ doMakeIndexedTrianglesFunc(OSG::Node *node)
 void
 doMakeIndexedTriangles(OSG::Node *pScene)
 {
+    using boost::placeholders::_1;
+
     OSG::Time start = OSG::getSystemTime();
 
     OSG::traverse(pScene,
@@ -331,6 +337,8 @@ doMakeOptimizedIndexFunc(OSG::Node *node)
 void
 doMakeOptimizedIndex(OSG::Node *pScene)
 {
+    using boost::placeholders::_1;
+
     OSG::Time start = OSG::getSystemTime();
 
     OSG::traverse(pScene,
@@ -358,6 +366,8 @@ doMakeOptimizedPropertiesFunc(OSG::Node *node)
 void
 doMakeOptimizedProperties(OSG::Node *pScene)
 {
+    using boost::placeholders::_1;
+
     OSG::Time start = OSG::getSystemTime();
 
     OSG::traverse(pScene,

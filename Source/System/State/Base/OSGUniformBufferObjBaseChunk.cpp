@@ -69,11 +69,12 @@ OSG_BEGIN_NAMESPACE
  *                           Class variables                               *
 \***************************************************************************/
 
-StateChunkClass UniformBufferObjBaseChunk::_class("UniformBuffer",
-                                                  osgMaxUniformBufferBindings,  // number if slots
-                                                  30);                          // priority
+StateChunkClass     UniformBufferObjBaseChunk::_class         (
+    "UniformBuffer",
+    osgMaxUniformBufferBindings,  // number if slots
+    30                         ); // priority
 
-volatile UInt16 UniformBufferObjBaseChunk::_uiChunkCounter = 1;
+std::atomic<UInt16> UniformBufferObjBaseChunk::_uiChunkCounter(1);
 
 /***************************************************************************\
  *                           Class methods                                 *
@@ -138,7 +139,7 @@ void UniformBufferObjBaseChunk::onCreate(const UniformBufferObjBaseChunk *source
     if(GlobalSystemState == Startup)
         return;
 
-    _uiChunkId = _uiChunkCounter++;
+    _uiChunkId = _uiChunkCounter.fetch_add(1);
 }
 
 void UniformBufferObjBaseChunk::onCreateAspect(const UniformBufferObjBaseChunk *createAspect,

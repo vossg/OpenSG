@@ -243,6 +243,18 @@ UInt16 ParentMFieldConstIterator<StorageTypeT>::getParentFieldPos(void) const
 }
 
 template <class StorageTypeT> inline 
+ParentMFieldConstIterator<StorageTypeT> &
+    ParentMFieldConstIterator<StorageTypeT>::operator =(
+        const ParentMFieldConstIterator &rhs)
+{
+    this->Inherited::operator =(rhs);
+
+    _posIt = rhs._posIt;
+
+    return *this;
+}
+
+template <class StorageTypeT> inline 
 const typename ParentMFieldConstIterator<StorageTypeT>::Inherited &
     ParentMFieldConstIterator<StorageTypeT>::ptrBase(void) const
 {

@@ -69,6 +69,15 @@ OSG_BEGIN_NAMESPACE
     // nothing to do
 }
 
+IOFileTypeBase::IOOption &
+    IOFileTypeBase::IOOption::operator =(const IOOption &rhs)
+{
+    optName  = rhs.optName;
+    optValue = rhs.optValue;
+    
+    return *this;
+}
+
 /*-------------------------------------------------------------------------*/
 /* IOFileTypeBase                                                          */
 /*-------------------------------------------------------------------------*/

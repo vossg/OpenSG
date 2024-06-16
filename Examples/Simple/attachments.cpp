@@ -63,6 +63,8 @@ class NamedNodeFinder
 
     OSG::Node *operator() (OSG::Node *root, const std::string &name)
     {
+        using boost::placeholders::_1;
+
         _name  = name;
         _found = NULL;
         

@@ -354,6 +354,14 @@ class ChildMFieldConstIterator :
     bool operator != (const iterator        &rhs  ) const;
 
     /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name Operators                                                    */
+    /*! \{                                                                 */
+
+    const ChildMFieldConstIterator &operator =(
+        const ChildMFieldConstIterator &rhs);
+
+    /*! \}                                                                 */
     /*=========================  PROTECTED  ===============================*/
 
   protected:

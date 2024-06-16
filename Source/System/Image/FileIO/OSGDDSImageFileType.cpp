@@ -67,11 +67,15 @@
 #include <climits>
 #endif
 
+namespace {
+
 // Static Class Varible implementations:
 static const OSG::Char8 *suffixArray[] =
 {
     "dds"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

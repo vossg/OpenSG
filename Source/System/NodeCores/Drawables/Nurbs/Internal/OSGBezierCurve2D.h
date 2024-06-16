@@ -108,6 +108,8 @@ class OSG_DRAWABLE_DLLMAPPING BezierCurve2D
     unsigned int computeNonratApproximationDegree(double eps) const;
 
     inline void optimizeDegree(void);
+
+    const BezierCurve2D &operator =(const BezierCurve2D &b);
 };
 
 OSG_END_NAMESPACE

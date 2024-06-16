@@ -165,7 +165,7 @@ class OSG_SYSTEM_DLLMAPPING MaterialChunk : public MaterialChunkBase
 
     /*! \}                                                                 */
 
-    static volatile UInt16 _uiChunkCounter;
+    static std::atomic<UInt16> _uiChunkCounter;
 
     /*==========================  PRIVATE  ================================*/
 

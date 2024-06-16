@@ -142,13 +142,12 @@ class OSG_SYSTEM_DLLMAPPING ShaderExecutableChunk :
 
   protected:
 
-    static       UInt32 _extSHL;
+    static       UInt32              _extSHL;
+    static       std::atomic<UInt16> _uiChunkCounter;
 
-    static const UInt32 UsesAttribs = 0x0001;
+    static const UInt32               UsesAttribs = 0x0001;
 
     /*---------------------------------------------------------------------*/
-
-    static volatile UInt16 _uiChunkCounter;
 
     UInt16 _uiChunkId;
 

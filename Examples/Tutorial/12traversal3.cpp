@@ -241,6 +241,9 @@ void keyboard(unsigned char k, int x, int y)
     break;
     
     case 's':
+    {
+        using boost::placeholders::_1;
+
         std::cout << "Splitting Graph now...";
         
         counter c;
@@ -262,6 +265,7 @@ void keyboard(unsigned char k, int x, int y)
         
         std::cout << "Number of nodes after splitting: " << c.getCount()
                   << std::endl;
+    }
     break;
 
     }

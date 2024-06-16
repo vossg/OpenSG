@@ -145,8 +145,8 @@ class OSG_SYSTEM_DLLMAPPING ShaderStorageBufferObjBaseChunk : public ShaderStora
 
     static void initMethod(InitPhase ePhase);
 
-    static StateChunkClass _class;
-    static volatile UInt16 _uiChunkCounter;
+    static StateChunkClass     _class;
+    static std::atomic<UInt16> _uiChunkCounter;
 
     /*! \}                                                                 */
     /*==========================  PRIVATE  ================================*/

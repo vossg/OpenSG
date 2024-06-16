@@ -60,11 +60,12 @@ OSG_BEGIN_NAMESPACE
  *                           Class variables                               *
 \***************************************************************************/
 
-StateChunkClass ShaderProgramVariableChunk::_class("ShaderProgramVariable", 
-                                                   1, 
-                                                   5);
+StateChunkClass     ShaderProgramVariableChunk::_class         (
+    "ShaderProgramVariable", 
+    1, 
+    5                      );
 
-volatile UInt16 ShaderProgramVariableChunk::_uiChunkCounter = 1;
+std::atomic<UInt16> ShaderProgramVariableChunk::_uiChunkCounter(1);
 
 ShaderProgramVariableChunk::VarIdPool *
     ShaderProgramVariableChunk::_pVarIdPool = NULL;
@@ -133,7 +134,7 @@ void ShaderProgramVariableChunk::onCreate(
         return;
     }
 
-    _uiChunkId = _uiChunkCounter++;
+    _uiChunkId = _uiChunkCounter.fetch_add(1);
     _uiVarId   = _pVarIdPool->create();
 
     markFieldsClusterLocal(ParentsFieldMask);

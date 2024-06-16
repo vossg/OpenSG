@@ -67,11 +67,15 @@
 #    define OSG_GDAL_ARG(ARG) ARG
 #endif
 
+namespace {
+
 // Static Class Varible implementations:
 static const OSG::Char8 *suffixArray[] = 
 {
     "gtif", "gtiff", "hdf4", "adf"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

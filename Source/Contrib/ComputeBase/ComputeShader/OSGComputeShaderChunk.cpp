@@ -64,9 +64,9 @@ OSG_BEGIN_NAMESPACE
  *                           Class variables                               *
 \***************************************************************************/
 
-StateChunkClass ComputeShaderChunk::_class("ShaderProgram", 1, 40);
+StateChunkClass     ComputeShaderChunk::_class         ("ShaderProgram", 1, 40);
 
-volatile UInt16 ComputeShaderChunk::_uiChunkCounter = 1;
+std::atomic<UInt16> ComputeShaderChunk::_uiChunkCounter(1                     );
 
 UInt32 ComputeShaderChunk::_arbComputeShader = Window::invalidExtensionID;
 

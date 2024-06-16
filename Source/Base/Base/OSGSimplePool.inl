@@ -40,7 +40,7 @@ OSG_BEGIN_NAMESPACE
 
 template <class PoolTag, class LockPolicy> inline
 SimplePool<Int32, PoolTag, LockPolicy>::SimplePool(void) :
-    Inherited    ( ),
+     Inherited   ( ),
     _currentValue(0)
 {
     initializeValue();
@@ -54,11 +54,7 @@ SimplePool<Int32, PoolTag, LockPolicy>::~SimplePool(void)
 template <class PoolTag, class LockPolicy> inline
 Int32 SimplePool<Int32, PoolTag, LockPolicy>::create(void)
 {
-    Int32 returnValue = _currentValue;
-
-    ++_currentValue;
-
-    return returnValue;
+    return _currentValue.fetch_add(1);
 }
 
 #ifndef OSG_DOXYGEN_IGNORE_RECOG_PROBS
@@ -71,7 +67,7 @@ void SimplePool<Int32, PoolTag, LockPolicy>::release(Int32 uiVal)
 template <class PoolTag, class LockPolicy> inline
 void SimplePool<Int32, PoolTag, LockPolicy>::printStat(void)
 {
-    fprintf(stderr, "\n%d\n", _currentValue);
+    fprintf(stderr, "\n%d\n", _currentValue.load());
 }
 #endif
 

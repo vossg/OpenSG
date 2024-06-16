@@ -556,6 +556,20 @@ bool ChildMFieldConstIterator<PtrTypeT,
     return ! (*this == rhs);
 }
 
+template <class PtrTypeT, typename RefCountPolicy, Int32 iNamespace> inline
+const ChildMFieldConstIterator<PtrTypeT,
+                               RefCountPolicy,
+                               iNamespace    > &
+    ChildMFieldConstIterator<PtrTypeT,
+                             RefCountPolicy,
+                             iNamespace    >::operator =(
+        const ChildMFieldConstIterator &rhs)
+{
+    this->Inherited::operator =(rhs);
+
+    return *this;
+}
+
 
 /*-------------------------------------------------------------------------*/
 /* Base                                                                    */

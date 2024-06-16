@@ -52,10 +52,14 @@
 
 #include "OSGMTDImageFileType.h"
 
+namespace {
+
 static const OSG::Char8 *suffixArray[] = 
 {
     "mtd","opensg","opensgImage"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

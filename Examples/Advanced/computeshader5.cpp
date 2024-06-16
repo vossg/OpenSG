@@ -232,10 +232,14 @@ void update_attractors(VecAttractorsT& attractors)
     }
 }
 
+namespace {
+
 VecPositionsT  positions  = initialize_positions (particle_count);
 VecVelocitiesT velocities = initialize_velocities(particle_count);
 VecLifetimesT  lifetimes  = initialize_lifetimes (particle_count);
 VecAttractorsT attractors = initialize_attractors(attractor_count);
+
+}
 
 OSG::GeoPnt4fPropertyTransitPtr create_position_property(const VecPositionsT& positions)
 {

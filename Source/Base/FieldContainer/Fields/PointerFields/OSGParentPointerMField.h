@@ -156,6 +156,13 @@ class ParentMFieldConstIterator : protected StorageTypeT::PtrStoreConstItType
     UInt16     getParentFieldPos(void) const;
     
     /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name Operators                                                    */
+    /*! \{                                                                 */
+
+    ParentMFieldConstIterator &operator =(const ParentMFieldConstIterator &rhs);
+
+    /*! \}                                                                 */
     /*========================  PROTECTED  ================================*/
 
   protected:

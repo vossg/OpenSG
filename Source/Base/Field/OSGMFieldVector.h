@@ -90,7 +90,7 @@ class MFieldVector : public std::vector<Tp, Alloc>
   private:
 
     typedef MFieldVector<Tp, Alloc> Self;
-    
+
   public:
 
     typedef typename Inherited::allocator_type allocator_type;
@@ -120,6 +120,8 @@ class MFieldVector : public std::vector<Tp, Alloc>
 #endif /* __STL_MEMBER_TEMPLATES */
 
     ~MFieldVector();
+
+    void operator =(const MFieldVector<Tp, Alloc>& __x);
 
     void shareValues (Self &other, bool bDeleteOld);
     void resolveShare(void                        );

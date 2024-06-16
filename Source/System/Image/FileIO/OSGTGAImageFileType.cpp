@@ -57,10 +57,14 @@
 #endif
 #include "OSGLog.h"
 
+namespace {
+
 static const OSG::Char8 *suffixArray[] = 
 {
     "tga", "targa"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

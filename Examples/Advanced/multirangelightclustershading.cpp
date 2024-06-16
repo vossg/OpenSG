@@ -324,7 +324,7 @@ class SmoothCubicBezierSpline
 public:
     typedef std::vector<OSG::Pnt3f> points_t;
 
-    SmoothCubicBezierSpline(const points_t& knots);
+    SmoothCubicBezierSpline(const points_t& knots_);
     SmoothCubicBezierSpline(const SmoothCubicBezierSpline& rhs);
 
     SmoothCubicBezierSpline& operator=(const SmoothCubicBezierSpline& rhs);
@@ -512,7 +512,7 @@ OSG::GeometryTransitPtr makeSpotGeo(
 
         OSG::Pnt3f pR = pT + l_cone * ey;
 
-        OSG::Real32 d_phi = (j & 0) ?  delta_phi : delta_phi + delta_phi/2.f;
+//        OSG::Real32 d_phi = (j & 0) ?  delta_phi : delta_phi + delta_phi/2.f;
 
         OSG::Real32 phi = (j & 0) ?  0 : delta_phi/2.f;
 
@@ -579,9 +579,9 @@ OSG::GeometryTransitPtr makeSpotGeo(
                 phi += delta_phi;
                 (*pvecCurr)[i] = pj + r_cone * OSG::Vec3f(OSG::osgSin(phi), 0, -OSG::osgCos(phi));
 
-                OSG::Vec3f n = (*pvecCurr)[i] - pT;
-                n.normalize();
-                vecNormals[i] = n;
+                OSG::Vec3f n0 = (*pvecCurr)[i] - pT;
+                n0.normalize();
+                vecNormals[i] = n0;
             }
 
             (*pvecCurr)[sides-1] = (*pvecCurr)[0];
@@ -691,29 +691,29 @@ OSG::GeometryTransitPtr makeCinemaGeo(
 
         for (OSG::UInt32 i = 0; i < sides-1; ++i)
         {
-            OSG::Real32 c = OSG::osgCos(phi);
-            OSG::Real32 s = OSG::osgSin(phi);
+            OSG::Real32 c  = OSG::osgCos(phi);
+            OSG::Real32 s  = OSG::osgSin(phi);
 
-            OSG::Real32 x = A * OSG::osgSgn(c) * OSG::osgPow(OSG::osgAbs(c), two_inv_r);
-            OSG::Real32 z = B * OSG::osgSgn(s) * OSG::osgPow(OSG::osgAbs(s), two_inv_r);
+            OSG::Real32 x  = A * OSG::osgSgn(c) * OSG::osgPow(OSG::osgAbs(c), two_inv_r);
+            OSG::Real32 z  = B * OSG::osgSgn(s) * OSG::osgPow(OSG::osgAbs(s), two_inv_r);
 
-            OSG::Pnt3f  p = pR + OSG::Vec3f(
-                                       x * cos_theta - z * sin_theta, 
-                                       0,
-                                       x * sin_theta + z * cos_theta
-                                    );
+            OSG::Pnt3f  p0 = pR + OSG::Vec3f(
+                                        x * cos_theta - z * sin_theta, 
+                                        0,
+                                        x * sin_theta + z * cos_theta
+                                     );
 
-            OSG::Real32 L = p.subZero().length();
+            OSG::Real32 L = p0.subZero().length();
 
             if (L > h)
             {
-                OSG::Vec3f v = p.subZero();
+                OSG::Vec3f v = p0.subZero();
                 v.normalize();
                 v *= h;
-                p = v.addToZero();
+                p0 = v.addToZero();
             }
 
-            (*pvecCurr)[i] = p;
+            (*pvecCurr)[i] = p0;
 
             phi += delta_phi;
         }
@@ -809,29 +809,29 @@ OSG::GeometryTransitPtr makeCinemaGeo(
 
         for (OSG::UInt32 i = 0; i < sides-1; ++i)
         {
-            OSG::Real32 c = OSG::osgCos(phi);
-            OSG::Real32 s = OSG::osgSin(phi);
+            OSG::Real32 c  = OSG::osgCos(phi);
+            OSG::Real32 s  = OSG::osgSin(phi);
 
-            OSG::Real32 x = A * OSG::osgSgn(c) * OSG::osgPow(OSG::osgAbs(c), two_inv_r);
-            OSG::Real32 z = B * OSG::osgSgn(s) * OSG::osgPow(OSG::osgAbs(s), two_inv_r);
+            OSG::Real32 x  = A * OSG::osgSgn(c) * OSG::osgPow(OSG::osgAbs(c), two_inv_r);
+            OSG::Real32 z  = B * OSG::osgSgn(s) * OSG::osgPow(OSG::osgAbs(s), two_inv_r);
 
-            OSG::Pnt3f  p = pE + OSG::Vec3f(
-                                        x * cos_theta - z * sin_theta, 
-                                        0,
-                                        x * sin_theta + z * cos_theta
-                                    );
+            OSG::Pnt3f  p0 = pE + OSG::Vec3f(
+                                         x * cos_theta - z * sin_theta, 
+                                         0,
+                                         x * sin_theta + z * cos_theta
+                                     );
 
-            OSG::Real32 L = p.subZero().length();
+            OSG::Real32 L = p0.subZero().length();
 
             if (L > h)
             {
-                OSG::Vec3f v = p.subZero();
+                OSG::Vec3f v = p0.subZero();
                 v.normalize();
                 v *= h;
-                p = v.addToZero();
+                p0 = v.addToZero();
             }
 
-            (*pvecCurr)[i] = p;
+            (*pvecCurr)[i] = p0;
 
             phi += delta_phi;
         }
@@ -891,12 +891,12 @@ OSG::GeometryTransitPtr makeCinemaGeo(
                 OSG::Vec3f v0;
                 OSG::Vec3f v1;
 
-                if (i < OSG::Int32(sides-1))
+                if (i < OSG::Int32(sides)-1)
                 {
                     v0 = (*pvecCurr)[i]   - pE;
                     v1 = (*pvecCurr)[i+1] - pE;
                 }
-                else if (i == sides-1)
+                else if (i == OSG::Int32(sides)-1)
                 {
                     v0 = (*pvecCurr)[0] - pE;
                     v1 = (*pvecCurr)[1] - pE;
@@ -1611,38 +1611,38 @@ void fill_test_data_light_grid_image(
 
     VecImageDataT imageData(sz, std::make_pair(0,0));
 
-    const OSG::UInt32 uiHeatMapColor0  =  0; // Black
-    const OSG::UInt32 uiHeatMapColor1  =  1; // DarkSlateGray
-    const OSG::UInt32 uiHeatMapColor2  =  2; // Navy
-    const OSG::UInt32 uiHeatMapColor3  =  3; // Blue
-    const OSG::UInt32 uiHeatMapColor4  =  4; // RoyalBlue
-    const OSG::UInt32 uiHeatMapColor5  =  5; // DodgerBlue
-    const OSG::UInt32 uiHeatMapColor6  =  6; // DeepSkyBlue
-    const OSG::UInt32 uiHeatMapColor7  =  7; // Turquoise
-    const OSG::UInt32 uiHeatMapColor8  =  8; // Aquamarine
-    const OSG::UInt32 uiHeatMapColor9  =  9; // Cyan
-    const OSG::UInt32 uiHeatMapColor10 = 10; // DarkGreen
-    const OSG::UInt32 uiHeatMapColor11 = 11; // Green
-    const OSG::UInt32 uiHeatMapColor12 = 12; // SpringGreen
-    const OSG::UInt32 uiHeatMapColor13 = 13; // Lime
-    const OSG::UInt32 uiHeatMapColor14 = 14; // Chartreuse
-    const OSG::UInt32 uiHeatMapColor15 = 15; // GreenYellow
-    const OSG::UInt32 uiHeatMapColor16 = 16; // Yellow
-    const OSG::UInt32 uiHeatMapColor17 = 17; // Gold
-    const OSG::UInt32 uiHeatMapColor18 = 18; // DarkOrange
-    const OSG::UInt32 uiHeatMapColor19 = 19; // OrangeRed
-    const OSG::UInt32 uiHeatMapColor20 = 20; // Red
-    const OSG::UInt32 uiHeatMapColor21 = 21; // FireBrick
-    const OSG::UInt32 uiHeatMapColor22 = 22; // DarkRed
-    const OSG::UInt32 uiHeatMapColor23 = 23; // BlueViolet
-    const OSG::UInt32 uiHeatMapColor24 = 24; // Fuchsia
-    const OSG::UInt32 uiHeatMapColor25 = 25; // DeepPink
-    const OSG::UInt32 uiHeatMapColor26 = 26; // HotPink
-    const OSG::UInt32 uiHeatMapColor27 = 27; // Pink
-    const OSG::UInt32 uiHeatMapColor28 = 28; // MistyRose
-    const OSG::UInt32 uiHeatMapColor29 = 29; // LavenderBlush
-    const OSG::UInt32 uiHeatMapColor30 = 30; // Seashell
-    const OSG::UInt32 uiHeatMapColor31 = 31; // White
+    const OSG::UInt32 uiHeatMapColor0  OSG_UNUSED =  0; // Black
+    const OSG::UInt32 uiHeatMapColor1  OSG_UNUSED =  1; // DarkSlateGray
+    const OSG::UInt32 uiHeatMapColor2  OSG_UNUSED =  2; // Navy
+    const OSG::UInt32 uiHeatMapColor3  OSG_UNUSED =  3; // Blue
+    const OSG::UInt32 uiHeatMapColor4  OSG_UNUSED =  4; // RoyalBlue
+    const OSG::UInt32 uiHeatMapColor5  OSG_UNUSED =  5; // DodgerBlue
+    const OSG::UInt32 uiHeatMapColor6  OSG_UNUSED =  6; // DeepSkyBlue
+    const OSG::UInt32 uiHeatMapColor7  OSG_UNUSED =  7; // Turquoise
+    const OSG::UInt32 uiHeatMapColor8  OSG_UNUSED =  8; // Aquamarine
+    const OSG::UInt32 uiHeatMapColor9  OSG_UNUSED =  9; // Cyan
+    const OSG::UInt32 uiHeatMapColor10 OSG_UNUSED = 10; // DarkGreen
+    const OSG::UInt32 uiHeatMapColor11 OSG_UNUSED = 11; // Green
+    const OSG::UInt32 uiHeatMapColor12 OSG_UNUSED = 12; // SpringGreen
+    const OSG::UInt32 uiHeatMapColor13 OSG_UNUSED = 13; // Lime
+    const OSG::UInt32 uiHeatMapColor14 OSG_UNUSED = 14; // Chartreuse
+    const OSG::UInt32 uiHeatMapColor15 OSG_UNUSED = 15; // GreenYellow
+    const OSG::UInt32 uiHeatMapColor16 OSG_UNUSED = 16; // Yellow
+    const OSG::UInt32 uiHeatMapColor17 OSG_UNUSED = 17; // Gold
+    const OSG::UInt32 uiHeatMapColor18 OSG_UNUSED = 18; // DarkOrange
+    const OSG::UInt32 uiHeatMapColor19 OSG_UNUSED = 19; // OrangeRed
+    const OSG::UInt32 uiHeatMapColor20 OSG_UNUSED = 20; // Red
+    const OSG::UInt32 uiHeatMapColor21 OSG_UNUSED = 21; // FireBrick
+    const OSG::UInt32 uiHeatMapColor22 OSG_UNUSED = 22; // DarkRed
+    const OSG::UInt32 uiHeatMapColor23 OSG_UNUSED = 23; // BlueViolet
+    const OSG::UInt32 uiHeatMapColor24 OSG_UNUSED = 24; // Fuchsia
+    const OSG::UInt32 uiHeatMapColor25 OSG_UNUSED = 25; // DeepPink
+    const OSG::UInt32 uiHeatMapColor26 OSG_UNUSED = 26; // HotPink
+    const OSG::UInt32 uiHeatMapColor27 OSG_UNUSED = 27; // Pink
+    const OSG::UInt32 uiHeatMapColor28 OSG_UNUSED = 28; // MistyRose
+    const OSG::UInt32 uiHeatMapColor29 OSG_UNUSED = 29; // LavenderBlush
+    const OSG::UInt32 uiHeatMapColor30 OSG_UNUSED = 30; // Seashell
+    const OSG::UInt32 uiHeatMapColor31 OSG_UNUSED = 31; // White
 
     for (OSG::UInt32 k = 0; k < dimensions.z(); ++k)
     {
@@ -1805,8 +1805,8 @@ bool isOrthographicCamera(OSG::Camera* cam, OSG::UInt32 width, OSG::UInt32 heigh
         OSG::Matrix matProjection;
         matrixCam->getProjection(matProjection, width, height);
 
-        float m32 = matProjection[2][3];
-        float m33 = matProjection[3][3];
+//        float m32 = matProjection[2][3];
+//        float m33 = matProjection[3][3];
 
         if (matProjection[2][3] == 0.f && matProjection[3][3] == 1.f)
             return true;
@@ -1885,7 +1885,7 @@ void calc_persp_frustums_cpu(
 
     frustums.resize(numHorizontalTiles * numVerticalTiles);
 
-    OSG::Pnt3f pEye = (0.f, 0.f, 0.f);    // eye position in view space
+    OSG::Pnt3f pEye(0.f, 0.f, 0.f);    // eye position in view space
 
     OSG::Pnt3f pnts_w[4];
     OSG::Pnt4f pnts_n[4];
@@ -2183,6 +2183,8 @@ bool ConeInsideFrustum(const Cone& cone, const Frustum& frustum, OSG::Real32 zNe
     return result;
 }
 
+namespace {
+
 //
 // simple light data structure
 //
@@ -2280,6 +2282,8 @@ Light::~Light()
 {
     beacon    = NULL;
     transform = NULL;
+}
+
 }
 
 void transformToEyeSpace(
@@ -2804,6 +2808,7 @@ void cullLights(
     //
     // Test
     //
+#if 0
     for (std::size_t l = 0; l < vecAffectedLights.size(); ++l)
     {
         std::size_t light_index = vecAffectedLights[l];
@@ -2813,6 +2818,7 @@ void cullLights(
         //globalTestData.value16[light_index] = light.position_es.subZero();
         //globalTestData.value17[light_index] = light.direction_es;
     }
+#endif
 
     for (OSG::UInt32 k = 0; k < dimensions.z(); ++k)
     {
@@ -3567,8 +3573,10 @@ void updateDispatchConfigFrustums(
     const OSG::Vec4u& viewport,
     const OSG::Matrix& matInvProjection)
 {
+#if 0
     OSG::Real32 x_v = static_cast<OSG::Real32>(viewport[0]);
     OSG::Real32 y_v = static_cast<OSG::Real32>(viewport[1]);
+#endif
     OSG::Real32 w   = static_cast<OSG::Real32>(viewport[2]);
     OSG::Real32 h   = static_cast<OSG::Real32>(viewport[3]);
 
@@ -3600,8 +3608,10 @@ void updateDispatchConfigCullLights(
     const OSG::Vec4u& viewport,
     const OSG::Matrix& matViewing)
 {
+#if 0
     OSG::Real32 x_v = static_cast<OSG::Real32>(viewport[0]);
     OSG::Real32 y_v = static_cast<OSG::Real32>(viewport[1]);
+#endif
     OSG::Real32 w   = static_cast<OSG::Real32>(viewport[2]);
     OSG::Real32 h   = static_cast<OSG::Real32>(viewport[3]);
 
@@ -4325,8 +4335,8 @@ void visualize_frustum_cpu(
         matEyeFromWorld.invert();   // now matWorldFromEye
         OSG::Matrix& matWorldFromEye = matEyeFromWorld;
 
-        std::size_t sz = frustums.size();
-        std::size_t  i = 0;
+//        std::size_t sz = frustums.size();
+//        std::size_t  i = 0;
         BOOST_FOREACH(const Frustum& frustum, frustums)
         {
             OSG::Plane nearPlane(OSG::Vec3f(0, 0, 1), -zNear);
@@ -5528,7 +5538,7 @@ OSG::Matrix CubicBezierCurve::frame(OSG::Real32 t, bool position_only) const
         OSG::Vec3f N = normal(t);
         OSG::Vec3f B = binormal(t);
     
-
+#if 0
         OSG::Real32 lT = T.length();
         OSG::Real32 lN = N.length();
         OSG::Real32 lB = B.length();
@@ -5536,6 +5546,7 @@ OSG::Matrix CubicBezierCurve::frame(OSG::Real32 t, bool position_only) const
         OSG::Real32 v1 = T.dot(N);
         OSG::Real32 v2 = T.dot(B);
         OSG::Real32 v3 = N.dot(B);
+#endif
 
         OSG_ASSERT(OSG::osgAbs(T.length() - 1.f) < OSG::Eps);
         OSG_ASSERT(OSG::osgAbs(N.length() - 1.f) < OSG::Eps);
@@ -5600,8 +5611,8 @@ OSG::Vec3f CubicBezierCurve::thr_devivative(OSG::Real32 t) const
 }
 
 
-SmoothCubicBezierSpline::SmoothCubicBezierSpline(const std::vector<OSG::Pnt3f>& knots)
-: knots(knots)
+SmoothCubicBezierSpline::SmoothCubicBezierSpline(const std::vector<OSG::Pnt3f>& knots_)
+: knots(knots_)
 {
     OSG_ASSERT(knots.size() > 3);
 
@@ -5797,8 +5808,10 @@ OSG::Real32 SmoothCubicBezierSpline::t_(OSG::Real32 t, std::size_t idx) const
     OSG::Real32 t0 = 0.f;
     OSG::Real32 t1 = 1.f;
 
-    if (idx > 0) t0 = intervals[idx-1];
-                 t1 = intervals[idx];
+    if(idx > 0) 
+        t0 = intervals[idx-1];
+    
+    t1 = intervals[idx];
 
     OSG::Real32 r = (t - t0) / (t1 - t0);
 

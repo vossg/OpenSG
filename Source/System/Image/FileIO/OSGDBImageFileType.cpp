@@ -58,11 +58,15 @@
 #    define OSG_DB_ARG(ARG) ARG
 #endif
 
+namespace {
+
 // Static Class Varible implementations:
 static const OSG::Char8 *suffixArray[] = 
 {
     "db"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

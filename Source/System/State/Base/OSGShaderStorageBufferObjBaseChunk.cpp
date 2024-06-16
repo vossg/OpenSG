@@ -69,11 +69,12 @@ OSG_BEGIN_NAMESPACE
  *                           Class variables                               *
 \***************************************************************************/
 
-StateChunkClass ShaderStorageBufferObjBaseChunk::_class("ShaderStorageBuffer", 
-                                                        osgMaxShaderStorageBufferBindings, // number if slots
-                                                        30);                               // priority
+StateChunkClass     ShaderStorageBufferObjBaseChunk::_class         (
+    "ShaderStorageBuffer", 
+    osgMaxShaderStorageBufferBindings,  // number if slots
+    30                               ); // priority
 
-volatile UInt16 ShaderStorageBufferObjBaseChunk::_uiChunkCounter = 1;
+std::atomic<UInt16> ShaderStorageBufferObjBaseChunk::_uiChunkCounter(1);
 
 /***************************************************************************\
  *                           Class methods                                 *
@@ -138,7 +139,7 @@ void ShaderStorageBufferObjBaseChunk::onCreate(const ShaderStorageBufferObjBaseC
     if(GlobalSystemState == Startup)
         return;
 
-    _uiChunkId = _uiChunkCounter++;
+    _uiChunkId = _uiChunkCounter.fetch_add(1);
 }
 
 void ShaderStorageBufferObjBaseChunk::onCreateAspect(const ShaderStorageBufferObjBaseChunk *createAspect,

@@ -109,6 +109,13 @@ class OSG_SYSTEM_DLLMAPPING MultiLightChunk : public MultiLightChunkBase
     /*! \name                      Interface                               */
     /*! \{                                                                 */
 
+    using Inherited::getType;
+
+    /*! \}                                                                 */
+    /*---------------------------------------------------------------------*/
+    /*! \name                      Sync                                    */
+    /*! \{                                                                 */
+
           UInt32               addLight                     (MultiLight::Type eType);
           UInt32               addLight                     (const MultiLight& light);
           void                 updateLight                  (const UInt32 idx, const MultiLight& light);
@@ -172,7 +179,6 @@ class OSG_SYSTEM_DLLMAPPING MultiLightChunk : public MultiLightChunkBase
           std::string          getLightProgSnippet          () const;
 
     /*! \}                                                                 */
-    
     /*---------------------------------------------------------------------*/
     /*! \name                      Sync                                    */
     /*! \{                                                                 */

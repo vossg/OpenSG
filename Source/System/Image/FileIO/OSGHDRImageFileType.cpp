@@ -57,11 +57,15 @@
 
 #include "OSGHDRImageFileType.h"
 
+namespace {
+
 // Static Class Varible implementations: 
 static const OSG::Char8 *suffixArray[] = 
 {
     "hdr"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

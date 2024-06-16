@@ -457,9 +457,9 @@ class OSG_SYSTEM_DLLMAPPING Window : public WindowBase
         
       protected:
 
-                 GLObjectFunctor        _functor;
-                 GLObjectDestroyFunctor _destroy;
-        volatile UInt32                 _refCounter;
+        GLObjectFunctor        _functor;
+        GLObjectDestroyFunctor _destroy;
+        UInt32                 _refCounter;
     };
 
     /*! \}                                                                 */

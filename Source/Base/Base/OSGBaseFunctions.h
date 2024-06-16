@@ -595,6 +595,13 @@ struct PtrStripper<PtrT * const>
     typedef PtrT * const Ptr;
 };
 
+
+template<class Enum> inline
+constexpr std::underlying_type_t<Enum> enumToUnderlying(Enum e) noexcept
+{
+    return static_cast<std::underlying_type_t<Enum>>(e);
+}
+
 OSG_END_NAMESPACE
 
 #include "OSGBaseFunctions.inl"

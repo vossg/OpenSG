@@ -60,8 +60,8 @@ OSG_BEGIN_NAMESPACE
  *                           Class variables                               *
 \***************************************************************************/
 
-StateChunkClass ShaderProgramChunk::_class("ShaderProgram", 1, 4);
-volatile UInt16 ShaderProgramChunk::_uiChunkCounter = 1;
+StateChunkClass     ShaderProgramChunk::_class         ("ShaderProgram", 1, 4);
+std::atomic<UInt16> ShaderProgramChunk::_uiChunkCounter(1                    );
 
 UInt32 ShaderProgramChunk::_extSHL = Window::invalidExtensionID;
 
@@ -114,7 +114,7 @@ void ShaderProgramChunk::onCreate(const ShaderProgramChunk *source)
     if(GlobalSystemState == Startup)
         return;
 
-    _uiChunkId = _uiChunkCounter++;
+    _uiChunkId = _uiChunkCounter.fetch_add(1);
 }
 
 void ShaderProgramChunk::onCreateAspect(const ShaderProgramChunk *createAspect,

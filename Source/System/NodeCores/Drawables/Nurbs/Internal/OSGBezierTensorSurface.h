@@ -85,6 +85,8 @@ class OSG_DRAWABLE_DLLMAPPING BezierTensorSurface
     int   midPointSubDivision(beziersurfacevector &newbeziers); //subdivide surface at midpoint into 4 bezier surfaces
     int   midPointSubDivisionU(BezierTensorSurface &newsurface);
     int   midPointSubDivisionV(BezierTensorSurface &newsurface);
+
+    const BezierTensorSurface &operator =(const BezierTensorSurface &bts);
 };
 
 OSG_END_NAMESPACE

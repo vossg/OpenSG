@@ -127,11 +127,10 @@ class OSG_SYSTEM_DLLMAPPING ShaderProgramChunk : public ShaderProgramChunkBase
 
   protected:
 
-    static UInt32 _extSHL;
+    static UInt32              _extSHL;
+    static std::atomic<UInt16> _uiChunkCounter;
 
     /*---------------------------------------------------------------------*/
-
-    static volatile UInt16 _uiChunkCounter;
 
     UInt16 _uiChunkId;
 

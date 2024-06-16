@@ -153,7 +153,7 @@ class OSG_SYSTEM_DLLMAPPING ShaderExecutableVarChunk :
 
     /*---------------------------------------------------------------------*/
 
-    static volatile UInt16 _uiChunkCounter;
+    static std::atomic<UInt16> _uiChunkCounter;
 
 #ifdef OSG_MULTISHADER_VARCHUNK
     ShaderVarLocMap _mShaderVarLocs;

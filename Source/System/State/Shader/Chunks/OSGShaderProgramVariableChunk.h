@@ -200,9 +200,9 @@ class OSG_SYSTEM_DLLMAPPING ShaderProgramVariableChunk :
 
     /*---------------------------------------------------------------------*/
 
-    static volatile UInt16 _uiChunkCounter;
+    static std::atomic<UInt16> _uiChunkCounter;
 
-    UInt16 _uiChunkId;
+           UInt16              _uiChunkId;
 
     // Variables should all be in ShaderProgramVariableChunkBase.
 

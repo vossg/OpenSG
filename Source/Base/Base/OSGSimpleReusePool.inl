@@ -63,10 +63,7 @@ Int32 SimpleReusePool<Int32, PoolTag, LockPolicy>::create(void)
 
     if(_vFreeValueStore.empty() == true)
     {
-        returnValue = _currentValue;
-
-        ++_currentValue;
-
+        returnValue = _currentValue.fetch_add(1);
     }
     else
     {
@@ -95,8 +92,8 @@ template <class PoolTag, class LockPolicy> inline
 void SimpleReusePool<Int32, PoolTag, LockPolicy>::dumpState(void)
 {
     fprintf(stderr, "SimpleReusePool<Int32>::dumpState\n");
-    fprintf(stderr, "    cv            : %d\n", _currentValue);
-    fprintf(stderr, "    cached values : \n");
+    fprintf(stderr, "    cv            : %d\n", _currentValue.load());
+    fprintf(stderr, "    cached values : \n"                        );
 
     std::deque<Int32>::const_iterator vIt  = _vFreeValueStore.begin();
     std::deque<Int32>::const_iterator vEnd = _vFreeValueStore.end  ();

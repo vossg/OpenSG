@@ -105,8 +105,9 @@ class OSG_BASE_DLLMAPPING Real16
     // Constructors
     //-------------
 
-    Real16 ();            // no initialization
-    Real16 (float f);
+    Real16 (               ); // no initialization
+    Real16 (const Real16 &h);
+    Real16 (      float   f);
 
 
     //--------------------
@@ -430,6 +431,10 @@ Real16::Real16 () : _h(0)
     // no initialization
 }
 
+inline
+Real16::Real16(const Real16 &h) : _h(h)
+{
+}
 
 //----------------------------
 // Half-from-float constructor

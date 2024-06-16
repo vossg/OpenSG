@@ -49,11 +49,15 @@
 #include "OSGImageFileHandler.h"
 #include "OSGPathHandler.h"
 
+namespace {
+
 // Static Class Varible implementations:
 static const OSG::Char8 *suffixArray[] = 
 {
     "itf"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

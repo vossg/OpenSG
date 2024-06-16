@@ -224,11 +224,10 @@ class OSG_CONTRIBCOMPUTEBASE_DLLMAPPING ComputeShaderChunk :
 
   protected:
 
-    static UInt32 _arbComputeShader;
+    static UInt32               _arbComputeShader;
+    static std::atomic<UInt16> _uiChunkCounter;
 
     /*---------------------------------------------------------------------*/
-
-    static volatile UInt16 _uiChunkCounter;
 
     UInt16 _uiChunkId;
 

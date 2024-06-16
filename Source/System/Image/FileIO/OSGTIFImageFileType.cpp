@@ -65,11 +65,15 @@
 #    define OSG_TIF_ARG(ARG) ARG
 #endif
 
+namespace { 
+
 // Static Class Varible implementations:
 static const OSG::Char8 *suffixArray[] = 
 {
     "tif", "tiff"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 
@@ -241,12 +245,12 @@ bool TIFImageFileType::read(      Image        *OSG_TIF_ARG(pImage),
     if (in == 0)
         return false;
 
-    uint32 w, h;
+    uint32_t w, h;
     TIFFGetField(in, TIFFTAG_IMAGEWIDTH, &w);
     TIFFGetField(in, TIFFTAG_IMAGELENGTH, &h);
 
     float res_x, res_y;
-    uint16 res_unit;
+    uint16_t res_unit;
     TIFFGetField(in, TIFFTAG_XRESOLUTION, &res_x);
     TIFFGetField(in, TIFFTAG_YRESOLUTION, &res_y);
     TIFFGetField(in, TIFFTAG_RESOLUTIONUNIT, &res_unit);
@@ -258,19 +262,19 @@ bool TIFImageFileType::read(      Image        *OSG_TIF_ARG(pImage),
         res_unit = Image::OSG_RESUNIT_INCH;
     }
 
-    uint16 bpp;
+    uint16_t bpp;
     TIFFGetFieldDefaulted(in, TIFFTAG_SAMPLESPERPIXEL, &bpp);
     if (bpp == 4)
     {   // accept unspecified extra samples as associated alpha
-        uint16 *sampleinfo;
-        uint16 extrasamples;
+        uint16_t *sampleinfo;
+        uint16_t extrasamples;
         TIFFGetFieldDefaulted(in,
                               TIFFTAG_EXTRASAMPLES,
                               &extrasamples,
                               &sampleinfo);
         if (sampleinfo && sampleinfo[0] == EXTRASAMPLE_UNSPECIFIED)
         {
-            uint16 si = EXTRASAMPLE_ASSOCALPHA;
+            uint16_t si = EXTRASAMPLE_ASSOCALPHA;
             TIFFSetField(in, TIFFTAG_EXTRASAMPLES, 1, &si);
         }
     }
@@ -299,8 +303,8 @@ bool TIFImageFileType::read(      Image        *OSG_TIF_ARG(pImage),
         return false;
     }
 
-    UInt32  numPixels = w * h;
-    uint32 *buffer = new uint32[numPixels];
+    UInt32    numPixels = w * h;
+    uint32_t *buffer = new uint32_t[numPixels];
     if (TIFFReadRGBAImage(in, w, h, buffer, 1) == 0)
     {
         delete [] buffer;
@@ -315,8 +319,8 @@ bool TIFImageFileType::read(      Image        *OSG_TIF_ARG(pImage),
     pImage->setResY(res_y);
     pImage->setResUnit(res_unit);
 
-    UChar8 *dst = pImage->editData();
-    uint32 *src = buffer;
+    UChar8   *dst = pImage->editData();
+    uint32_t *src = buffer;
     switch (bpp)
     {
     case 4:

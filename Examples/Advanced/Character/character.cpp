@@ -244,6 +244,8 @@ class ObjectCollector
 void
 ObjectCollector::operator()(OSG::Node *root)
 {
+    using boost::placeholders::_1;
+
     g->skinGeos .clear();
     g->materials.clear();
 

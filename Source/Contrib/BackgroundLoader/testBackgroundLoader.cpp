@@ -14,7 +14,7 @@
 #include "OSGSceneFileHandler.h"
 #include "OSGFieldContainerFactory.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <boost/filesystem/fstream.hpp>
 #include <boost/filesystem/convenience.hpp>
@@ -49,8 +49,8 @@ void findModels(std::string dirname)
    {
       if(!fs::is_directory(*itr))
       {
-         if (fs::extension(*itr) == std::string(".osb") ||
-             fs::extension(*itr) == std::string(".wrl"))
+         if (fs::path(*itr).extension() == std::string(".osb") ||
+             fs::path(*itr).extension() == std::string(".wrl"))
          {
 #if BOOST_FILESYSTEM_VERSION == 3
             fs::path complete_file = fs::absolute(*itr);

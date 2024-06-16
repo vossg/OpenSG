@@ -412,3 +412,10 @@ int BezierTensorSurface::midPointSubDivisionV(BezierTensorSurface &newsurface)
 
     return 0;
 }
+
+const BezierTensorSurface &BezierTensorSurface::operator =(const BezierTensorSurface &bts)
+{
+    this->control_points = bts.control_points;
+
+    return *this;
+}

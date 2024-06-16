@@ -58,11 +58,15 @@
 
 #include "OSGCHDRImageFileType.h"
 
+namespace {
+
 // Static Class Varible implementations: 
 static const OSG::Char8 *suffixArray[] = 
 {
     "chdr"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

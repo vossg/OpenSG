@@ -576,6 +576,19 @@ bool PointerMFieldConstIterator<PtrTypeT,
     return ! (*this == rhs);
 }
 
+template <class PtrTypeT, typename RefCountPolicy, Int32 NamespaceI> inline
+const typename PointerMFieldConstIterator<PtrTypeT,
+                                          RefCountPolicy,
+                                          NamespaceI    >::Self & 
+    PointerMFieldConstIterator<PtrTypeT,
+                               RefCountPolicy,
+                               NamespaceI    >::operator =(const Self &rhs) 
+{
+    Inherited::operator =(rhs);
+
+    return *this;
+}
+
 /*-------------------------------------------------------------------------*/
 /* Base                                                                    */
 

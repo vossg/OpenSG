@@ -173,6 +173,21 @@ MFieldVector<Tp, Alloc>::~MFieldVector()
 {
 }
 
+#if __GNUC__ >= 5
+#pragma GCC diagnostic ignored "-Weffc++"
+#pragma GCC diagnostic push
+#endif
+
+template<class Tp, class Alloc> inline
+void MFieldVector<Tp, Alloc>::operator =(const MFieldVector<Tp, Alloc>& __x)
+{
+    this->Inherited::operator =(__x);
+}
+
+#if __GNUC__ >= 5
+#pragma GCC diagnostic pop
+#endif
+
 template <class Tp, class Alloc> inline
 void MFieldVector<Tp, Alloc>::dump(
           UInt32    uiIndent,

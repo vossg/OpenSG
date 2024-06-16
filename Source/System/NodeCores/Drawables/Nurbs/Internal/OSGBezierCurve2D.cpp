@@ -1569,3 +1569,10 @@ void BezierCurve2D::AddNthHermitePoints(Vec3d d0, Vec3d d1)
 //    }
 
 }
+
+const BezierCurve2D &BezierCurve2D::operator =(BezierCurve2D const &b)
+{
+    this->control_points = b.control_points;
+
+    return *this;
+}

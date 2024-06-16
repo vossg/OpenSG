@@ -66,11 +66,15 @@
 #    define OSG_MNG_ARG(ARG) ARG
 #endif
 
+namespace {
+
 // Static Class Varible implementations:
 static const OSG::Char8 *suffixArray[] = 
 {
     "mng"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

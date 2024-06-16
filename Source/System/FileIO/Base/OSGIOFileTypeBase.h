@@ -87,6 +87,8 @@ class OSG_SYSTEM_DLLMAPPING IOFileTypeBase
     
         std::string optName;
         std::string optValue;
+
+        IOOption &operator =(const IOOption &rhs);
     };
   
     typedef std::map  <std::string, IOOption> OptionSet;

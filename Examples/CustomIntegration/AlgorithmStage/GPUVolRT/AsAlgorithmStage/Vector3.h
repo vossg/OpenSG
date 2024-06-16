@@ -37,7 +37,7 @@ public:
     Vector3& operator*=(const float t);
     Vector3& operator/=(const float t);
 
-
+    const Vector3 &operator =(const Vector3 &rhs);
     
     float length() const { return sqrt(e[0]*e[0] + e[1]*e[1] + e[2]*e[2]); }
     float squaredLength() const { return e[0]*e[0] + e[1]*e[1] + e[2]*e[2]; }
@@ -164,6 +164,16 @@ inline Vector3& Vector3::operator/=(const float t) {
     e[0]  /= t;
     e[1]  /= t;
     e[2]  /= t;
+    return *this;
+}
+
+inline
+const Vector3 &Vector3::operator =(const Vector3 &rhs)
+{
+    this->e[0] = rhs.e[0];
+    this->e[1] = rhs.e[1];
+    this->e[2] = rhs.e[2];
+
     return *this;
 }
 

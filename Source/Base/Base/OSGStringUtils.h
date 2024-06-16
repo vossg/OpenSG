@@ -237,14 +237,16 @@ struct HashCmpString :
     \nohierarchy
  */
 
-struct OSG_BASE_DLLMAPPING string_token_iterator :
-#if defined(OSG_HAS_INPUT_ITERATOR)
-    public std::input_iterator<std::string, std::ptrdiff_t>
-#else
-    public std::iterator<std::input_iterator_tag, std::string>
-#endif
+struct OSG_BASE_DLLMAPPING string_token_iterator
 {
   public:
+    using iterator_category = std::input_iterator_tag;
+    using value_type        = std::string;
+    using difference_type   = std::string::difference_type;
+    using pointer           = std::string::pointer;
+    using reference         = std::string::reference;
+
+
     string_token_iterator();
 
     string_token_iterator(const std::string & str_,

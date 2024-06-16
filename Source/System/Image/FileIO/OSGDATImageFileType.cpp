@@ -56,13 +56,15 @@
 
 #include "OSGDATImageFileType.h"
 
-// Static Class Varible implementations:
+namespace {
 
+// Static Class Varible implementations:
 static const OSG::Char8 *suffixArray[] =
 {
     "dat"
 };
 
+}
 
 OSG_BEGIN_NAMESPACE
 

@@ -69,9 +69,11 @@ OSG_USING_NAMESPACE
  *                           Class variables                               *
 \***************************************************************************/
 
-StateChunkClass TextureBaseChunk::_class("Texture", osgMaxTexImages, 20);
+StateChunkClass     TextureBaseChunk::_class         ("Texture", 
+                                                      osgMaxTexImages, 
+                                                      20             );
 
-volatile UInt16 TextureBaseChunk::_uiChunkCounter = 1;
+std::atomic<UInt16> TextureBaseChunk::_uiChunkCounter(1              );
 
 UInt32 TextureBaseChunk::_arbMultiTex           = Window::invalidExtensionID;
 UInt32 TextureBaseChunk::_funcActiveTexture     = Window::invalidFunctionID;
@@ -158,7 +160,7 @@ void TextureBaseChunk::onCreate(const TextureBaseChunk *source)
     if(GlobalSystemState == Startup)
         return;
 
-    _uiChunkId = _uiChunkCounter++;
+    _uiChunkId = _uiChunkCounter.fetch_add(1);
 }
 
 void TextureBaseChunk::onCreateAspect(const TextureBaseChunk *createAspect,

@@ -258,7 +258,7 @@ class SimplePool<Int32, PoolTagT, LockPolicyT> : public SimplePoolBase
     /*! \name                      Member                                  */
     /*! \{                                                                 */
 
-    volatile Int32 _currentValue;
+    std::atomic<Int32> _currentValue;
 
     /*! \}                                                                 */
     /*==========================  PRIVATE  ================================*/

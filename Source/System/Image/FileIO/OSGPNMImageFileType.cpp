@@ -61,10 +61,14 @@
 #include <climits>
 #endif
 
+namespace {
+
 static const OSG::Char8 *suffixArray[] =
 {
     "pnm", "pbm", "pgm", "ppm"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

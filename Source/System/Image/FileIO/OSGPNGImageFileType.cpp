@@ -65,10 +65,14 @@
 #    define OSG_PNG_ARG(ARG) ARG
 #endif
 
+namespace {
+
 static const OSG::Char8 *suffixArray[] =
 {
     "png"
 };
+
+}
 
 OSG_BEGIN_NAMESPACE
 

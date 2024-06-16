@@ -63,9 +63,9 @@ OSG_USING_NAMESPACE
  *                           Class variables                               *
 \***************************************************************************/
 
-StateChunkClass MaterialChunk::_class("Material", 1, 100);
+StateChunkClass     MaterialChunk::_class("Material", 1, 100);
 
-volatile UInt16 MaterialChunk::_uiChunkCounter = 1;
+std::atomic<UInt16> MaterialChunk::_uiChunkCounter(1);
 
 /***************************************************************************\
  *                           Class methods                                 *
@@ -108,7 +108,7 @@ void MaterialChunk::onCreate(const MaterialChunk *source)
     if(GlobalSystemState == Startup)
         return;
 
-    _uiChunkId = _uiChunkCounter++;
+    _uiChunkId = _uiChunkCounter.fetch_add(1);
 }
 
 void MaterialChunk::onCreateAspect(const MaterialChunk *createAspect,

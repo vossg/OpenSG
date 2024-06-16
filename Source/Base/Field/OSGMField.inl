@@ -132,9 +132,9 @@ void MField<ValueT, iNamespace, AllocT>::addValueFromCString(const Char8 *str)
 {
     ValueT tmpVal;
 
-    typedef typename boost::mpl::if_<boost::mpl::bool_< 
-        static_cast<bool>(MFieldTraits    ::Convertible &
-                          FieldTraitsBase ::FromStringConvertible)>, 
+    typedef typename boost::mpl::if_c<
+        (enumToUnderlying(MFieldTraits   ::Convertible          ) &
+         enumToUnderlying(FieldTraitsBase::FromStringConvertible) ) != 0, 
         MFieldTraits, 
         StringConversionError<ValueT,
                               iNamespace> >::type Converter;
@@ -150,9 +150,9 @@ void MField<ValueT,
             iNamespace, 
             AllocT    >::pushValuesToString(std::string  &str) const
 {
-    typedef typename boost::mpl::if_<boost::mpl::bool_< 
-        static_cast<bool>(MFieldTraits    ::Convertible &
-                          FieldTraitsBase ::ToStringConvertible)>, 
+    typedef typename boost::mpl::if_c<
+        (enumToUnderlying(MFieldTraits   ::Convertible        ) &
+         enumToUnderlying(FieldTraitsBase::ToStringConvertible) ) != 0, 
         MFieldTraits, 
         StringConversionError<ValueT,
                               iNamespace> >::type Converter;
@@ -176,9 +176,9 @@ void MField<ValueT,
 {
     ValueT tmpVal;
 
-    typedef typename boost::mpl::if_<boost::mpl::bool_<
-        static_cast<bool>(MFieldTraits    ::Convertible &
-                          FieldTraitsBase ::FromStreamConvertible)>, 
+    typedef typename boost::mpl::if_c<
+        (enumToUnderlying(MFieldTraits   ::Convertible          ) &
+         enumToUnderlying(FieldTraitsBase::FromStreamConvertible) ) != 0, 
         MFieldTraits, 
         StreamConversionError<ValueT,
                               iNamespace> >::type Converter;
@@ -196,9 +196,9 @@ void MField<ValueT,
 {
     ValueT tmpVal;
 
-    typedef typename boost::mpl::if_<boost::mpl::bool_< 
-        static_cast<bool>(MFieldTraits    ::Convertible &
-                          FieldTraitsBase ::FromStringConvertible)>, 
+    typedef typename boost::mpl::if_c<
+        (enumToUnderlying(MFieldTraits   ::Convertible          ) &
+         enumToUnderlying(FieldTraitsBase::FromStringConvertible) ) != 0, 
         MFieldTraits, 
         StringConversionError<ValueT,
                               iNamespace> >::type Converter;
@@ -214,9 +214,9 @@ void MField<ValueT,
             AllocT    >::pushIndexedValueToStream(OutStream &str, 
                                                   UInt32     index) const
 {
-    typedef typename boost::mpl::if_<boost::mpl::bool_< 
-        static_cast<bool>(MFieldTraits    ::Convertible &
-                          FieldTraitsBase ::ToStreamConvertible)>, 
+    typedef typename boost::mpl::if_c<
+        (enumToUnderlying(MFieldTraits   ::Convertible        ) &
+         enumToUnderlying(FieldTraitsBase::ToStreamConvertible) ) != 0, 
         MFieldTraits, 
         StreamConversionError<ValueT,
                               iNamespace> >::type Converter;
@@ -229,9 +229,9 @@ void MField<ValueT,
             iNamespace, 
             AllocT    >::pushValuesToStream(OutStream &str) const
 {
-    typedef typename boost::mpl::if_<boost::mpl::bool_< 
-        static_cast<bool>(MFieldTraits    ::Convertible &
-                          FieldTraitsBase ::ToStreamConvertible)>, 
+    typedef typename boost::mpl::if_c<
+        (enumToUnderlying(MFieldTraits   ::Convertible        ) &
+         enumToUnderlying(FieldTraitsBase::ToStreamConvertible) ) != 0, 
         MFieldTraits, 
         StreamConversionError<ValueT,
                               iNamespace> >::type Converter;

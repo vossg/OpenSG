@@ -65,8 +65,10 @@ OSG_BEGIN_NAMESPACE
  *                           Class variables                               *
 \***************************************************************************/
 
-StateChunkClass ShaderExecutableChunk::_class("ShaderExecutable", 1, 7);
-volatile UInt16 ShaderExecutableChunk::_uiChunkCounter = 1;
+StateChunkClass     ShaderExecutableChunk::_class         ("ShaderExecutable", 
+                                                           1, 
+                                                           7                 );
+std::atomic<UInt16> ShaderExecutableChunk::_uiChunkCounter(1                 );
 
 UInt32 ShaderExecutableChunk::_extSHL = Window::invalidExtensionID;
 
@@ -182,7 +184,7 @@ void ShaderExecutableChunk::onCreate(const ShaderExecutableChunk *source)
                         _1, _2, _3, _4),
             &ShaderExecutableChunk::handleDestroyGL));
 
-    _uiChunkId = _uiChunkCounter++;
+    _uiChunkId = _uiChunkCounter.fetch_add(1);
 }
 
 void ShaderExecutableChunk::onCreateAspect(
