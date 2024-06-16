@@ -46,7 +46,11 @@ class TemplateFiller:
         
         context = [d for d in dictList];
         
-        for lineNum, line in enumerate(self.m_inLines):
+        for lineNum, lineIn in enumerate(self.m_inLines):
+
+            # Fixes cannot use a string pattern on a bytes-like object
+            line = lineIn.decode('utf-8')
+            
             # handle @@BeginFieldLoop
             matchBeginFieldLoop = self.m_BeginFieldLoopRE.search(line);
             if (not skipCurrent) and (matchBeginFieldLoop != None):
@@ -267,7 +271,7 @@ class TemplateFiller:
         for part in varParts:
             if isinstance(context, list):
                 for elem in context:
-                    if elem.has_key(part):
+                    if part in elem:
                         value = elem[part];
                         break;
             elif context.has_key(part):

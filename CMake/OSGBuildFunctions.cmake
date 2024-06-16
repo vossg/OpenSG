@@ -984,14 +984,15 @@ FUNCTION(OSG_SETUP_LIBRARY_BUILD PROJ_DEFINE)
 
             SET(FCDPath ${CMAKE_SOURCE_DIR}/Tools/fcd2code)
 
-            IF(NOT EXISTS FCDPath AND OpenSG_DIR) #external setup
+            IF(NOT EXISTS ${FCDPath} AND OpenSG_DIR) #external setup
+
               SET(FCDBaseDir ${OpenSG_DIR}/bin/fcd2code)
 
               SET(FCDCommand ${OpenSG_DIR}/bin/fcd2code/fcd2code)
 
               SET(FCDRoot "")
               SET(FCDTemp -t ${FCDBaseDir})
-            ENDIF(NOT EXISTS FCDPath AND OpenSG_DIR)
+            ENDIF(NOT EXISTS ${FCDPath} AND OpenSG_DIR)
 
             IF(NOT EXISTS ${FCDDir}/${FCDClassHdr} AND
                NOT EXISTS ${FCDDir}/${FCDClassCpp} AND
