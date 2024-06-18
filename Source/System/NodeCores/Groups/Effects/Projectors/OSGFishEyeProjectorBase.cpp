@@ -1111,9 +1111,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleMode            (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleMode           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMode,
@@ -1139,14 +1136,14 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleGeometries      (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleGeometries     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecGeometryPtr::EditHandlePtr returnValue(
         new  MFUnrecGeometryPtr::EditHandle(
              &_mfGeometries,
              this->getType().getFieldDesc(GeometriesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&FishEyeProjector::pushToGeometries,
@@ -1179,9 +1176,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleShowDomeIntensity (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleShowDomeIntensity(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShowDomeIntensity,
@@ -1207,9 +1201,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleResolution      (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleResolution     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfResolution,
@@ -1235,9 +1226,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleMeshRefinementLevel (void) cons
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleMeshRefinementLevel(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMeshRefinementLevel,
@@ -1263,9 +1251,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleBufferFormat    (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleBufferFormat   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfBufferFormat,
@@ -1291,9 +1276,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleDomeRadius      (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleDomeRadius     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal64::EditHandlePtr returnValue(
         new  SFReal64::EditHandle(
              &_sfDomeRadius,
@@ -1319,9 +1301,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleMirrorRadius    (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleMirrorRadius   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal64::EditHandlePtr returnValue(
         new  SFReal64::EditHandle(
              &_sfMirrorRadius,
@@ -1347,9 +1326,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleMirrorPos       (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleMirrorPos      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3d::EditHandlePtr returnValue(
         new  SFVec3d::EditHandle(
              &_sfMirrorPos,
@@ -1375,9 +1351,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleProjectorPos    (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleProjectorPos   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3d::EditHandlePtr returnValue(
         new  SFVec3d::EditHandle(
              &_sfProjectorPos,
@@ -1403,9 +1376,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleAspectRatio     (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleAspectRatio    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal64::EditHandlePtr returnValue(
         new  SFReal64::EditHandle(
              &_sfAspectRatio,
@@ -1431,9 +1401,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleThrowDist       (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleThrowDist      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal64::EditHandlePtr returnValue(
         new  SFReal64::EditHandle(
              &_sfThrowDist,
@@ -1459,9 +1426,6 @@ GetFieldHandlePtr FishEyeProjectorBase::getHandleShowMesh        (void) const
 
 EditFieldHandlePtr FishEyeProjectorBase::editHandleShowMesh       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShowMesh,

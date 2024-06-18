@@ -789,9 +789,6 @@ GetFieldHandlePtr PerfMonitorForegroundBase::getHandleMode            (void) con
 
 EditFieldHandlePtr PerfMonitorForegroundBase::editHandleMode           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMode,
@@ -817,9 +814,6 @@ GetFieldHandlePtr PerfMonitorForegroundBase::getHandleMaxSize         (void) con
 
 EditFieldHandlePtr PerfMonitorForegroundBase::editHandleMaxSize        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfMaxSize,
@@ -845,9 +839,6 @@ GetFieldHandlePtr PerfMonitorForegroundBase::getHandleColor           (void) con
 
 EditFieldHandlePtr PerfMonitorForegroundBase::editHandleColor          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfColor,
@@ -873,9 +864,6 @@ GetFieldHandlePtr PerfMonitorForegroundBase::getHandleBgColor         (void) con
 
 EditFieldHandlePtr PerfMonitorForegroundBase::editHandleBgColor        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBgColor,
@@ -901,9 +889,6 @@ GetFieldHandlePtr PerfMonitorForegroundBase::getHandleFamily          (void) con
 
 EditFieldHandlePtr PerfMonitorForegroundBase::editHandleFamily         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfFamily,
@@ -929,9 +914,6 @@ GetFieldHandlePtr PerfMonitorForegroundBase::getHandleBorderColor     (void) con
 
 EditFieldHandlePtr PerfMonitorForegroundBase::editHandleBorderColor    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBorderColor,
@@ -957,9 +939,6 @@ GetFieldHandlePtr PerfMonitorForegroundBase::getHandleBorderOffset    (void) con
 
 EditFieldHandlePtr PerfMonitorForegroundBase::editHandleBorderOffset   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfBorderOffset,
@@ -985,9 +964,6 @@ GetFieldHandlePtr PerfMonitorForegroundBase::getHandleTextMargin      (void) con
 
 EditFieldHandlePtr PerfMonitorForegroundBase::editHandleTextMargin     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfTextMargin,

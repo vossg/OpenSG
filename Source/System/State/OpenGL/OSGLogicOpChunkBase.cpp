@@ -411,9 +411,6 @@ GetFieldHandlePtr LogicOpChunkBase::getHandleLogicOp         (void) const
 
 EditFieldHandlePtr LogicOpChunkBase::editHandleLogicOp        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfLogicOp,

@@ -676,9 +676,6 @@ GetFieldHandlePtr PostShaderStageBase::getHandleColorBufferFormat (void) const
 
 EditFieldHandlePtr PostShaderStageBase::editHandleColorBufferFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfColorBufferFormat,
@@ -704,9 +701,6 @@ GetFieldHandlePtr PostShaderStageBase::getHandleUseColorTextureBuffer (void) con
 
 EditFieldHandlePtr PostShaderStageBase::editHandleUseColorTextureBuffer(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseColorTextureBuffer,
@@ -732,9 +726,6 @@ GetFieldHandlePtr PostShaderStageBase::getHandleUseDepthTextureBuffer (void) con
 
 EditFieldHandlePtr PostShaderStageBase::editHandleUseDepthTextureBuffer(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseDepthTextureBuffer,
@@ -760,9 +751,6 @@ GetFieldHandlePtr PostShaderStageBase::getHandleVertexShaders   (void) const
 
 EditFieldHandlePtr PostShaderStageBase::editHandleVertexShaders  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfVertexShaders,
@@ -788,9 +776,6 @@ GetFieldHandlePtr PostShaderStageBase::getHandleFragmentShaders (void) const
 
 EditFieldHandlePtr PostShaderStageBase::editHandleFragmentShaders(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfFragmentShaders,
@@ -816,9 +801,6 @@ GetFieldHandlePtr PostShaderStageBase::getHandlePassSizes       (void) const
 
 EditFieldHandlePtr PostShaderStageBase::editHandlePassSizes      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfPassSizes,

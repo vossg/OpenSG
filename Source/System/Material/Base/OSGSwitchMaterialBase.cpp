@@ -535,14 +535,14 @@ GetFieldHandlePtr SwitchMaterialBase::getHandleMaterials       (void) const
 
 EditFieldHandlePtr SwitchMaterialBase::editHandleMaterials      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecMaterialPtr::EditHandle(
              &_mfMaterials,
              this->getType().getFieldDesc(MaterialsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&SwitchMaterial::pushToMaterials,
@@ -575,9 +575,6 @@ GetFieldHandlePtr SwitchMaterialBase::getHandleChoice          (void) const
 
 EditFieldHandlePtr SwitchMaterialBase::editHandleChoice         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfChoice,

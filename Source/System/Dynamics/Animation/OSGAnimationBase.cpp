@@ -813,14 +813,13 @@ GetFieldHandlePtr AnimationBase::getHandleTimeSensor      (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleTimeSensor     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecAnimTimeSensorPtr::EditHandlePtr returnValue(
         new  SFUnrecAnimTimeSensorPtr::EditHandle(
              &_sfTimeSensor,
              this->getType().getFieldDesc(TimeSensorFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Animation::setTimeSensor,
@@ -844,14 +843,13 @@ GetFieldHandlePtr AnimationBase::getHandleTemplate        (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleTemplate       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecAnimTemplatePtr::EditHandlePtr returnValue(
         new  SFUnrecAnimTemplatePtr::EditHandle(
              &_sfTemplate,
              this->getType().getFieldDesc(TemplateFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Animation::setTemplate,
@@ -875,14 +873,14 @@ GetFieldHandlePtr AnimationBase::getHandleChannels        (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleChannels       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecChildAnimChannelPtr::EditHandlePtr returnValue(
         new  MFUnrecChildAnimChannelPtr::EditHandle(
              &_mfChannels,
              this->getType().getFieldDesc(ChannelsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&Animation::pushToChannels,
@@ -915,9 +913,6 @@ GetFieldHandlePtr AnimationBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleEnabled        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -943,9 +938,6 @@ GetFieldHandlePtr AnimationBase::getHandleWeight          (void) const
 
 EditFieldHandlePtr AnimationBase::editHandleWeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfWeight,

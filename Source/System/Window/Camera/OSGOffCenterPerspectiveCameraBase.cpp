@@ -398,9 +398,6 @@ GetFieldHandlePtr OffCenterPerspectiveCameraBase::getHandlePrincipalPoint  (void
 
 EditFieldHandlePtr OffCenterPerspectiveCameraBase::editHandlePrincipalPoint (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfPrincipalPoint,

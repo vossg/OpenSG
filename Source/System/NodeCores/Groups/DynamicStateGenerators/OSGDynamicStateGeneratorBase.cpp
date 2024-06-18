@@ -432,14 +432,13 @@ GetFieldHandlePtr DynamicStateGeneratorBase::getHandleRenderTarget    (void) con
 
 EditFieldHandlePtr DynamicStateGeneratorBase::editHandleRenderTarget   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfRenderTarget,
              this->getType().getFieldDesc(RenderTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DynamicStateGenerator::setRenderTarget,

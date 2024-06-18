@@ -485,14 +485,13 @@ GetFieldHandlePtr AnimMatrixChannelBase::getHandleData            (void) const
 
 EditFieldHandlePtr AnimMatrixChannelBase::editHandleData           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecAnimMatrixDataSourcePtr::EditHandlePtr returnValue(
         new  SFUnrecAnimMatrixDataSourcePtr::EditHandle(
              &_sfData,
              this->getType().getFieldDesc(DataFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&AnimMatrixChannel::setData,
@@ -516,9 +515,6 @@ GetFieldHandlePtr AnimMatrixChannelBase::getHandleOutValue        (void) const
 
 EditFieldHandlePtr AnimMatrixChannelBase::editHandleOutValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfOutValue,

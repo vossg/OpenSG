@@ -452,9 +452,6 @@ GetFieldHandlePtr SimpleShadowMapEngineBase::getHandleShadowColor     (void) con
 
 EditFieldHandlePtr SimpleShadowMapEngineBase::editHandleShadowColor    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfShadowColor,
@@ -480,9 +477,6 @@ GetFieldHandlePtr SimpleShadowMapEngineBase::getHandleForceTextureUnit (void) co
 
 EditFieldHandlePtr SimpleShadowMapEngineBase::editHandleForceTextureUnit(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfForceTextureUnit,

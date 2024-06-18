@@ -595,14 +595,14 @@ GetFieldHandlePtr ImageForegroundBase::getHandleImages          (void) const
 
 EditFieldHandlePtr ImageForegroundBase::editHandleImages         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecImagePtr::EditHandlePtr returnValue(
         new  MFUnrecImagePtr::EditHandle(
              &_mfImages,
              this->getType().getFieldDesc(ImagesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ImageForeground::pushToImages,
@@ -635,9 +635,6 @@ GetFieldHandlePtr ImageForegroundBase::getHandlePositions       (void) const
 
 EditFieldHandlePtr ImageForegroundBase::editHandlePositions      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFPnt2f::EditHandlePtr returnValue(
         new  MFPnt2f::EditHandle(
              &_mfPositions,
@@ -663,9 +660,6 @@ GetFieldHandlePtr ImageForegroundBase::getHandleScales          (void) const
 
 EditFieldHandlePtr ImageForegroundBase::editHandleScales         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFPnt2f::EditHandlePtr returnValue(
         new  MFPnt2f::EditHandle(
              &_mfScales,

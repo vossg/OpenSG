@@ -399,9 +399,6 @@ GetFieldHandlePtr ShaderVariableVec4fBase::getHandleValue           (void) const
 
 EditFieldHandlePtr ShaderVariableVec4fBase::editHandleValue          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec4f::EditHandlePtr returnValue(
         new  SFVec4f::EditHandle(
              &_sfValue,

@@ -875,9 +875,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleTranslate       (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleTranslate      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfTranslate,
@@ -903,9 +900,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleRotate          (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleRotate         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfRotate,
@@ -931,9 +925,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleScale           (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleScale          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfScale,
@@ -959,9 +950,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleInvBindTranslate (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleInvBindTranslate(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfInvBindTranslate,
@@ -987,9 +975,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleInvBindRotate   (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleInvBindRotate  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfInvBindRotate,
@@ -1015,9 +1000,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleInvBindScale    (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleInvBindScale   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfInvBindScale,
@@ -1043,9 +1025,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleOffsetTranslate (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleOffsetTranslate(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfOffsetTranslate,
@@ -1071,9 +1050,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleOffsetRotate    (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleOffsetRotate   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfOffsetRotate,
@@ -1099,9 +1075,6 @@ GetFieldHandlePtr SkeletonOgreJointBase::getHandleOffsetScale     (void) const
 
 EditFieldHandlePtr SkeletonOgreJointBase::editHandleOffsetScale    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfOffsetScale,

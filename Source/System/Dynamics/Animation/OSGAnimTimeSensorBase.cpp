@@ -958,9 +958,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleEnabled        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -986,9 +983,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleIsActive        (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleIsActive       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIsActive,
@@ -1014,9 +1008,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleLoop            (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleLoop           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLoop,
@@ -1042,9 +1033,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleForward         (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleForward        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfForward,
@@ -1070,9 +1058,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleStartTime       (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleStartTime      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfStartTime,
@@ -1098,9 +1083,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleStopTime        (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleStopTime       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfStopTime,
@@ -1126,9 +1108,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleTime            (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleTime           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfTime,
@@ -1154,9 +1133,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleCycleLength     (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleCycleLength    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfCycleLength,
@@ -1182,9 +1158,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleTimeScale       (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleTimeScale      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTimeScale,
@@ -1210,9 +1183,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleFraction        (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleFraction       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFraction,
@@ -1238,9 +1208,6 @@ GetFieldHandlePtr AnimTimeSensorBase::getHandleAnimTime        (void) const
 
 EditFieldHandlePtr AnimTimeSensorBase::editHandleAnimTime       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAnimTime,

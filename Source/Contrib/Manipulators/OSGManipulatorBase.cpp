@@ -1628,14 +1628,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleTarget          (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleTarget         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTarget,
              this->getType().getFieldDesc(TargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setTarget,
@@ -1659,9 +1658,6 @@ GetFieldHandlePtr ManipulatorBase::getHandleEnablePivot     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleEnablePivot    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnablePivot,
@@ -1687,14 +1683,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleActiveSubHandle (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleActiveSubHandle(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfActiveSubHandle,
              this->getType().getFieldDesc(ActiveSubHandleFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setActiveSubHandle,
@@ -1718,9 +1713,6 @@ GetFieldHandlePtr ManipulatorBase::getHandleLastMousePos    (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleLastMousePos   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt2f::EditHandlePtr returnValue(
         new  SFPnt2f::EditHandle(
              &_sfLastMousePos,
@@ -1746,14 +1738,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleViewport        (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleViewport       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecViewportPtr::EditHandlePtr returnValue(
         new  SFUnrecViewportPtr::EditHandle(
              &_sfViewport,
              this->getType().getFieldDesc(ViewportFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setViewport,
@@ -1777,9 +1768,6 @@ GetFieldHandlePtr ManipulatorBase::getHandleActive          (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleActive         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfActive,
@@ -1805,9 +1793,6 @@ GetFieldHandlePtr ManipulatorBase::getHandleLength          (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleLength         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfLength,
@@ -1833,9 +1818,6 @@ GetFieldHandlePtr ManipulatorBase::getHandlePivot           (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandlePivot          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfPivot,
@@ -1861,14 +1843,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleHandleXNode     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleHandleXNode    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfHandleXNode,
              this->getType().getFieldDesc(HandleXNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setHandleXNode,
@@ -1892,14 +1873,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleHandleYNode     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleHandleYNode    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfHandleYNode,
              this->getType().getFieldDesc(HandleYNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setHandleYNode,
@@ -1923,14 +1903,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleHandleZNode     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleHandleZNode    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfHandleZNode,
              this->getType().getFieldDesc(HandleZNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setHandleZNode,
@@ -1954,14 +1933,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleHandlePNode     (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleHandlePNode    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfHandlePNode,
              this->getType().getFieldDesc(HandlePNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setHandlePNode,
@@ -1985,14 +1963,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleTransXNode      (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleTransXNode     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTransXNode,
              this->getType().getFieldDesc(TransXNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setTransXNode,
@@ -2016,14 +1993,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleTransYNode      (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleTransYNode     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTransYNode,
              this->getType().getFieldDesc(TransYNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setTransYNode,
@@ -2047,14 +2023,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleTransZNode      (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleTransZNode     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTransZNode,
              this->getType().getFieldDesc(TransZNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setTransZNode,
@@ -2078,14 +2053,13 @@ GetFieldHandlePtr ManipulatorBase::getHandlePivotNode       (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandlePivotNode      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfPivotNode,
              this->getType().getFieldDesc(PivotNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setPivotNode,
@@ -2109,14 +2083,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleMaterialX       (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleMaterialX      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterialX,
              this->getType().getFieldDesc(MaterialXFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setMaterialX,
@@ -2140,14 +2113,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleMaterialY       (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleMaterialY      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterialY,
              this->getType().getFieldDesc(MaterialYFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setMaterialY,
@@ -2171,14 +2143,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleMaterialZ       (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleMaterialZ      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterialZ,
              this->getType().getFieldDesc(MaterialZFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setMaterialZ,
@@ -2202,14 +2173,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleMaterialPivot   (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleMaterialPivot  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterialPivot,
              this->getType().getFieldDesc(MaterialPivotFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setMaterialPivot,
@@ -2233,14 +2203,13 @@ GetFieldHandlePtr ManipulatorBase::getHandleAxisLinesN      (void) const
 
 EditFieldHandlePtr ManipulatorBase::editHandleAxisLinesN     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfAxisLinesN,
              this->getType().getFieldDesc(AxisLinesNFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Manipulator::setAxisLinesN,

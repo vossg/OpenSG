@@ -535,14 +535,14 @@ GetFieldHandlePtr AnimQuaternionBlenderBase::getHandleChannels        (void) con
 
 EditFieldHandlePtr AnimQuaternionBlenderBase::editHandleChannels       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecAnimQuaternionChannelPtr::EditHandlePtr returnValue(
         new  MFUnrecAnimQuaternionChannelPtr::EditHandle(
              &_mfChannels,
              this->getType().getFieldDesc(ChannelsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&AnimQuaternionBlender::pushToChannels,
@@ -575,9 +575,6 @@ GetFieldHandlePtr AnimQuaternionBlenderBase::getHandleOutValue        (void) con
 
 EditFieldHandlePtr AnimQuaternionBlenderBase::editHandleOutValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfOutValue,

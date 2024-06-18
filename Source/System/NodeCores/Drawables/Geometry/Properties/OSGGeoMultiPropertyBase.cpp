@@ -766,14 +766,13 @@ GetFieldHandlePtr GeoMultiPropertyBase::getHandleContainer       (void) const
 
 EditFieldHandlePtr GeoMultiPropertyBase::editHandleContainer      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecGeoMultiPropertyDataPtr::EditHandlePtr returnValue(
         new  SFUnrecGeoMultiPropertyDataPtr::EditHandle(
              &_sfContainer,
              this->getType().getFieldDesc(ContainerFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&GeoMultiProperty::setContainer,
@@ -797,9 +796,6 @@ GetFieldHandlePtr GeoMultiPropertyBase::getHandleOffset          (void) const
 
 EditFieldHandlePtr GeoMultiPropertyBase::editHandleOffset         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfOffset,
@@ -825,9 +821,6 @@ GetFieldHandlePtr GeoMultiPropertyBase::getHandleIFormat         (void) const
 
 EditFieldHandlePtr GeoMultiPropertyBase::editHandleIFormat        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfIFormat,
@@ -853,9 +846,6 @@ GetFieldHandlePtr GeoMultiPropertyBase::getHandleIDimension      (void) const
 
 EditFieldHandlePtr GeoMultiPropertyBase::editHandleIDimension     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfIDimension,
@@ -881,9 +871,6 @@ GetFieldHandlePtr GeoMultiPropertyBase::getHandleISize           (void) const
 
 EditFieldHandlePtr GeoMultiPropertyBase::editHandleISize          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfISize,
@@ -909,9 +896,6 @@ GetFieldHandlePtr GeoMultiPropertyBase::getHandleINormalize      (void) const
 
 EditFieldHandlePtr GeoMultiPropertyBase::editHandleINormalize     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfINormalize,
@@ -937,9 +921,6 @@ GetFieldHandlePtr GeoMultiPropertyBase::getHandleIStride         (void) const
 
 EditFieldHandlePtr GeoMultiPropertyBase::editHandleIStride        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfIStride,

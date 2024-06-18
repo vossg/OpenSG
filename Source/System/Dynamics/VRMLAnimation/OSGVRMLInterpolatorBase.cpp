@@ -505,9 +505,6 @@ GetFieldHandlePtr VRMLInterpolatorBase::getHandleInValue         (void) const
 
 EditFieldHandlePtr VRMLInterpolatorBase::editHandleInValue        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfInValue,
@@ -533,9 +530,6 @@ GetFieldHandlePtr VRMLInterpolatorBase::getHandleKey             (void) const
 
 EditFieldHandlePtr VRMLInterpolatorBase::editHandleKey            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfKey,
@@ -561,9 +555,6 @@ GetFieldHandlePtr VRMLInterpolatorBase::getHandleResortIndex     (void) const
 
 EditFieldHandlePtr VRMLInterpolatorBase::editHandleResortIndex    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfResortIndex,

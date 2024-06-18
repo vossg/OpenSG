@@ -434,14 +434,13 @@ GetFieldHandlePtr ReplicateTransformBase::getHandleTarget          (void) const
 
 EditFieldHandlePtr ReplicateTransformBase::editHandleTarget         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfTarget,
              this->getType().getFieldDesc(TargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ReplicateTransform::setTarget,

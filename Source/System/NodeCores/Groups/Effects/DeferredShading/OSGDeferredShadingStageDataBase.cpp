@@ -1008,14 +1008,13 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleGBufferTarget   (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleGBufferTarget  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfGBufferTarget,
              this->getType().getFieldDesc(GBufferTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DeferredShadingStageData::setGBufferTarget,
@@ -1039,14 +1038,13 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleGBufferBackground (void
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleGBufferBackground(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfGBufferBackground,
              this->getType().getFieldDesc(GBufferBackgroundFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DeferredShadingStageData::setGBufferBackground,
@@ -1070,14 +1068,13 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleShadingTarget   (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleShadingTarget  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfShadingTarget,
              this->getType().getFieldDesc(ShadingTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DeferredShadingStageData::setShadingTarget,
@@ -1101,14 +1098,14 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleShadingStates   (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleShadingStates  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecStatePtr::EditHandlePtr returnValue(
         new  MFUnrecStatePtr::EditHandle(
              &_mfShadingStates,
              this->getType().getFieldDesc(ShadingStatesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&DeferredShadingStageData::pushToShadingStates,
@@ -1141,14 +1138,14 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleShadingProgramChunks (v
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleShadingProgramChunks(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramChunkPtr::EditHandle(
              &_mfShadingProgramChunks,
              this->getType().getFieldDesc(ShadingProgramChunksFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&DeferredShadingStageData::pushToShadingProgramChunks,
@@ -1181,14 +1178,14 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleLightChunks     (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleLightChunks    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecDSLightChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecDSLightChunkPtr::EditHandle(
              &_mfLightChunks,
              this->getType().getFieldDesc(LightChunksFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&DeferredShadingStageData::pushToLightChunks,
@@ -1221,14 +1218,13 @@ GetFieldHandlePtr DeferredShadingStageDataBase::getHandleBlendChunk      (void) 
 
 EditFieldHandlePtr DeferredShadingStageDataBase::editHandleBlendChunk     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecBlendChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecBlendChunkPtr::EditHandle(
              &_sfBlendChunk,
              this->getType().getFieldDesc(BlendChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DeferredShadingStageData::setBlendChunk,

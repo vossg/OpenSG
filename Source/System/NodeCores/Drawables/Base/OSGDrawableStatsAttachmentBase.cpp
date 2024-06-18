@@ -809,9 +809,6 @@ GetFieldHandlePtr DrawableStatsAttachmentBase::getHandleVertices        (void) c
 
 EditFieldHandlePtr DrawableStatsAttachmentBase::editHandleVertices       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfVertices,
@@ -837,9 +834,6 @@ GetFieldHandlePtr DrawableStatsAttachmentBase::getHandlePoints          (void) c
 
 EditFieldHandlePtr DrawableStatsAttachmentBase::editHandlePoints         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfPoints,
@@ -865,9 +859,6 @@ GetFieldHandlePtr DrawableStatsAttachmentBase::getHandleLines           (void) c
 
 EditFieldHandlePtr DrawableStatsAttachmentBase::editHandleLines          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfLines,
@@ -893,9 +884,6 @@ GetFieldHandlePtr DrawableStatsAttachmentBase::getHandleTriangles       (void) c
 
 EditFieldHandlePtr DrawableStatsAttachmentBase::editHandleTriangles      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTriangles,
@@ -921,9 +909,6 @@ GetFieldHandlePtr DrawableStatsAttachmentBase::getHandlePatches         (void) c
 
 EditFieldHandlePtr DrawableStatsAttachmentBase::editHandlePatches        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfPatches,
@@ -949,9 +934,6 @@ GetFieldHandlePtr DrawableStatsAttachmentBase::getHandleProcessedAttributeBytes 
 
 EditFieldHandlePtr DrawableStatsAttachmentBase::editHandleProcessedAttributeBytes(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfProcessedAttributeBytes,
@@ -977,9 +959,6 @@ GetFieldHandlePtr DrawableStatsAttachmentBase::getHandleStoredAttributeBytes (vo
 
 EditFieldHandlePtr DrawableStatsAttachmentBase::editHandleStoredAttributeBytes(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfStoredAttributeBytes,
@@ -1005,9 +984,6 @@ GetFieldHandlePtr DrawableStatsAttachmentBase::getHandleValid           (void) c
 
 EditFieldHandlePtr DrawableStatsAttachmentBase::editHandleValid          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfValid,

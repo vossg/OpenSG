@@ -681,14 +681,13 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleShadowVertexProgram (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleShadowVertexProgram(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramPtr::EditHandle(
              &_sfShadowVertexProgram,
              this->getType().getFieldDesc(ShadowVertexProgramFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShaderShadowMapEngine::setShadowVertexProgram,
@@ -712,14 +711,13 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleShadowFragmentProgram (voi
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleShadowFragmentProgram(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramPtr::EditHandle(
              &_sfShadowFragmentProgram,
              this->getType().getFieldDesc(ShadowFragmentProgramFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShaderShadowMapEngine::setShadowFragmentProgram,
@@ -743,9 +741,6 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleForceTextureUnit (void) co
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleForceTextureUnit(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfForceTextureUnit,
@@ -771,9 +766,6 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleShadowNear      (void) con
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleShadowNear     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShadowNear,
@@ -799,9 +791,6 @@ GetFieldHandlePtr ShaderShadowMapEngineBase::getHandleShadowFar       (void) con
 
 EditFieldHandlePtr ShaderShadowMapEngineBase::editHandleShadowFar      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShadowFar,

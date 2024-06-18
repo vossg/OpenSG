@@ -652,14 +652,13 @@ GetFieldHandlePtr TextureImageChunkBase::getHandleTexture         (void) const
 
 EditFieldHandlePtr TextureImageChunkBase::editHandleTexture        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBaseChunkPtr::EditHandle(
              &_sfTexture,
              this->getType().getFieldDesc(TextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&TextureImageChunk::setTexture,
@@ -683,9 +682,6 @@ GetFieldHandlePtr TextureImageChunkBase::getHandleLevel           (void) const
 
 EditFieldHandlePtr TextureImageChunkBase::editHandleLevel          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfLevel,
@@ -711,9 +707,6 @@ GetFieldHandlePtr TextureImageChunkBase::getHandleLayer           (void) const
 
 EditFieldHandlePtr TextureImageChunkBase::editHandleLayer          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfLayer,
@@ -739,9 +732,6 @@ GetFieldHandlePtr TextureImageChunkBase::getHandleAccess          (void) const
 
 EditFieldHandlePtr TextureImageChunkBase::editHandleAccess         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfAccess,
@@ -767,9 +757,6 @@ GetFieldHandlePtr TextureImageChunkBase::getHandleFormat          (void) const
 
 EditFieldHandlePtr TextureImageChunkBase::editHandleFormat         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfFormat,

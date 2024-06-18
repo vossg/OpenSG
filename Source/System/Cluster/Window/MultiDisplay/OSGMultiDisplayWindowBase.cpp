@@ -664,9 +664,6 @@ GetFieldHandlePtr MultiDisplayWindowBase::getHandleHServers        (void) const
 
 EditFieldHandlePtr MultiDisplayWindowBase::editHandleHServers       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfHServers,
@@ -692,9 +689,6 @@ GetFieldHandlePtr MultiDisplayWindowBase::getHandleVServers        (void) const
 
 EditFieldHandlePtr MultiDisplayWindowBase::editHandleVServers       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfVServers,
@@ -720,9 +714,6 @@ GetFieldHandlePtr MultiDisplayWindowBase::getHandleManageClientViewports (void) 
 
 EditFieldHandlePtr MultiDisplayWindowBase::editHandleManageClientViewports(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfManageClientViewports,
@@ -748,9 +739,6 @@ GetFieldHandlePtr MultiDisplayWindowBase::getHandleXOverlap        (void) const
 
 EditFieldHandlePtr MultiDisplayWindowBase::editHandleXOverlap       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfXOverlap,
@@ -776,9 +764,6 @@ GetFieldHandlePtr MultiDisplayWindowBase::getHandleYOverlap        (void) const
 
 EditFieldHandlePtr MultiDisplayWindowBase::editHandleYOverlap       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfYOverlap,
@@ -804,9 +789,6 @@ GetFieldHandlePtr MultiDisplayWindowBase::getHandleMaxDepth        (void) const
 
 EditFieldHandlePtr MultiDisplayWindowBase::editHandleMaxDepth       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfMaxDepth,

@@ -564,9 +564,6 @@ GetFieldHandlePtr XWindowBase::getHandleDisplay         (void) const
 
 EditFieldHandlePtr XWindowBase::editHandleDisplay        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFDisplayP::EditHandlePtr returnValue(
         new  SFDisplayP::EditHandle(
              &_sfDisplay,
@@ -592,9 +589,6 @@ GetFieldHandlePtr XWindowBase::getHandleWindow          (void) const
 
 EditFieldHandlePtr XWindowBase::editHandleWindow         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFX11Window::EditHandlePtr returnValue(
         new  SFX11Window::EditHandle(
              &_sfWindow,
@@ -620,9 +614,6 @@ GetFieldHandlePtr XWindowBase::getHandleContext         (void) const
 
 EditFieldHandlePtr XWindowBase::editHandleContext        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLXContext::EditHandlePtr returnValue(
         new  SFGLXContext::EditHandle(
              &_sfContext,
@@ -648,9 +639,6 @@ GetFieldHandlePtr XWindowBase::getHandleFbConfigId      (void) const
 
 EditFieldHandlePtr XWindowBase::editHandleFbConfigId     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfFbConfigId,

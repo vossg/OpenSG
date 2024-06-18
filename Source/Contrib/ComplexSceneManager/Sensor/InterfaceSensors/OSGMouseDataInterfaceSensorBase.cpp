@@ -392,9 +392,6 @@ GetFieldHandlePtr MouseDataInterfaceSensorBase::getHandleMouseData       (void) 
 
 EditFieldHandlePtr MouseDataInterfaceSensorBase::editHandleMouseData      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMouseData::EditHandlePtr returnValue(
         new  SFMouseData::EditHandle(
              &_sfMouseData,

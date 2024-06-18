@@ -432,14 +432,13 @@ GetFieldHandlePtr FBOViewportBase::getHandleFrameBufferObject (void) const
 
 EditFieldHandlePtr FBOViewportBase::editHandleFrameBufferObject(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfFrameBufferObject,
              this->getType().getFieldDesc(FrameBufferObjectFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FBOViewport::setFrameBufferObject,

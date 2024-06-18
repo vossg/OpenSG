@@ -542,9 +542,6 @@ GetFieldHandlePtr TextureSelectChunkBase::getHandleChoice          (void) const
 
 EditFieldHandlePtr TextureSelectChunkBase::editHandleChoice         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfChoice,
@@ -570,14 +567,14 @@ GetFieldHandlePtr TextureSelectChunkBase::getHandleTextures        (void) const
 
 EditFieldHandlePtr TextureSelectChunkBase::editHandleTextures       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecTextureBaseChunkPtr::EditHandle(
              &_mfTextures,
              this->getType().getFieldDesc(TexturesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&TextureSelectChunk::pushToTextures,

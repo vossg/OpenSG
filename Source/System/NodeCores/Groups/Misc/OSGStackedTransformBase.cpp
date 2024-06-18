@@ -569,14 +569,14 @@ GetFieldHandlePtr StackedTransformBase::getHandleTransformElements (void) const
 
 EditFieldHandlePtr StackedTransformBase::editHandleTransformElements(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecChildTransformationElementPtr::EditHandlePtr returnValue(
         new  MFUnrecChildTransformationElementPtr::EditHandle(
              &_mfTransformElements,
              this->getType().getFieldDesc(TransformElementsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&StackedTransform::pushToTransformElements,

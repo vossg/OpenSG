@@ -391,9 +391,6 @@ GetFieldHandlePtr FrameBufferAttachmentBase::getHandleWidth           (void) con
 
 EditFieldHandlePtr FrameBufferAttachmentBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfWidth,
@@ -419,9 +416,6 @@ GetFieldHandlePtr FrameBufferAttachmentBase::getHandleHeight          (void) con
 
 EditFieldHandlePtr FrameBufferAttachmentBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfHeight,
@@ -447,9 +441,6 @@ GetFieldHandlePtr FrameBufferAttachmentBase::getHandleReadBack        (void) con
 
 EditFieldHandlePtr FrameBufferAttachmentBase::editHandleReadBack       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfReadBack,

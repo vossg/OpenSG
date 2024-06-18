@@ -382,9 +382,6 @@ GetFieldHandlePtr ComputeCallbackAlgorithmBase::getHandleCallback        (void) 
 
 EditFieldHandlePtr ComputeCallbackAlgorithmBase::editHandleCallback       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;

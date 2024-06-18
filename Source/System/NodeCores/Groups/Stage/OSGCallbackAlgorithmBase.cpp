@@ -468,9 +468,6 @@ GetFieldHandlePtr CallbackAlgorithmBase::getHandleCallback        (void) const
 
 EditFieldHandlePtr CallbackAlgorithmBase::editHandleCallback       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -485,9 +482,6 @@ GetFieldHandlePtr CallbackAlgorithmBase::getHandleRenderEnter     (void) const
 
 EditFieldHandlePtr CallbackAlgorithmBase::editHandleRenderEnter    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -502,9 +496,6 @@ GetFieldHandlePtr CallbackAlgorithmBase::getHandleRenderLeave     (void) const
 
 EditFieldHandlePtr CallbackAlgorithmBase::editHandleRenderLeave    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;

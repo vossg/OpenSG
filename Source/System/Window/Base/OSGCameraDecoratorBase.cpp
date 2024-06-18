@@ -414,14 +414,13 @@ GetFieldHandlePtr CameraDecoratorBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr CameraDecoratorBase::editHandleBeacon         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfBeacon,
              this->getType().getFieldDesc(BeaconFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CameraDecorator::setBeacon,
@@ -445,9 +444,6 @@ GetFieldHandlePtr CameraDecoratorBase::getHandleNear            (void) const
 
 EditFieldHandlePtr CameraDecoratorBase::editHandleNear           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfNear,
@@ -473,9 +469,6 @@ GetFieldHandlePtr CameraDecoratorBase::getHandleFar             (void) const
 
 EditFieldHandlePtr CameraDecoratorBase::editHandleFar            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFar,

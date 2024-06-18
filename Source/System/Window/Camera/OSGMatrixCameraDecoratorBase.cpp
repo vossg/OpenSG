@@ -705,9 +705,6 @@ GetFieldHandlePtr MatrixCameraDecoratorBase::getHandlePreViewing      (void) con
 
 EditFieldHandlePtr MatrixCameraDecoratorBase::editHandlePreViewing     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfPreViewing,
@@ -733,9 +730,6 @@ GetFieldHandlePtr MatrixCameraDecoratorBase::getHandlePostViewing     (void) con
 
 EditFieldHandlePtr MatrixCameraDecoratorBase::editHandlePostViewing    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfPostViewing,
@@ -761,9 +755,6 @@ GetFieldHandlePtr MatrixCameraDecoratorBase::getHandlePreProjectionTranslation (
 
 EditFieldHandlePtr MatrixCameraDecoratorBase::editHandlePreProjectionTranslation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfPreProjectionTranslation,
@@ -789,9 +780,6 @@ GetFieldHandlePtr MatrixCameraDecoratorBase::getHandlePostProjectionTranslation 
 
 EditFieldHandlePtr MatrixCameraDecoratorBase::editHandlePostProjectionTranslation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfPostProjectionTranslation,
@@ -817,9 +805,6 @@ GetFieldHandlePtr MatrixCameraDecoratorBase::getHandlePreProjection   (void) con
 
 EditFieldHandlePtr MatrixCameraDecoratorBase::editHandlePreProjection  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfPreProjection,
@@ -845,9 +830,6 @@ GetFieldHandlePtr MatrixCameraDecoratorBase::getHandlePostProjection  (void) con
 
 EditFieldHandlePtr MatrixCameraDecoratorBase::editHandlePostProjection (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfPostProjection,

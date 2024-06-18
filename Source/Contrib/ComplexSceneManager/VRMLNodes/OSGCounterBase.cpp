@@ -476,9 +476,6 @@ GetFieldHandlePtr CounterBase::getHandleIncTrigger      (void) const
 
 EditFieldHandlePtr CounterBase::editHandleIncTrigger     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFOSGAny::EditHandlePtr returnValue(
         new  SFOSGAny::EditHandle(
              &_sfIncTrigger,
@@ -504,9 +501,6 @@ GetFieldHandlePtr CounterBase::getHandleDecTrigger      (void) const
 
 EditFieldHandlePtr CounterBase::editHandleDecTrigger     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFOSGAny::EditHandlePtr returnValue(
         new  SFOSGAny::EditHandle(
              &_sfDecTrigger,
@@ -532,9 +526,6 @@ GetFieldHandlePtr CounterBase::getHandleResetTrigger    (void) const
 
 EditFieldHandlePtr CounterBase::editHandleResetTrigger   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFOSGAny::EditHandlePtr returnValue(
         new  SFOSGAny::EditHandle(
              &_sfResetTrigger,

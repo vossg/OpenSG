@@ -589,14 +589,13 @@ GetFieldHandlePtr KDTreeIntersectProxyAttachmentBase::getHandleGeometry        (
 
 EditFieldHandlePtr KDTreeIntersectProxyAttachmentBase::editHandleGeometry       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecGeometryPtr::EditHandlePtr returnValue(
         new  SFUnrecGeometryPtr::EditHandle(
              &_sfGeometry,
              this->getType().getFieldDesc(GeometryFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&KDTreeIntersectProxyAttachment::setGeometry,
@@ -620,9 +619,6 @@ GetFieldHandlePtr KDTreeIntersectProxyAttachmentBase::getHandleMaxDepth        (
 
 EditFieldHandlePtr KDTreeIntersectProxyAttachmentBase::editHandleMaxDepth       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfMaxDepth,
@@ -648,9 +644,6 @@ GetFieldHandlePtr KDTreeIntersectProxyAttachmentBase::getHandleTreeNodes       (
 
 EditFieldHandlePtr KDTreeIntersectProxyAttachmentBase::editHandleTreeNodes      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFIntersectKDTreeNode::EditHandlePtr returnValue(
         new  MFIntersectKDTreeNode::EditHandle(
              &_mfTreeNodes,
@@ -676,9 +669,6 @@ GetFieldHandlePtr KDTreeIntersectProxyAttachmentBase::getHandleTriIndices      (
 
 EditFieldHandlePtr KDTreeIntersectProxyAttachmentBase::editHandleTriIndices     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfTriIndices,

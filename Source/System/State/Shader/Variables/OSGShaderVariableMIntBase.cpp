@@ -399,9 +399,6 @@ GetFieldHandlePtr ShaderVariableMIntBase::getHandleValue           (void) const
 
 EditFieldHandlePtr ShaderVariableMIntBase::editHandleValue          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfValue,

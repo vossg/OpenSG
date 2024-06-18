@@ -497,9 +497,6 @@ GetFieldHandlePtr RangeLODBase::getHandleCenter          (void) const
 
 EditFieldHandlePtr RangeLODBase::editHandleCenter         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfCenter,
@@ -525,9 +522,6 @@ GetFieldHandlePtr RangeLODBase::getHandleSwitchIn        (void) const
 
 EditFieldHandlePtr RangeLODBase::editHandleSwitchIn       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSwitchIn,
@@ -553,9 +547,6 @@ GetFieldHandlePtr RangeLODBase::getHandleSwitchOut       (void) const
 
 EditFieldHandlePtr RangeLODBase::editHandleSwitchOut      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSwitchOut,

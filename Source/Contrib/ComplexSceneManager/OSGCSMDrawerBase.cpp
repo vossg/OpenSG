@@ -626,14 +626,14 @@ GetFieldHandlePtr CSMDrawerBase::getHandleWindows         (void) const
 
 EditFieldHandlePtr CSMDrawerBase::editHandleWindows        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecChildCSMWindowPtr::EditHandlePtr returnValue(
         new  MFUnrecChildCSMWindowPtr::EditHandle(
              &_mfWindows,
              this->getType().getFieldDesc(WindowsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&CSMDrawer::pushToWindows,
@@ -666,9 +666,6 @@ GetFieldHandlePtr CSMDrawerBase::getHandleDisplayString   (void) const
 
 EditFieldHandlePtr CSMDrawerBase::editHandleDisplayString  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfDisplayString,
@@ -694,9 +691,6 @@ GetFieldHandlePtr CSMDrawerBase::getHandleAspect          (void) const
 
 EditFieldHandlePtr CSMDrawerBase::editHandleAspect         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFAspectId::EditHandlePtr returnValue(
         new  SFAspectId::EditHandle(
              &_sfAspect,

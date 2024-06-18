@@ -829,9 +829,6 @@ GetFieldHandlePtr StencilChunkBase::getHandleStencilFunc     (void) const
 
 EditFieldHandlePtr StencilChunkBase::editHandleStencilFunc    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfStencilFunc,
@@ -857,9 +854,6 @@ GetFieldHandlePtr StencilChunkBase::getHandleStencilValue    (void) const
 
 EditFieldHandlePtr StencilChunkBase::editHandleStencilValue   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfStencilValue,
@@ -885,9 +879,6 @@ GetFieldHandlePtr StencilChunkBase::getHandleStencilMask     (void) const
 
 EditFieldHandlePtr StencilChunkBase::editHandleStencilMask    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfStencilMask,
@@ -913,9 +904,6 @@ GetFieldHandlePtr StencilChunkBase::getHandleStencilOpFail   (void) const
 
 EditFieldHandlePtr StencilChunkBase::editHandleStencilOpFail  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfStencilOpFail,
@@ -941,9 +929,6 @@ GetFieldHandlePtr StencilChunkBase::getHandleStencilOpZFail  (void) const
 
 EditFieldHandlePtr StencilChunkBase::editHandleStencilOpZFail (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfStencilOpZFail,
@@ -969,9 +954,6 @@ GetFieldHandlePtr StencilChunkBase::getHandleStencilOpZPass  (void) const
 
 EditFieldHandlePtr StencilChunkBase::editHandleStencilOpZPass (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfStencilOpZPass,
@@ -997,9 +979,6 @@ GetFieldHandlePtr StencilChunkBase::getHandleClearBuffer     (void) const
 
 EditFieldHandlePtr StencilChunkBase::editHandleClearBuffer    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfClearBuffer,
@@ -1025,9 +1004,6 @@ GetFieldHandlePtr StencilChunkBase::getHandleBitMask         (void) const
 
 EditFieldHandlePtr StencilChunkBase::editHandleBitMask        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfBitMask,

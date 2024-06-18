@@ -454,9 +454,6 @@ GetFieldHandlePtr AttachmentBase::getHandleParents         (void) const
 
 EditFieldHandlePtr AttachmentBase::editHandleParents        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -475,9 +472,6 @@ GetFieldHandlePtr AttachmentBase::getHandleInternal        (void) const
 
 EditFieldHandlePtr AttachmentBase::editHandleInternal       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfInternal,

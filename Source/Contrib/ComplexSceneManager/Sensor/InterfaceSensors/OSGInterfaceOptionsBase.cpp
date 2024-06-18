@@ -557,9 +557,6 @@ GetFieldHandlePtr InterfaceOptionsBase::getHandleParent          (void) const
 
 EditFieldHandlePtr InterfaceOptionsBase::editHandleParent         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -578,9 +575,6 @@ GetFieldHandlePtr InterfaceOptionsBase::getHandleNapTime         (void) const
 
 EditFieldHandlePtr InterfaceOptionsBase::editHandleNapTime        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfNapTime,
@@ -606,9 +600,6 @@ GetFieldHandlePtr InterfaceOptionsBase::getHandleBufferSize      (void) const
 
 EditFieldHandlePtr InterfaceOptionsBase::editHandleBufferSize     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfBufferSize,

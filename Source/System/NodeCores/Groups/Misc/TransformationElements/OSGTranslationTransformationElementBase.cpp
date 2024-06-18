@@ -401,9 +401,6 @@ GetFieldHandlePtr TranslationTransformationElementBase::getHandleTranslation    
 
 EditFieldHandlePtr TranslationTransformationElementBase::editHandleTranslation    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfTranslation,

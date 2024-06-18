@@ -515,9 +515,6 @@ GetFieldHandlePtr MatrixCameraBase::getHandleProjectionMatrix (void) const
 
 EditFieldHandlePtr MatrixCameraBase::editHandleProjectionMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfProjectionMatrix,
@@ -543,9 +540,6 @@ GetFieldHandlePtr MatrixCameraBase::getHandleModelviewMatrix (void) const
 
 EditFieldHandlePtr MatrixCameraBase::editHandleModelviewMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfModelviewMatrix,
@@ -571,9 +565,6 @@ GetFieldHandlePtr MatrixCameraBase::getHandleUseBeacon       (void) const
 
 EditFieldHandlePtr MatrixCameraBase::editHandleUseBeacon      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseBeacon,

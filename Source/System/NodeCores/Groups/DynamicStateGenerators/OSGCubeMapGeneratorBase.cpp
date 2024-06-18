@@ -1143,14 +1143,13 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleRoot            (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleRoot           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfRoot,
              this->getType().getFieldDesc(RootFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeMapGenerator::setRoot,
@@ -1174,14 +1173,14 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleExclude         (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleExclude        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecNodePtr::EditHandlePtr returnValue(
         new  MFUnrecNodePtr::EditHandle(
              &_mfExclude,
              this->getType().getFieldDesc(ExcludeFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&CubeMapGenerator::pushToExclude,
@@ -1214,14 +1213,13 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleTexture         (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleTexture        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfTexture,
              this->getType().getFieldDesc(TextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeMapGenerator::setTexture,
@@ -1245,9 +1243,6 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleTextureSize     (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleTextureSize    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec2s::EditHandlePtr returnValue(
         new  SFVec2s::EditHandle(
              &_sfTextureSize,
@@ -1273,9 +1268,6 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleTextureFormat   (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleTextureFormat  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfTextureFormat,
@@ -1301,14 +1293,13 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleBeacon         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfBeacon,
              this->getType().getFieldDesc(BeaconFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeMapGenerator::setBeacon,
@@ -1332,9 +1323,6 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleOrigin          (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleOrigin         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfOrigin,
@@ -1360,9 +1348,6 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleOriginMode      (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleOriginMode     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfOriginMode,
@@ -1388,9 +1373,6 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleTexUnit         (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleTexUnit        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTexUnit,
@@ -1416,9 +1398,6 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleSetupMode       (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleSetupMode      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSetupMode,
@@ -1444,14 +1423,13 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleBackground      (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleBackground     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfBackground,
              this->getType().getFieldDesc(BackgroundFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeMapGenerator::setBackground,
@@ -1475,14 +1453,13 @@ GetFieldHandlePtr CubeMapGeneratorBase::getHandleCamera          (void) const
 
 EditFieldHandlePtr CubeMapGeneratorBase::editHandleCamera         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,
              this->getType().getFieldDesc(CameraFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeMapGenerator::setCamera,

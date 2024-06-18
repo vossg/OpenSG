@@ -868,14 +868,13 @@ GetFieldHandlePtr SkinnedGeometryBase::getHandleSkeleton        (void) const
 
 EditFieldHandlePtr SkinnedGeometryBase::editHandleSkeleton       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecSkeletonPtr::EditHandlePtr returnValue(
         new  SFUnrecSkeletonPtr::EditHandle(
              &_sfSkeleton,
              this->getType().getFieldDesc(SkeletonFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkinnedGeometry::setSkeleton,
@@ -899,9 +898,6 @@ GetFieldHandlePtr SkinnedGeometryBase::getHandleBindShapeMatrix (void) const
 
 EditFieldHandlePtr SkinnedGeometryBase::editHandleBindShapeMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfBindShapeMatrix,
@@ -927,9 +923,6 @@ GetFieldHandlePtr SkinnedGeometryBase::getHandleJointIds        (void) const
 
 EditFieldHandlePtr SkinnedGeometryBase::editHandleJointIds       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt16::EditHandlePtr returnValue(
         new  MFInt16::EditHandle(
              &_mfJointIds,
@@ -955,9 +948,6 @@ GetFieldHandlePtr SkinnedGeometryBase::getHandleJointIndexProperty (void) const
 
 EditFieldHandlePtr SkinnedGeometryBase::editHandleJointIndexProperty(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfJointIndexProperty,
@@ -983,9 +973,6 @@ GetFieldHandlePtr SkinnedGeometryBase::getHandleJointWeightProperty (void) const
 
 EditFieldHandlePtr SkinnedGeometryBase::editHandleJointWeightProperty(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfJointWeightProperty,
@@ -1011,9 +998,6 @@ GetFieldHandlePtr SkinnedGeometryBase::getHandleRenderMode      (void) const
 
 EditFieldHandlePtr SkinnedGeometryBase::editHandleRenderMode     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfRenderMode,
@@ -1039,14 +1023,13 @@ GetFieldHandlePtr SkinnedGeometryBase::getHandleSkinningAlgorithm (void) const
 
 EditFieldHandlePtr SkinnedGeometryBase::editHandleSkinningAlgorithm(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildSkinningAlgorithmPtr::EditHandlePtr returnValue(
         new  SFUnrecChildSkinningAlgorithmPtr::EditHandle(
              &_sfSkinningAlgorithm,
              this->getType().getFieldDesc(SkinningAlgorithmFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkinnedGeometry::setSkinningAlgorithm,

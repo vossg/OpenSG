@@ -549,9 +549,6 @@ GetFieldHandlePtr CSMLoggerBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr CSMLoggerBase::editHandleEnabled        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,
@@ -577,14 +574,14 @@ GetFieldHandlePtr CSMLoggerBase::getHandleContainers      (void) const
 
 EditFieldHandlePtr CSMLoggerBase::editHandleContainers     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecFieldContainerPtr::EditHandlePtr returnValue(
         new  MFUnrecFieldContainerPtr::EditHandle(
              &_mfContainers,
              this->getType().getFieldDesc(ContainersFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&CSMLogger::pushToContainers,
@@ -617,9 +614,6 @@ GetFieldHandlePtr CSMLoggerBase::getHandleFields          (void) const
 
 EditFieldHandlePtr CSMLoggerBase::editHandleFields         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfFields,

@@ -574,14 +574,14 @@ GetFieldHandlePtr SortLastWindowBase::getHandleGroupNodes      (void) const
 
 EditFieldHandlePtr SortLastWindowBase::editHandleGroupNodes     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecNodePtr::EditHandlePtr returnValue(
         new  MFUnrecNodePtr::EditHandle(
              &_mfGroupNodes,
              this->getType().getFieldDesc(GroupNodesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&SortLastWindow::pushToGroupNodes,
@@ -614,9 +614,6 @@ GetFieldHandlePtr SortLastWindowBase::getHandleGroupLengths    (void) const
 
 EditFieldHandlePtr SortLastWindowBase::editHandleGroupLengths   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfGroupLengths,
@@ -642,9 +639,6 @@ GetFieldHandlePtr SortLastWindowBase::getHandleGroupsChanged   (void) const
 
 EditFieldHandlePtr SortLastWindowBase::editHandleGroupsChanged  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfGroupsChanged,

@@ -436,14 +436,13 @@ GetFieldHandlePtr MaterialGroupBase::getHandleMaterial        (void) const
 
 EditFieldHandlePtr MaterialGroupBase::editHandleMaterial       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecMaterialPtr::EditHandle(
              &_sfMaterial,
              this->getType().getFieldDesc(MaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&MaterialGroup::setMaterial,

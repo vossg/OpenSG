@@ -509,9 +509,6 @@ GetFieldHandlePtr LookAtTransformationElementBase::getHandleEyePosition     (voi
 
 EditFieldHandlePtr LookAtTransformationElementBase::editHandleEyePosition    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfEyePosition,
@@ -537,9 +534,6 @@ GetFieldHandlePtr LookAtTransformationElementBase::getHandleLookAtPosition  (voi
 
 EditFieldHandlePtr LookAtTransformationElementBase::editHandleLookAtPosition (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfLookAtPosition,
@@ -565,9 +559,6 @@ GetFieldHandlePtr LookAtTransformationElementBase::getHandleUpDirection     (voi
 
 EditFieldHandlePtr LookAtTransformationElementBase::editHandleUpDirection    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfUpDirection,

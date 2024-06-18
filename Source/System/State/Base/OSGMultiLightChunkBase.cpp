@@ -3560,9 +3560,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasWorldToLightSpaceMatrix (void
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasWorldToLightSpaceMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasWorldToLightSpaceMatrix,
@@ -3588,9 +3585,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasLightToWorldSpaceMatrix (void
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasLightToWorldSpaceMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasLightToWorldSpaceMatrix,
@@ -3616,9 +3610,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasEyeToLightSpaceMatrix (void) 
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasEyeToLightSpaceMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasEyeToLightSpaceMatrix,
@@ -3644,9 +3635,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasLightToEyeSpaceMatrix (void) 
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasLightToEyeSpaceMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasLightToEyeSpaceMatrix,
@@ -3672,9 +3660,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasLightPerspectiveMatrix (void)
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasLightPerspectiveMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasLightPerspectiveMatrix,
@@ -3700,9 +3685,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasInvLightPerspectiveMatrix (vo
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasInvLightPerspectiveMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasInvLightPerspectiveMatrix,
@@ -3728,9 +3710,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasColor        (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasColor       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasColor,
@@ -3756,9 +3735,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasIntensity    (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasIntensity   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasIntensity,
@@ -3784,9 +3760,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasSeparateIntensities (void) co
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasSeparateIntensities(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasSeparateIntensities,
@@ -3812,9 +3785,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasAttenuation  (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasAttenuation (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasAttenuation,
@@ -3840,9 +3810,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleAutoCalcRanges  (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleAutoCalcRanges (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAutoCalcRanges,
@@ -3868,9 +3835,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasRangeCutOn   (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasRangeCutOn  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasRangeCutOn,
@@ -3896,9 +3860,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasRangeCutOff  (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasRangeCutOff (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasRangeCutOff,
@@ -3924,9 +3885,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasRangeNearZone (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasRangeNearZone(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasRangeNearZone,
@@ -3952,9 +3910,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasRangeFarZone (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasRangeFarZone(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasRangeFarZone,
@@ -3980,9 +3935,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasCosSpotlightAngle (void) cons
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasCosSpotlightAngle(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasCosSpotlightAngle,
@@ -4008,9 +3960,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasSpotlightAngle (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasSpotlightAngle(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasSpotlightAngle,
@@ -4036,9 +3985,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasSpotExponent (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasSpotExponent(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasSpotExponent,
@@ -4064,9 +4010,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleHasCinemaLight  (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleHasCinemaLight (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfHasCinemaLight,
@@ -4092,9 +4035,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandlePosition        (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandlePosition       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFPnt3f::EditHandlePtr returnValue(
         new  MFPnt3f::EditHandle(
              &_mfPosition,
@@ -4120,9 +4060,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleDirection       (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleDirection      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfDirection,
@@ -4148,9 +4085,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleColor           (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleColor          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFColor3f::EditHandlePtr returnValue(
         new  MFColor3f::EditHandle(
              &_mfColor,
@@ -4176,9 +4110,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleIntensity       (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleIntensity      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfIntensity,
@@ -4204,9 +4135,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleAmbientIntensity (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleAmbientIntensity(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfAmbientIntensity,
@@ -4232,9 +4160,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleDiffuseIntensity (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleDiffuseIntensity(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfDiffuseIntensity,
@@ -4260,9 +4185,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleSpecularIntensity (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleSpecularIntensity(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfSpecularIntensity,
@@ -4288,9 +4210,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleAttenuation     (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleAttenuation    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfAttenuation,
@@ -4316,9 +4235,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleSpotlightAngle  (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleSpotlightAngle (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfSpotlightAngle,
@@ -4344,9 +4260,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleSpotExponent    (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleSpotExponent   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfSpotExponent,
@@ -4372,9 +4285,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleInnerSuperEllipsesWidth (void) c
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleInnerSuperEllipsesWidth(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfInnerSuperEllipsesWidth,
@@ -4400,9 +4310,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleInnerSuperEllipsesHeight (void) 
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleInnerSuperEllipsesHeight(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfInnerSuperEllipsesHeight,
@@ -4428,9 +4335,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleOuterSuperEllipsesWidth (void) c
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleOuterSuperEllipsesWidth(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfOuterSuperEllipsesWidth,
@@ -4456,9 +4360,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleOuterSuperEllipsesHeight (void) 
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleOuterSuperEllipsesHeight(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfOuterSuperEllipsesHeight,
@@ -4484,9 +4385,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleSuperEllipsesRoundness (void) co
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleSuperEllipsesRoundness(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfSuperEllipsesRoundness,
@@ -4512,9 +4410,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleSuperEllipsesTwist (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleSuperEllipsesTwist(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfSuperEllipsesTwist,
@@ -4540,9 +4435,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleRangeCutOn      (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleRangeCutOn     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfRangeCutOn,
@@ -4568,9 +4460,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleRangeCutOff     (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleRangeCutOff    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfRangeCutOff,
@@ -4596,9 +4485,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleRangeNearZone   (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleRangeNearZone  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfRangeNearZone,
@@ -4624,9 +4510,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleRangeFarZone    (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleRangeFarZone   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfRangeFarZone,
@@ -4652,9 +4535,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleType            (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleType           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfType,
@@ -4680,9 +4560,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleEnabled        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFBool::EditHandlePtr returnValue(
         new  MFBool::EditHandle(
              &_mfEnabled,
@@ -4708,14 +4585,14 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleBeacon         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFWeakNodePtr::EditHandlePtr returnValue(
         new  MFWeakNodePtr::EditHandle(
              &_mfBeacon,
              this->getType().getFieldDesc(BeaconFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&MultiLightChunk::pushToBeacon,
@@ -4748,9 +4625,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleBeaconMatrix    (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleBeaconMatrix   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfBeaconMatrix,
@@ -4776,9 +4650,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleEyeSpace        (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleEyeSpace       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEyeSpace,
@@ -4804,9 +4675,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleLastCamNear     (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleLastCamNear    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLastCamNear,
@@ -4832,9 +4700,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleLastCamFar      (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleLastCamFar     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLastCamFar,
@@ -4860,9 +4725,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleLastCamToWorld  (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleLastCamToWorld (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfLastCamToWorld,
@@ -4888,9 +4750,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleLightBlockName  (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleLightBlockName (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfLightBlockName,
@@ -4916,9 +4775,6 @@ GetFieldHandlePtr MultiLightChunkBase::getHandleLightVariableName (void) const
 
 EditFieldHandlePtr MultiLightChunkBase::editHandleLightVariableName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfLightVariableName,

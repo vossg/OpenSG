@@ -497,14 +497,14 @@ GetFieldHandlePtr ChunkMaterialBase::getHandleChunks          (void) const
 
 EditFieldHandlePtr ChunkMaterialBase::editHandleChunks         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecStateChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecStateChunkPtr::EditHandle(
              &_mfChunks,
              this->getType().getFieldDesc(ChunksFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ChunkMaterial::pushToChunks,
@@ -537,9 +537,6 @@ GetFieldHandlePtr ChunkMaterialBase::getHandleSlots           (void) const
 
 EditFieldHandlePtr ChunkMaterialBase::editHandleSlots          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfSlots,

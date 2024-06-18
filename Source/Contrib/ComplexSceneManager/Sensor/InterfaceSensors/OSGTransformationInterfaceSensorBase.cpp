@@ -614,9 +614,6 @@ GetFieldHandlePtr TransformationInterfaceSensorBase::getHandleTransformation  (v
 
 EditFieldHandlePtr TransformationInterfaceSensorBase::editHandleTransformation (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfTransformation,
@@ -642,9 +639,6 @@ GetFieldHandlePtr TransformationInterfaceSensorBase::getHandleTranslation     (v
 
 EditFieldHandlePtr TransformationInterfaceSensorBase::editHandleTranslation    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfTranslation,
@@ -670,9 +664,6 @@ GetFieldHandlePtr TransformationInterfaceSensorBase::getHandleRotation        (v
 
 EditFieldHandlePtr TransformationInterfaceSensorBase::editHandleRotation       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfRotation,
@@ -698,9 +689,6 @@ GetFieldHandlePtr TransformationInterfaceSensorBase::getHandleRotationScale   (v
 
 EditFieldHandlePtr TransformationInterfaceSensorBase::editHandleRotationScale  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfRotationScale,
@@ -726,9 +714,6 @@ GetFieldHandlePtr TransformationInterfaceSensorBase::getHandleTranslationScale (
 
 EditFieldHandlePtr TransformationInterfaceSensorBase::editHandleTranslationScale(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTranslationScale,

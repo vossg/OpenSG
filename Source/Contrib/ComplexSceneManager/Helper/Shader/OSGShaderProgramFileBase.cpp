@@ -392,9 +392,6 @@ GetFieldHandlePtr ShaderProgramFileBase::getHandleProgramUrl      (void) const
 
 EditFieldHandlePtr ShaderProgramFileBase::editHandleProgramUrl     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfProgramUrl,

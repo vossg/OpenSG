@@ -455,9 +455,6 @@ GetFieldHandlePtr RotationTransformationElementBase::getHandleAxis            (v
 
 EditFieldHandlePtr RotationTransformationElementBase::editHandleAxis           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfAxis,
@@ -483,9 +480,6 @@ GetFieldHandlePtr RotationTransformationElementBase::getHandleAngle           (v
 
 EditFieldHandlePtr RotationTransformationElementBase::editHandleAngle          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAngle,

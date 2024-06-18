@@ -780,14 +780,13 @@ GetFieldHandlePtr ProjectionCameraDecoratorBase::getHandleUser            (void)
 
 EditFieldHandlePtr ProjectionCameraDecoratorBase::editHandleUser           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfUser,
              this->getType().getFieldDesc(UserFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ProjectionCameraDecorator::setUser,
@@ -811,9 +810,6 @@ GetFieldHandlePtr ProjectionCameraDecoratorBase::getHandleSurface         (void)
 
 EditFieldHandlePtr ProjectionCameraDecoratorBase::editHandleSurface        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFPnt3f::EditHandlePtr returnValue(
         new  MFPnt3f::EditHandle(
              &_mfSurface,
@@ -839,9 +835,6 @@ GetFieldHandlePtr ProjectionCameraDecoratorBase::getHandleLeft            (void)
 
 EditFieldHandlePtr ProjectionCameraDecoratorBase::editHandleLeft           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPlane::EditHandlePtr returnValue(
         new  SFPlane::EditHandle(
              &_sfLeft,
@@ -867,9 +860,6 @@ GetFieldHandlePtr ProjectionCameraDecoratorBase::getHandleBottom          (void)
 
 EditFieldHandlePtr ProjectionCameraDecoratorBase::editHandleBottom         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPlane::EditHandlePtr returnValue(
         new  SFPlane::EditHandle(
              &_sfBottom,
@@ -895,9 +885,6 @@ GetFieldHandlePtr ProjectionCameraDecoratorBase::getHandleNormal          (void)
 
 EditFieldHandlePtr ProjectionCameraDecoratorBase::editHandleNormal         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPlane::EditHandlePtr returnValue(
         new  SFPlane::EditHandle(
              &_sfNormal,
@@ -923,9 +910,6 @@ GetFieldHandlePtr ProjectionCameraDecoratorBase::getHandleWidth           (void)
 
 EditFieldHandlePtr ProjectionCameraDecoratorBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfWidth,
@@ -951,9 +935,6 @@ GetFieldHandlePtr ProjectionCameraDecoratorBase::getHandleHeight          (void)
 
 EditFieldHandlePtr ProjectionCameraDecoratorBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfHeight,

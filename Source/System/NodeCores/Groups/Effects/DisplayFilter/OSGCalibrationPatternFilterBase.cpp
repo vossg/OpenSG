@@ -283,9 +283,6 @@ GetFieldHandlePtr CalibrationPatternFilterBase::getHandleEnabled         (void) 
 
 EditFieldHandlePtr CalibrationPatternFilterBase::editHandleEnabled        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,

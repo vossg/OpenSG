@@ -1140,9 +1140,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleVertexShader    (void) con
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleVertexShader   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -1157,9 +1154,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleTessControlShader (void) c
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleTessControlShader(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -1174,9 +1168,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleTessEvaluationShader (void
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleTessEvaluationShader(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -1191,9 +1182,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleGeometryShader  (void) con
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleGeometryShader (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -1208,9 +1196,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleFragmentShader  (void) con
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleFragmentShader (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -1229,14 +1214,13 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleVariables       (void) con
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleVariables      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildShaderProgramVariablesPtr::EditHandlePtr returnValue(
         new  SFUnrecChildShaderProgramVariablesPtr::EditHandle(
              &_sfVariables,
              this->getType().getFieldDesc(VariablesFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShaderExecutableChunk::setVariables,
@@ -1260,9 +1244,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleVariableLocations (void) c
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleVariableLocations(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfVariableLocations,
@@ -1288,9 +1269,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleProceduralVariableLocation
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleProceduralVariableLocations(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfProceduralVariableLocations,
@@ -1316,9 +1294,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleGeometryVerticesOut (void)
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleGeometryVerticesOut(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGeometryVerticesOut,
@@ -1344,9 +1319,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleGeometryInputType (void) c
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleGeometryInputType(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGeometryInputType,
@@ -1372,9 +1344,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleGeometryOutputType (void) 
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleGeometryOutputType(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGeometryOutputType,
@@ -1400,9 +1369,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleAttributes      (void) con
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleAttributes     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFShaderAttribute::EditHandlePtr returnValue(
         new  MFShaderAttribute::EditHandle(
              &_mfAttributes,
@@ -1428,9 +1394,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandleGLId            (void) con
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGLId,
@@ -1456,9 +1419,6 @@ GetFieldHandlePtr ShaderExecutableChunkBase::getHandlePointSize       (void) con
 
 EditFieldHandlePtr ShaderExecutableChunkBase::editHandlePointSize      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPointSize,

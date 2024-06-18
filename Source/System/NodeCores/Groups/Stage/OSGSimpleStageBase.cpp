@@ -857,9 +857,6 @@ GetFieldHandlePtr SimpleStageBase::getHandleLeft            (void) const
 
 EditFieldHandlePtr SimpleStageBase::editHandleLeft           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLeft,
@@ -885,9 +882,6 @@ GetFieldHandlePtr SimpleStageBase::getHandleRight           (void) const
 
 EditFieldHandlePtr SimpleStageBase::editHandleRight          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfRight,
@@ -913,9 +907,6 @@ GetFieldHandlePtr SimpleStageBase::getHandleBottom          (void) const
 
 EditFieldHandlePtr SimpleStageBase::editHandleBottom         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBottom,
@@ -941,9 +932,6 @@ GetFieldHandlePtr SimpleStageBase::getHandleTop             (void) const
 
 EditFieldHandlePtr SimpleStageBase::editHandleTop            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTop,
@@ -969,14 +957,13 @@ GetFieldHandlePtr SimpleStageBase::getHandleCamera          (void) const
 
 EditFieldHandlePtr SimpleStageBase::editHandleCamera         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,
              this->getType().getFieldDesc(CameraFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SimpleStage::setCamera,
@@ -1000,14 +987,13 @@ GetFieldHandlePtr SimpleStageBase::getHandleBackground      (void) const
 
 EditFieldHandlePtr SimpleStageBase::editHandleBackground     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfBackground,
              this->getType().getFieldDesc(BackgroundFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SimpleStage::setBackground,
@@ -1031,14 +1017,14 @@ GetFieldHandlePtr SimpleStageBase::getHandleForegrounds     (void) const
 
 EditFieldHandlePtr SimpleStageBase::editHandleForegrounds    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecForegroundPtr::EditHandlePtr returnValue(
         new  MFUnrecForegroundPtr::EditHandle(
              &_mfForegrounds,
              this->getType().getFieldDesc(ForegroundsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&SimpleStage::pushToForegrounds,

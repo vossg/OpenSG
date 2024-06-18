@@ -541,9 +541,6 @@ GetFieldHandlePtr UniformBufferObjStd140ChunkBase::getHandleGLId            (voi
 
 EditFieldHandlePtr UniformBufferObjStd140ChunkBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGLId,
@@ -569,9 +566,6 @@ GetFieldHandlePtr UniformBufferObjStd140ChunkBase::getHandleUsage           (voi
 
 EditFieldHandlePtr UniformBufferObjStd140ChunkBase::editHandleUsage          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfUsage,
@@ -597,9 +591,6 @@ GetFieldHandlePtr UniformBufferObjStd140ChunkBase::getHandleBuffer          (voi
 
 EditFieldHandlePtr UniformBufferObjStd140ChunkBase::editHandleBuffer         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfBuffer,

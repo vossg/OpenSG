@@ -496,9 +496,6 @@ GetFieldHandlePtr SimpleSHLChunkFileBase::getHandleVertexProgramUrl (void) const
 
 EditFieldHandlePtr SimpleSHLChunkFileBase::editHandleVertexProgramUrl(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfVertexProgramUrl,
@@ -524,9 +521,6 @@ GetFieldHandlePtr SimpleSHLChunkFileBase::getHandleGeometryProgramUrl (void) con
 
 EditFieldHandlePtr SimpleSHLChunkFileBase::editHandleGeometryProgramUrl(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfGeometryProgramUrl,
@@ -552,9 +546,6 @@ GetFieldHandlePtr SimpleSHLChunkFileBase::getHandleFragmentProgramUrl (void) con
 
 EditFieldHandlePtr SimpleSHLChunkFileBase::editHandleFragmentProgramUrl(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfFragmentProgramUrl,

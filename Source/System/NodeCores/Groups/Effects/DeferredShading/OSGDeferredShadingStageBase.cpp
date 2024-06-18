@@ -865,9 +865,6 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandlePixelFormats    (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandlePixelFormats   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfPixelFormats,
@@ -893,9 +890,6 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandlePixelTypes      (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandlePixelTypes     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfPixelTypes,
@@ -921,14 +915,13 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandleGBufferProgram  (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandleGBufferProgram (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramChunkPtr::EditHandle(
              &_sfGBufferProgram,
              this->getType().getFieldDesc(GBufferProgramFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DeferredShadingStage::setGBufferProgram,
@@ -952,14 +945,13 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandleAmbientProgram  (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandleAmbientProgram (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramChunkPtr::EditHandle(
              &_sfAmbientProgram,
              this->getType().getFieldDesc(AmbientProgramFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DeferredShadingStage::setAmbientProgram,
@@ -983,14 +975,14 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandleLightPrograms   (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandleLightPrograms  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramChunkPtr::EditHandle(
              &_mfLightPrograms,
              this->getType().getFieldDesc(LightProgramsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&DeferredShadingStage::pushToLightPrograms,
@@ -1023,14 +1015,14 @@ GetFieldHandlePtr DeferredShadingStageBase::getHandleLights          (void) cons
 
 EditFieldHandlePtr DeferredShadingStageBase::editHandleLights         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecLightPtr::EditHandlePtr returnValue(
         new  MFUnrecLightPtr::EditHandle(
              &_mfLights,
              this->getType().getFieldDesc(LightsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&DeferredShadingStage::pushToLights,

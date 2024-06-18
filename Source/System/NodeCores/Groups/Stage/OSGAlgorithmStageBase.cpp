@@ -578,14 +578,13 @@ GetFieldHandlePtr AlgorithmStageBase::getHandleAlgorithm       (void) const
 
 EditFieldHandlePtr AlgorithmStageBase::editHandleAlgorithm      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecAlgorithmPtr::EditHandlePtr returnValue(
         new  SFUnrecAlgorithmPtr::EditHandle(
              &_sfAlgorithm,
              this->getType().getFieldDesc(AlgorithmFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&AlgorithmStage::setAlgorithm,
@@ -609,9 +608,6 @@ GetFieldHandlePtr AlgorithmStageBase::getHandleProjectionMode  (void) const
 
 EditFieldHandlePtr AlgorithmStageBase::editHandleProjectionMode (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfProjectionMode,
@@ -637,9 +633,6 @@ GetFieldHandlePtr AlgorithmStageBase::getHandleCopyViewing     (void) const
 
 EditFieldHandlePtr AlgorithmStageBase::editHandleCopyViewing    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCopyViewing,
@@ -665,9 +658,6 @@ GetFieldHandlePtr AlgorithmStageBase::getHandleProjectionMatrix (void) const
 
 EditFieldHandlePtr AlgorithmStageBase::editHandleProjectionMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfProjectionMatrix,

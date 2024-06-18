@@ -427,14 +427,13 @@ GetFieldHandlePtr AlgorithmComputeElementBase::getHandleAlgorithm       (void) c
 
 EditFieldHandlePtr AlgorithmComputeElementBase::editHandleAlgorithm      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecComputeAlgorithmPtr::EditHandlePtr returnValue(
         new  SFUnrecComputeAlgorithmPtr::EditHandle(
              &_sfAlgorithm,
              this->getType().getFieldDesc(AlgorithmFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&AlgorithmComputeElement::setAlgorithm,

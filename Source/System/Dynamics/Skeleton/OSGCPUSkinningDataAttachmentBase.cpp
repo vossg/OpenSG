@@ -693,14 +693,14 @@ GetFieldHandlePtr CPUSkinningDataAttachmentBase::getHandleProperties      (void)
 
 EditFieldHandlePtr CPUSkinningDataAttachmentBase::editHandleProperties     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecChildGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  MFUnrecChildGeoVectorPropertyPtr::EditHandle(
              &_mfProperties,
              this->getType().getFieldDesc(PropertiesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&CPUSkinningDataAttachment::pushToProperties,
@@ -733,9 +733,6 @@ GetFieldHandlePtr CPUSkinningDataAttachmentBase::getHandleJointMatrices   (void)
 
 EditFieldHandlePtr CPUSkinningDataAttachmentBase::editHandleJointMatrices  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfJointMatrices,
@@ -761,9 +758,6 @@ GetFieldHandlePtr CPUSkinningDataAttachmentBase::getHandleJointNormalMatrices (v
 
 EditFieldHandlePtr CPUSkinningDataAttachmentBase::editHandleJointNormalMatrices(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfJointNormalMatrices,
@@ -789,9 +783,6 @@ GetFieldHandlePtr CPUSkinningDataAttachmentBase::getHandleDataValid       (void)
 
 EditFieldHandlePtr CPUSkinningDataAttachmentBase::editHandleDataValid      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDataValid,

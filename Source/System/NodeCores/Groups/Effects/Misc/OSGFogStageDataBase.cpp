@@ -672,14 +672,13 @@ GetFieldHandlePtr FogStageDataBase::getHandleFogMaterial     (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleFogMaterial    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfFogMaterial,
              this->getType().getFieldDesc(FogMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FogStageData::setFogMaterial,
@@ -703,9 +702,6 @@ GetFieldHandlePtr FogStageDataBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -731,9 +727,6 @@ GetFieldHandlePtr FogStageDataBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -759,14 +752,13 @@ GetFieldHandlePtr FogStageDataBase::getHandleRenderTarget    (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleRenderTarget   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfRenderTarget,
              this->getType().getFieldDesc(RenderTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FogStageData::setRenderTarget,
@@ -790,14 +782,13 @@ GetFieldHandlePtr FogStageDataBase::getHandleCamera          (void) const
 
 EditFieldHandlePtr FogStageDataBase::editHandleCamera         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,
              this->getType().getFieldDesc(CameraFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FogStageData::setCamera,

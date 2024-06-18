@@ -583,14 +583,13 @@ GetFieldHandlePtr ShadowMapEngineBase::getHandleShadowTexChunk  (void) const
 
 EditFieldHandlePtr ShadowMapEngineBase::editHandleShadowTexChunk (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfShadowTexChunk,
              this->getType().getFieldDesc(ShadowTexChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShadowMapEngine::setShadowTexChunk,
@@ -614,9 +613,6 @@ GetFieldHandlePtr ShadowMapEngineBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr ShadowMapEngineBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -642,9 +638,6 @@ GetFieldHandlePtr ShadowMapEngineBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr ShadowMapEngineBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -670,9 +663,6 @@ GetFieldHandlePtr ShadowMapEngineBase::getHandleOffsetBias      (void) const
 
 EditFieldHandlePtr ShadowMapEngineBase::editHandleOffsetBias     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOffsetBias,
@@ -698,9 +688,6 @@ GetFieldHandlePtr ShadowMapEngineBase::getHandleOffsetFactor    (void) const
 
 EditFieldHandlePtr ShadowMapEngineBase::editHandleOffsetFactor   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfOffsetFactor,
@@ -726,9 +713,6 @@ GetFieldHandlePtr ShadowMapEngineBase::getHandleShadowTravMask  (void) const
 
 EditFieldHandlePtr ShadowMapEngineBase::editHandleShadowTravMask (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfShadowTravMask,

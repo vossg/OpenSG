@@ -312,9 +312,6 @@ GetFieldHandlePtr ForegroundBase::getHandleActive          (void) const
 
 EditFieldHandlePtr ForegroundBase::editHandleActive         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfActive,

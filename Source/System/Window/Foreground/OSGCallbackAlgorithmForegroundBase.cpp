@@ -438,14 +438,13 @@ GetFieldHandlePtr CallbackAlgorithmForegroundBase::getHandleCallbackAlgorithm (v
 
 EditFieldHandlePtr CallbackAlgorithmForegroundBase::editHandleCallbackAlgorithm(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecCallbackAlgorithmPtr::EditHandlePtr returnValue(
         new  SFUnrecCallbackAlgorithmPtr::EditHandle(
              &_sfCallbackAlgorithm,
              this->getType().getFieldDesc(CallbackAlgorithmFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CallbackAlgorithmForeground::setCallbackAlgorithm,

@@ -745,9 +745,6 @@ GetFieldHandlePtr TextureBackgroundBase::getHandleColor           (void) const
 
 EditFieldHandlePtr TextureBackgroundBase::editHandleColor          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfColor,
@@ -773,14 +770,13 @@ GetFieldHandlePtr TextureBackgroundBase::getHandleTexture         (void) const
 
 EditFieldHandlePtr TextureBackgroundBase::editHandleTexture        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBaseChunkPtr::EditHandle(
              &_sfTexture,
              this->getType().getFieldDesc(TextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&TextureBackground::setTexture,
@@ -804,9 +800,6 @@ GetFieldHandlePtr TextureBackgroundBase::getHandleTexCoords       (void) const
 
 EditFieldHandlePtr TextureBackgroundBase::editHandleTexCoords      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFPnt2f::EditHandlePtr returnValue(
         new  MFPnt2f::EditHandle(
              &_mfTexCoords,
@@ -832,9 +825,6 @@ GetFieldHandlePtr TextureBackgroundBase::getHandleRadialDistortion (void) const
 
 EditFieldHandlePtr TextureBackgroundBase::editHandleRadialDistortion(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfRadialDistortion,
@@ -860,9 +850,6 @@ GetFieldHandlePtr TextureBackgroundBase::getHandleCenterOfDistortion (void) cons
 
 EditFieldHandlePtr TextureBackgroundBase::editHandleCenterOfDistortion(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec2f::EditHandlePtr returnValue(
         new  SFVec2f::EditHandle(
              &_sfCenterOfDistortion,
@@ -888,9 +875,6 @@ GetFieldHandlePtr TextureBackgroundBase::getHandleHor             (void) const
 
 EditFieldHandlePtr TextureBackgroundBase::editHandleHor            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfHor,
@@ -916,9 +900,6 @@ GetFieldHandlePtr TextureBackgroundBase::getHandleVert            (void) const
 
 EditFieldHandlePtr TextureBackgroundBase::editHandleVert           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfVert,

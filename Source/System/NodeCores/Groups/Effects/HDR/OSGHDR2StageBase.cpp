@@ -2988,9 +2988,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleApplyGamma      (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleApplyGamma     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfApplyGamma,
@@ -3016,9 +3013,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleAccurateGamma   (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleAccurateGamma  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAccurateGamma,
@@ -3044,9 +3038,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleAdjustLuminance (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleAdjustLuminance(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAdjustLuminance,
@@ -3072,9 +3063,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleTau             (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleTau            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTau,
@@ -3100,9 +3088,6 @@ GetFieldHandlePtr HDR2StageBase::getHandlePerformBloom    (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandlePerformBloom   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPerformBloom,
@@ -3128,9 +3113,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleBloomThreshold  (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleBloomThreshold (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBloomThreshold,
@@ -3156,9 +3138,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleBloomBackground (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleBloomBackground(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBloomBackground,
@@ -3184,9 +3163,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleBloomMagnitude  (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleBloomMagnitude (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBloomMagnitude,
@@ -3212,9 +3188,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleNumTaps         (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleNumTaps        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfNumTaps,
@@ -3240,9 +3213,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleBlurGaussSigma  (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleBlurGaussSigma (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBlurGaussSigma,
@@ -3268,9 +3238,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleToneMappingMode (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleToneMappingMode(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfToneMappingMode,
@@ -3296,9 +3263,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleForceBackground (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleForceBackground(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfForceBackground,
@@ -3324,9 +3288,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleUse_ITU_R_BT_709 (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleUse_ITU_R_BT_709(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUse_ITU_R_BT_709,
@@ -3352,9 +3313,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleAutoExposureMode (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleAutoExposureMode(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfAutoExposureMode,
@@ -3380,9 +3338,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleExposure        (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleExposure       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfExposure,
@@ -3408,9 +3363,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleKeyValue        (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleKeyValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfKeyValue,
@@ -3436,9 +3388,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleWhiteLevel      (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleWhiteLevel     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfWhiteLevel,
@@ -3464,9 +3413,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleSaturation      (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleSaturation     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSaturation,
@@ -3492,9 +3438,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleUseLinChromCorrection (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleUseLinChromCorrection(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseLinChromCorrection,
@@ -3520,9 +3463,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleFilmicShoulderStrenght (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleFilmicShoulderStrenght(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFilmicShoulderStrenght,
@@ -3548,9 +3488,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleFilmicLinearStrength (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleFilmicLinearStrength(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFilmicLinearStrength,
@@ -3576,9 +3513,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleFilmicLinearAngle (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleFilmicLinearAngle(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFilmicLinearAngle,
@@ -3604,9 +3538,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleFilmicToeStrength (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleFilmicToeStrength(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFilmicToeStrength,
@@ -3632,9 +3563,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleFilmicToeNumerator (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleFilmicToeNumerator(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFilmicToeNumerator,
@@ -3660,9 +3588,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleFilmicToeDenominator (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleFilmicToeDenominator(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFilmicToeDenominator,
@@ -3688,9 +3613,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleFilmicLinearWhite (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleFilmicLinearWhite(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFilmicLinearWhite,
@@ -3716,9 +3638,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleDragoBias       (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleDragoBias      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfDragoBias,
@@ -3744,9 +3663,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleTarget          (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleTarget         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTarget,
@@ -3772,9 +3688,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleCarryDepth      (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleCarryDepth     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCarryDepth,
@@ -3800,9 +3713,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleColorBufferInternalFormat (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleColorBufferInternalFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfColorBufferInternalFormat,
@@ -3828,9 +3738,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleColorBufferPixelFormat (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleColorBufferPixelFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfColorBufferPixelFormat,
@@ -3856,9 +3763,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleColorBufferType (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleColorBufferType(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfColorBufferType,
@@ -3884,9 +3788,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleDepthBufferInternalFormat (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleDepthBufferInternalFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfDepthBufferInternalFormat,
@@ -3912,9 +3813,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleDepthBufferPixelFormat (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleDepthBufferPixelFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfDepthBufferPixelFormat,
@@ -3940,9 +3838,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleDepthBufferType (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleDepthBufferType(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfDepthBufferType,
@@ -3968,9 +3863,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleLumBufferInternalFormat (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleLumBufferInternalFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfLumBufferInternalFormat,
@@ -3996,9 +3888,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleLumBufferPixelFormat (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleLumBufferPixelFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfLumBufferPixelFormat,
@@ -4024,9 +3913,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleLumBufferType   (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleLumBufferType  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfLumBufferType,
@@ -4052,9 +3938,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleImageBufferInternalFormat (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleImageBufferInternalFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfImageBufferInternalFormat,
@@ -4080,9 +3963,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleImageBufferPixelFormat (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleImageBufferPixelFormat(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfImageBufferPixelFormat,
@@ -4108,9 +3988,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleImageBufferType (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleImageBufferType(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfImageBufferType,
@@ -4136,9 +4013,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleNumSamples      (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleNumSamples     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfNumSamples,
@@ -4164,9 +4038,6 @@ GetFieldHandlePtr HDR2StageBase::getHandleMipmapLevel     (void) const
 
 EditFieldHandlePtr HDR2StageBase::editHandleMipmapLevel    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfMipmapLevel,

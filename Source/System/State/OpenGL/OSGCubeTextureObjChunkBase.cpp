@@ -736,14 +736,13 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandlePosZImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandlePosZImage      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfPosZImage,
              this->getType().getFieldDesc(PosZImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeTextureObjChunk::setPosZImage,
@@ -767,14 +766,13 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandlePosXImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandlePosXImage      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfPosXImage,
              this->getType().getFieldDesc(PosXImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeTextureObjChunk::setPosXImage,
@@ -798,14 +796,13 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandleNegXImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandleNegXImage      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfNegXImage,
              this->getType().getFieldDesc(NegXImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeTextureObjChunk::setNegXImage,
@@ -829,14 +826,13 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandlePosYImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandlePosYImage      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfPosYImage,
              this->getType().getFieldDesc(PosYImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeTextureObjChunk::setPosYImage,
@@ -860,14 +856,13 @@ GetFieldHandlePtr CubeTextureObjChunkBase::getHandleNegYImage       (void) const
 
 EditFieldHandlePtr CubeTextureObjChunkBase::editHandleNegYImage      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfNegYImage,
              this->getType().getFieldDesc(NegYImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeTextureObjChunk::setNegYImage,

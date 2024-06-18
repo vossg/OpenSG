@@ -473,9 +473,6 @@ GetFieldHandlePtr AnimTemplateBase::getHandleName            (void) const
 
 EditFieldHandlePtr AnimTemplateBase::editHandleName           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfName,
@@ -501,14 +498,14 @@ GetFieldHandlePtr AnimTemplateBase::getHandleSources         (void) const
 
 EditFieldHandlePtr AnimTemplateBase::editHandleSources        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecAnimDataSourcePtr::EditHandlePtr returnValue(
         new  MFUnrecAnimDataSourcePtr::EditHandle(
              &_mfSources,
              this->getType().getFieldDesc(SourcesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&AnimTemplate::pushToSources,
@@ -541,9 +538,6 @@ GetFieldHandlePtr AnimTemplateBase::getHandleTargetIds       (void) const
 
 EditFieldHandlePtr AnimTemplateBase::editHandleTargetIds      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfTargetIds,

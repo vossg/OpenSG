@@ -450,9 +450,6 @@ GetFieldHandlePtr VRMLPositionInterpolatorBase::getHandleKeyValue        (void) 
 
 EditFieldHandlePtr VRMLPositionInterpolatorBase::editHandleKeyValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfKeyValue,
@@ -478,9 +475,6 @@ GetFieldHandlePtr VRMLPositionInterpolatorBase::getHandleOutValue        (void) 
 
 EditFieldHandlePtr VRMLPositionInterpolatorBase::editHandleOutValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfOutValue,

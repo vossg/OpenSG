@@ -524,9 +524,6 @@ GetFieldHandlePtr CSMStatisticsForegroundBase::getHandleSize            (void) c
 
 EditFieldHandlePtr CSMStatisticsForegroundBase::editHandleSize           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSize,
@@ -552,9 +549,6 @@ GetFieldHandlePtr CSMStatisticsForegroundBase::getHandleColor           (void) c
 
 EditFieldHandlePtr CSMStatisticsForegroundBase::editHandleColor          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfColor,
@@ -580,9 +574,6 @@ GetFieldHandlePtr CSMStatisticsForegroundBase::getHandleBgColor         (void) c
 
 EditFieldHandlePtr CSMStatisticsForegroundBase::editHandleBgColor        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBgColor,
@@ -608,9 +599,6 @@ GetFieldHandlePtr CSMStatisticsForegroundBase::getHandleElements        (void) c
 
 EditFieldHandlePtr CSMStatisticsForegroundBase::editHandleElements       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfElements,

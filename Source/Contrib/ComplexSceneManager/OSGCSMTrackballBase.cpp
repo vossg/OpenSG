@@ -894,9 +894,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleModifierMask    (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleModifierMask   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfModifierMask,
@@ -922,9 +919,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleProcessing      (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleProcessing     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfProcessing,
@@ -950,9 +944,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleTranslationScaleFactor (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleTranslationScaleFactor(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTranslationScaleFactor,
@@ -978,9 +969,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleMatrixResult    (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleMatrixResult   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfMatrixResult,
@@ -1006,9 +994,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleRotationMatrixResult (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleRotationMatrixResult(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfRotationMatrixResult,
@@ -1034,9 +1019,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleReferencePosition (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleReferencePosition(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfReferencePosition,
@@ -1062,9 +1044,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleReferenceMatrix (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleReferenceMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfReferenceMatrix,
@@ -1090,9 +1069,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleTransformCenter (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleTransformCenter(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfTransformCenter,
@@ -1118,9 +1094,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleWorldDiag       (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleWorldDiag      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfWorldDiag,
@@ -1146,9 +1119,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleMouseData       (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleMouseData      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMouseData::EditHandlePtr returnValue(
         new  SFMouseData::EditHandle(
              &_sfMouseData,
@@ -1174,9 +1144,6 @@ GetFieldHandlePtr CSMTrackballBase::getHandleReset           (void) const
 
 EditFieldHandlePtr CSMTrackballBase::editHandleReset          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFOSGAny::EditHandlePtr returnValue(
         new  SFOSGAny::EditHandle(
              &_sfReset,

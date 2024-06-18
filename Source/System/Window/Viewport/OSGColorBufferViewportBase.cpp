@@ -574,9 +574,6 @@ GetFieldHandlePtr ColorBufferViewportBase::getHandleRed             (void) const
 
 EditFieldHandlePtr ColorBufferViewportBase::editHandleRed            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfRed,
@@ -602,9 +599,6 @@ GetFieldHandlePtr ColorBufferViewportBase::getHandleBlue            (void) const
 
 EditFieldHandlePtr ColorBufferViewportBase::editHandleBlue           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBlue,
@@ -630,9 +624,6 @@ GetFieldHandlePtr ColorBufferViewportBase::getHandleGreen           (void) const
 
 EditFieldHandlePtr ColorBufferViewportBase::editHandleGreen          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfGreen,
@@ -658,9 +649,6 @@ GetFieldHandlePtr ColorBufferViewportBase::getHandleAlpha           (void) const
 
 EditFieldHandlePtr ColorBufferViewportBase::editHandleAlpha          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAlpha,

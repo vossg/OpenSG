@@ -419,14 +419,14 @@ GetFieldHandlePtr ChunkBlockBase::getHandleChunks          (void) const
 
 EditFieldHandlePtr ChunkBlockBase::editHandleChunks         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecStateChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecStateChunkPtr::EditHandle(
              &_mfChunks,
              this->getType().getFieldDesc(ChunksFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ChunkBlock::pushToChunks,

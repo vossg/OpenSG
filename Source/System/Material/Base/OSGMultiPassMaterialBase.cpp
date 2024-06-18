@@ -485,14 +485,14 @@ GetFieldHandlePtr MultiPassMaterialBase::getHandleMaterials       (void) const
 
 EditFieldHandlePtr MultiPassMaterialBase::editHandleMaterials      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecPrimeMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecPrimeMaterialPtr::EditHandle(
              &_mfMaterials,
              this->getType().getFieldDesc(MaterialsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&MultiPassMaterial::addMaterial,

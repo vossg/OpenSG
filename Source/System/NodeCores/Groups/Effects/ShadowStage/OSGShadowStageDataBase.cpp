@@ -922,14 +922,13 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleToneMappingMaterial (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleToneMappingMaterial(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfToneMappingMaterial,
              this->getType().getFieldDesc(ToneMappingMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShadowStageData::setToneMappingMaterial,
@@ -953,14 +952,13 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleBlurRenderTarget (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleBlurRenderTarget(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfBlurRenderTarget,
              this->getType().getFieldDesc(BlurRenderTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShadowStageData::setBlurRenderTarget,
@@ -984,14 +982,13 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleBlurMaterial    (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleBlurMaterial   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfBlurMaterial,
              this->getType().getFieldDesc(BlurMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShadowStageData::setBlurMaterial,
@@ -1015,14 +1012,13 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleHBlurShader     (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleHBlurShader    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfHBlurShader,
              this->getType().getFieldDesc(HBlurShaderFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShadowStageData::setHBlurShader,
@@ -1046,14 +1042,13 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleVBlurShader     (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleVBlurShader    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfVBlurShader,
              this->getType().getFieldDesc(VBlurShaderFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShadowStageData::setVBlurShader,
@@ -1077,9 +1072,6 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfWidth,
@@ -1105,9 +1097,6 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfHeight,
@@ -1133,14 +1122,13 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleShrinkRenderTarget (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleShrinkRenderTarget(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfShrinkRenderTarget,
              this->getType().getFieldDesc(ShrinkRenderTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShadowStageData::setShrinkRenderTarget,
@@ -1164,14 +1152,13 @@ GetFieldHandlePtr ShadowStageDataBase::getHandleShrinkMaterial  (void) const
 
 EditFieldHandlePtr ShadowStageDataBase::editHandleShrinkMaterial (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfShrinkMaterial,
              this->getType().getFieldDesc(ShrinkMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShadowStageData::setShrinkMaterial,

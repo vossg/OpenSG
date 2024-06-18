@@ -821,14 +821,14 @@ GetFieldHandlePtr ComputeShaderChunkBase::getHandleComputeShader   (void) const
 
 EditFieldHandlePtr ComputeShaderChunkBase::editHandleComputeShader  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecShaderProgramPtr::EditHandlePtr returnValue(
         new  MFUnrecShaderProgramPtr::EditHandle(
              &_mfComputeShader,
              this->getType().getFieldDesc(ComputeShaderFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ComputeShaderChunk::addComputeShader,
@@ -861,9 +861,6 @@ GetFieldHandlePtr ComputeShaderChunkBase::getHandleComputeProgram  (void) const
 
 EditFieldHandlePtr ComputeShaderChunkBase::editHandleComputeProgram (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfComputeProgram,
@@ -889,14 +886,13 @@ GetFieldHandlePtr ComputeShaderChunkBase::getHandleVariables       (void) const
 
 EditFieldHandlePtr ComputeShaderChunkBase::editHandleVariables      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildShaderProgramVariablesPtr::EditHandlePtr returnValue(
         new  SFUnrecChildShaderProgramVariablesPtr::EditHandle(
              &_sfVariables,
              this->getType().getFieldDesc(VariablesFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ComputeShaderChunk::setVariables,
@@ -920,9 +916,6 @@ GetFieldHandlePtr ComputeShaderChunkBase::getHandleVariableLocations (void) cons
 
 EditFieldHandlePtr ComputeShaderChunkBase::editHandleVariableLocations(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfVariableLocations,
@@ -948,9 +941,6 @@ GetFieldHandlePtr ComputeShaderChunkBase::getHandleProceduralVariableLocations (
 
 EditFieldHandlePtr ComputeShaderChunkBase::editHandleProceduralVariableLocations(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfProceduralVariableLocations,
@@ -976,9 +966,6 @@ GetFieldHandlePtr ComputeShaderChunkBase::getHandleGLId            (void) const
 
 EditFieldHandlePtr ComputeShaderChunkBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGLId,

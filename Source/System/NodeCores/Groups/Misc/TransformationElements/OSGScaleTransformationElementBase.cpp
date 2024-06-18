@@ -401,9 +401,6 @@ GetFieldHandlePtr ScaleTransformationElementBase::getHandleScale           (void
 
 EditFieldHandlePtr ScaleTransformationElementBase::editHandleScale          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfScale,

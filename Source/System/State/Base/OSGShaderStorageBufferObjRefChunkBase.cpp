@@ -489,9 +489,6 @@ GetFieldHandlePtr ShaderStorageBufferObjRefChunkBase::getHandleOglGLId         (
 
 EditFieldHandlePtr ShaderStorageBufferObjRefChunkBase::editHandleOglGLId        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfOglGLId,
@@ -517,9 +514,6 @@ GetFieldHandlePtr ShaderStorageBufferObjRefChunkBase::getHandleOsgGLId         (
 
 EditFieldHandlePtr ShaderStorageBufferObjRefChunkBase::editHandleOsgGLId        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfOsgGLId,

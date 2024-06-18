@@ -1112,9 +1112,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleGLId            (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGLId,
@@ -1140,9 +1137,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleUsage           (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleUsage          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfUsage,
@@ -1168,9 +1162,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleBlockName       (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleBlockName      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfBlockName,
@@ -1196,9 +1187,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleFundamentalTypes (void) co
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleFundamentalTypes(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfFundamentalTypes,
@@ -1224,9 +1212,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleMainTypes       (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleMainTypes      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfMainTypes,
@@ -1252,9 +1237,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleCardinality     (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleCardinality    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfCardinality,
@@ -1280,9 +1262,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleIndex           (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleIndex          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfIndex,
@@ -1308,9 +1287,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleNames           (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleNames          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfNames,
@@ -1336,9 +1312,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleNameToIndex     (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleNameToIndex    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFStringToUInt32Map::EditHandlePtr returnValue(
         new  SFStringToUInt32Map::EditHandle(
              &_sfNameToIndex,
@@ -1364,9 +1337,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleFloatValues     (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleFloatValues    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfFloatValues,
@@ -1392,9 +1362,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleDoubleValues    (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleDoubleValues   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal64::EditHandlePtr returnValue(
         new  MFReal64::EditHandle(
              &_mfDoubleValues,
@@ -1420,9 +1387,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleIntValues       (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleIntValues      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfIntValues,
@@ -1448,9 +1412,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleUIntValues      (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleUIntValues     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfUIntValues,
@@ -1476,9 +1437,6 @@ GetFieldHandlePtr UniformBufferObjChunkBase::getHandleBoolValues      (void) con
 
 EditFieldHandlePtr UniformBufferObjChunkBase::editHandleBoolValues     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfBoolValues,

@@ -587,9 +587,6 @@ GetFieldHandlePtr LineChunkBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr LineChunkBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfWidth,
@@ -615,9 +612,6 @@ GetFieldHandlePtr LineChunkBase::getHandleStippleRepeat   (void) const
 
 EditFieldHandlePtr LineChunkBase::editHandleStippleRepeat  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfStippleRepeat,
@@ -643,9 +637,6 @@ GetFieldHandlePtr LineChunkBase::getHandleStipplePattern  (void) const
 
 EditFieldHandlePtr LineChunkBase::editHandleStipplePattern (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfStipplePattern,
@@ -671,9 +662,6 @@ GetFieldHandlePtr LineChunkBase::getHandleSmooth          (void) const
 
 EditFieldHandlePtr LineChunkBase::editHandleSmooth         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfSmooth,

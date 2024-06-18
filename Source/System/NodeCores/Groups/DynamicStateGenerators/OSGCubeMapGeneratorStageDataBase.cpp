@@ -465,14 +465,13 @@ GetFieldHandlePtr CubeMapGeneratorStageDataBase::getHandleCamera          (void)
 
 EditFieldHandlePtr CubeMapGeneratorStageDataBase::editHandleCamera         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecCameraPtr::EditHandlePtr returnValue(
         new  SFUnrecCameraPtr::EditHandle(
              &_sfCamera,
              this->getType().getFieldDesc(CameraFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeMapGeneratorStageData::setCamera,
@@ -496,14 +495,13 @@ GetFieldHandlePtr CubeMapGeneratorStageDataBase::getHandleTexTransform    (void)
 
 EditFieldHandlePtr CubeMapGeneratorStageDataBase::editHandleTexTransform   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureTransformChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureTransformChunkPtr::EditHandle(
              &_sfTexTransform,
              this->getType().getFieldDesc(TexTransformFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CubeMapGeneratorStageData::setTexTransform,

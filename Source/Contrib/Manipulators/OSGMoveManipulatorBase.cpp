@@ -497,9 +497,6 @@ GetFieldHandlePtr MoveManipulatorBase::getHandleAxisBase        (void) const
 
 EditFieldHandlePtr MoveManipulatorBase::editHandleAxisBase       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfAxisBase,
@@ -525,9 +522,6 @@ GetFieldHandlePtr MoveManipulatorBase::getHandleAxisDirection   (void) const
 
 EditFieldHandlePtr MoveManipulatorBase::editHandleAxisDirection  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfAxisDirection,
@@ -553,9 +547,6 @@ GetFieldHandlePtr MoveManipulatorBase::getHandleBaseTranslation (void) const
 
 EditFieldHandlePtr MoveManipulatorBase::editHandleBaseTranslation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfBaseTranslation,

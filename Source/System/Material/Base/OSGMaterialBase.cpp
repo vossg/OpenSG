@@ -375,9 +375,6 @@ GetFieldHandlePtr MaterialBase::getHandleSortKey         (void) const
 
 EditFieldHandlePtr MaterialBase::editHandleSortKey        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfSortKey,
@@ -403,9 +400,6 @@ GetFieldHandlePtr MaterialBase::getHandleTransparencyMode (void) const
 
 EditFieldHandlePtr MaterialBase::editHandleTransparencyMode(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfTransparencyMode,

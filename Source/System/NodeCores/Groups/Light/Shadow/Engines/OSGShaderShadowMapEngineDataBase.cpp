@@ -912,14 +912,14 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleRenderTargets   (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleRenderTargets  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  MFUnrecFrameBufferObjectPtr::EditHandle(
              &_mfRenderTargets,
              this->getType().getFieldDesc(RenderTargetsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ShaderShadowMapEngineData::pushToRenderTargets,
@@ -952,14 +952,14 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleShadowTexBuffers (void
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleShadowTexBuffers(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecTextureBufferPtr::EditHandlePtr returnValue(
         new  MFUnrecTextureBufferPtr::EditHandle(
              &_mfShadowTexBuffers,
              this->getType().getFieldDesc(ShadowTexBuffersFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ShaderShadowMapEngineData::pushToShadowTexBuffers,
@@ -992,14 +992,13 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleShadowTexChunk  (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleShadowTexChunk (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfShadowTexChunk,
              this->getType().getFieldDesc(ShadowTexChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShaderShadowMapEngineData::setShadowTexChunk,
@@ -1023,14 +1022,13 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleShadowTexImage  (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleShadowTexImage (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfShadowTexImage,
              this->getType().getFieldDesc(ShadowTexImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShaderShadowMapEngineData::setShadowTexImage,
@@ -1054,14 +1052,14 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleLightPassMaterials (vo
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleLightPassMaterials(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecChunkMaterialPtr::EditHandle(
              &_mfLightPassMaterials,
              this->getType().getFieldDesc(LightPassMaterialsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ShaderShadowMapEngineData::pushToLightPassMaterials,
@@ -1094,14 +1092,13 @@ GetFieldHandlePtr ShaderShadowMapEngineDataBase::getHandleBackground      (void)
 
 EditFieldHandlePtr ShaderShadowMapEngineDataBase::editHandleBackground     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfBackground,
              this->getType().getFieldDesc(BackgroundFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShaderShadowMapEngineData::setBackground,

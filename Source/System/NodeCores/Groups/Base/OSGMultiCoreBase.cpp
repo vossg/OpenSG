@@ -588,14 +588,14 @@ GetFieldHandlePtr MultiCoreBase::getHandleCores           (void) const
 
 EditFieldHandlePtr MultiCoreBase::editHandleCores          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecChildNodeCorePtr::EditHandlePtr returnValue(
         new  MFUnrecChildNodeCorePtr::EditHandle(
              &_mfCores,
              this->getType().getFieldDesc(CoresFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&MultiCore::addCore,
@@ -628,9 +628,6 @@ GetFieldHandlePtr MultiCoreBase::getHandleExitOnSkip      (void) const
 
 EditFieldHandlePtr MultiCoreBase::editHandleExitOnSkip     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfExitOnSkip,

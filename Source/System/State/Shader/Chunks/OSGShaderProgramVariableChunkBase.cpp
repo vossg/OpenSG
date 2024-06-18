@@ -519,14 +519,13 @@ GetFieldHandlePtr ShaderProgramVariableChunkBase::getHandleVariables       (void
 
 EditFieldHandlePtr ShaderProgramVariableChunkBase::editHandleVariables      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildShaderProgramVariablesPtr::EditHandlePtr returnValue(
         new  SFUnrecChildShaderProgramVariablesPtr::EditHandle(
              &_sfVariables,
              this->getType().getFieldDesc(VariablesFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShaderProgramVariableChunk::setVariables,
@@ -546,9 +545,6 @@ GetFieldHandlePtr ShaderProgramVariableChunkBase::getHandleDestroyedFunctors (vo
 
 EditFieldHandlePtr ShaderProgramVariableChunkBase::editHandleDestroyedFunctors(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;

@@ -517,9 +517,6 @@ GetFieldHandlePtr SpotLightBase::getHandleDirection       (void) const
 
 EditFieldHandlePtr SpotLightBase::editHandleDirection      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfDirection,
@@ -545,9 +542,6 @@ GetFieldHandlePtr SpotLightBase::getHandleSpotExponent    (void) const
 
 EditFieldHandlePtr SpotLightBase::editHandleSpotExponent   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSpotExponent,
@@ -573,9 +567,6 @@ GetFieldHandlePtr SpotLightBase::getHandleSpotCutOff      (void) const
 
 EditFieldHandlePtr SpotLightBase::editHandleSpotCutOff     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSpotCutOff,

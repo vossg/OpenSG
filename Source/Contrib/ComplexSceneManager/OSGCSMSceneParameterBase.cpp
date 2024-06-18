@@ -770,14 +770,13 @@ GetFieldHandlePtr CSMSceneParameterBase::getHandleSceneRef        (void) const
 
 EditFieldHandlePtr CSMSceneParameterBase::editHandleSceneRef       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfSceneRef,
              this->getType().getFieldDesc(SceneRefFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CSMSceneParameter::setSceneRef,
@@ -801,9 +800,6 @@ GetFieldHandlePtr CSMSceneParameterBase::getHandleDistScale       (void) const
 
 EditFieldHandlePtr CSMSceneParameterBase::editHandleDistScale      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfDistScale,
@@ -829,9 +825,6 @@ GetFieldHandlePtr CSMSceneParameterBase::getHandleSceneDiag       (void) const
 
 EditFieldHandlePtr CSMSceneParameterBase::editHandleSceneDiag      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfSceneDiag,
@@ -857,9 +850,6 @@ GetFieldHandlePtr CSMSceneParameterBase::getHandleInitViewPos     (void) const
 
 EditFieldHandlePtr CSMSceneParameterBase::editHandleInitViewPos    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfInitViewPos,
@@ -885,9 +875,6 @@ GetFieldHandlePtr CSMSceneParameterBase::getHandleSceneCenter     (void) const
 
 EditFieldHandlePtr CSMSceneParameterBase::editHandleSceneCenter    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfSceneCenter,
@@ -913,9 +900,6 @@ GetFieldHandlePtr CSMSceneParameterBase::getHandleSceneNear       (void) const
 
 EditFieldHandlePtr CSMSceneParameterBase::editHandleSceneNear      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSceneNear,
@@ -941,9 +925,6 @@ GetFieldHandlePtr CSMSceneParameterBase::getHandleSceneFar        (void) const
 
 EditFieldHandlePtr CSMSceneParameterBase::editHandleSceneFar       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSceneFar,
@@ -969,9 +950,6 @@ GetFieldHandlePtr CSMSceneParameterBase::getHandleReset           (void) const
 
 EditFieldHandlePtr CSMSceneParameterBase::editHandleReset          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFOSGAny::EditHandlePtr returnValue(
         new  SFOSGAny::EditHandle(
              &_sfReset,

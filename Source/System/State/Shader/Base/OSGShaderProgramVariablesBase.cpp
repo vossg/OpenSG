@@ -613,14 +613,14 @@ GetFieldHandlePtr ShaderProgramVariablesBase::getHandleVariables       (void) co
 
 EditFieldHandlePtr ShaderProgramVariablesBase::editHandleVariables      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecShaderValueVariablePtr::EditHandlePtr returnValue(
         new  MFUnrecShaderValueVariablePtr::EditHandle(
              &_mfVariables,
              this->getType().getFieldDesc(VariablesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ShaderProgramVariables::addVariable,
@@ -650,14 +650,14 @@ GetFieldHandlePtr ShaderProgramVariablesBase::getHandleProceduralVariables (void
 
 EditFieldHandlePtr ShaderProgramVariablesBase::editHandleProceduralVariables(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecChildShaderProcVariablePtr::EditHandlePtr returnValue(
         new  MFUnrecChildShaderProcVariablePtr::EditHandle(
              &_mfProceduralVariables,
              this->getType().getFieldDesc(ProceduralVariablesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ShaderProgramVariables::addProceduralVariable,
@@ -687,9 +687,6 @@ GetFieldHandlePtr ShaderProgramVariablesBase::getHandleVariableChanged (void) co
 
 EditFieldHandlePtr ShaderProgramVariablesBase::editHandleVariableChanged(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfVariableChanged,

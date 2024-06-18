@@ -509,9 +509,6 @@ GetFieldHandlePtr SkewTransformationElementBase::getHandleRotationAxis    (void)
 
 EditFieldHandlePtr SkewTransformationElementBase::editHandleRotationAxis   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfRotationAxis,
@@ -537,9 +534,6 @@ GetFieldHandlePtr SkewTransformationElementBase::getHandleTranslationAxis (void)
 
 EditFieldHandlePtr SkewTransformationElementBase::editHandleTranslationAxis(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfTranslationAxis,
@@ -565,9 +559,6 @@ GetFieldHandlePtr SkewTransformationElementBase::getHandleAngle           (void)
 
 EditFieldHandlePtr SkewTransformationElementBase::editHandleAngle          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAngle,

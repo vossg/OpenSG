@@ -535,14 +535,14 @@ GetFieldHandlePtr AnimVec3fBlenderBase::getHandleChannels        (void) const
 
 EditFieldHandlePtr AnimVec3fBlenderBase::editHandleChannels       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecAnimVec3fChannelPtr::EditHandlePtr returnValue(
         new  MFUnrecAnimVec3fChannelPtr::EditHandle(
              &_mfChannels,
              this->getType().getFieldDesc(ChannelsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&AnimVec3fBlender::pushToChannels,
@@ -575,9 +575,6 @@ GetFieldHandlePtr AnimVec3fBlenderBase::getHandleOutValue        (void) const
 
 EditFieldHandlePtr AnimVec3fBlenderBase::editHandleOutValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfOutValue,

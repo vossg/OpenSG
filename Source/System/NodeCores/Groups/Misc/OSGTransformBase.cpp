@@ -401,9 +401,6 @@ GetFieldHandlePtr TransformBase::getHandleMatrix          (void) const
 
 EditFieldHandlePtr TransformBase::editHandleMatrix         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfMatrix,

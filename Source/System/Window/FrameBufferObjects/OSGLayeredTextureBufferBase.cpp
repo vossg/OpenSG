@@ -597,14 +597,13 @@ GetFieldHandlePtr LayeredTextureBufferBase::getHandleTexture         (void) cons
 
 EditFieldHandlePtr LayeredTextureBufferBase::editHandleTexture        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfTexture,
              this->getType().getFieldDesc(TextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&LayeredTextureBuffer::setTexture,
@@ -628,9 +627,6 @@ GetFieldHandlePtr LayeredTextureBufferBase::getHandleTexTarget       (void) cons
 
 EditFieldHandlePtr LayeredTextureBufferBase::editHandleTexTarget      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfTexTarget,
@@ -656,9 +652,6 @@ GetFieldHandlePtr LayeredTextureBufferBase::getHandleLevel           (void) cons
 
 EditFieldHandlePtr LayeredTextureBufferBase::editHandleLevel          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfLevel,
@@ -684,9 +677,6 @@ GetFieldHandlePtr LayeredTextureBufferBase::getHandleZoffset         (void) cons
 
 EditFieldHandlePtr LayeredTextureBufferBase::editHandleZoffset        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfZoffset,

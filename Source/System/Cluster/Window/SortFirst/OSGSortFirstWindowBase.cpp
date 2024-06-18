@@ -604,9 +604,6 @@ GetFieldHandlePtr SortFirstWindowBase::getHandleCompression     (void) const
 
 EditFieldHandlePtr SortFirstWindowBase::editHandleCompression    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfCompression,
@@ -632,9 +629,6 @@ GetFieldHandlePtr SortFirstWindowBase::getHandleSubtileSize     (void) const
 
 EditFieldHandlePtr SortFirstWindowBase::editHandleSubtileSize    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSubtileSize,
@@ -660,9 +654,6 @@ GetFieldHandlePtr SortFirstWindowBase::getHandleCompose         (void) const
 
 EditFieldHandlePtr SortFirstWindowBase::editHandleCompose        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCompose,
@@ -688,9 +679,6 @@ GetFieldHandlePtr SortFirstWindowBase::getHandleRegion          (void) const
 
 EditFieldHandlePtr SortFirstWindowBase::editHandleRegion         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfRegion,
@@ -716,9 +704,6 @@ GetFieldHandlePtr SortFirstWindowBase::getHandleUseFaceDistribution (void) const
 
 EditFieldHandlePtr SortFirstWindowBase::editHandleUseFaceDistribution(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseFaceDistribution,

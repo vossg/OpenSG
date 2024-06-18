@@ -600,9 +600,6 @@ GetFieldHandlePtr ComponentTransformBase::getHandleCenter          (void) const
 
 EditFieldHandlePtr ComponentTransformBase::editHandleCenter         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfCenter,
@@ -628,9 +625,6 @@ GetFieldHandlePtr ComponentTransformBase::getHandleRotation        (void) const
 
 EditFieldHandlePtr ComponentTransformBase::editHandleRotation       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfRotation,
@@ -656,9 +650,6 @@ GetFieldHandlePtr ComponentTransformBase::getHandleScale           (void) const
 
 EditFieldHandlePtr ComponentTransformBase::editHandleScale          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfScale,
@@ -684,9 +675,6 @@ GetFieldHandlePtr ComponentTransformBase::getHandleScaleOrientation (void) const
 
 EditFieldHandlePtr ComponentTransformBase::editHandleScaleOrientation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfScaleOrientation,
@@ -712,9 +700,6 @@ GetFieldHandlePtr ComponentTransformBase::getHandleTranslation     (void) const
 
 EditFieldHandlePtr ComponentTransformBase::editHandleTranslation    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfTranslation,

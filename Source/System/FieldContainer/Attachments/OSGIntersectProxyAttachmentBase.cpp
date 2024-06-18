@@ -303,9 +303,6 @@ GetFieldHandlePtr IntersectProxyAttachmentBase::getHandleVisitChildren   (void) 
 
 EditFieldHandlePtr IntersectProxyAttachmentBase::editHandleVisitChildren  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfVisitChildren,

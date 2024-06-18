@@ -421,14 +421,13 @@ GetFieldHandlePtr FBOBackgroundBase::getHandleFrameBufferObject (void) const
 
 EditFieldHandlePtr FBOBackgroundBase::editHandleFrameBufferObject(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfFrameBufferObject,
              this->getType().getFieldDesc(FrameBufferObjectFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FBOBackground::setFrameBufferObject,

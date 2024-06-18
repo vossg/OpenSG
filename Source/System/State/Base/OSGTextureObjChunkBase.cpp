@@ -2023,14 +2023,13 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleImage           (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleImage          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildImagePtr::EditHandlePtr returnValue(
         new  SFUnrecChildImagePtr::EditHandle(
              &_sfImage,
              this->getType().getFieldDesc(ImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&TextureObjChunk::setImage,
@@ -2054,9 +2053,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleInternalFormat  (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleInternalFormat (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfInternalFormat,
@@ -2082,9 +2078,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleExternalFormat  (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleExternalFormat (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfExternalFormat,
@@ -2110,9 +2103,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleScale           (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleScale          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfScale,
@@ -2138,9 +2128,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleFrame           (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleFrame          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFrame,
@@ -2166,9 +2153,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleMinFilter       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleMinFilter      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfMinFilter,
@@ -2194,9 +2178,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleMagFilter       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleMagFilter      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfMagFilter,
@@ -2222,9 +2203,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleWrapS           (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleWrapS          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfWrapS,
@@ -2250,9 +2228,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleWrapT           (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleWrapT          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfWrapT,
@@ -2278,9 +2253,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleWrapR           (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleWrapR          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfWrapR,
@@ -2306,9 +2278,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleGLId            (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGLId,
@@ -2334,9 +2303,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandlePriority        (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandlePriority       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfPriority,
@@ -2362,9 +2328,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleDirtyLeft       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleDirtyLeft      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDirtyLeft,
@@ -2390,9 +2353,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleDirtyMinX       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleDirtyMinX      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDirtyMinX,
@@ -2418,9 +2378,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleDirtyMaxX       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleDirtyMaxX      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDirtyMaxX,
@@ -2446,9 +2403,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleDirtyMinY       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleDirtyMinY      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDirtyMinY,
@@ -2474,9 +2428,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleDirtyMaxY       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleDirtyMaxY      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDirtyMaxY,
@@ -2502,9 +2453,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleDirtyMinZ       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleDirtyMinZ      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDirtyMinZ,
@@ -2530,9 +2478,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleDirtyMaxZ       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleDirtyMaxZ      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfDirtyMaxZ,
@@ -2558,9 +2503,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleAnisotropy      (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleAnisotropy     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfAnisotropy,
@@ -2586,9 +2528,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleBorderColor     (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleBorderColor    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfBorderColor,
@@ -2614,9 +2553,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleCompareMode     (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleCompareMode    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfCompareMode,
@@ -2642,9 +2578,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleCompareFunc     (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleCompareFunc    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfCompareFunc,
@@ -2670,9 +2603,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleDepthMode       (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleDepthMode      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfDepthMode,
@@ -2698,9 +2628,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleBorderWidth     (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleBorderWidth    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfBorderWidth,
@@ -2726,9 +2653,6 @@ GetFieldHandlePtr TextureObjChunkBase::getHandleSkipMipMapLevels (void) const
 
 EditFieldHandlePtr TextureObjChunkBase::editHandleSkipMipMapLevels(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSkipMipMapLevels,

@@ -529,9 +529,6 @@ GetFieldHandlePtr ContainerCollectionBase::getHandleName            (void) const
 
 EditFieldHandlePtr ContainerCollectionBase::editHandleName           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfName,
@@ -557,14 +554,14 @@ GetFieldHandlePtr ContainerCollectionBase::getHandleContainers      (void) const
 
 EditFieldHandlePtr ContainerCollectionBase::editHandleContainers     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecFieldContainerPtr::EditHandlePtr returnValue(
         new  MFUnrecFieldContainerPtr::EditHandle(
              &_mfContainers,
              this->getType().getFieldDesc(ContainersFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&ContainerCollection::pushToContainers,

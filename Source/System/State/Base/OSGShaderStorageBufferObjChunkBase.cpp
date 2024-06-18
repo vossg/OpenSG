@@ -1112,9 +1112,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleGLId            (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGLId,
@@ -1140,9 +1137,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleUsage           (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleUsage          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfUsage,
@@ -1168,9 +1162,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleBlockName       (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleBlockName      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfBlockName,
@@ -1196,9 +1187,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleFundamentalTypes (vo
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleFundamentalTypes(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfFundamentalTypes,
@@ -1224,9 +1212,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleMainTypes       (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleMainTypes      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfMainTypes,
@@ -1252,9 +1237,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleCardinality     (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleCardinality    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfCardinality,
@@ -1280,9 +1262,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleIndex           (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleIndex          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfIndex,
@@ -1308,9 +1287,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleNames           (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleNames          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfNames,
@@ -1336,9 +1312,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleNameToIndex     (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleNameToIndex    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFStringToUInt32Map::EditHandlePtr returnValue(
         new  SFStringToUInt32Map::EditHandle(
              &_sfNameToIndex,
@@ -1364,9 +1337,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleFloatValues     (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleFloatValues    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfFloatValues,
@@ -1392,9 +1362,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleDoubleValues    (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleDoubleValues   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal64::EditHandlePtr returnValue(
         new  MFReal64::EditHandle(
              &_mfDoubleValues,
@@ -1420,9 +1387,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleIntValues       (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleIntValues      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfIntValues,
@@ -1448,9 +1412,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleUIntValues      (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleUIntValues     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfUIntValues,
@@ -1476,9 +1437,6 @@ GetFieldHandlePtr ShaderStorageBufferObjChunkBase::getHandleBoolValues      (voi
 
 EditFieldHandlePtr ShaderStorageBufferObjChunkBase::editHandleBoolValues     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfBoolValues,

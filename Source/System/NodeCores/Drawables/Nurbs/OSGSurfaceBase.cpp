@@ -1350,9 +1350,6 @@ GetFieldHandlePtr SurfaceBase::getHandleDimU            (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleDimU           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDimU,
@@ -1378,9 +1375,6 @@ GetFieldHandlePtr SurfaceBase::getHandleDimV            (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleDimV           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDimV,
@@ -1406,9 +1400,6 @@ GetFieldHandlePtr SurfaceBase::getHandleKnotsU          (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleKnotsU         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfKnotsU,
@@ -1434,9 +1425,6 @@ GetFieldHandlePtr SurfaceBase::getHandleKnotsV          (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleKnotsV         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfKnotsV,
@@ -1462,14 +1450,13 @@ GetFieldHandlePtr SurfaceBase::getHandleControlPoints   (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleControlPoints  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeoVectorPropertyPtr::EditHandle(
              &_sfControlPoints,
              this->getType().getFieldDesc(ControlPointsFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Surface::setControlPoints,
@@ -1493,9 +1480,6 @@ GetFieldHandlePtr SurfaceBase::getHandleError           (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleError          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfError,
@@ -1521,9 +1505,6 @@ GetFieldHandlePtr SurfaceBase::getHandleNumCurves       (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleNumCurves      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfNumCurves,
@@ -1549,9 +1530,6 @@ GetFieldHandlePtr SurfaceBase::getHandleKnotLengths     (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleKnotLengths    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfKnotLengths,
@@ -1577,9 +1555,6 @@ GetFieldHandlePtr SurfaceBase::getHandleDimensions      (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleDimensions     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfDimensions,
@@ -1605,9 +1580,6 @@ GetFieldHandlePtr SurfaceBase::getHandleCurveControlPoints (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleCurveControlPoints(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFPnt3f::EditHandlePtr returnValue(
         new  MFPnt3f::EditHandle(
              &_mfCurveControlPoints,
@@ -1633,9 +1605,6 @@ GetFieldHandlePtr SurfaceBase::getHandleKnots           (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleKnots          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfKnots,
@@ -1661,9 +1630,6 @@ GetFieldHandlePtr SurfaceBase::getHandleCurvesPerLoop   (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleCurvesPerLoop  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfCurvesPerLoop,
@@ -1689,9 +1655,6 @@ GetFieldHandlePtr SurfaceBase::getHandleIsDelaunay      (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleIsDelaunay     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIsDelaunay,
@@ -1717,14 +1680,13 @@ GetFieldHandlePtr SurfaceBase::getHandleTextureControlPoints (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleTextureControlPoints(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildGeoVectorPropertyPtr::EditHandlePtr returnValue(
         new  SFUnrecChildGeoVectorPropertyPtr::EditHandle(
              &_sfTextureControlPoints,
              this->getType().getFieldDesc(TextureControlPointsFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&Surface::setTextureControlPoints,
@@ -1748,9 +1710,6 @@ GetFieldHandlePtr SurfaceBase::getHandleDirtyMask       (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleDirtyMask      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDirtyMask,
@@ -1776,9 +1735,6 @@ GetFieldHandlePtr SurfaceBase::getHandleSurfaceGLId     (void) const
 
 EditFieldHandlePtr SurfaceBase::editHandleSurfaceGLId    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfSurfaceGLId,

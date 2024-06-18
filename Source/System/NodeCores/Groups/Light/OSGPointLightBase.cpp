@@ -402,9 +402,6 @@ GetFieldHandlePtr PointLightBase::getHandlePosition        (void) const
 
 EditFieldHandlePtr PointLightBase::editHandlePosition       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFPnt3f::EditHandlePtr returnValue(
         new  SFPnt3f::EditHandle(
              &_sfPosition,

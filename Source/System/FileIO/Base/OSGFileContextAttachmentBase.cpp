@@ -398,9 +398,6 @@ GetFieldHandlePtr FileContextAttachmentBase::getHandleResolvedName    (void) con
 
 EditFieldHandlePtr FileContextAttachmentBase::editHandleResolvedName   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfResolvedName,

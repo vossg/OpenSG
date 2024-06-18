@@ -400,9 +400,6 @@ GetFieldHandlePtr BoostPathAttachmentBase::getHandlePath            (void) const
 
 EditFieldHandlePtr BoostPathAttachmentBase::editHandlePath           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBoostPath::EditHandlePtr returnValue(
         new  SFBoostPath::EditHandle(
              &_sfPath,

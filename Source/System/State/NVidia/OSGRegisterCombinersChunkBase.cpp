@@ -2044,9 +2044,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleColor0          (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleColor0         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfColor0,
@@ -2072,9 +2069,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleColor1          (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleColor1         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfColor1,
@@ -2100,9 +2094,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleColorSumClamp   (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleColorSumClamp  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfColorSumClamp,
@@ -2128,9 +2119,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableArgb    (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableArgb   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableArgb,
@@ -2156,9 +2144,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableBrgb    (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableBrgb   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableBrgb,
@@ -2184,9 +2169,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableCrgb    (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableCrgb   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableCrgb,
@@ -2212,9 +2194,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableDrgb    (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableDrgb   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableDrgb,
@@ -2240,9 +2219,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableAalpha  (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableAalpha (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableAalpha,
@@ -2268,9 +2244,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableBalpha  (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableBalpha (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableBalpha,
@@ -2296,9 +2269,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableCalpha  (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableCalpha (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableCalpha,
@@ -2324,9 +2294,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableDalpha  (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableDalpha (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableDalpha,
@@ -2352,9 +2319,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleOutputABrgb     (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleOutputABrgb    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfOutputABrgb,
@@ -2380,9 +2344,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleOutputCDrgb     (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleOutputCDrgb    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfOutputCDrgb,
@@ -2408,9 +2369,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleOutputSumrgb    (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleOutputSumrgb   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfOutputSumrgb,
@@ -2436,9 +2394,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleScalergb        (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleScalergb       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfScalergb,
@@ -2464,9 +2419,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleBiasrgb         (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleBiasrgb        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfBiasrgb,
@@ -2492,9 +2444,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleOutputABalpha   (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleOutputABalpha  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfOutputABalpha,
@@ -2520,9 +2469,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleOutputCDalpha   (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleOutputCDalpha  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfOutputCDalpha,
@@ -2548,9 +2494,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleOutputSumalpha  (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleOutputSumalpha (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfOutputSumalpha,
@@ -2576,9 +2519,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleDotABrgb        (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleDotABrgb       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfDotABrgb,
@@ -2604,9 +2544,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleDotCDrgb        (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleDotCDrgb       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfDotCDrgb,
@@ -2632,9 +2569,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleMuxSumrgb       (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleMuxSumrgb      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfMuxSumrgb,
@@ -2660,9 +2594,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleScalealpha      (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleScalealpha     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfScalealpha,
@@ -2688,9 +2619,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleBiasalpha       (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleBiasalpha      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfBiasalpha,
@@ -2716,9 +2644,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleMuxSumalpha     (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleMuxSumalpha    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt8::EditHandlePtr returnValue(
         new  MFUInt8::EditHandle(
              &_mfMuxSumalpha,
@@ -2744,9 +2669,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableE       (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableE      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableE,
@@ -2772,9 +2694,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableF       (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableF      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableF,
@@ -2800,9 +2719,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleVariableG       (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleVariableG      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfVariableG,
@@ -2828,9 +2744,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleCombinerColor0  (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleCombinerColor0 (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFColor4f::EditHandlePtr returnValue(
         new  MFColor4f::EditHandle(
              &_mfCombinerColor0,
@@ -2856,9 +2769,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandleCombinerColor1  (void) co
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandleCombinerColor1 (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFColor4f::EditHandlePtr returnValue(
         new  MFColor4f::EditHandle(
              &_mfCombinerColor1,
@@ -2884,9 +2794,6 @@ GetFieldHandlePtr RegisterCombinersChunkBase::getHandlePerStageConstants (void) 
 
 EditFieldHandlePtr RegisterCombinersChunkBase::editHandlePerStageConstants(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt8::EditHandlePtr returnValue(
         new  SFUInt8::EditHandle(
              &_sfPerStageConstants,

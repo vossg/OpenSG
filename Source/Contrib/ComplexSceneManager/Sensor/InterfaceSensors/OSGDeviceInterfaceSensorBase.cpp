@@ -427,9 +427,6 @@ GetFieldHandlePtr DeviceInterfaceSensorBase::getHandleInterfaceName   (void) con
 
 EditFieldHandlePtr DeviceInterfaceSensorBase::editHandleInterfaceName  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfInterfaceName,
@@ -455,14 +452,13 @@ GetFieldHandlePtr DeviceInterfaceSensorBase::getHandleOptions         (void) con
 
 EditFieldHandlePtr DeviceInterfaceSensorBase::editHandleOptions        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildInterfaceOptionsPtr::EditHandlePtr returnValue(
         new  SFUnrecChildInterfaceOptionsPtr::EditHandle(
              &_sfOptions,
              this->getType().getFieldDesc(OptionsFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DeviceInterfaceSensor::setOptions,

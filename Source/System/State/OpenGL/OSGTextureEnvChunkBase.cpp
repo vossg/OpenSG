@@ -1916,9 +1916,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvMode         (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvMode        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvMode,
@@ -1944,9 +1941,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvColor        (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvColor       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfEnvColor,
@@ -1972,9 +1966,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvCombineRGB   (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvCombineRGB  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvCombineRGB,
@@ -2000,9 +1991,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvCombineAlpha (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvCombineAlpha(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvCombineAlpha,
@@ -2028,9 +2016,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvScaleRGB     (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvScaleRGB    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfEnvScaleRGB,
@@ -2056,9 +2041,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvScaleAlpha   (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvScaleAlpha  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfEnvScaleAlpha,
@@ -2084,9 +2066,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvSource0RGB   (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvSource0RGB  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvSource0RGB,
@@ -2112,9 +2091,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvSource1RGB   (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvSource1RGB  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvSource1RGB,
@@ -2140,9 +2116,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvSource2RGB   (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvSource2RGB  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvSource2RGB,
@@ -2168,9 +2141,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvSource0Alpha (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvSource0Alpha(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvSource0Alpha,
@@ -2196,9 +2166,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvSource1Alpha (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvSource1Alpha(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvSource1Alpha,
@@ -2224,9 +2191,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvSource2Alpha (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvSource2Alpha(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvSource2Alpha,
@@ -2252,9 +2216,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvOperand0RGB  (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvOperand0RGB (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvOperand0RGB,
@@ -2280,9 +2241,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvOperand1RGB  (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvOperand1RGB (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvOperand1RGB,
@@ -2308,9 +2266,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvOperand2RGB  (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvOperand2RGB (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvOperand2RGB,
@@ -2336,9 +2291,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvOperand0Alpha (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvOperand0Alpha(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvOperand0Alpha,
@@ -2364,9 +2316,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvOperand1Alpha (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvOperand1Alpha(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvOperand1Alpha,
@@ -2392,9 +2341,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleEnvOperand2Alpha (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleEnvOperand2Alpha(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfEnvOperand2Alpha,
@@ -2420,9 +2366,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandlePointSprite     (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandlePointSprite    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPointSprite,
@@ -2448,9 +2391,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleShaderOperation (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleShaderOperation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfShaderOperation,
@@ -2476,9 +2416,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleShaderInput     (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleShaderInput    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfShaderInput,
@@ -2504,9 +2441,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleShaderOffsetMatrix (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleShaderOffsetMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfShaderOffsetMatrix,
@@ -2532,9 +2466,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleShaderOffsetScale (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleShaderOffsetScale(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShaderOffsetScale,
@@ -2560,9 +2491,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleShaderOffsetBias (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleShaderOffsetBias(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfShaderOffsetBias,
@@ -2588,9 +2516,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleShaderRGBADotProduct (void) cons
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleShaderRGBADotProduct(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfShaderRGBADotProduct,
@@ -2616,9 +2541,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleShaderCullModes (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleShaderCullModes(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt8::EditHandlePtr returnValue(
         new  SFUInt8::EditHandle(
              &_sfShaderCullModes,
@@ -2644,9 +2566,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleShaderConstEye  (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleShaderConstEye (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfShaderConstEye,
@@ -2672,9 +2591,6 @@ GetFieldHandlePtr TextureEnvChunkBase::getHandleLodBias         (void) const
 
 EditFieldHandlePtr TextureEnvChunkBase::editHandleLodBias        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLodBias,

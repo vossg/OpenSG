@@ -436,14 +436,13 @@ GetFieldHandlePtr HeadTrackedStereoCameraDecoratorBase::getHandleUser           
 
 EditFieldHandlePtr HeadTrackedStereoCameraDecoratorBase::editHandleUser           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfUser,
              this->getType().getFieldDesc(UserFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&HeadTrackedStereoCameraDecorator::setUser,

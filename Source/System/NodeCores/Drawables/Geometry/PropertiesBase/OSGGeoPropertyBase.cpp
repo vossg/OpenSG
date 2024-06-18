@@ -451,9 +451,6 @@ GetFieldHandlePtr GeoPropertyBase::getHandleUseVBO          (void) const
 
 EditFieldHandlePtr GeoPropertyBase::editHandleUseVBO         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseVBO,
@@ -479,9 +476,6 @@ GetFieldHandlePtr GeoPropertyBase::getHandleUsage           (void) const
 
 EditFieldHandlePtr GeoPropertyBase::editHandleUsage          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfUsage,
@@ -507,9 +501,6 @@ GetFieldHandlePtr GeoPropertyBase::getHandleGLId            (void) const
 
 EditFieldHandlePtr GeoPropertyBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGLId,
@@ -535,9 +526,6 @@ GetFieldHandlePtr GeoPropertyBase::getHandleVboUsage        (void) const
 
 EditFieldHandlePtr GeoPropertyBase::editHandleVboUsage       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfVboUsage,

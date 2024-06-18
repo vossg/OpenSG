@@ -399,9 +399,6 @@ GetFieldHandlePtr ShaderVariableStringBase::getHandleValue           (void) cons
 
 EditFieldHandlePtr ShaderVariableStringBase::editHandleValue          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfValue,

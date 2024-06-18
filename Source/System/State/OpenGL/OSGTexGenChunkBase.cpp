@@ -1209,9 +1209,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleGenFuncS        (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleGenFuncS       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGenFuncS,
@@ -1237,9 +1234,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleGenFuncT        (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleGenFuncT       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGenFuncT,
@@ -1265,9 +1259,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleGenFuncR        (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleGenFuncR       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGenFuncR,
@@ -1293,9 +1284,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleGenFuncQ        (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleGenFuncQ       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGenFuncQ,
@@ -1321,9 +1309,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleGenFuncSPlane   (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleGenFuncSPlane  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec4f::EditHandlePtr returnValue(
         new  SFVec4f::EditHandle(
              &_sfGenFuncSPlane,
@@ -1349,9 +1334,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleGenFuncTPlane   (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleGenFuncTPlane  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec4f::EditHandlePtr returnValue(
         new  SFVec4f::EditHandle(
              &_sfGenFuncTPlane,
@@ -1377,9 +1359,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleGenFuncRPlane   (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleGenFuncRPlane  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec4f::EditHandlePtr returnValue(
         new  SFVec4f::EditHandle(
              &_sfGenFuncRPlane,
@@ -1405,9 +1384,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleGenFuncQPlane   (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleGenFuncQPlane  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec4f::EditHandlePtr returnValue(
         new  SFVec4f::EditHandle(
              &_sfGenFuncQPlane,
@@ -1433,14 +1409,13 @@ GetFieldHandlePtr TexGenChunkBase::getHandleSBeacon         (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleSBeacon        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfSBeacon,
              this->getType().getFieldDesc(SBeaconFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&TexGenChunk::setSBeacon,
@@ -1464,14 +1439,13 @@ GetFieldHandlePtr TexGenChunkBase::getHandleTBeacon         (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleTBeacon        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfTBeacon,
              this->getType().getFieldDesc(TBeaconFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&TexGenChunk::setTBeacon,
@@ -1495,14 +1469,13 @@ GetFieldHandlePtr TexGenChunkBase::getHandleRBeacon         (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleRBeacon        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfRBeacon,
              this->getType().getFieldDesc(RBeaconFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&TexGenChunk::setRBeacon,
@@ -1526,14 +1499,13 @@ GetFieldHandlePtr TexGenChunkBase::getHandleQBeacon         (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleQBeacon        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfQBeacon,
              this->getType().getFieldDesc(QBeaconFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&TexGenChunk::setQBeacon,
@@ -1557,9 +1529,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleEyeModelViewMatrix (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleEyeModelViewMatrix(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfEyeModelViewMatrix,
@@ -1585,9 +1554,6 @@ GetFieldHandlePtr TexGenChunkBase::getHandleEyeModelViewMode (void) const
 
 EditFieldHandlePtr TexGenChunkBase::editHandleEyeModelViewMode(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfEyeModelViewMode,

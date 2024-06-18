@@ -285,9 +285,6 @@ GetFieldHandlePtr StateChunkBase::getHandleIgnore          (void) const
 
 EditFieldHandlePtr StateChunkBase::editHandleIgnore         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIgnore,

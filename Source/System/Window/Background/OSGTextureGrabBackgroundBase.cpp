@@ -595,14 +595,13 @@ GetFieldHandlePtr TextureGrabBackgroundBase::getHandleTexture         (void) con
 
 EditFieldHandlePtr TextureGrabBackgroundBase::editHandleTexture        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfTexture,
              this->getType().getFieldDesc(TextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&TextureGrabBackground::setTexture,
@@ -626,9 +625,6 @@ GetFieldHandlePtr TextureGrabBackgroundBase::getHandleAutoResize      (void) con
 
 EditFieldHandlePtr TextureGrabBackgroundBase::editHandleAutoResize     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAutoResize,
@@ -654,9 +650,6 @@ GetFieldHandlePtr TextureGrabBackgroundBase::getHandleBindTarget      (void) con
 
 EditFieldHandlePtr TextureGrabBackgroundBase::editHandleBindTarget     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfBindTarget,
@@ -682,9 +675,6 @@ GetFieldHandlePtr TextureGrabBackgroundBase::getHandleCopyTarget      (void) con
 
 EditFieldHandlePtr TextureGrabBackgroundBase::editHandleCopyTarget     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfCopyTarget,

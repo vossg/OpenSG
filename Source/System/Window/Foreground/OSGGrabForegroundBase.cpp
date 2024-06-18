@@ -484,14 +484,13 @@ GetFieldHandlePtr GrabForegroundBase::getHandleImage           (void) const
 
 EditFieldHandlePtr GrabForegroundBase::editHandleImage          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfImage,
              this->getType().getFieldDesc(ImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&GrabForeground::setImage,
@@ -515,9 +514,6 @@ GetFieldHandlePtr GrabForegroundBase::getHandleAutoResize      (void) const
 
 EditFieldHandlePtr GrabForegroundBase::editHandleAutoResize     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAutoResize,

@@ -372,9 +372,6 @@ GetFieldHandlePtr CSMPassiveWinClearOpBase::getHandleEnabled         (void) cons
 
 EditFieldHandlePtr CSMPassiveWinClearOpBase::editHandleEnabled        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,

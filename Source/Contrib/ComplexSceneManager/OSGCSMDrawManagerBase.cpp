@@ -680,14 +680,13 @@ GetFieldHandlePtr CSMDrawManagerBase::getHandleAppDrawer       (void) const
 
 EditFieldHandlePtr CSMDrawManagerBase::editHandleAppDrawer      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecCSMDrawerPtr::EditHandlePtr returnValue(
         new  SFUnrecCSMDrawerPtr::EditHandle(
              &_sfAppDrawer,
              this->getType().getFieldDesc(AppDrawerFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CSMDrawManager::setAppDrawer,
@@ -711,14 +710,14 @@ GetFieldHandlePtr CSMDrawManagerBase::getHandleDrawer          (void) const
 
 EditFieldHandlePtr CSMDrawManagerBase::editHandleDrawer         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecCSMDrawerPtr::EditHandlePtr returnValue(
         new  MFUnrecCSMDrawerPtr::EditHandle(
              &_mfDrawer,
              this->getType().getFieldDesc(DrawerFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&CSMDrawManager::pushToDrawer,
@@ -751,9 +750,6 @@ GetFieldHandlePtr CSMDrawManagerBase::getHandleParallel        (void) const
 
 EditFieldHandlePtr CSMDrawManagerBase::editHandleParallel       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfParallel,
@@ -779,9 +775,6 @@ GetFieldHandlePtr CSMDrawManagerBase::getHandleSyncBarrierName (void) const
 
 EditFieldHandlePtr CSMDrawManagerBase::editHandleSyncBarrierName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfSyncBarrierName,
@@ -807,9 +800,6 @@ GetFieldHandlePtr CSMDrawManagerBase::getHandleSwapBarrierName (void) const
 
 EditFieldHandlePtr CSMDrawManagerBase::editHandleSwapBarrierName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfSwapBarrierName,

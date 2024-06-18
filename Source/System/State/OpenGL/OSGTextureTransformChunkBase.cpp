@@ -410,9 +410,6 @@ GetFieldHandlePtr TextureTransformChunkBase::getHandleUseCameraBeacon (void) con
 
 EditFieldHandlePtr TextureTransformChunkBase::editHandleUseCameraBeacon(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseCameraBeacon,

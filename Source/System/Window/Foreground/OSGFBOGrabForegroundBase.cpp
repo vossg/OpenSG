@@ -484,14 +484,13 @@ GetFieldHandlePtr FBOGrabForegroundBase::getHandleFrameBufferObject (void) const
 
 EditFieldHandlePtr FBOGrabForegroundBase::editHandleFrameBufferObject(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfFrameBufferObject,
              this->getType().getFieldDesc(FrameBufferObjectFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FBOGrabForeground::setFrameBufferObject,
@@ -515,9 +514,6 @@ GetFieldHandlePtr FBOGrabForegroundBase::getHandleAutoResize      (void) const
 
 EditFieldHandlePtr FBOGrabForegroundBase::editHandleAutoResize     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAutoResize,

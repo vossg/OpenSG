@@ -531,9 +531,6 @@ GetFieldHandlePtr AnimTargetAttachmentBase::getHandleTargetId        (void) cons
 
 EditFieldHandlePtr AnimTargetAttachmentBase::editHandleTargetId       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfTargetId,
@@ -559,14 +556,14 @@ GetFieldHandlePtr AnimTargetAttachmentBase::getHandleBlenders        (void) cons
 
 EditFieldHandlePtr AnimTargetAttachmentBase::editHandleBlenders       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecAnimBlenderPtr::EditHandlePtr returnValue(
         new  MFUnrecAnimBlenderPtr::EditHandle(
              &_mfBlenders,
              this->getType().getFieldDesc(BlendersFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&AnimTargetAttachment::pushToBlenders,

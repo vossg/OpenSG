@@ -1231,9 +1231,6 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleWidth           (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -1259,9 +1256,6 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleHeight          (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -1287,14 +1281,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleBackground      (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleBackground     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecBackgroundPtr::EditHandlePtr returnValue(
         new  SFUnrecBackgroundPtr::EditHandle(
              &_sfBackground,
              this->getType().getFieldDesc(BackgroundFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setBackground,
@@ -1318,14 +1311,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandlePeelPingFBO     (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandlePeelPingFBO    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfPeelPingFBO,
              this->getType().getFieldDesc(PeelPingFBOFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setPeelPingFBO,
@@ -1349,14 +1341,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandlePeelPongFBO     (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandlePeelPongFBO    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfPeelPongFBO,
              this->getType().getFieldDesc(PeelPongFBOFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setPeelPongFBO,
@@ -1380,14 +1371,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleBlendFBO        (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleBlendFBO       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfBlendFBO,
              this->getType().getFieldDesc(BlendFBOFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setBlendFBO,
@@ -1411,14 +1401,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleBlendMaterial   (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleBlendMaterial  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfBlendMaterial,
              this->getType().getFieldDesc(BlendMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setBlendMaterial,
@@ -1442,14 +1431,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleBlendFinalMaterial (void) 
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleBlendFinalMaterial(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfBlendFinalMaterial,
              this->getType().getFieldDesc(BlendFinalMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setBlendFinalMaterial,
@@ -1473,14 +1461,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandlePeelPingMaterial (void) co
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandlePeelPingMaterial(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfPeelPingMaterial,
              this->getType().getFieldDesc(PeelPingMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setPeelPingMaterial,
@@ -1504,14 +1491,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandlePeelPongMaterial (void) co
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandlePeelPongMaterial(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfPeelPongMaterial,
              this->getType().getFieldDesc(PeelPongMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setPeelPongMaterial,
@@ -1535,14 +1521,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleDepthChunk      (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleDepthChunk     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecDepthChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecDepthChunkPtr::EditHandle(
              &_sfDepthChunk,
              this->getType().getFieldDesc(DepthChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setDepthChunk,
@@ -1566,14 +1551,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleSpvIsPeelChunk  (void) con
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleSpvIsPeelChunk (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderProgramVariableChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramVariableChunkPtr::EditHandle(
              &_sfSpvIsPeelChunk,
              this->getType().getFieldDesc(SpvIsPeelChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setSpvIsPeelChunk,
@@ -1597,14 +1581,13 @@ GetFieldHandlePtr DepthPeelingStageDataBase::getHandleSpvIsInitialChunk (void) c
 
 EditFieldHandlePtr DepthPeelingStageDataBase::editHandleSpvIsInitialChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderProgramVariableChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramVariableChunkPtr::EditHandle(
              &_sfSpvIsInitialChunk,
              this->getType().getFieldDesc(SpvIsInitialChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DepthPeelingStageData::setSpvIsInitialChunk,

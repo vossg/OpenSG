@@ -485,14 +485,13 @@ GetFieldHandlePtr AnimVec3fChannelBase::getHandleData            (void) const
 
 EditFieldHandlePtr AnimVec3fChannelBase::editHandleData           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecAnimVec3fDataSourcePtr::EditHandlePtr returnValue(
         new  SFUnrecAnimVec3fDataSourcePtr::EditHandle(
              &_sfData,
              this->getType().getFieldDesc(DataFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&AnimVec3fChannel::setData,
@@ -516,9 +515,6 @@ GetFieldHandlePtr AnimVec3fChannelBase::getHandleOutValue        (void) const
 
 EditFieldHandlePtr AnimVec3fChannelBase::editHandleOutValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfOutValue,

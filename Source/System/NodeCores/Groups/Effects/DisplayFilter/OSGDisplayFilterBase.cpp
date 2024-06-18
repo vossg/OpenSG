@@ -283,9 +283,6 @@ GetFieldHandlePtr DisplayFilterBase::getHandleEnabled         (void) const
 
 EditFieldHandlePtr DisplayFilterBase::editHandleEnabled        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnabled,

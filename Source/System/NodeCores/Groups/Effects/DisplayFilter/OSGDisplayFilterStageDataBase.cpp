@@ -741,9 +741,6 @@ GetFieldHandlePtr DisplayFilterStageDataBase::getHandleWidth           (void) co
 
 EditFieldHandlePtr DisplayFilterStageDataBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfWidth,
@@ -769,9 +766,6 @@ GetFieldHandlePtr DisplayFilterStageDataBase::getHandleHeight          (void) co
 
 EditFieldHandlePtr DisplayFilterStageDataBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfHeight,
@@ -797,14 +791,13 @@ GetFieldHandlePtr DisplayFilterStageDataBase::getHandleTarget          (void) co
 
 EditFieldHandlePtr DisplayFilterStageDataBase::editHandleTarget         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfTarget,
              this->getType().getFieldDesc(TargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DisplayFilterStageData::setTarget,
@@ -828,14 +821,13 @@ GetFieldHandlePtr DisplayFilterStageDataBase::getHandleBaseMaterial    (void) co
 
 EditFieldHandlePtr DisplayFilterStageDataBase::editHandleBaseMaterial   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfBaseMaterial,
              this->getType().getFieldDesc(BaseMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DisplayFilterStageData::setBaseMaterial,
@@ -859,14 +851,13 @@ GetFieldHandlePtr DisplayFilterStageDataBase::getHandleColorFilterShader (void) 
 
 EditFieldHandlePtr DisplayFilterStageDataBase::editHandleColorFilterShader(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfColorFilterShader,
              this->getType().getFieldDesc(ColorFilterShaderFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DisplayFilterStageData::setColorFilterShader,
@@ -890,14 +881,13 @@ GetFieldHandlePtr DisplayFilterStageDataBase::getHandleColorFilterTexture (void)
 
 EditFieldHandlePtr DisplayFilterStageDataBase::editHandleColorFilterTexture(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfColorFilterTexture,
              this->getType().getFieldDesc(ColorFilterTextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DisplayFilterStageData::setColorFilterTexture,

@@ -484,14 +484,13 @@ GetFieldHandlePtr AnimQuaternionChannelBase::getHandleData            (void) con
 
 EditFieldHandlePtr AnimQuaternionChannelBase::editHandleData           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecAnimQuaternionDataSourcePtr::EditHandlePtr returnValue(
         new  SFUnrecAnimQuaternionDataSourcePtr::EditHandle(
              &_sfData,
              this->getType().getFieldDesc(DataFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&AnimQuaternionChannel::setData,
@@ -515,9 +514,6 @@ GetFieldHandlePtr AnimQuaternionChannelBase::getHandleOutValue        (void) con
 
 EditFieldHandlePtr AnimQuaternionChannelBase::editHandleOutValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFQuaternion::EditHandlePtr returnValue(
         new  SFQuaternion::EditHandle(
              &_sfOutValue,

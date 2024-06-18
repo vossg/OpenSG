@@ -340,9 +340,6 @@ GetFieldHandlePtr AnimKeyFrameDataSourceBase::getHandleInValues        (void) co
 
 EditFieldHandlePtr AnimKeyFrameDataSourceBase::editHandleInValues       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfInValues,
@@ -368,9 +365,6 @@ GetFieldHandlePtr AnimKeyFrameDataSourceBase::getHandleInterpolationModes (void)
 
 EditFieldHandlePtr AnimKeyFrameDataSourceBase::editHandleInterpolationModes(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUInt32::EditHandlePtr returnValue(
         new  MFUInt32::EditHandle(
              &_mfInterpolationModes,

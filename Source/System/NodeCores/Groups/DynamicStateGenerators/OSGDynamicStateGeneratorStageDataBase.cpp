@@ -459,14 +459,13 @@ GetFieldHandlePtr DynamicStateGeneratorStageDataBase::getHandleRenderTarget    (
 
 EditFieldHandlePtr DynamicStateGeneratorStageDataBase::editHandleRenderTarget   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfRenderTarget,
              this->getType().getFieldDesc(RenderTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&DynamicStateGeneratorStageData::setRenderTarget,
@@ -490,14 +489,14 @@ GetFieldHandlePtr DynamicStateGeneratorStageDataBase::getHandleChunks          (
 
 EditFieldHandlePtr DynamicStateGeneratorStageDataBase::editHandleChunks         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecStateChunkPtr::EditHandlePtr returnValue(
         new  MFUnrecStateChunkPtr::EditHandle(
              &_mfChunks,
              this->getType().getFieldDesc(ChunksFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
 
     editMField(ChunksFieldMask, _mfChunks);

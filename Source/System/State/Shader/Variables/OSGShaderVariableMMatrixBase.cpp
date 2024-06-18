@@ -399,9 +399,6 @@ GetFieldHandlePtr ShaderVariableMMatrixBase::getHandleValue           (void) con
 
 EditFieldHandlePtr ShaderVariableMMatrixBase::editHandleValue          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfValue,

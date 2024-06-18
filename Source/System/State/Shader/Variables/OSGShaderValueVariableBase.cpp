@@ -515,9 +515,6 @@ GetFieldHandlePtr ShaderValueVariableBase::getHandleVariableIdx     (void) const
 
 EditFieldHandlePtr ShaderValueVariableBase::editHandleVariableIdx    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -532,9 +529,6 @@ GetFieldHandlePtr ShaderValueVariableBase::getHandleParents         (void) const
 
 EditFieldHandlePtr ShaderValueVariableBase::editHandleParents        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -549,9 +543,6 @@ GetFieldHandlePtr ShaderValueVariableBase::getHandleExeVariableIdx  (void) const
 
 EditFieldHandlePtr ShaderValueVariableBase::editHandleExeVariableIdx (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -566,9 +557,6 @@ GetFieldHandlePtr ShaderValueVariableBase::getHandleExeParents      (void) const
 
 EditFieldHandlePtr ShaderValueVariableBase::editHandleExeParents     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;

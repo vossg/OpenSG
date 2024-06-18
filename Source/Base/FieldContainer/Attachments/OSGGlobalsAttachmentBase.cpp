@@ -530,14 +530,14 @@ GetFieldHandlePtr GlobalsAttachmentBase::getHandleElements        (void) const
 
 EditFieldHandlePtr GlobalsAttachmentBase::editHandleElements       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecFieldContainerPtr::EditHandlePtr returnValue(
         new  MFUnrecFieldContainerPtr::EditHandle(
              &_mfElements,
              this->getType().getFieldDesc(ElementsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&GlobalsAttachment::pushToElements,

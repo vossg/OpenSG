@@ -450,9 +450,6 @@ GetFieldHandlePtr VRMLNormalInterpolatorBase::getHandleKeyValue        (void) co
 
 EditFieldHandlePtr VRMLNormalInterpolatorBase::editHandleKeyValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfKeyValue,
@@ -478,9 +475,6 @@ GetFieldHandlePtr VRMLNormalInterpolatorBase::getHandleOutValue        (void) co
 
 EditFieldHandlePtr VRMLNormalInterpolatorBase::editHandleOutValue       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfOutValue,

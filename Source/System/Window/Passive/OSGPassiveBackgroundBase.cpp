@@ -450,9 +450,6 @@ GetFieldHandlePtr PassiveBackgroundBase::getHandleClearFrameBufferObject (void) 
 
 EditFieldHandlePtr PassiveBackgroundBase::editHandleClearFrameBufferObject(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfClearFrameBufferObject,
@@ -474,9 +471,6 @@ GetFieldHandlePtr PassiveBackgroundBase::getHandleClearCallback   (void) const
 
 EditFieldHandlePtr PassiveBackgroundBase::editHandleClearCallback  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;

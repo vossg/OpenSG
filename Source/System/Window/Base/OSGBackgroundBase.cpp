@@ -477,9 +477,6 @@ GetFieldHandlePtr BackgroundBase::getHandleClearStencilBit (void) const
 
 EditFieldHandlePtr BackgroundBase::editHandleClearStencilBit(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfClearStencilBit,
@@ -505,9 +502,6 @@ GetFieldHandlePtr BackgroundBase::getHandleDepth           (void) const
 
 EditFieldHandlePtr BackgroundBase::editHandleDepth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfDepth,
@@ -533,9 +527,6 @@ GetFieldHandlePtr BackgroundBase::getHandleClearDepth      (void) const
 
 EditFieldHandlePtr BackgroundBase::editHandleClearDepth     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfClearDepth,
@@ -561,9 +552,6 @@ GetFieldHandlePtr BackgroundBase::getHandleClearColor      (void) const
 
 EditFieldHandlePtr BackgroundBase::editHandleClearColor     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfClearColor,

@@ -399,9 +399,6 @@ GetFieldHandlePtr ShaderVariableMVec2fBase::getHandleValue           (void) cons
 
 EditFieldHandlePtr ShaderVariableMVec2fBase::editHandleValue          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfValue,

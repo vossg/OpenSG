@@ -2271,9 +2271,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleBlockSize       (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleBlockSize      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfBlockSize,
@@ -2299,9 +2296,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleTileSize        (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleTileSize       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTileSize,
@@ -2327,9 +2321,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleNumClusterZ     (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleNumClusterZ    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfNumClusterZ,
@@ -2355,9 +2346,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleNearPlaneOffset (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleNearPlaneOffset(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfNearPlaneOffset,
@@ -2383,9 +2371,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleDispatchDataBindingPnt (void
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleDispatchDataBindingPnt(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDispatchDataBindingPnt,
@@ -2411,9 +2396,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleClusterDataBindingPnt (void)
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleClusterDataBindingPnt(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfClusterDataBindingPnt,
@@ -2439,9 +2421,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleLightBindingPnt (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleLightBindingPnt(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfLightBindingPnt,
@@ -2467,9 +2446,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleAffectedLightIndexListBindin
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleAffectedLightIndexListBindingPnt(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfAffectedLightIndexListBindingPnt,
@@ -2495,9 +2471,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleFrustumBindingPnt (void) con
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleFrustumBindingPnt(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFrustumBindingPnt,
@@ -2523,9 +2496,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleLightIndexListBindingPnt (vo
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleLightIndexListBindingPnt(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfLightIndexListBindingPnt,
@@ -2551,9 +2521,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleLightIndexCounterBindingPnt 
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleLightIndexCounterBindingPnt(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfLightIndexCounterBindingPnt,
@@ -2579,9 +2546,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleLightGridBindingPnt (void) c
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleLightGridBindingPnt(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfLightGridBindingPnt,
@@ -2607,9 +2571,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleAffectedLightIndexListBlockN
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleAffectedLightIndexListBlockName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfAffectedLightIndexListBlockName,
@@ -2635,9 +2596,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleAffectedLightIndexListVariab
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleAffectedLightIndexListVariableName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfAffectedLightIndexListVariableName,
@@ -2663,9 +2621,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleLightIndexListBlockName (voi
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleLightIndexListBlockName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfLightIndexListBlockName,
@@ -2691,9 +2646,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleLightIndexListVariableName (
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleLightIndexListVariableName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfLightIndexListVariableName,
@@ -2719,9 +2671,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleClusteringDataBlockName (voi
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleClusteringDataBlockName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfClusteringDataBlockName,
@@ -2747,9 +2696,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleClusteringDataVariableName (
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleClusteringDataVariableName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfClusteringDataVariableName,
@@ -2775,9 +2721,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleLightGridVariableName (void)
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleLightGridVariableName(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfLightGridVariableName,
@@ -2803,9 +2746,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleCalcFrustumsOnCPU (void) con
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleCalcFrustumsOnCPU(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCalcFrustumsOnCPU,
@@ -2831,9 +2771,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleCullLighsOnCPU  (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleCullLighsOnCPU (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfCullLighsOnCPU,
@@ -2859,9 +2796,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleDisabled        (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleDisabled       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfDisabled,
@@ -2887,9 +2821,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleMaxLightIndexListSize (void)
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleMaxLightIndexListSize(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMaxLightIndexListSize,
@@ -2915,9 +2846,6 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleMaxClusterLightCount (void) 
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleMaxClusterLightCount(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfMaxClusterLightCount,
@@ -2943,14 +2871,13 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleFrustNode       (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleFrustNode      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfFrustNode,
              this->getType().getFieldDesc(FrustNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStage::setFrustNode,
@@ -2974,14 +2901,13 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleFrustAlgoElement (void) cons
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleFrustAlgoElement(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecAlgorithmComputeElementPtr::EditHandlePtr returnValue(
         new  SFUnrecAlgorithmComputeElementPtr::EditHandle(
              &_sfFrustAlgoElement,
              this->getType().getFieldDesc(FrustAlgoElementFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStage::setFrustAlgoElement,
@@ -3005,14 +2931,13 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleFrustCompShaderAlgo (void) c
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleFrustCompShaderAlgo(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecComputeShaderAlgorithmPtr::EditHandlePtr returnValue(
         new  SFUnrecComputeShaderAlgorithmPtr::EditHandle(
              &_sfFrustCompShaderAlgo,
              this->getType().getFieldDesc(FrustCompShaderAlgoFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStage::setFrustCompShaderAlgo,
@@ -3036,14 +2961,13 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleCullNode        (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleCullNode       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecNodePtr::EditHandlePtr returnValue(
         new  SFUnrecNodePtr::EditHandle(
              &_sfCullNode,
              this->getType().getFieldDesc(CullNodeFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStage::setCullNode,
@@ -3067,14 +2991,13 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleCullAlgoElement (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleCullAlgoElement(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecAlgorithmComputeElementPtr::EditHandlePtr returnValue(
         new  SFUnrecAlgorithmComputeElementPtr::EditHandle(
              &_sfCullAlgoElement,
              this->getType().getFieldDesc(CullAlgoElementFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStage::setCullAlgoElement,
@@ -3098,14 +3021,13 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleCullCompShaderAlgo (void) co
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleCullCompShaderAlgo(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecComputeShaderAlgorithmPtr::EditHandlePtr returnValue(
         new  SFUnrecComputeShaderAlgorithmPtr::EditHandle(
              &_sfCullCompShaderAlgo,
              this->getType().getFieldDesc(CullCompShaderAlgoFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStage::setCullCompShaderAlgo,
@@ -3129,14 +3051,13 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleMultiLightChunk (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleMultiLightChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecMultiLightChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecMultiLightChunkPtr::EditHandle(
              &_sfMultiLightChunk,
              this->getType().getFieldDesc(MultiLightChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStage::setMultiLightChunk,
@@ -3160,14 +3081,13 @@ GetFieldHandlePtr ClusterShadingStageBase::getHandleShaderProgChunk (void) const
 
 EditFieldHandlePtr ClusterShadingStageBase::editHandleShaderProgChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderProgramChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderProgramChunkPtr::EditHandle(
              &_sfShaderProgChunk,
              this->getType().getFieldDesc(ShaderProgChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStage::setShaderProgChunk,

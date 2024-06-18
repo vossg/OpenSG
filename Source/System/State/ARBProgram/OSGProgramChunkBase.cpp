@@ -471,9 +471,6 @@ GetFieldHandlePtr ProgramChunkBase::getHandleProgram         (void) const
 
 EditFieldHandlePtr ProgramChunkBase::editHandleProgram        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfProgram,
@@ -499,9 +496,6 @@ GetFieldHandlePtr ProgramChunkBase::getHandleParamValues     (void) const
 
 EditFieldHandlePtr ProgramChunkBase::editHandleParamValues    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec4f::EditHandlePtr returnValue(
         new  MFVec4f::EditHandle(
              &_mfParamValues,
@@ -527,9 +521,6 @@ GetFieldHandlePtr ProgramChunkBase::getHandleParamNames      (void) const
 
 EditFieldHandlePtr ProgramChunkBase::editHandleParamNames     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfParamNames,
@@ -555,9 +546,6 @@ GetFieldHandlePtr ProgramChunkBase::getHandleGLId            (void) const
 
 EditFieldHandlePtr ProgramChunkBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfGLId,

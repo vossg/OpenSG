@@ -687,9 +687,6 @@ GetFieldHandlePtr TileCameraDecoratorBase::getHandleLeft            (void) const
 
 EditFieldHandlePtr TileCameraDecoratorBase::editHandleLeft           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLeft,
@@ -715,9 +712,6 @@ GetFieldHandlePtr TileCameraDecoratorBase::getHandleRight           (void) const
 
 EditFieldHandlePtr TileCameraDecoratorBase::editHandleRight          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfRight,
@@ -743,9 +737,6 @@ GetFieldHandlePtr TileCameraDecoratorBase::getHandleBottom          (void) const
 
 EditFieldHandlePtr TileCameraDecoratorBase::editHandleBottom         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfBottom,
@@ -771,9 +762,6 @@ GetFieldHandlePtr TileCameraDecoratorBase::getHandleTop             (void) const
 
 EditFieldHandlePtr TileCameraDecoratorBase::editHandleTop            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfTop,
@@ -799,9 +787,6 @@ GetFieldHandlePtr TileCameraDecoratorBase::getHandleFullWidth       (void) const
 
 EditFieldHandlePtr TileCameraDecoratorBase::editHandleFullWidth      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFullWidth,
@@ -827,9 +812,6 @@ GetFieldHandlePtr TileCameraDecoratorBase::getHandleFullHeight      (void) const
 
 EditFieldHandlePtr TileCameraDecoratorBase::editHandleFullHeight     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfFullHeight,

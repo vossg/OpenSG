@@ -726,9 +726,6 @@ GetFieldHandlePtr AnimVec3fDataSourceBase::getHandleValues          (void) const
 
 EditFieldHandlePtr AnimVec3fDataSourceBase::editHandleValues         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfValues,
@@ -754,9 +751,6 @@ GetFieldHandlePtr AnimVec3fDataSourceBase::getHandleInTangentsX     (void) const
 
 EditFieldHandlePtr AnimVec3fDataSourceBase::editHandleInTangentsX    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfInTangentsX,
@@ -782,9 +776,6 @@ GetFieldHandlePtr AnimVec3fDataSourceBase::getHandleInTangentsY     (void) const
 
 EditFieldHandlePtr AnimVec3fDataSourceBase::editHandleInTangentsY    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfInTangentsY,
@@ -810,9 +801,6 @@ GetFieldHandlePtr AnimVec3fDataSourceBase::getHandleInTangentsZ     (void) const
 
 EditFieldHandlePtr AnimVec3fDataSourceBase::editHandleInTangentsZ    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfInTangentsZ,
@@ -838,9 +826,6 @@ GetFieldHandlePtr AnimVec3fDataSourceBase::getHandleOutTangentsX    (void) const
 
 EditFieldHandlePtr AnimVec3fDataSourceBase::editHandleOutTangentsX   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfOutTangentsX,
@@ -866,9 +851,6 @@ GetFieldHandlePtr AnimVec3fDataSourceBase::getHandleOutTangentsY    (void) const
 
 EditFieldHandlePtr AnimVec3fDataSourceBase::editHandleOutTangentsY   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfOutTangentsY,
@@ -894,9 +876,6 @@ GetFieldHandlePtr AnimVec3fDataSourceBase::getHandleOutTangentsZ    (void) const
 
 EditFieldHandlePtr AnimVec3fDataSourceBase::editHandleOutTangentsZ   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec2f::EditHandlePtr returnValue(
         new  MFVec2f::EditHandle(
              &_mfOutTangentsZ,

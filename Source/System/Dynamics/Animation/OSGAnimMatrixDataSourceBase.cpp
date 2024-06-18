@@ -402,9 +402,6 @@ GetFieldHandlePtr AnimMatrixDataSourceBase::getHandleValues          (void) cons
 
 EditFieldHandlePtr AnimMatrixDataSourceBase::editHandleValues         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfValues,

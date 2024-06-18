@@ -410,9 +410,6 @@ GetFieldHandlePtr ShaderProcVariableBase::getHandleDependency      (void) const
 
 EditFieldHandlePtr ShaderProcVariableBase::editHandleDependency     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDependency,
@@ -434,9 +431,6 @@ GetFieldHandlePtr ShaderProcVariableBase::getHandleParents         (void) const
 
 EditFieldHandlePtr ShaderProcVariableBase::editHandleParents        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;

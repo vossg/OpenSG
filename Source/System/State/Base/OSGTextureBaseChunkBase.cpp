@@ -297,9 +297,6 @@ GetFieldHandlePtr TextureBaseChunkBase::getHandleTarget          (void) const
 
 EditFieldHandlePtr TextureBaseChunkBase::editHandleTarget         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfTarget,

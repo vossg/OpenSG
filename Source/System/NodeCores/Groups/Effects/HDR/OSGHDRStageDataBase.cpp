@@ -948,14 +948,13 @@ GetFieldHandlePtr HDRStageDataBase::getHandleToneMappingMaterial (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleToneMappingMaterial(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfToneMappingMaterial,
              this->getType().getFieldDesc(ToneMappingMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&HDRStageData::setToneMappingMaterial,
@@ -979,14 +978,13 @@ GetFieldHandlePtr HDRStageDataBase::getHandleBlurRenderTarget (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleBlurRenderTarget(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfBlurRenderTarget,
              this->getType().getFieldDesc(BlurRenderTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&HDRStageData::setBlurRenderTarget,
@@ -1010,14 +1008,13 @@ GetFieldHandlePtr HDRStageDataBase::getHandleBlurMaterial    (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleBlurMaterial   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfBlurMaterial,
              this->getType().getFieldDesc(BlurMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&HDRStageData::setBlurMaterial,
@@ -1041,14 +1038,13 @@ GetFieldHandlePtr HDRStageDataBase::getHandleHBlurShader     (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleHBlurShader    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfHBlurShader,
              this->getType().getFieldDesc(HBlurShaderFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&HDRStageData::setHBlurShader,
@@ -1072,14 +1068,13 @@ GetFieldHandlePtr HDRStageDataBase::getHandleVBlurShader     (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleVBlurShader    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfVBlurShader,
              this->getType().getFieldDesc(VBlurShaderFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&HDRStageData::setVBlurShader,
@@ -1103,9 +1098,6 @@ GetFieldHandlePtr HDRStageDataBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -1131,9 +1123,6 @@ GetFieldHandlePtr HDRStageDataBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -1159,14 +1148,13 @@ GetFieldHandlePtr HDRStageDataBase::getHandleShrinkRenderTarget (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleShrinkRenderTarget(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferObjectPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferObjectPtr::EditHandle(
              &_sfShrinkRenderTarget,
              this->getType().getFieldDesc(ShrinkRenderTargetFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&HDRStageData::setShrinkRenderTarget,
@@ -1190,14 +1178,13 @@ GetFieldHandlePtr HDRStageDataBase::getHandleShrinkMaterial  (void) const
 
 EditFieldHandlePtr HDRStageDataBase::editHandleShrinkMaterial (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfShrinkMaterial,
              this->getType().getFieldDesc(ShrinkMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&HDRStageData::setShrinkMaterial,

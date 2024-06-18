@@ -613,9 +613,6 @@ GetFieldHandlePtr BalancedMultiWindowBase::getHandleBalance         (void) const
 
 EditFieldHandlePtr BalancedMultiWindowBase::editHandleBalance        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBalance,
@@ -641,9 +638,6 @@ GetFieldHandlePtr BalancedMultiWindowBase::getHandleBestCut         (void) const
 
 EditFieldHandlePtr BalancedMultiWindowBase::editHandleBestCut        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBestCut,
@@ -669,9 +663,6 @@ GetFieldHandlePtr BalancedMultiWindowBase::getHandleShowBalancing   (void) const
 
 EditFieldHandlePtr BalancedMultiWindowBase::editHandleShowBalancing  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShowBalancing,
@@ -697,9 +688,6 @@ GetFieldHandlePtr BalancedMultiWindowBase::getHandleTileSize        (void) const
 
 EditFieldHandlePtr BalancedMultiWindowBase::editHandleTileSize       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfTileSize,
@@ -725,9 +713,6 @@ GetFieldHandlePtr BalancedMultiWindowBase::getHandleShort           (void) const
 
 EditFieldHandlePtr BalancedMultiWindowBase::editHandleShort          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfShort,

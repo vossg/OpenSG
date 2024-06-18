@@ -393,9 +393,6 @@ GetFieldHandlePtr ImageFileBase::getHandleUrl             (void) const
 
 EditFieldHandlePtr ImageFileBase::editHandleUrl            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfUrl,

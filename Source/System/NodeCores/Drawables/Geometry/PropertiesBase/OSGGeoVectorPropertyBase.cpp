@@ -309,9 +309,6 @@ GetFieldHandlePtr GeoVectorPropertyBase::getHandleDivisor         (void) const
 
 EditFieldHandlePtr GeoVectorPropertyBase::editHandleDivisor        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfDivisor,

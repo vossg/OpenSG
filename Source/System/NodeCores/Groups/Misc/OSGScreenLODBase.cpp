@@ -412,9 +412,6 @@ GetFieldHandlePtr ScreenLODBase::getHandleCoverageOverride (void) const
 
 EditFieldHandlePtr ScreenLODBase::editHandleCoverageOverride(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfCoverageOverride,

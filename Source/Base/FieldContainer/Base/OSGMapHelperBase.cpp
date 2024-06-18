@@ -475,9 +475,6 @@ GetFieldHandlePtr MapHelperBase::getHandleKeys            (void) const
 
 EditFieldHandlePtr MapHelperBase::editHandleKeys           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFString::EditHandlePtr returnValue(
         new  MFString::EditHandle(
              &_mfKeys,
@@ -503,14 +500,13 @@ GetFieldHandlePtr MapHelperBase::getHandleContainer       (void) const
 
 EditFieldHandlePtr MapHelperBase::editHandleContainer      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFieldContainerPtr::EditHandlePtr returnValue(
         new  SFUnrecFieldContainerPtr::EditHandle(
              &_sfContainer,
              this->getType().getFieldDesc(ContainerFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&MapHelper::setContainer,

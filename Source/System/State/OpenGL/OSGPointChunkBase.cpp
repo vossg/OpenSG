@@ -921,9 +921,6 @@ GetFieldHandlePtr PointChunkBase::getHandleSize            (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleSize           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfSize,
@@ -949,9 +946,6 @@ GetFieldHandlePtr PointChunkBase::getHandleSmooth          (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleSmooth         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfSmooth,
@@ -977,9 +971,6 @@ GetFieldHandlePtr PointChunkBase::getHandleMinSize         (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleMinSize        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfMinSize,
@@ -1005,9 +996,6 @@ GetFieldHandlePtr PointChunkBase::getHandleMaxSize         (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleMaxSize        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfMaxSize,
@@ -1033,9 +1021,6 @@ GetFieldHandlePtr PointChunkBase::getHandleConstantAttenuation (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleConstantAttenuation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfConstantAttenuation,
@@ -1061,9 +1046,6 @@ GetFieldHandlePtr PointChunkBase::getHandleLinearAttenuation (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleLinearAttenuation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfLinearAttenuation,
@@ -1089,9 +1071,6 @@ GetFieldHandlePtr PointChunkBase::getHandleQuadraticAttenuation (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleQuadraticAttenuation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfQuadraticAttenuation,
@@ -1117,9 +1096,6 @@ GetFieldHandlePtr PointChunkBase::getHandleFadeThreshold   (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleFadeThreshold  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfFadeThreshold,
@@ -1145,9 +1121,6 @@ GetFieldHandlePtr PointChunkBase::getHandleSprite          (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleSprite         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfSprite,
@@ -1173,9 +1146,6 @@ GetFieldHandlePtr PointChunkBase::getHandleRMode           (void) const
 
 EditFieldHandlePtr PointChunkBase::editHandleRMode          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfRMode,

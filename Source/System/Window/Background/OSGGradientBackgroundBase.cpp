@@ -569,9 +569,6 @@ GetFieldHandlePtr GradientBackgroundBase::getHandleColor           (void) const
 
 EditFieldHandlePtr GradientBackgroundBase::editHandleColor          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFColor3f::EditHandlePtr returnValue(
         new  MFColor3f::EditHandle(
              &_mfColor,
@@ -597,9 +594,6 @@ GetFieldHandlePtr GradientBackgroundBase::getHandlePosition        (void) const
 
 EditFieldHandlePtr GradientBackgroundBase::editHandlePosition       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfPosition,
@@ -625,9 +619,6 @@ GetFieldHandlePtr GradientBackgroundBase::getHandleNormPosition    (void) const
 
 EditFieldHandlePtr GradientBackgroundBase::editHandleNormPosition   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfNormPosition,
@@ -653,9 +644,6 @@ GetFieldHandlePtr GradientBackgroundBase::getHandleStyle           (void) const
 
 EditFieldHandlePtr GradientBackgroundBase::editHandleStyle          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfStyle,

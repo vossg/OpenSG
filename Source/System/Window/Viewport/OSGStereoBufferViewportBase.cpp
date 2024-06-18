@@ -466,9 +466,6 @@ GetFieldHandlePtr StereoBufferViewportBase::getHandleLeftBuffer      (void) cons
 
 EditFieldHandlePtr StereoBufferViewportBase::editHandleLeftBuffer     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfLeftBuffer,
@@ -494,9 +491,6 @@ GetFieldHandlePtr StereoBufferViewportBase::getHandleRightBuffer     (void) cons
 
 EditFieldHandlePtr StereoBufferViewportBase::editHandleRightBuffer    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfRightBuffer,

@@ -423,14 +423,13 @@ GetFieldHandlePtr VariantMaterialBase::getHandleFallbackMaterial (void) const
 
 EditFieldHandlePtr VariantMaterialBase::editHandleFallbackMaterial(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecPrimeMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecPrimeMaterialPtr::EditHandle(
              &_sfFallbackMaterial,
              this->getType().getFieldDesc(FallbackMaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&VariantMaterial::setFallbackMaterial,

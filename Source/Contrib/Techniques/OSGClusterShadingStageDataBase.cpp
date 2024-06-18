@@ -1683,14 +1683,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleFrustDispDatUBOChunk (vo
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleFrustDispDatUBOChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecUniformBufferObjStd140ChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecUniformBufferObjStd140ChunkPtr::EditHandle(
              &_sfFrustDispDatUBOChunk,
              this->getType().getFieldDesc(FrustDispDatUBOChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setFrustDispDatUBOChunk,
@@ -1714,14 +1713,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleCullDispDatUBOChunk (voi
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleCullDispDatUBOChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecUniformBufferObjStd140ChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecUniformBufferObjStd140ChunkPtr::EditHandle(
              &_sfCullDispDatUBOChunk,
              this->getType().getFieldDesc(CullDispDatUBOChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setCullDispDatUBOChunk,
@@ -1745,14 +1743,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleCullClusterDatUBOChunk (
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleCullClusterDatUBOChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecUniformBufferObjStd140ChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecUniformBufferObjStd140ChunkPtr::EditHandle(
              &_sfCullClusterDatUBOChunk,
              this->getType().getFieldDesc(CullClusterDatUBOChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setCullClusterDatUBOChunk,
@@ -1776,14 +1773,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleCullLightIndexCounterSSB
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleCullLightIndexCounterSSBOChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderStorageBufferObjStdLayoutChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderStorageBufferObjStdLayoutChunkPtr::EditHandle(
              &_sfCullLightIndexCounterSSBOChunk,
              this->getType().getFieldDesc(CullLightIndexCounterSSBOChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setCullLightIndexCounterSSBOChunk,
@@ -1807,14 +1803,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleFrustumsSSBOChunk (void)
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleFrustumsSSBOChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderStorageBufferObjStdLayoutChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderStorageBufferObjStdLayoutChunkPtr::EditHandle(
              &_sfFrustumsSSBOChunk,
              this->getType().getFieldDesc(FrustumsSSBOChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setFrustumsSSBOChunk,
@@ -1838,14 +1833,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleAffectedLightIndexListSS
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleAffectedLightIndexListSSBOChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderStorageBufferObjStdLayoutChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderStorageBufferObjStdLayoutChunkPtr::EditHandle(
              &_sfAffectedLightIndexListSSBOChunk,
              this->getType().getFieldDesc(AffectedLightIndexListSSBOChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setAffectedLightIndexListSSBOChunk,
@@ -1869,14 +1863,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleLightIndexListSSBOChunk 
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleLightIndexListSSBOChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecShaderStorageBufferObjStdLayoutChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecShaderStorageBufferObjStdLayoutChunkPtr::EditHandle(
              &_sfLightIndexListSSBOChunk,
              this->getType().getFieldDesc(LightIndexListSSBOChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setLightIndexListSSBOChunk,
@@ -1900,14 +1893,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleFrustChunkMat   (void) c
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleFrustChunkMat  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfFrustChunkMat,
              this->getType().getFieldDesc(FrustChunkMatFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setFrustChunkMat,
@@ -1931,14 +1923,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleCullChunkMat    (void) c
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleCullChunkMat   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChunkMaterialPtr::EditHandlePtr returnValue(
         new  SFUnrecChunkMaterialPtr::EditHandle(
              &_sfCullChunkMat,
              this->getType().getFieldDesc(CullChunkMatFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setCullChunkMat,
@@ -1962,14 +1953,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleLightGridImage  (void) c
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleLightGridImage (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfLightGridImage,
              this->getType().getFieldDesc(LightGridImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setLightGridImage,
@@ -1993,14 +1983,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleLightGridTexObjChunk (vo
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleLightGridTexObjChunk(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureObjChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureObjChunkPtr::EditHandle(
              &_sfLightGridTexObjChunk,
              this->getType().getFieldDesc(LightGridTexObjChunkFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setLightGridTexObjChunk,
@@ -2024,14 +2013,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleLightGridTexImgChunkCS (
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleLightGridTexImgChunkCS(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureImageChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureImageChunkPtr::EditHandle(
              &_sfLightGridTexImgChunkCS,
              this->getType().getFieldDesc(LightGridTexImgChunkCSFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setLightGridTexImgChunkCS,
@@ -2055,14 +2043,13 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleLightGridTexImgChunkFS (
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleLightGridTexImgChunkFS(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureImageChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureImageChunkPtr::EditHandle(
              &_sfLightGridTexImgChunkFS,
              this->getType().getFieldDesc(LightGridTexImgChunkFSFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ClusterShadingStageData::setLightGridTexImgChunkFS,
@@ -2086,9 +2073,6 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleFrustumPlanesNormals (vo
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleFrustumPlanesNormals(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFMatrix::EditHandlePtr returnValue(
         new  MFMatrix::EditHandle(
              &_mfFrustumPlanesNormals,
@@ -2114,9 +2098,6 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleFrustumPlanesDistances (
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleFrustumPlanesDistances(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec4f::EditHandlePtr returnValue(
         new  MFVec4f::EditHandle(
              &_mfFrustumPlanesDistances,
@@ -2142,9 +2123,6 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleLeft            (void) c
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleLeft           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfLeft,
@@ -2170,9 +2148,6 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleBottom          (void) c
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleBottom         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfBottom,
@@ -2198,9 +2173,6 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleWidth           (void) c
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfWidth,
@@ -2226,9 +2198,6 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleHeight          (void) c
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfHeight,
@@ -2254,9 +2223,6 @@ GetFieldHandlePtr ClusterShadingStageDataBase::getHandleIsOrthographicCamera (vo
 
 EditFieldHandlePtr ClusterShadingStageDataBase::editHandleIsOrthographicCamera(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfIsOrthographicCamera,

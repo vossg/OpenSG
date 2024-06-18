@@ -610,9 +610,6 @@ GetFieldHandlePtr BillboardBase::getHandleAxisOfRotation  (void) const
 
 EditFieldHandlePtr BillboardBase::editHandleAxisOfRotation (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFVec3f::EditHandlePtr returnValue(
         new  SFVec3f::EditHandle(
              &_sfAxisOfRotation,
@@ -638,9 +635,6 @@ GetFieldHandlePtr BillboardBase::getHandleFocusOnCamera   (void) const
 
 EditFieldHandlePtr BillboardBase::editHandleFocusOnCamera  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfFocusOnCamera,
@@ -666,9 +660,6 @@ GetFieldHandlePtr BillboardBase::getHandleAlignToScreen   (void) const
 
 EditFieldHandlePtr BillboardBase::editHandleAlignToScreen  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfAlignToScreen,
@@ -694,9 +685,6 @@ GetFieldHandlePtr BillboardBase::getHandleMinAngle        (void) const
 
 EditFieldHandlePtr BillboardBase::editHandleMinAngle       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfMinAngle,
@@ -722,9 +710,6 @@ GetFieldHandlePtr BillboardBase::getHandleMaxAngle        (void) const
 
 EditFieldHandlePtr BillboardBase::editHandleMaxAngle       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfMaxAngle,

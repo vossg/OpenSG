@@ -394,9 +394,6 @@ GetFieldHandlePtr StatisticsForegroundBase::getHandleElementIDs      (void) cons
 
 EditFieldHandlePtr StatisticsForegroundBase::editHandleElementIDs     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfElementIDs,
@@ -422,9 +419,6 @@ GetFieldHandlePtr StatisticsForegroundBase::getHandleCollector       (void) cons
 
 EditFieldHandlePtr StatisticsForegroundBase::editHandleCollector      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFStatCollectorP::EditHandlePtr returnValue(
         new  SFStatCollectorP::EditHandle(
              &_sfCollector,

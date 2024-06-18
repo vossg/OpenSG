@@ -1245,14 +1245,14 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleHeightTiles     (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleHeightTiles    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecImagePtr::EditHandlePtr returnValue(
         new  MFUnrecImagePtr::EditHandle(
              &_mfHeightTiles,
              this->getType().getFieldDesc(HeightTilesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&TiledQuadTreeTerrain::pushToHeightTiles,
@@ -1285,14 +1285,14 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleHeightTextures  (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleHeightTextures (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecMaterialPtr::EditHandlePtr returnValue(
         new  MFUnrecMaterialPtr::EditHandle(
              &_mfHeightTextures,
              this->getType().getFieldDesc(HeightTexturesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&TiledQuadTreeTerrain::pushToHeightTextures,
@@ -1325,9 +1325,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleSizeX           (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleSizeX          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSizeX,
@@ -1353,9 +1350,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleSizeY           (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleSizeY          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSizeY,
@@ -1381,9 +1375,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleHeightScale     (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleHeightScale    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfHeightScale,
@@ -1409,9 +1400,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleVertexSpacing   (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleVertexSpacing  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfVertexSpacing,
@@ -1437,9 +1425,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleGeoMorphing     (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleGeoMorphing    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfGeoMorphing,
@@ -1465,9 +1450,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleDetail          (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleDetail         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfDetail,
@@ -1493,9 +1475,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleCurrentX        (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleCurrentX       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfCurrentX,
@@ -1521,9 +1500,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleCurrentY        (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleCurrentY       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfCurrentY,
@@ -1549,9 +1525,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleSizeROI         (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleSizeROI        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFInt32::EditHandlePtr returnValue(
         new  SFInt32::EditHandle(
              &_sfSizeROI,
@@ -1577,9 +1550,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleUpdate          (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleUpdate         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUpdate,
@@ -1605,9 +1575,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandleUpdateTerrain   (void) cons
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandleUpdateTerrain  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUpdateTerrain,
@@ -1633,9 +1600,6 @@ GetFieldHandlePtr TiledQuadTreeTerrainBase::getHandlePerPixelLighting (void) con
 
 EditFieldHandlePtr TiledQuadTreeTerrainBase::editHandlePerPixelLighting(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPerPixelLighting,

@@ -1446,9 +1446,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleGLId            (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleGLId           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfGLId,
@@ -1474,9 +1471,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleMultiSampleGLId (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleMultiSampleGLId(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfMultiSampleGLId,
@@ -1502,14 +1496,14 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleColorAttachments (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleColorAttachments(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecFrameBufferAttachmentPtr::EditHandlePtr returnValue(
         new  MFUnrecFrameBufferAttachmentPtr::EditHandle(
              &_mfColorAttachments,
              this->getType().getFieldDesc(ColorAttachmentsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&FrameBufferObject::pushToColorAttachments,
@@ -1542,9 +1536,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleDrawBuffers     (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleDrawBuffers    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFGLenum::EditHandlePtr returnValue(
         new  MFGLenum::EditHandle(
              &_mfDrawBuffers,
@@ -1570,14 +1561,13 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleDepthAttachment (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleDepthAttachment(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferAttachmentPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferAttachmentPtr::EditHandle(
              &_sfDepthAttachment,
              this->getType().getFieldDesc(DepthAttachmentFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FrameBufferObject::setDepthAttachment,
@@ -1601,14 +1591,13 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleStencilAttachment (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleStencilAttachment(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferAttachmentPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferAttachmentPtr::EditHandle(
              &_sfStencilAttachment,
              this->getType().getFieldDesc(StencilAttachmentFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FrameBufferObject::setStencilAttachment,
@@ -1632,9 +1621,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleWidth           (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleWidth          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfWidth,
@@ -1660,9 +1646,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleHeight          (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleHeight         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt16::EditHandlePtr returnValue(
         new  SFUInt16::EditHandle(
              &_sfHeight,
@@ -1688,9 +1671,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandlePostProcessOnDeactivate (void)
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandlePostProcessOnDeactivate(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPostProcessOnDeactivate,
@@ -1716,9 +1696,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleEnableMultiSample (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleEnableMultiSample(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfEnableMultiSample,
@@ -1744,9 +1721,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleColorSamples    (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleColorSamples   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfColorSamples,
@@ -1772,9 +1746,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleCoverageSamples (void) const
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleCoverageSamples(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfCoverageSamples,
@@ -1800,9 +1771,6 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleFixedSampleLocation (void) con
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleFixedSampleLocation(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfFixedSampleLocation,
@@ -1828,14 +1796,14 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleMsaaColorAttachments (void) co
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleMsaaColorAttachments(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFUnrecFrameBufferAttachmentPtr::EditHandlePtr returnValue(
         new  MFUnrecFrameBufferAttachmentPtr::EditHandle(
              &_mfMsaaColorAttachments,
              this->getType().getFieldDesc(MsaaColorAttachmentsFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&FrameBufferObject::pushToMsaaColorAttachments,
@@ -1868,14 +1836,13 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleMsaaDepthAttachment (void) con
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleMsaaDepthAttachment(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferAttachmentPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferAttachmentPtr::EditHandle(
              &_sfMsaaDepthAttachment,
              this->getType().getFieldDesc(MsaaDepthAttachmentFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FrameBufferObject::setMsaaDepthAttachment,
@@ -1899,14 +1866,13 @@ GetFieldHandlePtr FrameBufferObjectBase::getHandleMsaaStencilAttachment (void) c
 
 EditFieldHandlePtr FrameBufferObjectBase::editHandleMsaaStencilAttachment(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecFrameBufferAttachmentPtr::EditHandlePtr returnValue(
         new  SFUnrecFrameBufferAttachmentPtr::EditHandle(
              &_sfMsaaStencilAttachment,
              this->getType().getFieldDesc(MsaaStencilAttachmentFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&FrameBufferObject::setMsaaStencilAttachment,

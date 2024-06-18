@@ -799,9 +799,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandleFrameCount      (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandleFrameCount     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt64::EditHandlePtr returnValue(
         new  SFUInt64::EditHandle(
              &_sfFrameCount,
@@ -827,9 +824,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandleStartTime       (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandleStartTime      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfStartTime,
@@ -855,9 +849,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandleLastTime        (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandleLastTime       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfLastTime,
@@ -883,9 +874,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandleCurrTime        (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandleCurrTime       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfCurrTime,
@@ -911,9 +899,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandleTimeStamp       (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandleTimeStamp      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfTimeStamp,
@@ -939,9 +924,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandleTimeScale       (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandleTimeScale      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfTimeScale,
@@ -967,9 +949,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandleConstantTimeStep (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandleConstantTimeStep(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFTime::EditHandlePtr returnValue(
         new  SFTime::EditHandle(
              &_sfConstantTimeStep,
@@ -995,9 +974,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandleConstantTime    (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandleConstantTime   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfConstantTime,
@@ -1023,9 +999,6 @@ GetFieldHandlePtr FrameHandlerBase::getHandlePaused          (void) const
 
 EditFieldHandlePtr FrameHandlerBase::editHandlePaused         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPaused,

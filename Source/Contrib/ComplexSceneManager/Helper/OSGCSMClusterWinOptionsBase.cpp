@@ -447,9 +447,6 @@ GetFieldHandlePtr CSMClusterWinOptionsBase::getHandleParent          (void) cons
 
 EditFieldHandlePtr CSMClusterWinOptionsBase::editHandleParent         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;

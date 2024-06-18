@@ -631,9 +631,6 @@ GetFieldHandlePtr FogChunkBase::getHandleMode            (void) const
 
 EditFieldHandlePtr FogChunkBase::editHandleMode           (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFGLenum::EditHandlePtr returnValue(
         new  SFGLenum::EditHandle(
              &_sfMode,
@@ -659,9 +656,6 @@ GetFieldHandlePtr FogChunkBase::getHandleColor           (void) const
 
 EditFieldHandlePtr FogChunkBase::editHandleColor          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFColor4f::EditHandlePtr returnValue(
         new  SFColor4f::EditHandle(
              &_sfColor,
@@ -687,9 +681,6 @@ GetFieldHandlePtr FogChunkBase::getHandleStart           (void) const
 
 EditFieldHandlePtr FogChunkBase::editHandleStart          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfStart,
@@ -715,9 +706,6 @@ GetFieldHandlePtr FogChunkBase::getHandleEnd             (void) const
 
 EditFieldHandlePtr FogChunkBase::editHandleEnd            (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfEnd,
@@ -743,9 +731,6 @@ GetFieldHandlePtr FogChunkBase::getHandleDensity         (void) const
 
 EditFieldHandlePtr FogChunkBase::editHandleDensity        (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfDensity,

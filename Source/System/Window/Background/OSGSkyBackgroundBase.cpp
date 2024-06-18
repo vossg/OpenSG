@@ -1592,9 +1592,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleSkyColor        (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleSkyColor       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFColor4f::EditHandlePtr returnValue(
         new  MFColor4f::EditHandle(
              &_mfSkyColor,
@@ -1620,9 +1617,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleSkyAngle        (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleSkyAngle       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfSkyAngle,
@@ -1648,9 +1642,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleGroundColor     (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleGroundColor    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFColor4f::EditHandlePtr returnValue(
         new  MFColor4f::EditHandle(
              &_mfGroundColor,
@@ -1676,9 +1667,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleGroundAngle     (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleGroundAngle    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFReal32::EditHandlePtr returnValue(
         new  MFReal32::EditHandle(
              &_mfGroundAngle,
@@ -1704,9 +1692,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleSphereRes       (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleSphereRes      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfSphereRes,
@@ -1732,14 +1717,13 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleBackTexture     (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleBackTexture    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBaseChunkPtr::EditHandle(
              &_sfBackTexture,
              this->getType().getFieldDesc(BackTextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkyBackground::setBackTexture,
@@ -1763,14 +1747,13 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleBottomTexture   (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleBottomTexture  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBaseChunkPtr::EditHandle(
              &_sfBottomTexture,
              this->getType().getFieldDesc(BottomTextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkyBackground::setBottomTexture,
@@ -1794,14 +1777,13 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleFrontTexture    (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleFrontTexture   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBaseChunkPtr::EditHandle(
              &_sfFrontTexture,
              this->getType().getFieldDesc(FrontTextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkyBackground::setFrontTexture,
@@ -1825,14 +1807,13 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleLeftTexture     (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleLeftTexture    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBaseChunkPtr::EditHandle(
              &_sfLeftTexture,
              this->getType().getFieldDesc(LeftTextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkyBackground::setLeftTexture,
@@ -1856,14 +1837,13 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleRightTexture    (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleRightTexture   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBaseChunkPtr::EditHandle(
              &_sfRightTexture,
              this->getType().getFieldDesc(RightTextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkyBackground::setRightTexture,
@@ -1887,14 +1867,13 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleTopTexture      (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleTopTexture     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecTextureBaseChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecTextureBaseChunkPtr::EditHandle(
              &_sfTopTexture,
              this->getType().getFieldDesc(TopTextureFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkyBackground::setTopTexture,
@@ -1918,9 +1897,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleBoxInside       (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleBoxInside      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfBoxInside,
@@ -1946,9 +1922,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleTopTexCoord     (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleTopTexCoord    (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfTopTexCoord,
@@ -1974,9 +1947,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleBottomTexCoord  (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleBottomTexCoord (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfBottomTexCoord,
@@ -2002,9 +1972,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleRightTexCoord   (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleRightTexCoord  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfRightTexCoord,
@@ -2030,9 +1997,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleLeftTexCoord    (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleLeftTexCoord   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfLeftTexCoord,
@@ -2058,9 +2022,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleFrontTexCoord   (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleFrontTexCoord  (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfFrontTexCoord,
@@ -2086,9 +2047,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleBackTexCoord    (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleBackTexCoord   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFVec3f::EditHandlePtr returnValue(
         new  MFVec3f::EditHandle(
              &_mfBackTexCoord,
@@ -2114,14 +2072,13 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleBeacon          (void) const
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleBeacon         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFWeakNodePtr::EditHandlePtr returnValue(
         new  SFWeakNodePtr::EditHandle(
              &_sfBeacon,
              this->getType().getFieldDesc(BeaconFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&SkyBackground::setBeacon,
@@ -2145,9 +2102,6 @@ GetFieldHandlePtr SkyBackgroundBase::getHandleUseVRMLCubeTextureSemantics (void)
 
 EditFieldHandlePtr SkyBackgroundBase::editHandleUseVRMLCubeTextureSemantics(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfUseVRMLCubeTextureSemantics,

@@ -630,9 +630,6 @@ GetFieldHandlePtr ShaderExecutableVarChunkBase::getHandleProgramVarChunks (void)
 
 EditFieldHandlePtr ShaderExecutableVarChunkBase::editHandleProgramVarChunks(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     EditFieldHandlePtr returnValue;
 
     return returnValue;
@@ -651,14 +648,13 @@ GetFieldHandlePtr ShaderExecutableVarChunkBase::getHandleVariables       (void) 
 
 EditFieldHandlePtr ShaderExecutableVarChunkBase::editHandleVariables      (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecChildShaderProgramVariablesPtr::EditHandlePtr returnValue(
         new  SFUnrecChildShaderProgramVariablesPtr::EditHandle(
              &_sfVariables,
              this->getType().getFieldDesc(VariablesFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ShaderExecutableVarChunk::setVariables,
@@ -682,9 +678,6 @@ GetFieldHandlePtr ShaderExecutableVarChunkBase::getHandleVariableLocations (void
 
 EditFieldHandlePtr ShaderExecutableVarChunkBase::editHandleVariableLocations(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFInt32::EditHandlePtr returnValue(
         new  MFInt32::EditHandle(
              &_mfVariableLocations,
@@ -710,9 +703,6 @@ GetFieldHandlePtr ShaderExecutableVarChunkBase::getHandleActiveShader    (void) 
 
 EditFieldHandlePtr ShaderExecutableVarChunkBase::editHandleActiveShader   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfActiveShader,

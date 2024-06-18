@@ -819,9 +819,6 @@ GetFieldHandlePtr ColorDisplayFilterBase::getHandleGamma           (void) const
 
 EditFieldHandlePtr ColorDisplayFilterBase::editHandleGamma          (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFReal32::EditHandlePtr returnValue(
         new  SFReal32::EditHandle(
              &_sfGamma,
@@ -847,9 +844,6 @@ GetFieldHandlePtr ColorDisplayFilterBase::getHandleMatrix          (void) const
 
 EditFieldHandlePtr ColorDisplayFilterBase::editHandleMatrix         (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFMatrix::EditHandlePtr returnValue(
         new  SFMatrix::EditHandle(
              &_sfMatrix,
@@ -875,9 +869,6 @@ GetFieldHandlePtr ColorDisplayFilterBase::getHandleColorTableWidth (void) const
 
 EditFieldHandlePtr ColorDisplayFilterBase::editHandleColorTableWidth(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfColorTableWidth,
@@ -903,9 +894,6 @@ GetFieldHandlePtr ColorDisplayFilterBase::getHandleColorTableHeight (void) const
 
 EditFieldHandlePtr ColorDisplayFilterBase::editHandleColorTableHeight(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfColorTableHeight,
@@ -931,9 +919,6 @@ GetFieldHandlePtr ColorDisplayFilterBase::getHandleColorTableDepth (void) const
 
 EditFieldHandlePtr ColorDisplayFilterBase::editHandleColorTableDepth(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUInt32::EditHandlePtr returnValue(
         new  SFUInt32::EditHandle(
              &_sfColorTableDepth,
@@ -959,9 +944,6 @@ GetFieldHandlePtr ColorDisplayFilterBase::getHandleColorTable      (void) const
 
 EditFieldHandlePtr ColorDisplayFilterBase::editHandleColorTable     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     MFColor3f::EditHandlePtr returnValue(
         new  MFColor3f::EditHandle(
              &_mfColorTable,
@@ -987,14 +969,13 @@ GetFieldHandlePtr ColorDisplayFilterBase::getHandleTableImage      (void) const
 
 EditFieldHandlePtr ColorDisplayFilterBase::editHandleTableImage     (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecImagePtr::EditHandlePtr returnValue(
         new  SFUnrecImagePtr::EditHandle(
              &_sfTableImage,
              this->getType().getFieldDesc(TableImageFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ColorDisplayFilter::setTableImage,
@@ -1018,14 +999,13 @@ GetFieldHandlePtr ColorDisplayFilterBase::getHandleFilterShader    (void) const
 
 EditFieldHandlePtr ColorDisplayFilterBase::editHandleFilterShader   (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFUnrecSimpleSHLChunkPtr::EditHandlePtr returnValue(
         new  SFUnrecSimpleSHLChunkPtr::EditHandle(
              &_sfFilterShader,
              this->getType().getFieldDesc(FilterShaderFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&ColorDisplayFilter::setFilterShader,
