@@ -226,12 +226,18 @@
 # else
 #  define OSG_THROW(X) throw(X)
 # endif
+
+# define OSG_UNUSED __attribute__((unused)) 
+
 #else // __GNUC__
 # if __cplusplus > 201402L
 #  define OSG_THROW(X)
 # else
 #  define OSG_THROW(X) throw(X)
 # endif
+
+# define OSG_UNUSED
+
 #endif
 
 
