@@ -83,7 +83,7 @@ struct FieldTraits<QT4Window *, nsOSG> :
 
     typedef FieldTraits<QT4Window *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_WINDOWQT4_DLLMAPPING DataType &getType(void);
 

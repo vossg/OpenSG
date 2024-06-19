@@ -83,7 +83,7 @@ struct FieldTraits<CoreGLWindow *, nsOSG> :
 
     typedef FieldTraits<CoreGLWindow *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_WINDOWCOREGL_DLLMAPPING DataType &getType(void);
 

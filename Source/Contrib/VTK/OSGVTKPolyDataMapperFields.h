@@ -83,7 +83,7 @@ struct FieldTraits<VTKPolyDataMapper *, nsOSG> :
 
     typedef FieldTraits<VTKPolyDataMapper *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_CONTRIBVTK_DLLMAPPING DataType &getType(void);
 

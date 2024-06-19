@@ -83,7 +83,7 @@ struct FieldTraits<CocoaWindow *, nsOSG> :
 
     typedef FieldTraits<CocoaWindow *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_WINDOWCOCOA_DLLMAPPING DataType &getType(void);
 

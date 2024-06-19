@@ -83,7 +83,7 @@ struct FieldTraits<EGLWindow *> :
 
     typedef FieldTraits<EGLWindow *>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_WINDOWEGL_DLLMAPPING DataType &getType(void);
 

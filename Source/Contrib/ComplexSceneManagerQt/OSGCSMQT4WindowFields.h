@@ -83,7 +83,7 @@ struct FieldTraits<CSMQT4Window *, nsOSG> :
 
     typedef FieldTraits<CSMQT4Window *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_CONTRIBCSMQT_DLLMAPPING DataType &getType(void);
 

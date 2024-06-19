@@ -83,7 +83,7 @@ struct FieldTraits<CgFXVariableTexObj *, nsOSG> :
 
     typedef FieldTraits<CgFXVariableTexObj *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_CONTRIBCGFX_DLLMAPPING DataType &getType(void);
 

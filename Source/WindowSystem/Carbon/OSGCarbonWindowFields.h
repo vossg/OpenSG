@@ -83,7 +83,7 @@ struct FieldTraits<CarbonWindow *, nsOSG> :
 
     typedef FieldTraits<CarbonWindow *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_WINDOWCARBON_DLLMAPPING DataType &getType(void);
 
