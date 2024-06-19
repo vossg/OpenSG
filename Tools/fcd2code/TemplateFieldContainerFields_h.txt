@@ -99,7 +99,7 @@ struct FieldTraits<@!Classname!@ *, @!nsConst!@> :
 
     typedef FieldTraits<@!Classname!@ *, @!nsConst!@>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     @@if isInLibrary
     static OSG_@!LIBNAME!@_DLLMAPPING DataType &getType(void);
@@ -186,7 +186,7 @@ struct FieldTraits<@!Classname!@ *, @!nsConst!@ + @!ChildNS!@> :
   public:
     typedef FieldTraits<@!Classname!@ *, @!nsConst!@ + @!ChildNS!@>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 @@if PointerField
 
     @@if isInLibrary
@@ -281,7 +281,7 @@ struct FieldTraits<@!Classname!@ *, @!nsConst!@ + @!ParentNS!@> :
     typedef FieldTraits<@!Classname!@ *, @!nsConst!@ + @!ParentNS!@> Self;
 
 
-    enum             { Convertible = Self::NotConvertible };
+    enum : UInt32    { Convertible = Self::NotConvertible };
     
     static OSG_@!LIBNAME!@_DLLMAPPING
                  DataType &getType (void);
