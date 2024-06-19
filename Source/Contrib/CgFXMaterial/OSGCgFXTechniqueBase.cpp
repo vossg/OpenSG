@@ -67,7 +67,7 @@
 #include "OSGCgFXTechniqueBase.h"
 #include "OSGCgFXTechnique.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -531,6 +531,9 @@ EditFieldHandlePtr CgFXTechniqueBase::editHandleRenderPassStates(void)
              &_mfRenderPassStates,
              this->getType().getFieldDesc(RenderPassStatesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&CgFXTechnique::addPassState,

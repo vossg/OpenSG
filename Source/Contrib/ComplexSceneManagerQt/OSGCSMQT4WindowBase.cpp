@@ -425,9 +425,6 @@ GetFieldHandlePtr CSMQT4WindowBase::getHandlePrimaryDisplayString (void) const
 
 EditFieldHandlePtr CSMQT4WindowBase::editHandlePrimaryDisplayString(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFString::EditHandlePtr returnValue(
         new  SFString::EditHandle(
              &_sfPrimaryDisplayString,
@@ -453,9 +450,6 @@ GetFieldHandlePtr CSMQT4WindowBase::getHandlePrivateContext  (void) const
 
 EditFieldHandlePtr CSMQT4WindowBase::editHandlePrivateContext (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPrivateContext,

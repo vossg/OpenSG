@@ -465,9 +465,6 @@ GetFieldHandlePtr QT4WindowBase::getHandleGlWidget        (void) const
 
 EditFieldHandlePtr QT4WindowBase::editHandleGlWidget       (void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFOSGQGLWidgetP::EditHandlePtr returnValue(
         new  SFOSGQGLWidgetP::EditHandle(
              &_sfGlWidget,
@@ -493,9 +490,6 @@ GetFieldHandlePtr QT4WindowBase::getHandlePrivateOSGContext (void) const
 
 EditFieldHandlePtr QT4WindowBase::editHandlePrivateOSGContext(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
     SFBool::EditHandlePtr returnValue(
         new  SFBool::EditHandle(
              &_sfPrivateOSGContext,

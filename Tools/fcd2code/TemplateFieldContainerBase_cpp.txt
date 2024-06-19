@@ -1197,9 +1197,6 @@ GetFieldHandlePtr @!Classname!@Base::getHandle@!field.Name:15!@ (void) const
 
 EditFieldHandlePtr @!Classname!@Base::editHandle@!field.Name:15!@(void)
 {
-    using boost::placeholders::_1;
-    using boost::placeholders::_2;
-
  @@if !field.noAccess
   @@if !field.isParentField
     @!field.CARD!@@!field.FieldTypeCaps!@::EditHandlePtr returnValue(
@@ -1218,6 +1215,9 @@ EditFieldHandlePtr @!Classname!@Base::editHandle@!field.Name:15!@(void)
    @@endif // field.isStoreless
    @@if field.isMField
     @@if field.isPtrField
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
      @@if field.hasPushToField
     returnValue->setAddMethod(
         boost::bind(&@!Classname!@::@!field.PushToField!@,
@@ -1260,6 +1260,8 @@ EditFieldHandlePtr @!Classname!@Base::editHandle@!field.Name:15!@(void)
     @@endif // !field.isStoreless
    @@else // field.isMField
     @@if field.isPtrField
+    using boost::placeholders::_1;
+
     returnValue->setSetMethod(
         boost::bind(&@!Classname!@::set@!field.Name!@,
                     static_cast<@!Classname!@ *>(this), _1));

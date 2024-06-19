@@ -69,7 +69,7 @@
 #include "OSGCgFXMaterialBase.h"
 #include "OSGCgFXMaterial.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -1299,6 +1299,8 @@ EditFieldHandlePtr CgFXMaterialBase::editHandleVariables      (void)
              this->getType().getFieldDesc(VariablesFieldId),
              this));
 
+    using boost::placeholders::_1;
+
     returnValue->setSetMethod(
         boost::bind(&CgFXMaterial::setVariables,
                     static_cast<CgFXMaterial *>(this), _1));
@@ -1377,6 +1379,9 @@ EditFieldHandlePtr CgFXMaterialBase::editHandleTechniques     (void)
              this->getType().getFieldDesc(TechniquesFieldId),
              this));
 
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
+
     returnValue->setAddMethod(
         boost::bind(&CgFXMaterial::pushToTechniques,
                     static_cast<CgFXMaterial *>(this), _1));
@@ -1413,6 +1418,9 @@ EditFieldHandlePtr CgFXMaterialBase::editHandleTextures       (void)
              &_mfTextures,
              this->getType().getFieldDesc(TexturesFieldId),
              this));
+
+    using boost::placeholders::_1;
+    using boost::placeholders::_2;
 
     returnValue->setAddMethod(
         boost::bind(&CgFXMaterial::pushToTextures,

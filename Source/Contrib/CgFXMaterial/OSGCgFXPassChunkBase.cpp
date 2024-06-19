@@ -67,7 +67,7 @@
 #include "OSGCgFXPassChunkBase.h"
 #include "OSGCgFXPassChunk.h"
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 OSG_BEGIN_NAMESPACE
 
@@ -440,6 +440,8 @@ EditFieldHandlePtr CgFXPassChunkBase::editHandleMaterial       (void)
              &_sfMaterial,
              this->getType().getFieldDesc(MaterialFieldId),
              this));
+
+    using boost::placeholders::_1;
 
     returnValue->setSetMethod(
         boost::bind(&CgFXPassChunk::setMaterial,
