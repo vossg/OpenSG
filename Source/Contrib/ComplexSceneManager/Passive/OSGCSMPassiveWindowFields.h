@@ -83,7 +83,7 @@ struct FieldTraits<CSMPassiveWindow *, nsOSG> :
 
     typedef FieldTraits<CSMPassiveWindow *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_CONTRIBCSM_DLLMAPPING DataType &getType(void);
 

@@ -83,7 +83,7 @@ struct FieldTraits<ShaderVariableBool *, nsOSG> :
 
     typedef FieldTraits<ShaderVariableBool *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_SYSTEM_DLLMAPPING DataType &getType(void);
 

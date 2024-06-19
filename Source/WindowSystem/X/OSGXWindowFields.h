@@ -83,7 +83,7 @@ struct FieldTraits<XWindow *, nsOSG> :
 
     typedef FieldTraits<XWindow *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_WINDOWX_DLLMAPPING DataType &getType(void);
 

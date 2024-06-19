@@ -83,7 +83,7 @@ struct FieldTraits<SimpleShadowMapEngine *, nsOSG> :
 
     typedef FieldTraits<SimpleShadowMapEngine *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_GROUP_DLLMAPPING DataType &getType(void);
 

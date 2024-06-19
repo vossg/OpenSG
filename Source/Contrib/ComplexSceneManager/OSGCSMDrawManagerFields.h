@@ -83,7 +83,7 @@ struct FieldTraits<CSMDrawManager *, nsOSG> :
 
     typedef FieldTraits<CSMDrawManager *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_CONTRIBCSM_DLLMAPPING DataType &getType(void);
 

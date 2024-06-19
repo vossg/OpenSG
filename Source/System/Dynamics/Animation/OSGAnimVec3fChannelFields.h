@@ -83,7 +83,7 @@ struct FieldTraits<AnimVec3fChannel *, nsOSG> :
 
     typedef FieldTraits<AnimVec3fChannel *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_DYNAMICS_DLLMAPPING DataType &getType(void);
 

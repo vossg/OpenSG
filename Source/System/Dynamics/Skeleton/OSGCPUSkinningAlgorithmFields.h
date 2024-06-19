@@ -83,7 +83,7 @@ struct FieldTraits<CPUSkinningAlgorithm *, nsOSG> :
 
     typedef FieldTraits<CPUSkinningAlgorithm *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_DYNAMICS_DLLMAPPING DataType &getType(void);
 

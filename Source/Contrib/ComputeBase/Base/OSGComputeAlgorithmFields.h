@@ -83,7 +83,7 @@ struct FieldTraits<ComputeAlgorithm *, nsOSG> :
 
     typedef FieldTraits<ComputeAlgorithm *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_CONTRIBCOMPUTEBASE_DLLMAPPING DataType &getType(void);
 

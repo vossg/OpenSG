@@ -83,7 +83,7 @@ struct FieldTraits<HDR2StageData *, nsOSG> :
 
     typedef FieldTraits<HDR2StageData *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_EFFECTGROUPS_DLLMAPPING DataType &getType(void);
 

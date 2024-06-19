@@ -83,7 +83,7 @@ struct FieldTraits<PerfMonitorForeground *, nsOSG> :
 
     typedef FieldTraits<PerfMonitorForeground *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_UTIL_DLLMAPPING DataType &getType(void);
 

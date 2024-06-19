@@ -83,7 +83,7 @@ struct FieldTraits<QuadTreeTerrain *, nsOSG> :
 
     typedef FieldTraits<QuadTreeTerrain *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_DRAWABLE_DLLMAPPING DataType &getType(void);
 

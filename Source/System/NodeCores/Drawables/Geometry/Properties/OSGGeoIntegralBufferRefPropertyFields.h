@@ -83,7 +83,7 @@ struct FieldTraits<GeoIntegralBufferRefProperty *, nsOSG> :
 
     typedef FieldTraits<GeoIntegralBufferRefProperty *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_DRAWABLE_DLLMAPPING DataType &getType(void);
 
@@ -155,7 +155,7 @@ struct FieldTraits<GeoIntegralBufferRefProperty *, nsOSG + 1> :
   public:
     typedef FieldTraits<GeoIntegralBufferRefProperty *, nsOSG + 1>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_DRAWABLE_DLLMAPPING DataType &getType(void);
 

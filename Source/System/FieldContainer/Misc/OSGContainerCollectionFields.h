@@ -83,7 +83,7 @@ struct FieldTraits<ContainerCollection *, nsOSG> :
 
     typedef FieldTraits<ContainerCollection *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_SYSTEM_DLLMAPPING DataType &getType(void);
 

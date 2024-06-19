@@ -83,7 +83,7 @@ struct FieldTraits<LightModelChunk *, nsOSG> :
 
     typedef FieldTraits<LightModelChunk *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_STATE_DLLMAPPING DataType &getType(void);
 

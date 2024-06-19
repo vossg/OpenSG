@@ -83,7 +83,7 @@ struct FieldTraits<Skeleton *, nsOSG> :
 
     typedef FieldTraits<Skeleton *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_DYNAMICS_DLLMAPPING DataType &getType(void);
 
@@ -155,7 +155,7 @@ struct FieldTraits<Skeleton *, nsOSG + 1> :
   public:
     typedef FieldTraits<Skeleton *, nsOSG + 1>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_DYNAMICS_DLLMAPPING DataType &getType(void);
 
@@ -232,7 +232,7 @@ struct FieldTraits<Skeleton *, nsOSG + 2> :
     typedef FieldTraits<Skeleton *, nsOSG + 2> Self;
 
 
-    enum             { Convertible = Self::NotConvertible };
+    enum : UInt32    { Convertible = Self::NotConvertible };
     
     static OSG_DYNAMICS_DLLMAPPING
                  DataType &getType (void);

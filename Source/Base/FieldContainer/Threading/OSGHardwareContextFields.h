@@ -83,7 +83,7 @@ struct FieldTraits<HardwareContext *, nsOSG> :
 
     typedef FieldTraits<HardwareContext *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_BASE_DLLMAPPING DataType &getType(void);
 
@@ -155,7 +155,7 @@ struct FieldTraits<HardwareContext *, nsOSG + 1> :
   public:
     typedef FieldTraits<HardwareContext *, nsOSG + 1>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_BASE_DLLMAPPING DataType &getType(void);
 
@@ -232,7 +232,7 @@ struct FieldTraits<HardwareContext *, nsOSG + 2> :
     typedef FieldTraits<HardwareContext *, nsOSG + 2> Self;
 
 
-    enum             { Convertible = Self::NotConvertible };
+    enum : UInt32    { Convertible = Self::NotConvertible };
     
     static OSG_BASE_DLLMAPPING
                  DataType &getType (void);

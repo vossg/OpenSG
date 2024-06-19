@@ -83,7 +83,7 @@ struct FieldTraits<TranslationTransformationElement *, nsOSG> :
 
     typedef FieldTraits<TranslationTransformationElement *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_GROUP_DLLMAPPING DataType &getType(void);
 

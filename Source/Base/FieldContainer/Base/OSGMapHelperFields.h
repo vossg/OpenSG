@@ -83,7 +83,7 @@ struct FieldTraits<MapHelper *, nsOSG> :
 
     typedef FieldTraits<MapHelper *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_BASE_DLLMAPPING DataType &getType(void);
 

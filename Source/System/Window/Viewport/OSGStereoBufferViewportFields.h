@@ -83,7 +83,7 @@ struct FieldTraits<StereoBufferViewport *, nsOSG> :
 
     typedef FieldTraits<StereoBufferViewport *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_WINDOW_DLLMAPPING DataType &getType(void);
 

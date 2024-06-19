@@ -83,7 +83,7 @@ struct FieldTraits<LinuxEventOptions *, nsOSG> :
 
     typedef FieldTraits<LinuxEventOptions *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_CONTRIBCSM_DLLMAPPING DataType &getType(void);
 
@@ -129,7 +129,7 @@ struct FieldTraits<LinuxEventOptions *, nsOSG + 1> :
   public:
     typedef FieldTraits<LinuxEventOptions *, nsOSG + 1>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_CONTRIBCSM_DLLMAPPING DataType &getType(void);
 

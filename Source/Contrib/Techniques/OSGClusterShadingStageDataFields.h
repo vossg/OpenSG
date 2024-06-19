@@ -83,7 +83,7 @@ struct FieldTraits<ClusterShadingStageData *, nsOSG> :
 
     typedef FieldTraits<ClusterShadingStageData *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_CONTRIBTECHNIQUES_DLLMAPPING DataType &getType(void);
 

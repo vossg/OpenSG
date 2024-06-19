@@ -83,7 +83,7 @@ struct FieldTraits<AnimKeyFrameTemplate *, nsOSG> :
 
     typedef FieldTraits<AnimKeyFrameTemplate *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_DYNAMICS_DLLMAPPING DataType &getType(void);
 

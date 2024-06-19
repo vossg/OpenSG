@@ -83,7 +83,7 @@ struct FieldTraits<ResolutionDisplayFilter *, nsOSG> :
 
     typedef FieldTraits<ResolutionDisplayFilter *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_EFFECTGROUPS_DLLMAPPING DataType &getType(void);
 

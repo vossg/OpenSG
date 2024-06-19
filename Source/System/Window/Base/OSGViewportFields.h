@@ -83,7 +83,7 @@ struct FieldTraits<Viewport *, nsOSG> :
 
     typedef FieldTraits<Viewport *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_SYSTEM_DLLMAPPING DataType &getType(void);
 
@@ -155,7 +155,7 @@ struct FieldTraits<Viewport *, nsOSG + 1> :
   public:
     typedef FieldTraits<Viewport *, nsOSG + 1>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_SYSTEM_DLLMAPPING DataType &getType(void);
 

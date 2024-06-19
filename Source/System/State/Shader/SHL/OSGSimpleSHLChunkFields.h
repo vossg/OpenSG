@@ -83,7 +83,7 @@ struct FieldTraits<SimpleSHLChunk *, nsOSG> :
 
     typedef FieldTraits<SimpleSHLChunk *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_SYSTEM_DLLMAPPING DataType &getType(void);
 

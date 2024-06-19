@@ -83,7 +83,7 @@ struct FieldTraits<VRMLAttachment *, nsOSG> :
 
     typedef FieldTraits<VRMLAttachment *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_FILEIO_DLLMAPPING DataType &getType(void);
 

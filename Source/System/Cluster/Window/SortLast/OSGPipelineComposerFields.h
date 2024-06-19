@@ -83,7 +83,7 @@ struct FieldTraits<PipelineComposer *, nsOSG> :
 
     typedef FieldTraits<PipelineComposer *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_CLUSTER_DLLMAPPING DataType &getType(void);
 

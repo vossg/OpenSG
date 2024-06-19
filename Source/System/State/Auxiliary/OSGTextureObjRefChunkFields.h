@@ -83,7 +83,7 @@ struct FieldTraits<TextureObjRefChunk *, nsOSG> :
 
     typedef FieldTraits<TextureObjRefChunk *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_STATE_DLLMAPPING DataType &getType(void);
 

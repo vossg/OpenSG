@@ -83,7 +83,7 @@ struct FieldTraits<TrapezoidalShadowMapEngine *, nsOSG> :
 
     typedef FieldTraits<TrapezoidalShadowMapEngine *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_CONTRIBTRAPEZOIDALSHADOWMAPS_DLLMAPPING DataType &getType(void);
 

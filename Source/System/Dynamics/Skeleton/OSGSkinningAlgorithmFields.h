@@ -83,7 +83,7 @@ struct FieldTraits<SkinningAlgorithm *, nsOSG> :
 
     typedef FieldTraits<SkinningAlgorithm *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_DYNAMICS_DLLMAPPING DataType &getType(void);
 
@@ -155,7 +155,7 @@ struct FieldTraits<SkinningAlgorithm *, nsOSG + 1> :
   public:
     typedef FieldTraits<SkinningAlgorithm *, nsOSG + 1>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum : UInt32               { Convertible = NotConvertible };
 
     static OSG_DYNAMICS_DLLMAPPING DataType &getType(void);
 

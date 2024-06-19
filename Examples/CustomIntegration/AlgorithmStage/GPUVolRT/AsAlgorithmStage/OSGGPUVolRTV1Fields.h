@@ -83,7 +83,7 @@ struct FieldTraits<GPUVolRTV1 *, nsOSG> :
 
     typedef FieldTraits<GPUVolRTV1 *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_EXGPUVOLRT_DLLMAPPING DataType &getType(void);
 

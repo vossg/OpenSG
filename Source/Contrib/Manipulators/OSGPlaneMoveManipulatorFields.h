@@ -83,7 +83,7 @@ struct FieldTraits<PlaneMoveManipulator *, nsOSG> :
 
     typedef FieldTraits<PlaneMoveManipulator *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_CONTRIBGUI_DLLMAPPING DataType &getType(void);
 

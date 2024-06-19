@@ -83,7 +83,7 @@ struct FieldTraits<GLUTWindow *, nsOSG> :
 
     typedef FieldTraits<GLUTWindow *, nsOSG>  Self;
 
-    enum                        { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_WINDOWGLUT_DLLMAPPING DataType &getType(void);
 
