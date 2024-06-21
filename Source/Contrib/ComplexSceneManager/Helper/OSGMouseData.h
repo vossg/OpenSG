@@ -233,7 +233,7 @@ struct FieldTraits<MouseData> : public FieldTraitsTemplateBase<MouseData>
 
     typedef FieldTraits<MouseData>  Self;
 
-    enum             { Convertible = Self::NotConvertible  };
+    enum : UInt32    { Convertible = Self::NotConvertible  };
 
     static OSG_CONTRIBCSM_DLLMAPPING
                  DataType   &getType      (void);

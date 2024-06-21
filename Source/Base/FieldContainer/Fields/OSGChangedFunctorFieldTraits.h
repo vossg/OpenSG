@@ -66,7 +66,7 @@ struct FieldTraits<ChangedFunctorCallback> :
     typedef FieldTraits<ChangedFunctorCallback>  Self;
 
 
-    enum             { Convertible = Self::NotConvertible                  };
+    enum : UInt32    { Convertible = Self::NotConvertible                  };
 
     static OSG_BASE_DLLMAPPING
                  DataType &getType      (void);

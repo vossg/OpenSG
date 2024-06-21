@@ -64,7 +64,7 @@ struct FieldTraits<AspectId, 2> :
 
     typedef FieldTraits<AspectId, 2>   Self;
 
-    enum              { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32     { Convertible = (Self::ToStreamConvertible  |
                                        Self::FromStringConvertible)    };
 
     static OSG_SYSTEM_DLLMAPPING

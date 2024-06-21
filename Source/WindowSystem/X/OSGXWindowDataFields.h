@@ -74,7 +74,7 @@ struct FieldTraits<DisplayP, 2> :
     static  DataType                 _type;                       
     typedef FieldTraits<DisplayP, 2>  Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     static       DataType &getType (void) { return _type;        }
@@ -111,7 +111,7 @@ struct FieldTraits<X11Window, 2> :
     static  DataType                  _type;                       
     typedef FieldTraits<X11Window, 2>  Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     static       DataType &getType (void) { return _type;         }
@@ -146,7 +146,7 @@ struct FieldTraits<GLXContext, 2> :
     static  DataType                   _type;                       
     typedef FieldTraits<GLXContext, 2>  Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     static       DataType &getType (void) { return _type;          }

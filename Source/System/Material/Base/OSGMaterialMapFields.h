@@ -102,7 +102,7 @@ struct FieldTraits<MaterialMap> :
 
     typedef RenderPropertiesPool      KeyPool;
 
-    enum             { Convertible = Self::NotConvertible                  };
+    enum : UInt32    { Convertible = Self::NotConvertible                  };
 
     static OSG_SYSTEM_DLLMAPPING
                  DataType &getType      (void);

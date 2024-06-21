@@ -64,7 +64,7 @@ struct FieldTraits<Node *> : public FieldTraitsFCPtrBase<Node *>
 
     typedef FieldTraits<Node *, 0>   Self;
 
-    enum             { Convertible = Self::NotConvertible              };
+    enum : UInt32    { Convertible = Self::NotConvertible              };
 
     static OSG_BASE_DLLMAPPING
                  DataType &getType      (void);
@@ -141,7 +141,7 @@ struct FieldTraits<Node *, 1> : public FieldTraitsFCPtrBase<Node *, 1>
 
     typedef FieldTraits<Node *, 1>  Self;
 
-    enum             { Convertible = Self::NotConvertible              };
+    enum : UInt32    { Convertible = Self::NotConvertible              };
 
     static const FieldType::Cardinality eParentCard = FieldType::SingleField;
 

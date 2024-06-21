@@ -68,10 +68,10 @@ struct FieldTraits<base##dim##type> :                                       \
     typedef FieldTraits<base##dim##type>  Self;                             \
                                                                             \
                                                                             \
-    enum             { Convertible = (Self::ToStreamConvertible  |          \
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |          \
                                       Self::FromStringConvertible)     };   \
                                                                             \
-    enum             { bHasParent        = 0x01                        };   \
+    enum : UInt32    { bHasParent        = 0x01                        };   \
                                                                             \
     static OSG_BASE_DLLMAPPING                                              \
                  DataType &getType (void);                                  \

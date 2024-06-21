@@ -78,7 +78,7 @@ struct FieldTraits<OSGAny> : public FieldTraitsTemplateBase<OSGAny>
 
     typedef FieldTraits<OSGAny>  Self;
 
-    enum             { Convertible = Self::NotConvertible  };
+    enum : UInt32    { Convertible = Self::NotConvertible  };
 
     static OSG_BASE_DLLMAPPING
                  DataType   &getType      (void);

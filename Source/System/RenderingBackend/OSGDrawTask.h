@@ -303,7 +303,7 @@ struct FieldTraits<DrawTaskRefPtr, 0> :
     static  DataType                       _type;                       
     typedef FieldTraits<DrawTaskRefPtr, 0>  Self;
 
-    enum { Convertible = Self::NotConvertible };
+    enum : UInt32 { Convertible = Self::NotConvertible };
 
     static OSG_SYSTEM_DLLMAPPING DataType &getType (void);
 

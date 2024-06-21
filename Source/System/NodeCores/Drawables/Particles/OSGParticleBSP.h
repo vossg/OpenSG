@@ -260,7 +260,7 @@ struct FieldTraits<ParticleBSPTree> :
 
     typedef FieldTraits<ParticleBSPTree>  Self;
 
-    enum                  { Convertible = 0x00    };
+    enum : UInt32         { Convertible = 0x00    };
 
     static OSG_DRAWABLE_DLLMAPPING 
            DataType       &getType      (void);

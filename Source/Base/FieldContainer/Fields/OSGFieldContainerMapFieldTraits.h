@@ -63,7 +63,7 @@ struct FieldTraits<FieldContainerMap> :
 
     // Define whether string conversions are available. It is strongly
     // recommended to implement both.
-    enum             { Convertible = (Self::ToStreamConvertible |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible |
                                       Self::FromStringConvertible)  };
 
     // access method for the DataType

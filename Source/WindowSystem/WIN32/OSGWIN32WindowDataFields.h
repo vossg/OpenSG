@@ -72,7 +72,7 @@ struct FieldTraits<HWND> :
     typedef FieldTraits<HWND>   Self;
     static  DataType           _type;                       
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWWIN32_DLLMAPPING
@@ -104,7 +104,7 @@ struct FieldTraits<HDC> :
     static  DataType             _type;                       
     typedef FieldTraits<HDC>      Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWWIN32_DLLMAPPING
@@ -136,7 +136,7 @@ struct FieldTraits<HGLRC> :
     static  DataType             _type;                       
     typedef FieldTraits<HGLRC>    Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWWIN32_DLLMAPPING
@@ -168,7 +168,7 @@ struct FieldTraits<PAINTSTRUCT> :
     static  DataType                 _type;                       
     typedef FieldTraits<PAINTSTRUCT>  Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWWIN32_DLLMAPPING

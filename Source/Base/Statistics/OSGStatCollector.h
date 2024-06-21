@@ -196,7 +196,7 @@ struct FieldTraits<StatCollectorP> :
     static  DataType                    _type;
     typedef FieldTraits<StatCollectorP>  Self;
 
-    enum                  { Convertible = Self::ToStringConvertible  |
+    enum : UInt32         { Convertible = Self::ToStringConvertible  |
                                           Self::FromStringConvertible };
 
     static OSG_BASE_DLLMAPPING

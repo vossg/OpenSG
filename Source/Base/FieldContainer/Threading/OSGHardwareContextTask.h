@@ -415,7 +415,7 @@ struct FieldTraits<HardwareContextTaskRefPtr> :
 
     typedef FieldTraits<HardwareContextTaskRefPtr>  Self;
 
-    enum { Convertible = Self::NotConvertible };
+    enum : UInt32 { Convertible = Self::NotConvertible };
 
     OSG_BASE_DLLMAPPING
     static DataType &getType (void);

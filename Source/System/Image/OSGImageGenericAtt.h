@@ -128,7 +128,7 @@ struct FieldTraits<ImageGenericAtt *, 0> :
     static  DataType                        _type;
     typedef FieldTraits<ImageGenericAtt *>   Self;
 
-    enum                            { Convertible = Self::NotConvertible };
+    enum : UInt32                   { Convertible = Self::NotConvertible };
 
     static       DataType &getType (void) { return _type;                      }
 

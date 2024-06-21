@@ -78,7 +78,7 @@ struct FieldTraits<EAGLContextP> :
     typedef FieldTraits<EAGLContextP>  Self;
     static  DataType                  _type;                       
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWEAGL_DLLMAPPING

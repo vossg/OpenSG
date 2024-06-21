@@ -66,7 +66,7 @@ class FieldConnector;
 
 struct FieldTraitsBase
 {
-    enum
+    enum : UInt32
     {
         NotConvertible        = 0x00,
 

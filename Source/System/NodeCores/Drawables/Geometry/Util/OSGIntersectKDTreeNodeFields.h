@@ -48,7 +48,7 @@ struct OSG_DRAWABLE_DLLMAPPING FieldTraits<IntersectKDTreeNode> :
 
     static  DataType _type;
 
-    enum { Convertible = Self::NotConvertible };
+    enum : UInt32 { Convertible = Self::NotConvertible };
 
     static       DataType &getType (void);
 

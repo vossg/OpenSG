@@ -69,7 +69,7 @@ struct FieldTraits<OSGQGLWidgetP>
     static  DataType              _type;                       
     typedef FieldTraits<OSGQGLWidget *>  Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible) };
 
 	OSG_WINDOWQT4_DLLMAPPING

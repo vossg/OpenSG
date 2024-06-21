@@ -93,7 +93,7 @@ struct FieldTraits<ComputeFunctorCallback> :
     typedef FieldTraits<ComputeFunctorCallback>  Self;
 
 
-    enum             { Convertible = Self::NotConvertible                  };
+    enum : UInt32    { Convertible = Self::NotConvertible                  };
 
     static OSG_CONTRIBCOMPUTEBASE_DLLMAPPING
                  DataType &getType      (void);

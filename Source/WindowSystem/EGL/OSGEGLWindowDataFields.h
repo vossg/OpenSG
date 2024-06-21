@@ -70,7 +70,7 @@ struct FieldTraits<EGLDisplay> :
     typedef FieldTraits<EGLDisplay>   Self;
     static  DataType           _type;                       
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     OSG_WINDOWEGL_DLLMAPPING
@@ -100,7 +100,7 @@ struct FieldTraits<EGLSurface> :
     static  DataType                _type;                       
     typedef FieldTraits<EGLSurface>  Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     static DataType &getType (void);
@@ -128,7 +128,7 @@ struct FieldTraits<EGLContext> :
     static  DataType                _type;                       
     typedef FieldTraits<EGLContext>  Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     static DataType &getType (void);
@@ -157,7 +157,7 @@ struct FieldTraits<PAINTSTRUCT> :
     static  DataType                 _type;                       
     typedef FieldTraits<PAINTSTRUCT>  Self;
 
-    enum                        { Convertible = (Self::ToStringConvertible  |
+    enum : UInt32               { Convertible = (Self::ToStringConvertible  |
                                                  Self::FromStringConvertible)};
 
     static DataType &getType (void);

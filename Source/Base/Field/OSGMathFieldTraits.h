@@ -65,7 +65,7 @@ struct FieldTraits<Matrix> : public FieldTraitsTemplateBase<Matrix>
 
     typedef FieldTraits<Matrix>  Self;
 
-    enum             { Convertible = (Self::FromStringConvertible |
+    enum : UInt32    { Convertible = (Self::FromStringConvertible |
                                       Self::ToStreamConvertible   ) };
 
     static OSG_BASE_DLLMAPPING
@@ -181,7 +181,7 @@ struct FieldTraits<Matrix4d> : public FieldTraitsTemplateBase<Matrix4d>
 
     typedef FieldTraits<Matrix4d>  Self;
 
-    enum             { Convertible = (Self::FromStringConvertible |
+    enum : UInt32    { Convertible = (Self::FromStringConvertible |
                                       Self::ToStreamConvertible   ) };
 
     static OSG_BASE_DLLMAPPING
@@ -296,7 +296,7 @@ struct FieldTraits<Matrix4fx> : public FieldTraitsTemplateBase<Matrix4fx>
 
     typedef FieldTraits<Matrix4fx>  Self;
 
-    enum             { Convertible = Self::NotConvertible           };
+    enum : UInt32    { Convertible = Self::NotConvertible           };
 
     static OSG_BASE_DLLMAPPING
                  DataType &getType      (void);
@@ -369,7 +369,7 @@ struct FieldTraits<Quaternion> : public FieldTraitsVec4TemplateBase<Quaternion>
 
     typedef FieldTraits<Quaternion>  Self;
 
-    enum             { Convertible = (Self::FromStringConvertible |
+    enum : UInt32    { Convertible = (Self::FromStringConvertible |
                                       Self::ToStreamConvertible   ) };
 
     static OSG_BASE_DLLMAPPING
@@ -408,7 +408,7 @@ struct FieldTraits<Quaternionfx> :
 
     typedef FieldTraits<Quaternionfx>  Self;
 
-    enum               { Convertible = Self::ToStreamConvertible    };
+    enum : UInt32      { Convertible = Self::ToStreamConvertible    };
 
     static OSG_BASE_DLLMAPPING
                  DataType     &getType      (void);

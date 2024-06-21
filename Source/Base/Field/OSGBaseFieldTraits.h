@@ -72,7 +72,7 @@ struct FieldTraits<Color3f> : public FieldTraitsVec3TemplateBase<Color3f>
 
     typedef FieldTraits<Color3f>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING
@@ -101,7 +101,7 @@ struct FieldTraits<Color3fx> : public FieldTraitsVec3TemplateBase<Color3fx>
 
     typedef FieldTraits<Color3fx>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING
@@ -130,7 +130,7 @@ struct FieldTraits<Color4f> : public FieldTraitsVec4TemplateBase<Color4f>
 
     typedef FieldTraits<Color4f>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING
@@ -159,7 +159,7 @@ struct FieldTraits<Color4fx> : public FieldTraitsVec4TemplateBase<Color4fx>
 
     typedef FieldTraits<Color4fx>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING
@@ -188,7 +188,7 @@ struct FieldTraits<Color3ub> : public FieldTraitsVec3TemplateBase<Color3ub>
 
     typedef FieldTraits<Color3ub>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING
@@ -216,7 +216,7 @@ struct FieldTraits<Color4ub> : public FieldTraitsVec4TemplateBase<Color4ub>
 
     typedef FieldTraits<Color4ub>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING
@@ -245,7 +245,7 @@ struct FieldTraits<std::string> : public FieldTraitsTemplateBase<std::string>
 
     typedef FieldTraits<std::string>  Self;
 
-    enum             { Convertible = (Self::FromStringConvertible |
+    enum : UInt32    { Convertible = (Self::FromStringConvertible |
                                       Self::ToStreamConvertible   )  };
 
     static OSG_BASE_DLLMAPPING
@@ -341,7 +341,7 @@ struct FieldTraits<Time, 1> : public FieldTraitsPODTemplateBase<Time, 1>
 
     typedef FieldTraits<Time, 1>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING
@@ -371,7 +371,7 @@ struct FieldTraits<BoxVolume> :
 
     typedef FieldTraits<BoxVolume>  Self;
 
-    enum                  { Convertible = (Self::FromStringConvertible |
+    enum : UInt32         { Convertible = (Self::FromStringConvertible |
                                            Self::ToStreamConvertible   )     };
 
     static OSG_BASE_DLLMAPPING
@@ -567,7 +567,7 @@ struct FieldTraits<BitVector, 1> :
 
     typedef FieldTraits<BitVector, 1>  Self;
 
-    enum              { Convertible = Self::NotConvertible             };
+    enum : UInt32     { Convertible = Self::NotConvertible             };
 
     static OSG_BASE_DLLMAPPING
                  DataType  &getType (void);
@@ -595,7 +595,7 @@ struct FieldTraits<GLenum, 1> : public FieldTraitsPODTemplateBase<GLenum, 1>
 
     typedef FieldTraits<GLenum, 1>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING
@@ -650,7 +650,7 @@ struct FieldTraits<Plane> : public FieldTraitsTemplateBase<Plane>
 
     typedef FieldTraits<Plane>  Self;
 
-    enum             { Convertible = Self::NotConvertible               };
+    enum : UInt32    { Convertible = Self::NotConvertible               };
 
     static OSG_BASE_DLLMAPPING
                  DataType &getType      (void);
@@ -732,7 +732,7 @@ struct FieldTraits<RenderPropBitVector, 3> :
 
     typedef FieldTraits<RenderPropBitVector, 3>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible)     };
 
     static OSG_BASE_DLLMAPPING

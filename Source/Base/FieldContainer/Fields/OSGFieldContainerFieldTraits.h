@@ -163,7 +163,7 @@ struct FieldTraits<FieldContainer *> :
     typedef FieldTraits<FieldContainer *>  Self;
 
 
-    enum             { Convertible = Self::NotConvertible                 };
+    enum : UInt32    { Convertible = Self::NotConvertible                 };
 
     static OSG_BASE_DLLMAPPING
                  DataType &getType (void);
@@ -260,7 +260,7 @@ struct FieldTraits<FieldContainer *, 1> :
     typedef FieldTraits<FieldContainer *, 1>        Self;
 
 
-    enum             { Convertible = Self::NotConvertible };
+    enum : UInt32    { Convertible = Self::NotConvertible };
     
     static OSG_BASE_DLLMAPPING
                  DataType &getType (void);

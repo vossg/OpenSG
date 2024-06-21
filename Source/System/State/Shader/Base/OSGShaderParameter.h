@@ -64,7 +64,7 @@ struct FieldTraits<ShaderParameter> :
 
     typedef FieldTraits<ShaderParameter>  Self;
 
-    enum             { Convertible = (Self::ToStreamConvertible  |
+    enum : UInt32    { Convertible = (Self::ToStreamConvertible  |
                                       Self::FromStringConvertible) };
 
     static OSG_SYSTEM_DLLMAPPING
