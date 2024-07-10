@@ -1,8 +1,9 @@
-/* A Bison parser, made by GNU Bison 3.0.2.  */
+/* A Bison parser, made by GNU Bison 3.8.2.  */
 
 /* Bison implementation for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
+   Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -15,7 +16,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -33,6 +34,10 @@
 /* C LALR(1) parser skeleton written by Richard Stallman, by
    simplifying the original so-called "semantic" parser.  */
 
+/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
+   especially those whose name start with YY_ or yy_.  They are
+   private implementation details that can be changed or removed.  */
+
 /* All symbols defined below should begin with yy or YY, to avoid
    infringing on user name space.  This should be done even for local
    variables, as they might otherwise be expanded by user macros.
@@ -40,11 +45,11 @@
    define necessary library symbols; they are noted "INFRINGES ON
    USER NAME SPACE" below.  */
 
-/* Identify Bison output.  */
-#define YYBISON 1
+/* Identify Bison output, and Bison version.  */
+#define YYBISON 30802
 
-/* Bison version.  */
-#define YYBISON_VERSION "3.0.2"
+/* Bison version string.  */
+#define YYBISON_VERSION "3.8.2"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -67,158 +72,397 @@
 #define yynerrs         OSGScanParseSkel_nerrs
 
 
-/* Copy the first part of user declarations.  */
-
-#line 73 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:339  */
-
-# ifndef YY_NULLPTR
-#  if defined __cplusplus && 201103L <= __cplusplus
-#   define YY_NULLPTR nullptr
+# ifndef YY_CAST
+#  ifdef __cplusplus
+#   define YY_CAST(Type, Val) static_cast<Type> (Val)
+#   define YY_REINTERPRET_CAST(Type, Val) reinterpret_cast<Type> (Val)
 #  else
-#   define YY_NULLPTR 0
+#   define YY_CAST(Type, Val) ((Type) (Val))
+#   define YY_REINTERPRET_CAST(Type, Val) ((Type) (Val))
+#  endif
+# endif
+# ifndef YY_NULLPTR
+#  if defined __cplusplus
+#   if 201103L <= __cplusplus
+#    define YY_NULLPTR nullptr
+#   else
+#    define YY_NULLPTR 0
+#   endif
+#  else
+#   define YY_NULLPTR ((void*)0)
 #  endif
 # endif
 
-/* Enabling verbose error messages.  */
-#ifdef YYERROR_VERBOSE
-# undef YYERROR_VERBOSE
-# define YYERROR_VERBOSE 1
-#else
-# define YYERROR_VERBOSE 0
-#endif
-
-/* In a future release of Bison, this section will be replaced
-   by #include "OSGScanParseSkelParser.hpp".  */
-#ifndef YY_OSGSCANPARSESKEL_HOME_GERRIT_PROJECTS_OPENSG_SVN_OPENSG_BUILD_BUILD_OSGSYSTEM_OSGSCANPARSESKELPARSER_HPP_INCLUDED
-# define YY_OSGSCANPARSESKEL_HOME_GERRIT_PROJECTS_OPENSG_SVN_OPENSG_BUILD_BUILD_OSGSYSTEM_OSGSCANPARSESKELPARSER_HPP_INCLUDED
-/* Debug traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-#if YYDEBUG
-extern int OSGScanParseSkel_debug;
-#endif
-
-/* Token type.  */
-#ifndef YYTOKENTYPE
-# define YYTOKENTYPE
-  enum yytokentype
-  {
-    TOK_HEADER = 258,
-    TOK_PROFILE = 259,
-    TOK_COMPONENT = 260,
-    TOK_META = 261,
-    TOK_PROTO = 262,
-    TOK_EXTERNPROTO = 263,
-    TOK_IS = 264,
-    TOK_DEF = 265,
-    TOK_USE = 266,
-    TOK_ROUTE = 267,
-    TOK_TO = 268,
-    TOK_IMPORT = 269,
-    TOK_EXPORT = 270,
-    TOK_AS = 271,
-    TOK_eventIn = 272,
-    TOK_eventOut = 273,
-    TOK_exposedField = 274,
-    TOK_field = 275,
-    TOK_MFBool = 276,
-    TOK_MFColor = 277,
-    TOK_MFColorRGBA = 278,
-    TOK_MFDouble = 279,
-    TOK_MFFloat = 280,
-    TOK_MFImage = 281,
-    TOK_MFInt32 = 282,
-    TOK_MFMatrix3d = 283,
-    TOK_MFMatrix3f = 284,
-    TOK_MFMatrix4d = 285,
-    TOK_MFMatrix4f = 286,
-    TOK_MFNode = 287,
-    TOK_MFRotation = 288,
-    TOK_MFString = 289,
-    TOK_MFTime = 290,
-    TOK_MFVec2d = 291,
-    TOK_MFVec2f = 292,
-    TOK_MFVec3d = 293,
-    TOK_MFVec3f = 294,
-    TOK_MFVec4d = 295,
-    TOK_MFVec4f = 296,
-    TOK_SFBool = 297,
-    TOK_SFColor = 298,
-    TOK_SFColorRGBA = 299,
-    TOK_SFDouble = 300,
-    TOK_SFFloat = 301,
-    TOK_SFImage = 302,
-    TOK_SFInt32 = 303,
-    TOK_SFMatrix3d = 304,
-    TOK_SFMatrix3f = 305,
-    TOK_SFMatrix4d = 306,
-    TOK_SFMatrix4f = 307,
-    TOK_SFNode = 308,
-    TOK_SFRotation = 309,
-    TOK_SFString = 310,
-    TOK_SFTime = 311,
-    TOK_SFVec2d = 312,
-    TOK_SFVec2f = 313,
-    TOK_SFVec3d = 314,
-    TOK_SFVec3f = 315,
-    TOK_SFVec4d = 316,
-    TOK_SFVec4f = 317,
-    TOK_MFColor4i = 318,
-    TOK_MFPnt2f = 319,
-    TOK_MFPnt3f = 320,
-    TOK_MFPnt4f = 321,
-    TOK_MFPlane = 322,
-    TOK_SFColor4i = 323,
-    TOK_SFPnt2f = 324,
-    TOK_SFPnt3f = 325,
-    TOK_SFPnt4f = 326,
-    TOK_SFPlane = 327,
-    TOK_SFVolume = 328,
-    TOK_SFVec2i = 329,
-    TOK_SFVec3i = 330,
-    TOK_MFVec2i = 331,
-    TOK_hex = 332,
-    TOK_int32 = 333,
-    TOK_double = 334,
-    TOK_string = 335,
-    TOK_bool = 336,
-    TOK_NULL = 337,
-    TOK_Id = 338,
-    TOK_ImageFinished = 339,
-    TOK_Error = 340,
-    TOK_ClusterLocal = 341,
-    TOK_ThreadLocal = 342
-  };
-#endif
-
-/* Value type.  */
-#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE YYSTYPE;
-union YYSTYPE
+#include "OSGScanParseSkelParser.hpp"
+/* Symbol kind.  */
+enum yysymbol_kind_t
 {
-#line 41 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:355  */
-
-    long intVal;
-    double doubleVal;
-    float floatVal;
-    const char *stringVal;
-    bool boolVal;
-
-#line 209 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:355  */
+  YYSYMBOL_YYEMPTY = -2,
+  YYSYMBOL_YYEOF = 0,                      /* "end of file"  */
+  YYSYMBOL_YYerror = 1,                    /* error  */
+  YYSYMBOL_YYUNDEF = 2,                    /* "invalid token"  */
+  YYSYMBOL_TOK_HEADER = 3,                 /* TOK_HEADER  */
+  YYSYMBOL_TOK_PROFILE = 4,                /* TOK_PROFILE  */
+  YYSYMBOL_TOK_COMPONENT = 5,              /* TOK_COMPONENT  */
+  YYSYMBOL_TOK_META = 6,                   /* TOK_META  */
+  YYSYMBOL_TOK_PROTO = 7,                  /* TOK_PROTO  */
+  YYSYMBOL_TOK_EXTERNPROTO = 8,            /* TOK_EXTERNPROTO  */
+  YYSYMBOL_TOK_IS = 9,                     /* TOK_IS  */
+  YYSYMBOL_TOK_DEF = 10,                   /* TOK_DEF  */
+  YYSYMBOL_TOK_USE = 11,                   /* TOK_USE  */
+  YYSYMBOL_TOK_ROUTE = 12,                 /* TOK_ROUTE  */
+  YYSYMBOL_TOK_TO = 13,                    /* TOK_TO  */
+  YYSYMBOL_TOK_IMPORT = 14,                /* TOK_IMPORT  */
+  YYSYMBOL_TOK_EXPORT = 15,                /* TOK_EXPORT  */
+  YYSYMBOL_TOK_AS = 16,                    /* TOK_AS  */
+  YYSYMBOL_TOK_eventIn = 17,               /* TOK_eventIn  */
+  YYSYMBOL_TOK_eventOut = 18,              /* TOK_eventOut  */
+  YYSYMBOL_TOK_exposedField = 19,          /* TOK_exposedField  */
+  YYSYMBOL_TOK_field = 20,                 /* TOK_field  */
+  YYSYMBOL_TOK_MFBool = 21,                /* TOK_MFBool  */
+  YYSYMBOL_TOK_MFColor = 22,               /* TOK_MFColor  */
+  YYSYMBOL_TOK_MFColorRGBA = 23,           /* TOK_MFColorRGBA  */
+  YYSYMBOL_TOK_MFDouble = 24,              /* TOK_MFDouble  */
+  YYSYMBOL_TOK_MFFloat = 25,               /* TOK_MFFloat  */
+  YYSYMBOL_TOK_MFImage = 26,               /* TOK_MFImage  */
+  YYSYMBOL_TOK_MFInt32 = 27,               /* TOK_MFInt32  */
+  YYSYMBOL_TOK_MFMatrix3d = 28,            /* TOK_MFMatrix3d  */
+  YYSYMBOL_TOK_MFMatrix3f = 29,            /* TOK_MFMatrix3f  */
+  YYSYMBOL_TOK_MFMatrix4d = 30,            /* TOK_MFMatrix4d  */
+  YYSYMBOL_TOK_MFMatrix4f = 31,            /* TOK_MFMatrix4f  */
+  YYSYMBOL_TOK_MFNode = 32,                /* TOK_MFNode  */
+  YYSYMBOL_TOK_MFRotation = 33,            /* TOK_MFRotation  */
+  YYSYMBOL_TOK_MFString = 34,              /* TOK_MFString  */
+  YYSYMBOL_TOK_MFTime = 35,                /* TOK_MFTime  */
+  YYSYMBOL_TOK_MFVec2d = 36,               /* TOK_MFVec2d  */
+  YYSYMBOL_TOK_MFVec2f = 37,               /* TOK_MFVec2f  */
+  YYSYMBOL_TOK_MFVec3d = 38,               /* TOK_MFVec3d  */
+  YYSYMBOL_TOK_MFVec3f = 39,               /* TOK_MFVec3f  */
+  YYSYMBOL_TOK_MFVec4d = 40,               /* TOK_MFVec4d  */
+  YYSYMBOL_TOK_MFVec4f = 41,               /* TOK_MFVec4f  */
+  YYSYMBOL_TOK_SFBool = 42,                /* TOK_SFBool  */
+  YYSYMBOL_TOK_SFColor = 43,               /* TOK_SFColor  */
+  YYSYMBOL_TOK_SFColorRGBA = 44,           /* TOK_SFColorRGBA  */
+  YYSYMBOL_TOK_SFDouble = 45,              /* TOK_SFDouble  */
+  YYSYMBOL_TOK_SFFloat = 46,               /* TOK_SFFloat  */
+  YYSYMBOL_TOK_SFImage = 47,               /* TOK_SFImage  */
+  YYSYMBOL_TOK_SFInt32 = 48,               /* TOK_SFInt32  */
+  YYSYMBOL_TOK_SFMatrix3d = 49,            /* TOK_SFMatrix3d  */
+  YYSYMBOL_TOK_SFMatrix3f = 50,            /* TOK_SFMatrix3f  */
+  YYSYMBOL_TOK_SFMatrix4d = 51,            /* TOK_SFMatrix4d  */
+  YYSYMBOL_TOK_SFMatrix4f = 52,            /* TOK_SFMatrix4f  */
+  YYSYMBOL_TOK_SFNode = 53,                /* TOK_SFNode  */
+  YYSYMBOL_TOK_SFRotation = 54,            /* TOK_SFRotation  */
+  YYSYMBOL_TOK_SFString = 55,              /* TOK_SFString  */
+  YYSYMBOL_TOK_SFTime = 56,                /* TOK_SFTime  */
+  YYSYMBOL_TOK_SFVec2d = 57,               /* TOK_SFVec2d  */
+  YYSYMBOL_TOK_SFVec2f = 58,               /* TOK_SFVec2f  */
+  YYSYMBOL_TOK_SFVec3d = 59,               /* TOK_SFVec3d  */
+  YYSYMBOL_TOK_SFVec3f = 60,               /* TOK_SFVec3f  */
+  YYSYMBOL_TOK_SFVec4d = 61,               /* TOK_SFVec4d  */
+  YYSYMBOL_TOK_SFVec4f = 62,               /* TOK_SFVec4f  */
+  YYSYMBOL_TOK_MFColor4i = 63,             /* TOK_MFColor4i  */
+  YYSYMBOL_TOK_MFPnt2f = 64,               /* TOK_MFPnt2f  */
+  YYSYMBOL_TOK_MFPnt3f = 65,               /* TOK_MFPnt3f  */
+  YYSYMBOL_TOK_MFPnt4f = 66,               /* TOK_MFPnt4f  */
+  YYSYMBOL_TOK_MFPlane = 67,               /* TOK_MFPlane  */
+  YYSYMBOL_TOK_SFColor4i = 68,             /* TOK_SFColor4i  */
+  YYSYMBOL_TOK_SFPnt2f = 69,               /* TOK_SFPnt2f  */
+  YYSYMBOL_TOK_SFPnt3f = 70,               /* TOK_SFPnt3f  */
+  YYSYMBOL_TOK_SFPnt4f = 71,               /* TOK_SFPnt4f  */
+  YYSYMBOL_TOK_SFPlane = 72,               /* TOK_SFPlane  */
+  YYSYMBOL_TOK_SFVolume = 73,              /* TOK_SFVolume  */
+  YYSYMBOL_TOK_SFVec2i = 74,               /* TOK_SFVec2i  */
+  YYSYMBOL_TOK_SFVec3i = 75,               /* TOK_SFVec3i  */
+  YYSYMBOL_TOK_MFVec2i = 76,               /* TOK_MFVec2i  */
+  YYSYMBOL_TOK_hex = 77,                   /* TOK_hex  */
+  YYSYMBOL_TOK_int32 = 78,                 /* TOK_int32  */
+  YYSYMBOL_TOK_double = 79,                /* TOK_double  */
+  YYSYMBOL_TOK_string = 80,                /* TOK_string  */
+  YYSYMBOL_TOK_bool = 81,                  /* TOK_bool  */
+  YYSYMBOL_TOK_NULL = 82,                  /* TOK_NULL  */
+  YYSYMBOL_TOK_Id = 83,                    /* TOK_Id  */
+  YYSYMBOL_TOK_ImageFinished = 84,         /* TOK_ImageFinished  */
+  YYSYMBOL_TOK_Error = 85,                 /* TOK_Error  */
+  YYSYMBOL_TOK_ClusterLocal = 86,          /* TOK_ClusterLocal  */
+  YYSYMBOL_TOK_ThreadLocal = 87,           /* TOK_ThreadLocal  */
+  YYSYMBOL_88_ = 88,                       /* '['  */
+  YYSYMBOL_89_ = 89,                       /* ']'  */
+  YYSYMBOL_90_ = 90,                       /* '{'  */
+  YYSYMBOL_91_ = 91,                       /* '}'  */
+  YYSYMBOL_92_ = 92,                       /* '.'  */
+  YYSYMBOL_YYACCEPT = 93,                  /* $accept  */
+  YYSYMBOL_x3dScene = 94,                  /* x3dScene  */
+  YYSYMBOL_headerStatement = 95,           /* headerStatement  */
+  YYSYMBOL_profileStatement = 96,          /* profileStatement  */
+  YYSYMBOL_profileNameId = 97,             /* profileNameId  */
+  YYSYMBOL_componentStatements = 98,       /* componentStatements  */
+  YYSYMBOL_componentStatement = 99,        /* componentStatement  */
+  YYSYMBOL_componentNameId = 100,          /* componentNameId  */
+  YYSYMBOL_metaStatements = 101,           /* metaStatements  */
+  YYSYMBOL_metaStatement = 102,            /* metaStatement  */
+  YYSYMBOL_103_1 = 103,                    /* $@1  */
+  YYSYMBOL_metakey = 104,                  /* metakey  */
+  YYSYMBOL_metavalue = 105,                /* metavalue  */
+  YYSYMBOL_statements = 106,               /* statements  */
+  YYSYMBOL_statement = 107,                /* statement  */
+  YYSYMBOL_nodeStatement = 108,            /* nodeStatement  */
+  YYSYMBOL_109_2 = 109,                    /* $@2  */
+  YYSYMBOL_110_3 = 110,                    /* $@3  */
+  YYSYMBOL_111_4 = 111,                    /* $@4  */
+  YYSYMBOL_112_5 = 112,                    /* $@5  */
+  YYSYMBOL_113_6 = 113,                    /* $@6  */
+  YYSYMBOL_nodeOptionStatement = 114,      /* nodeOptionStatement  */
+  YYSYMBOL_nodeOptions = 115,              /* nodeOptions  */
+  YYSYMBOL_nodeOption = 116,               /* nodeOption  */
+  YYSYMBOL_protoStatement = 117,           /* protoStatement  */
+  YYSYMBOL_proto = 118,                    /* proto  */
+  YYSYMBOL_119_7 = 119,                    /* $@7  */
+  YYSYMBOL_120_8 = 120,                    /* $@8  */
+  YYSYMBOL_interfaceDeclarations = 121,    /* interfaceDeclarations  */
+  YYSYMBOL_interfaceDeclaration = 122,     /* interfaceDeclaration  */
+  YYSYMBOL_123_9 = 123,                    /* $@9  */
+  YYSYMBOL_124_10 = 124,                   /* $@10  */
+  YYSYMBOL_125_11 = 125,                   /* $@11  */
+  YYSYMBOL_126_12 = 126,                   /* $@12  */
+  YYSYMBOL_127_13 = 127,                   /* $@13  */
+  YYSYMBOL_128_14 = 128,                   /* $@14  */
+  YYSYMBOL_externproto = 129,              /* externproto  */
+  YYSYMBOL_130_15 = 130,                   /* $@15  */
+  YYSYMBOL_131_16 = 131,                   /* $@16  */
+  YYSYMBOL_externInterfaceDeclarations = 132, /* externInterfaceDeclarations  */
+  YYSYMBOL_externInterfaceDeclaration = 133, /* externInterfaceDeclaration  */
+  YYSYMBOL_134_17 = 134,                   /* $@17  */
+  YYSYMBOL_135_18 = 135,                   /* $@18  */
+  YYSYMBOL_136_19 = 136,                   /* $@19  */
+  YYSYMBOL_137_20 = 137,                   /* $@20  */
+  YYSYMBOL_routeStatement = 138,           /* routeStatement  */
+  YYSYMBOL_139_21 = 139,                   /* $@21  */
+  YYSYMBOL_140_22 = 140,                   /* $@22  */
+  YYSYMBOL_141_23 = 141,                   /* $@23  */
+  YYSYMBOL_importStatement = 142,          /* importStatement  */
+  YYSYMBOL_143_24 = 143,                   /* $@24  */
+  YYSYMBOL_144_25 = 144,                   /* $@25  */
+  YYSYMBOL_exportStatement = 145,          /* exportStatement  */
+  YYSYMBOL_146_26 = 146,                   /* $@26  */
+  YYSYMBOL_asStatement = 147,              /* asStatement  */
+  YYSYMBOL_URLList = 148,                  /* URLList  */
+  YYSYMBOL_node = 149,                     /* node  */
+  YYSYMBOL_scriptBody = 150,               /* scriptBody  */
+  YYSYMBOL_scriptBodyElement = 151,        /* scriptBodyElement  */
+  YYSYMBOL_eventInDeclaration = 152,       /* eventInDeclaration  */
+  YYSYMBOL_153_27 = 153,                   /* $@27  */
+  YYSYMBOL_154_28 = 154,                   /* $@28  */
+  YYSYMBOL_eventOutDeclaration = 155,      /* eventOutDeclaration  */
+  YYSYMBOL_156_29 = 156,                   /* $@29  */
+  YYSYMBOL_157_30 = 157,                   /* $@30  */
+  YYSYMBOL_eventDeclarationEnd = 158,      /* eventDeclarationEnd  */
+  YYSYMBOL_fieldDeclaration = 159,         /* fieldDeclaration  */
+  YYSYMBOL_160_31 = 160,                   /* $@31  */
+  YYSYMBOL_161_32 = 161,                   /* $@32  */
+  YYSYMBOL_162_33 = 162,                   /* $@33  */
+  YYSYMBOL_163_34 = 163,                   /* $@34  */
+  YYSYMBOL_exposedFieldDeclaration = 164,  /* exposedFieldDeclaration  */
+  YYSYMBOL_165_35 = 165,                   /* $@35  */
+  YYSYMBOL_166_36 = 166,                   /* $@36  */
+  YYSYMBOL_fieldDeclarationEnd = 167,      /* fieldDeclarationEnd  */
+  YYSYMBOL_nodeBodyElement = 168,          /* nodeBodyElement  */
+  YYSYMBOL_169_37 = 169,                   /* $@37  */
+  YYSYMBOL_fieldEnd = 170,                 /* fieldEnd  */
+  YYSYMBOL_nodeNameId = 171,               /* nodeNameId  */
+  YYSYMBOL_nodeTypeId = 172,               /* nodeTypeId  */
+  YYSYMBOL_fieldId = 173,                  /* fieldId  */
+  YYSYMBOL_eventInId = 174,                /* eventInId  */
+  YYSYMBOL_eventOutId = 175,               /* eventOutId  */
+  YYSYMBOL_fieldType = 176,                /* fieldType  */
+  YYSYMBOL_fieldValue = 177,               /* fieldValue  */
+  YYSYMBOL_int32 = 178,                    /* int32  */
+  YYSYMBOL_double = 179,                   /* double  */
+  YYSYMBOL_float = 180,                    /* float  */
+  YYSYMBOL_sfboolValue = 181,              /* sfboolValue  */
+  YYSYMBOL_sfcolorValue = 182,             /* sfcolorValue  */
+  YYSYMBOL_183_38 = 183,                   /* $@38  */
+  YYSYMBOL_184_39 = 184,                   /* $@39  */
+  YYSYMBOL_sfcolorRGBAValue = 185,         /* sfcolorRGBAValue  */
+  YYSYMBOL_186_40 = 186,                   /* $@40  */
+  YYSYMBOL_187_41 = 187,                   /* $@41  */
+  YYSYMBOL_188_42 = 188,                   /* $@42  */
+  YYSYMBOL_sfdoubleValue = 189,            /* sfdoubleValue  */
+  YYSYMBOL_sffloatValue = 190,             /* sffloatValue  */
+  YYSYMBOL_sfimageValue = 191,             /* sfimageValue  */
+  YYSYMBOL_192_43 = 192,                   /* $@43  */
+  YYSYMBOL_193_44 = 193,                   /* $@44  */
+  YYSYMBOL_194_45 = 194,                   /* $@45  */
+  YYSYMBOL_pixels = 195,                   /* pixels  */
+  YYSYMBOL_sfint32Value = 196,             /* sfint32Value  */
+  YYSYMBOL_sfmatrix3dValue = 197,          /* sfmatrix3dValue  */
+  YYSYMBOL_198_46 = 198,                   /* $@46  */
+  YYSYMBOL_199_47 = 199,                   /* $@47  */
+  YYSYMBOL_200_48 = 200,                   /* $@48  */
+  YYSYMBOL_201_49 = 201,                   /* $@49  */
+  YYSYMBOL_202_50 = 202,                   /* $@50  */
+  YYSYMBOL_203_51 = 203,                   /* $@51  */
+  YYSYMBOL_204_52 = 204,                   /* $@52  */
+  YYSYMBOL_205_53 = 205,                   /* $@53  */
+  YYSYMBOL_sfmatrix3fValue = 206,          /* sfmatrix3fValue  */
+  YYSYMBOL_207_54 = 207,                   /* $@54  */
+  YYSYMBOL_208_55 = 208,                   /* $@55  */
+  YYSYMBOL_209_56 = 209,                   /* $@56  */
+  YYSYMBOL_210_57 = 210,                   /* $@57  */
+  YYSYMBOL_211_58 = 211,                   /* $@58  */
+  YYSYMBOL_212_59 = 212,                   /* $@59  */
+  YYSYMBOL_213_60 = 213,                   /* $@60  */
+  YYSYMBOL_214_61 = 214,                   /* $@61  */
+  YYSYMBOL_sfmatrix4dValue = 215,          /* sfmatrix4dValue  */
+  YYSYMBOL_216_62 = 216,                   /* $@62  */
+  YYSYMBOL_217_63 = 217,                   /* $@63  */
+  YYSYMBOL_218_64 = 218,                   /* $@64  */
+  YYSYMBOL_219_65 = 219,                   /* $@65  */
+  YYSYMBOL_220_66 = 220,                   /* $@66  */
+  YYSYMBOL_221_67 = 221,                   /* $@67  */
+  YYSYMBOL_222_68 = 222,                   /* $@68  */
+  YYSYMBOL_223_69 = 223,                   /* $@69  */
+  YYSYMBOL_224_70 = 224,                   /* $@70  */
+  YYSYMBOL_225_71 = 225,                   /* $@71  */
+  YYSYMBOL_226_72 = 226,                   /* $@72  */
+  YYSYMBOL_227_73 = 227,                   /* $@73  */
+  YYSYMBOL_228_74 = 228,                   /* $@74  */
+  YYSYMBOL_229_75 = 229,                   /* $@75  */
+  YYSYMBOL_230_76 = 230,                   /* $@76  */
+  YYSYMBOL_sfmatrix4fValue = 231,          /* sfmatrix4fValue  */
+  YYSYMBOL_232_77 = 232,                   /* $@77  */
+  YYSYMBOL_233_78 = 233,                   /* $@78  */
+  YYSYMBOL_234_79 = 234,                   /* $@79  */
+  YYSYMBOL_235_80 = 235,                   /* $@80  */
+  YYSYMBOL_236_81 = 236,                   /* $@81  */
+  YYSYMBOL_237_82 = 237,                   /* $@82  */
+  YYSYMBOL_238_83 = 238,                   /* $@83  */
+  YYSYMBOL_239_84 = 239,                   /* $@84  */
+  YYSYMBOL_240_85 = 240,                   /* $@85  */
+  YYSYMBOL_241_86 = 241,                   /* $@86  */
+  YYSYMBOL_242_87 = 242,                   /* $@87  */
+  YYSYMBOL_243_88 = 243,                   /* $@88  */
+  YYSYMBOL_244_89 = 244,                   /* $@89  */
+  YYSYMBOL_245_90 = 245,                   /* $@90  */
+  YYSYMBOL_246_91 = 246,                   /* $@91  */
+  YYSYMBOL_sfnodeValue = 247,              /* sfnodeValue  */
+  YYSYMBOL_sfrotationValue = 248,          /* sfrotationValue  */
+  YYSYMBOL_249_92 = 249,                   /* $@92  */
+  YYSYMBOL_250_93 = 250,                   /* $@93  */
+  YYSYMBOL_251_94 = 251,                   /* $@94  */
+  YYSYMBOL_sfstringValue = 252,            /* sfstringValue  */
+  YYSYMBOL_sftimeValue = 253,              /* sftimeValue  */
+  YYSYMBOL_sfvec2dValue = 254,             /* sfvec2dValue  */
+  YYSYMBOL_255_95 = 255,                   /* $@95  */
+  YYSYMBOL_sfvec2fValue = 256,             /* sfvec2fValue  */
+  YYSYMBOL_257_96 = 257,                   /* $@96  */
+  YYSYMBOL_sfvec3dValue = 258,             /* sfvec3dValue  */
+  YYSYMBOL_259_97 = 259,                   /* $@97  */
+  YYSYMBOL_260_98 = 260,                   /* $@98  */
+  YYSYMBOL_261_99 = 261,                   /* $@99  */
+  YYSYMBOL_sfvec3fValue = 262,             /* sfvec3fValue  */
+  YYSYMBOL_263_100 = 263,                  /* $@100  */
+  YYSYMBOL_264_101 = 264,                  /* $@101  */
+  YYSYMBOL_265_102 = 265,                  /* $@102  */
+  YYSYMBOL_sfvec4dValue = 266,             /* sfvec4dValue  */
+  YYSYMBOL_267_103 = 267,                  /* $@103  */
+  YYSYMBOL_268_104 = 268,                  /* $@104  */
+  YYSYMBOL_269_105 = 269,                  /* $@105  */
+  YYSYMBOL_270_106 = 270,                  /* $@106  */
+  YYSYMBOL_sfvec4fValue = 271,             /* sfvec4fValue  */
+  YYSYMBOL_272_107 = 272,                  /* $@107  */
+  YYSYMBOL_273_108 = 273,                  /* $@108  */
+  YYSYMBOL_274_109 = 274,                  /* $@109  */
+  YYSYMBOL_275_110 = 275,                  /* $@110  */
+  YYSYMBOL_mfboolValue = 276,              /* mfboolValue  */
+  YYSYMBOL_sfboolValues = 277,             /* sfboolValues  */
+  YYSYMBOL_mfcolorValue = 278,             /* mfcolorValue  */
+  YYSYMBOL_sfcolorValues = 279,            /* sfcolorValues  */
+  YYSYMBOL_mfcolorRGBAValue = 280,         /* mfcolorRGBAValue  */
+  YYSYMBOL_sfcolorRGBAValues = 281,        /* sfcolorRGBAValues  */
+  YYSYMBOL_mfdoubleValue = 282,            /* mfdoubleValue  */
+  YYSYMBOL_sfdoubleValues = 283,           /* sfdoubleValues  */
+  YYSYMBOL_mffloatValue = 284,             /* mffloatValue  */
+  YYSYMBOL_sffloatValues = 285,            /* sffloatValues  */
+  YYSYMBOL_mfimageValue = 286,             /* mfimageValue  */
+  YYSYMBOL_sfimageValues = 287,            /* sfimageValues  */
+  YYSYMBOL_mfint32Value = 288,             /* mfint32Value  */
+  YYSYMBOL_sfint32Values = 289,            /* sfint32Values  */
+  YYSYMBOL_mfmatrix3dValue = 290,          /* mfmatrix3dValue  */
+  YYSYMBOL_sfmatrix3dValues = 291,         /* sfmatrix3dValues  */
+  YYSYMBOL_mfmatrix3fValue = 292,          /* mfmatrix3fValue  */
+  YYSYMBOL_sfmatrix3fValues = 293,         /* sfmatrix3fValues  */
+  YYSYMBOL_mfmatrix4dValue = 294,          /* mfmatrix4dValue  */
+  YYSYMBOL_sfmatrix4dValues = 295,         /* sfmatrix4dValues  */
+  YYSYMBOL_mfmatrix4fValue = 296,          /* mfmatrix4fValue  */
+  YYSYMBOL_sfmatrix4fValues = 297,         /* sfmatrix4fValues  */
+  YYSYMBOL_mfnodeValue = 298,              /* mfnodeValue  */
+  YYSYMBOL_sfnodeValues = 299,             /* sfnodeValues  */
+  YYSYMBOL_mfrotationValue = 300,          /* mfrotationValue  */
+  YYSYMBOL_sfrotationValues = 301,         /* sfrotationValues  */
+  YYSYMBOL_mfstringValue = 302,            /* mfstringValue  */
+  YYSYMBOL_sfstringValues = 303,           /* sfstringValues  */
+  YYSYMBOL_mftimeValue = 304,              /* mftimeValue  */
+  YYSYMBOL_sftimeValues = 305,             /* sftimeValues  */
+  YYSYMBOL_mfvec2dValue = 306,             /* mfvec2dValue  */
+  YYSYMBOL_sfvec2dValues = 307,            /* sfvec2dValues  */
+  YYSYMBOL_mfvec2fValue = 308,             /* mfvec2fValue  */
+  YYSYMBOL_sfvec2fValues = 309,            /* sfvec2fValues  */
+  YYSYMBOL_mfvec3dValue = 310,             /* mfvec3dValue  */
+  YYSYMBOL_sfvec3dValues = 311,            /* sfvec3dValues  */
+  YYSYMBOL_mfvec3fValue = 312,             /* mfvec3fValue  */
+  YYSYMBOL_sfvec3fValues = 313,            /* sfvec3fValues  */
+  YYSYMBOL_mfvec4dValue = 314,             /* mfvec4dValue  */
+  YYSYMBOL_sfvec4dValues = 315,            /* sfvec4dValues  */
+  YYSYMBOL_mfvec4fValue = 316,             /* mfvec4fValue  */
+  YYSYMBOL_sfvec4fValues = 317,            /* sfvec4fValues  */
+  YYSYMBOL_sfcolor4iValue = 318,           /* sfcolor4iValue  */
+  YYSYMBOL_319_111 = 319,                  /* $@111  */
+  YYSYMBOL_320_112 = 320,                  /* $@112  */
+  YYSYMBOL_321_113 = 321,                  /* $@113  */
+  YYSYMBOL_sfpnt2fValue = 322,             /* sfpnt2fValue  */
+  YYSYMBOL_323_114 = 323,                  /* $@114  */
+  YYSYMBOL_sfpnt3fValue = 324,             /* sfpnt3fValue  */
+  YYSYMBOL_325_115 = 325,                  /* $@115  */
+  YYSYMBOL_326_116 = 326,                  /* $@116  */
+  YYSYMBOL_sfpnt4fValue = 327,             /* sfpnt4fValue  */
+  YYSYMBOL_328_117 = 328,                  /* $@117  */
+  YYSYMBOL_329_118 = 329,                  /* $@118  */
+  YYSYMBOL_330_119 = 330,                  /* $@119  */
+  YYSYMBOL_sfplaneValue = 331,             /* sfplaneValue  */
+  YYSYMBOL_332_120 = 332,                  /* $@120  */
+  YYSYMBOL_333_121 = 333,                  /* $@121  */
+  YYSYMBOL_334_122 = 334,                  /* $@122  */
+  YYSYMBOL_sfVolumeValue = 335,            /* sfVolumeValue  */
+  YYSYMBOL_336_123 = 336,                  /* $@123  */
+  YYSYMBOL_337_124 = 337,                  /* $@124  */
+  YYSYMBOL_338_125 = 338,                  /* $@125  */
+  YYSYMBOL_339_126 = 339,                  /* $@126  */
+  YYSYMBOL_340_127 = 340,                  /* $@127  */
+  YYSYMBOL_341_128 = 341,                  /* $@128  */
+  YYSYMBOL_sfvec2iValue = 342,             /* sfvec2iValue  */
+  YYSYMBOL_343_129 = 343,                  /* $@129  */
+  YYSYMBOL_sfvec3iValue = 344,             /* sfvec3iValue  */
+  YYSYMBOL_345_130 = 345,                  /* $@130  */
+  YYSYMBOL_346_131 = 346,                  /* $@131  */
+  YYSYMBOL_mfcolor4iValue = 347,           /* mfcolor4iValue  */
+  YYSYMBOL_sfcolor4iValues = 348,          /* sfcolor4iValues  */
+  YYSYMBOL_mfpnt2fValue = 349,             /* mfpnt2fValue  */
+  YYSYMBOL_sfpnt2fValues = 350,            /* sfpnt2fValues  */
+  YYSYMBOL_mfpnt3fValue = 351,             /* mfpnt3fValue  */
+  YYSYMBOL_sfpnt3fValues = 352,            /* sfpnt3fValues  */
+  YYSYMBOL_mfpnt4fValue = 353,             /* mfpnt4fValue  */
+  YYSYMBOL_sfpnt4fValues = 354,            /* sfpnt4fValues  */
+  YYSYMBOL_mfplaneValue = 355,             /* mfplaneValue  */
+  YYSYMBOL_sfplaneValues = 356,            /* sfplaneValues  */
+  YYSYMBOL_mfvec2iValue = 357,             /* mfvec2iValue  */
+  YYSYMBOL_sfvec2iValues = 358             /* sfvec2iValues  */
 };
-# define YYSTYPE_IS_TRIVIAL 1
-# define YYSTYPE_IS_DECLARED 1
-#endif
+typedef enum yysymbol_kind_t yysymbol_kind_t;
 
 
-
-int OSGScanParseSkel_parse (void *pSkel);
-
-#endif /* !YY_OSGSCANPARSESKEL_HOME_GERRIT_PROJECTS_OPENSG_SVN_OPENSG_BUILD_BUILD_OSGSYSTEM_OSGSCANPARSESKELPARSER_HPP_INCLUDED  */
-
-/* Copy the second part of user declarations.  */
-#line 49 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:358  */
+/* Second part of user prologue.  */
+#line 49 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
 
 
 #if __GNUC__ >= 4 || __GNUC_MINOR__ >=3
@@ -257,34 +501,94 @@ int OSGScanParseSkel_lex(YYSTYPE *lvalp, void *);
 #endif
 
 
-#line 261 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:358  */
+#line 505 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
+
 
 #ifdef short
 # undef short
 #endif
 
-#ifdef YYTYPE_UINT8
-typedef YYTYPE_UINT8 yytype_uint8;
-#else
-typedef unsigned char yytype_uint8;
+/* On compilers that do not define __PTRDIFF_MAX__ etc., make sure
+   <limits.h> and (if available) <stdint.h> are included
+   so that the code can choose integer types of a good width.  */
+
+#ifndef __PTRDIFF_MAX__
+# include <limits.h> /* INFRINGES ON USER NAME SPACE */
+# if defined __STDC_VERSION__ && 199901 <= __STDC_VERSION__
+#  include <stdint.h> /* INFRINGES ON USER NAME SPACE */
+#  define YY_STDINT_H
+# endif
 #endif
 
-#ifdef YYTYPE_INT8
-typedef YYTYPE_INT8 yytype_int8;
+/* Narrow types that promote to a signed type and that can represent a
+   signed or unsigned integer of at least N bits.  In tables they can
+   save space and decrease cache pressure.  Promoting to a signed type
+   helps avoid bugs in integer arithmetic.  */
+
+#ifdef __INT_LEAST8_MAX__
+typedef __INT_LEAST8_TYPE__ yytype_int8;
+#elif defined YY_STDINT_H
+typedef int_least8_t yytype_int8;
 #else
 typedef signed char yytype_int8;
 #endif
 
-#ifdef YYTYPE_UINT16
-typedef YYTYPE_UINT16 yytype_uint16;
+#ifdef __INT_LEAST16_MAX__
+typedef __INT_LEAST16_TYPE__ yytype_int16;
+#elif defined YY_STDINT_H
+typedef int_least16_t yytype_int16;
 #else
-typedef unsigned short int yytype_uint16;
+typedef short yytype_int16;
 #endif
 
-#ifdef YYTYPE_INT16
-typedef YYTYPE_INT16 yytype_int16;
+/* Work around bug in HP-UX 11.23, which defines these macros
+   incorrectly for preprocessor constants.  This workaround can likely
+   be removed in 2023, as HPE has promised support for HP-UX 11.23
+   (aka HP-UX 11i v2) only through the end of 2022; see Table 2 of
+   <https://h20195.www2.hpe.com/V2/getpdf.aspx/4AA4-7673ENW.pdf>.  */
+#ifdef __hpux
+# undef UINT_LEAST8_MAX
+# undef UINT_LEAST16_MAX
+# define UINT_LEAST8_MAX 255
+# define UINT_LEAST16_MAX 65535
+#endif
+
+#if defined __UINT_LEAST8_MAX__ && __UINT_LEAST8_MAX__ <= __INT_MAX__
+typedef __UINT_LEAST8_TYPE__ yytype_uint8;
+#elif (!defined __UINT_LEAST8_MAX__ && defined YY_STDINT_H \
+       && UINT_LEAST8_MAX <= INT_MAX)
+typedef uint_least8_t yytype_uint8;
+#elif !defined __UINT_LEAST8_MAX__ && UCHAR_MAX <= INT_MAX
+typedef unsigned char yytype_uint8;
 #else
-typedef short int yytype_int16;
+typedef short yytype_uint8;
+#endif
+
+#if defined __UINT_LEAST16_MAX__ && __UINT_LEAST16_MAX__ <= __INT_MAX__
+typedef __UINT_LEAST16_TYPE__ yytype_uint16;
+#elif (!defined __UINT_LEAST16_MAX__ && defined YY_STDINT_H \
+       && UINT_LEAST16_MAX <= INT_MAX)
+typedef uint_least16_t yytype_uint16;
+#elif !defined __UINT_LEAST16_MAX__ && USHRT_MAX <= INT_MAX
+typedef unsigned short yytype_uint16;
+#else
+typedef int yytype_uint16;
+#endif
+
+#ifndef YYPTRDIFF_T
+# if defined __PTRDIFF_TYPE__ && defined __PTRDIFF_MAX__
+#  define YYPTRDIFF_T __PTRDIFF_TYPE__
+#  define YYPTRDIFF_MAXIMUM __PTRDIFF_MAX__
+# elif defined PTRDIFF_MAX
+#  ifndef ptrdiff_t
+#   include <stddef.h> /* INFRINGES ON USER NAME SPACE */
+#  endif
+#  define YYPTRDIFF_T ptrdiff_t
+#  define YYPTRDIFF_MAXIMUM PTRDIFF_MAX
+# else
+#  define YYPTRDIFF_T long
+#  define YYPTRDIFF_MAXIMUM LONG_MAX
+# endif
 #endif
 
 #ifndef YYSIZE_T
@@ -292,15 +596,28 @@ typedef short int yytype_int16;
 #  define YYSIZE_T __SIZE_TYPE__
 # elif defined size_t
 #  define YYSIZE_T size_t
-# elif ! defined YYSIZE_T
+# elif defined __STDC_VERSION__ && 199901 <= __STDC_VERSION__
 #  include <stddef.h> /* INFRINGES ON USER NAME SPACE */
 #  define YYSIZE_T size_t
 # else
-#  define YYSIZE_T unsigned int
+#  define YYSIZE_T unsigned
 # endif
 #endif
 
-#define YYSIZE_MAXIMUM ((YYSIZE_T) -1)
+#define YYSIZE_MAXIMUM                                  \
+  YY_CAST (YYPTRDIFF_T,                                 \
+           (YYPTRDIFF_MAXIMUM < YY_CAST (YYSIZE_T, -1)  \
+            ? YYPTRDIFF_MAXIMUM                         \
+            : YY_CAST (YYSIZE_T, -1)))
+
+#define YYSIZEOF(X) YY_CAST (YYPTRDIFF_T, sizeof (X))
+
+
+/* Stored state numbers (used for stacks). */
+typedef yytype_int16 yy_state_t;
+
+/* State numbers in computations.  */
+typedef int yy_state_fast_t;
 
 #ifndef YY_
 # if defined YYENABLE_NLS && YYENABLE_NLS
@@ -314,47 +631,43 @@ typedef short int yytype_int16;
 # endif
 #endif
 
-#ifndef YY_ATTRIBUTE
-# if (defined __GNUC__                                               \
-      && (2 < __GNUC__ || (__GNUC__ == 2 && 96 <= __GNUC_MINOR__)))  \
-     || defined __SUNPRO_C && 0x5110 <= __SUNPRO_C
-#  define YY_ATTRIBUTE(Spec) __attribute__(Spec)
+
+#ifndef YY_ATTRIBUTE_PURE
+# if defined __GNUC__ && 2 < __GNUC__ + (96 <= __GNUC_MINOR__)
+#  define YY_ATTRIBUTE_PURE __attribute__ ((__pure__))
 # else
-#  define YY_ATTRIBUTE(Spec) /* empty */
+#  define YY_ATTRIBUTE_PURE
 # endif
 #endif
 
-#ifndef YY_ATTRIBUTE_PURE
-# define YY_ATTRIBUTE_PURE   YY_ATTRIBUTE ((__pure__))
-#endif
-
 #ifndef YY_ATTRIBUTE_UNUSED
-# define YY_ATTRIBUTE_UNUSED YY_ATTRIBUTE ((__unused__))
-#endif
-
-#if !defined _Noreturn \
-     && (!defined __STDC_VERSION__ || __STDC_VERSION__ < 201112)
-# if defined _MSC_VER && 1200 <= _MSC_VER
-#  define _Noreturn __declspec (noreturn)
+# if defined __GNUC__ && 2 < __GNUC__ + (7 <= __GNUC_MINOR__)
+#  define YY_ATTRIBUTE_UNUSED __attribute__ ((__unused__))
 # else
-#  define _Noreturn YY_ATTRIBUTE ((__noreturn__))
+#  define YY_ATTRIBUTE_UNUSED
 # endif
 #endif
 
 /* Suppress unused-variable warnings by "using" E.  */
 #if ! defined lint || defined __GNUC__
-# define YYUSE(E) ((void) (E))
+# define YY_USE(E) ((void) (E))
 #else
-# define YYUSE(E) /* empty */
+# define YY_USE(E) /* empty */
 #endif
 
-#if defined __GNUC__ && 407 <= __GNUC__ * 100 + __GNUC_MINOR__
 /* Suppress an incorrect diagnostic about yylval being uninitialized.  */
-# define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN \
-    _Pragma ("GCC diagnostic push") \
-    _Pragma ("GCC diagnostic ignored \"-Wuninitialized\"")\
+#if defined __GNUC__ && ! defined __ICC && 406 <= __GNUC__ * 100 + __GNUC_MINOR__
+# if __GNUC__ * 100 + __GNUC_MINOR__ < 407
+#  define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN                           \
+    _Pragma ("GCC diagnostic push")                                     \
+    _Pragma ("GCC diagnostic ignored \"-Wuninitialized\"")
+# else
+#  define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN                           \
+    _Pragma ("GCC diagnostic push")                                     \
+    _Pragma ("GCC diagnostic ignored \"-Wuninitialized\"")              \
     _Pragma ("GCC diagnostic ignored \"-Wmaybe-uninitialized\"")
-# define YY_IGNORE_MAYBE_UNINITIALIZED_END \
+# endif
+# define YY_IGNORE_MAYBE_UNINITIALIZED_END      \
     _Pragma ("GCC diagnostic pop")
 #else
 # define YY_INITIAL_VALUE(Value) Value
@@ -367,8 +680,22 @@ typedef short int yytype_int16;
 # define YY_INITIAL_VALUE(Value) /* Nothing. */
 #endif
 
+#if defined __cplusplus && defined __GNUC__ && ! defined __ICC && 6 <= __GNUC__
+# define YY_IGNORE_USELESS_CAST_BEGIN                          \
+    _Pragma ("GCC diagnostic push")                            \
+    _Pragma ("GCC diagnostic ignored \"-Wuseless-cast\"")
+# define YY_IGNORE_USELESS_CAST_END            \
+    _Pragma ("GCC diagnostic pop")
+#endif
+#ifndef YY_IGNORE_USELESS_CAST_BEGIN
+# define YY_IGNORE_USELESS_CAST_BEGIN
+# define YY_IGNORE_USELESS_CAST_END
+#endif
 
-#if ! defined yyoverflow || YYERROR_VERBOSE
+
+#define YY_ASSERT(E) ((void) (0 && (E)))
+
+#if !defined yyoverflow
 
 /* The parser invokes alloca or malloc; define the necessary symbols.  */
 
@@ -433,8 +760,7 @@ void free (void *); /* INFRINGES ON USER NAME SPACE */
 #   endif
 #  endif
 # endif
-#endif /* ! defined yyoverflow || YYERROR_VERBOSE */
-
+#endif /* !defined yyoverflow */
 
 #if (! defined yyoverflow \
      && (! defined __cplusplus \
@@ -443,17 +769,17 @@ void free (void *); /* INFRINGES ON USER NAME SPACE */
 /* A type that is properly aligned for any stack member.  */
 union yyalloc
 {
-  yytype_int16 yyss_alloc;
+  yy_state_t yyss_alloc;
   YYSTYPE yyvs_alloc;
 };
 
 /* The size of the maximum gap between one aligned stack and the next.  */
-# define YYSTACK_GAP_MAXIMUM (sizeof (union yyalloc) - 1)
+# define YYSTACK_GAP_MAXIMUM (YYSIZEOF (union yyalloc) - 1)
 
 /* The size of an array large to enough to hold all stacks, each with
    N elements.  */
 # define YYSTACK_BYTES(N) \
-     ((N) * (sizeof (yytype_int16) + sizeof (YYSTYPE)) \
+     ((N) * (YYSIZEOF (yy_state_t) + YYSIZEOF (YYSTYPE)) \
       + YYSTACK_GAP_MAXIMUM)
 
 # define YYCOPY_NEEDED 1
@@ -466,11 +792,11 @@ union yyalloc
 # define YYSTACK_RELOCATE(Stack_alloc, Stack)                           \
     do                                                                  \
       {                                                                 \
-        YYSIZE_T yynewbytes;                                            \
+        YYPTRDIFF_T yynewbytes;                                         \
         YYCOPY (&yyptr->Stack_alloc, Stack, yysize);                    \
         Stack = &yyptr->Stack_alloc;                                    \
-        yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \
-        yyptr += yynewbytes / sizeof (*yyptr);                          \
+        yynewbytes = yystacksize * YYSIZEOF (*Stack) + YYSTACK_GAP_MAXIMUM; \
+        yyptr += yynewbytes / YYSIZEOF (*yyptr);                        \
       }                                                                 \
     while (0)
 
@@ -482,12 +808,12 @@ union yyalloc
 # ifndef YYCOPY
 #  if defined __GNUC__ && 1 < __GNUC__
 #   define YYCOPY(Dst, Src, Count) \
-      __builtin_memcpy (Dst, Src, (Count) * sizeof (*(Src)))
+      __builtin_memcpy (Dst, Src, YY_CAST (YYSIZE_T, (Count)) * sizeof (*(Src)))
 #  else
 #   define YYCOPY(Dst, Src, Count)              \
       do                                        \
         {                                       \
-          YYSIZE_T yyi;                         \
+          YYPTRDIFF_T yyi;                      \
           for (yyi = 0; yyi < (Count); yyi++)   \
             (Dst)[yyi] = (Src)[yyi];            \
         }                                       \
@@ -510,17 +836,20 @@ union yyalloc
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  774
 
-/* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
-   by yylex, with out-of-bounds checking.  */
-#define YYUNDEFTOK  2
+/* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   342
 
-#define YYTRANSLATE(YYX)                                                \
-  ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
+
+/* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
+   as returned by yylex, with out-of-bounds checking.  */
+#define YYTRANSLATE(YYX)                                \
+  (0 <= (YYX) && (YYX) <= YYMAXUTOK                     \
+   ? YY_CAST (yysymbol_kind_t, yytranslate[YYX])        \
+   : YYSYMBOL_YYUNDEF)
 
 /* YYTRANSLATE[TOKEN-NUM] -- Symbol number corresponding to TOKEN-NUM
-   as returned by yylex, without out-of-bounds checking.  */
-static const yytype_uint8 yytranslate[] =
+   as returned by yylex.  */
+static const yytype_int8 yytranslate[] =
 {
        0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -560,8 +889,8 @@ static const yytype_uint8 yytranslate[] =
 };
 
 #if YYDEBUG
-  /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
-static const yytype_uint16 yyrline[] =
+/* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
+static const yytype_int16 yyrline[] =
 {
        0,   214,   214,   221,   222,   225,   226,   229,   232,   233,
      237,   242,   243,   250,   251,   256,   254,   261,   264,   267,
@@ -614,25 +943,32 @@ static const yytype_uint16 yyrline[] =
 };
 #endif
 
-#if YYDEBUG || YYERROR_VERBOSE || 0
+/** Accessing symbol of state STATE.  */
+#define YY_ACCESSING_SYMBOL(State) YY_CAST (yysymbol_kind_t, yystos[State])
+
+#if YYDEBUG || 0
+/* The user-facing name of the symbol whose (internal) number is
+   YYSYMBOL.  No bounds checking.  */
+static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
+
 /* YYTNAME[SYMBOL-NUM] -- String name of the symbol SYMBOL-NUM.
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "TOK_HEADER", "TOK_PROFILE",
-  "TOK_COMPONENT", "TOK_META", "TOK_PROTO", "TOK_EXTERNPROTO", "TOK_IS",
-  "TOK_DEF", "TOK_USE", "TOK_ROUTE", "TOK_TO", "TOK_IMPORT", "TOK_EXPORT",
-  "TOK_AS", "TOK_eventIn", "TOK_eventOut", "TOK_exposedField", "TOK_field",
-  "TOK_MFBool", "TOK_MFColor", "TOK_MFColorRGBA", "TOK_MFDouble",
-  "TOK_MFFloat", "TOK_MFImage", "TOK_MFInt32", "TOK_MFMatrix3d",
-  "TOK_MFMatrix3f", "TOK_MFMatrix4d", "TOK_MFMatrix4f", "TOK_MFNode",
-  "TOK_MFRotation", "TOK_MFString", "TOK_MFTime", "TOK_MFVec2d",
-  "TOK_MFVec2f", "TOK_MFVec3d", "TOK_MFVec3f", "TOK_MFVec4d",
-  "TOK_MFVec4f", "TOK_SFBool", "TOK_SFColor", "TOK_SFColorRGBA",
-  "TOK_SFDouble", "TOK_SFFloat", "TOK_SFImage", "TOK_SFInt32",
-  "TOK_SFMatrix3d", "TOK_SFMatrix3f", "TOK_SFMatrix4d", "TOK_SFMatrix4f",
-  "TOK_SFNode", "TOK_SFRotation", "TOK_SFString", "TOK_SFTime",
-  "TOK_SFVec2d", "TOK_SFVec2f", "TOK_SFVec3d", "TOK_SFVec3f",
+  "\"end of file\"", "error", "\"invalid token\"", "TOK_HEADER",
+  "TOK_PROFILE", "TOK_COMPONENT", "TOK_META", "TOK_PROTO",
+  "TOK_EXTERNPROTO", "TOK_IS", "TOK_DEF", "TOK_USE", "TOK_ROUTE", "TOK_TO",
+  "TOK_IMPORT", "TOK_EXPORT", "TOK_AS", "TOK_eventIn", "TOK_eventOut",
+  "TOK_exposedField", "TOK_field", "TOK_MFBool", "TOK_MFColor",
+  "TOK_MFColorRGBA", "TOK_MFDouble", "TOK_MFFloat", "TOK_MFImage",
+  "TOK_MFInt32", "TOK_MFMatrix3d", "TOK_MFMatrix3f", "TOK_MFMatrix4d",
+  "TOK_MFMatrix4f", "TOK_MFNode", "TOK_MFRotation", "TOK_MFString",
+  "TOK_MFTime", "TOK_MFVec2d", "TOK_MFVec2f", "TOK_MFVec3d", "TOK_MFVec3f",
+  "TOK_MFVec4d", "TOK_MFVec4f", "TOK_SFBool", "TOK_SFColor",
+  "TOK_SFColorRGBA", "TOK_SFDouble", "TOK_SFFloat", "TOK_SFImage",
+  "TOK_SFInt32", "TOK_SFMatrix3d", "TOK_SFMatrix3f", "TOK_SFMatrix4d",
+  "TOK_SFMatrix4f", "TOK_SFNode", "TOK_SFRotation", "TOK_SFString",
+  "TOK_SFTime", "TOK_SFVec2d", "TOK_SFVec2f", "TOK_SFVec3d", "TOK_SFVec3f",
   "TOK_SFVec4d", "TOK_SFVec4f", "TOK_MFColor4i", "TOK_MFPnt2f",
   "TOK_MFPnt3f", "TOK_MFPnt4f", "TOK_MFPlane", "TOK_SFColor4i",
   "TOK_SFPnt2f", "TOK_SFPnt3f", "TOK_SFPnt4f", "TOK_SFPlane",
@@ -692,38 +1028,26 @@ static const char *const yytname[] =
   "mfpnt4fValue", "sfpnt4fValues", "mfplaneValue", "sfplaneValues",
   "mfvec2iValue", "sfvec2iValues", YY_NULLPTR
 };
+
+static const char *
+yysymbol_name (yysymbol_kind_t yysymbol)
+{
+  return yytname[yysymbol];
+}
 #endif
 
-# ifdef YYPRINT
-/* YYTOKNUM[NUM] -- (External) token number corresponding to the
-   (internal) symbol number NUM (which must be that of a token).  */
-static const yytype_uint16 yytoknum[] =
-{
-       0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
-     275,   276,   277,   278,   279,   280,   281,   282,   283,   284,
-     285,   286,   287,   288,   289,   290,   291,   292,   293,   294,
-     295,   296,   297,   298,   299,   300,   301,   302,   303,   304,
-     305,   306,   307,   308,   309,   310,   311,   312,   313,   314,
-     315,   316,   317,   318,   319,   320,   321,   322,   323,   324,
-     325,   326,   327,   328,   329,   330,   331,   332,   333,   334,
-     335,   336,   337,   338,   339,   340,   341,   342,    91,    93,
-     123,   125,    46
-};
-# endif
+#define YYPACT_NINF (-286)
 
-#define YYPACT_NINF -286
+#define yypact_value_is_default(Yyn) \
+  ((Yyn) == YYPACT_NINF)
 
-#define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-286)))
+#define YYTABLE_NINF (-1)
 
-#define YYTABLE_NINF -1
-
-#define yytable_value_is_error(Yytable_value) \
+#define yytable_value_is_error(Yyn) \
   0
 
-  /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
-     STATE-NUM.  */
+/* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
+   STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
       42,  -286,    36,    48,  -286,   -27,  -286,  -286,  -286,    68,
@@ -806,10 +1130,10 @@ static const yytype_int16 yypact[] =
       49,    32,  -286,  -286
 };
 
-  /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
-     Performed when YYTABLE does not specify something else to do.  Zero
-     means the default is an error.  */
-static const yytype_uint16 yydefact[] =
+/* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
+   Performed when YYTABLE does not specify something else to do.  Zero
+   means the default is an error.  */
+static const yytype_int16 yydefact[] =
 {
        4,     3,     0,     6,     1,     0,     9,     7,     5,    14,
        0,     8,    20,    12,    11,    10,     0,    13,     2,    17,
@@ -891,7 +1215,7 @@ static const yytype_uint16 yydefact[] =
        0,     0,   289,   305
 };
 
-  /* YYPGOTO[NTERM-NUM].  */
+/* YYPGOTO[NTERM-NUM].  */
 static const yytype_int16 yypgoto[] =
 {
     -286,  -286,  -286,  -286,  -286,  -286,  -286,  -286,  -286,  -286,
@@ -923,10 +1247,10 @@ static const yytype_int16 yypgoto[] =
     -286,  -286,  -286,  -286,  -286,  -286
 };
 
-  /* YYDEFGOTO[NTERM-NUM].  */
+/* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int16 yydefgoto[] =
 {
-      -1,     2,     3,     6,     8,     9,    11,    15,    12,    17,
+       0,     2,     3,     6,     8,     9,    11,    15,    12,    17,
       38,    20,    49,    18,    29,   345,    47,    66,    52,    69,
      159,    57,    65,    77,    31,    32,    50,   153,    67,    85,
      180,   181,   183,   282,   182,   281,    33,    51,   158,    68,
@@ -955,10 +1279,10 @@ static const yytype_int16 yydefgoto[] =
      417,   538,   421,   540,   435,   545
 };
 
-  /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
-     positive, shift that token.  If negative, reduce the rule whose
-     number is the opposite.  If YYTABLE_NINF, syntax error.  */
-static const yytype_uint16 yytable[] =
+/* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
+   positive, shift that token.  If negative, reduce the rule whose
+   number is the opposite.  If YYTABLE_NINF, syntax error.  */
+static const yytype_int16 yytable[] =
 {
      304,   434,   314,   401,   426,   397,   332,   400,   340,   425,
      349,   422,   390,    30,   362,   398,   370,   399,   378,   424,
@@ -1164,9 +1488,9 @@ static const yytype_int16 yycheck[] =
       65,    66,    67,    68,    69,    70,    71,    72,    73
 };
 
-  /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
-     symbol of state STATE-NUM.  */
-static const yytype_uint16 yystos[] =
+/* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
+   state STATE-NUM.  */
+static const yytype_int16 yystos[] =
 {
        0,     3,    94,    95,     0,     4,    96,    83,    97,    98,
        5,    99,   101,    80,    83,   100,     6,   102,   106,    80,
@@ -1248,8 +1572,8 @@ static const yytype_uint16 yystos[] =
      230,   246,   179,   180
 };
 
-  /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
-static const yytype_uint16 yyr1[] =
+/* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
+static const yytype_int16 yyr1[] =
 {
        0,    93,    94,    95,    95,    96,    96,    97,    98,    98,
       99,   100,   100,   101,   101,   103,   102,   104,   105,   106,
@@ -1301,8 +1625,8 @@ static const yytype_uint16 yyr1[] =
      356,   356,   357,   357,   358,   358
 };
 
-  /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
-static const yytype_uint8 yyr2[] =
+/* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
+static const yytype_int8 yyr2[] =
 {
        0,     2,     5,     1,     0,     2,     0,     1,     2,     0,
        2,     1,     1,     2,     0,     0,     4,     1,     1,     2,
@@ -1355,39 +1679,39 @@ static const yytype_uint8 yyr2[] =
 };
 
 
+enum { YYENOMEM = -2 };
+
 #define yyerrok         (yyerrstatus = 0)
 #define yyclearin       (yychar = YYEMPTY)
-#define YYEMPTY         (-2)
-#define YYEOF           0
 
 #define YYACCEPT        goto yyacceptlab
 #define YYABORT         goto yyabortlab
 #define YYERROR         goto yyerrorlab
+#define YYNOMEM         goto yyexhaustedlab
 
 
 #define YYRECOVERING()  (!!yyerrstatus)
 
-#define YYBACKUP(Token, Value)                                  \
-do                                                              \
-  if (yychar == YYEMPTY)                                        \
-    {                                                           \
-      yychar = (Token);                                         \
-      yylval = (Value);                                         \
-      YYPOPSTACK (yylen);                                       \
-      yystate = *yyssp;                                         \
-      goto yybackup;                                            \
-    }                                                           \
-  else                                                          \
-    {                                                           \
-      yyerror (pSkel, YY_("syntax error: cannot back up")); \
-      YYERROR;                                                  \
-    }                                                           \
-while (0)
+#define YYBACKUP(Token, Value)                                    \
+  do                                                              \
+    if (yychar == YYEMPTY)                                        \
+      {                                                           \
+        yychar = (Token);                                         \
+        yylval = (Value);                                         \
+        YYPOPSTACK (yylen);                                       \
+        yystate = *yyssp;                                         \
+        goto yybackup;                                            \
+      }                                                           \
+    else                                                          \
+      {                                                           \
+        yyerror (pSkel, YY_("syntax error: cannot back up")); \
+        YYERROR;                                                  \
+      }                                                           \
+  while (0)
 
-/* Error token number */
-#define YYTERROR        1
-#define YYERRCODE       256
-
+/* Backward compatibility with an undocumented macro.
+   Use YYerror or YYUNDEF. */
+#define YYERRCODE YYUNDEF
 
 
 /* Enable debugging if requested.  */
@@ -1404,56 +1728,53 @@ do {                                            \
     YYFPRINTF Args;                             \
 } while (0)
 
-/* This macro is provided for backward compatibility. */
-#ifndef YY_LOCATION_PRINT
-# define YY_LOCATION_PRINT(File, Loc) ((void) 0)
-#endif
 
 
-# define YY_SYMBOL_PRINT(Title, Type, Value, Location)                    \
+
+# define YY_SYMBOL_PRINT(Title, Kind, Value, Location)                    \
 do {                                                                      \
   if (yydebug)                                                            \
     {                                                                     \
       YYFPRINTF (stderr, "%s ", Title);                                   \
       yy_symbol_print (stderr,                                            \
-                  Type, Value, pSkel); \
+                  Kind, Value, pSkel); \
       YYFPRINTF (stderr, "\n");                                           \
     }                                                                     \
 } while (0)
 
 
-/*----------------------------------------.
-| Print this symbol's value on YYOUTPUT.  |
-`----------------------------------------*/
+/*-----------------------------------.
+| Print this symbol's value on YYO.  |
+`-----------------------------------*/
 
 static void
-yy_symbol_value_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep, void *pSkel)
+yy_symbol_value_print (FILE *yyo,
+                       yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep, void *pSkel)
 {
-  FILE *yyo = yyoutput;
-  YYUSE (yyo);
-  YYUSE (pSkel);
+  FILE *yyoutput = yyo;
+  YY_USE (yyoutput);
+  YY_USE (pSkel);
   if (!yyvaluep)
     return;
-# ifdef YYPRINT
-  if (yytype < YYNTOKENS)
-    YYPRINT (yyoutput, yytoknum[yytype], *yyvaluep);
-# endif
-  YYUSE (yytype);
+  YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
+  YY_USE (yykind);
+  YY_IGNORE_MAYBE_UNINITIALIZED_END
 }
 
 
-/*--------------------------------.
-| Print this symbol on YYOUTPUT.  |
-`--------------------------------*/
+/*---------------------------.
+| Print this symbol on YYO.  |
+`---------------------------*/
 
 static void
-yy_symbol_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep, void *pSkel)
+yy_symbol_print (FILE *yyo,
+                 yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep, void *pSkel)
 {
-  YYFPRINTF (yyoutput, "%s %s (",
-             yytype < YYNTOKENS ? "token" : "nterm", yytname[yytype]);
+  YYFPRINTF (yyo, "%s %s (",
+             yykind < YYNTOKENS ? "token" : "nterm", yysymbol_name (yykind));
 
-  yy_symbol_value_print (yyoutput, yytype, yyvaluep, pSkel);
-  YYFPRINTF (yyoutput, ")");
+  yy_symbol_value_print (yyo, yykind, yyvaluep, pSkel);
+  YYFPRINTF (yyo, ")");
 }
 
 /*------------------------------------------------------------------.
@@ -1462,7 +1783,7 @@ yy_symbol_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep, voi
 `------------------------------------------------------------------*/
 
 static void
-yy_stack_print (yytype_int16 *yybottom, yytype_int16 *yytop)
+yy_stack_print (yy_state_t *yybottom, yy_state_t *yytop)
 {
   YYFPRINTF (stderr, "Stack now");
   for (; yybottom <= yytop; yybottom++)
@@ -1485,21 +1806,21 @@ do {                                                            \
 `------------------------------------------------*/
 
 static void
-yy_reduce_print (yytype_int16 *yyssp, YYSTYPE *yyvsp, int yyrule, void *pSkel)
+yy_reduce_print (yy_state_t *yyssp, YYSTYPE *yyvsp,
+                 int yyrule, void *pSkel)
 {
-  unsigned long int yylno = yyrline[yyrule];
+  int yylno = yyrline[yyrule];
   int yynrhs = yyr2[yyrule];
   int yyi;
-  YYFPRINTF (stderr, "Reducing stack by rule %d (line %lu):\n",
+  YYFPRINTF (stderr, "Reducing stack by rule %d (line %d):\n",
              yyrule - 1, yylno);
   /* The symbols being reduced.  */
   for (yyi = 0; yyi < yynrhs; yyi++)
     {
       YYFPRINTF (stderr, "   $%d = ", yyi + 1);
       yy_symbol_print (stderr,
-                       yystos[yyssp[yyi + 1 - yynrhs]],
-                       &(yyvsp[(yyi + 1) - (yynrhs)])
-                                              , pSkel);
+                       YY_ACCESSING_SYMBOL (+yyssp[yyi + 1 - yynrhs]),
+                       &yyvsp[(yyi + 1) - (yynrhs)], pSkel);
       YYFPRINTF (stderr, "\n");
     }
 }
@@ -1514,8 +1835,8 @@ do {                                    \
    multiple parsers can coexist.  */
 int yydebug;
 #else /* !YYDEBUG */
-# define YYDPRINTF(Args)
-# define YY_SYMBOL_PRINT(Title, Type, Value, Location)
+# define YYDPRINTF(Args) ((void) 0)
+# define YY_SYMBOL_PRINT(Title, Kind, Value, Location)
 # define YY_STACK_PRINT(Bottom, Top)
 # define YY_REDUCE_PRINT(Rule)
 #endif /* !YYDEBUG */
@@ -1538,245 +1859,30 @@ int yydebug;
 #endif
 
 
-#if YYERROR_VERBOSE
 
-# ifndef yystrlen
-#  if defined __GLIBC__ && defined _STRING_H
-#   define yystrlen strlen
-#  else
-/* Return the length of YYSTR.  */
-static YYSIZE_T
-yystrlen (const char *yystr)
-{
-  YYSIZE_T yylen;
-  for (yylen = 0; yystr[yylen]; yylen++)
-    continue;
-  return yylen;
-}
-#  endif
-# endif
 
-# ifndef yystpcpy
-#  if defined __GLIBC__ && defined _STRING_H && defined _GNU_SOURCE
-#   define yystpcpy stpcpy
-#  else
-/* Copy YYSRC to YYDEST, returning the address of the terminating '\0' in
-   YYDEST.  */
-static char *
-yystpcpy (char *yydest, const char *yysrc)
-{
-  char *yyd = yydest;
-  const char *yys = yysrc;
 
-  while ((*yyd++ = *yys++) != '\0')
-    continue;
-
-  return yyd - 1;
-}
-#  endif
-# endif
-
-# ifndef yytnamerr
-/* Copy to YYRES the contents of YYSTR after stripping away unnecessary
-   quotes and backslashes, so that it's suitable for yyerror.  The
-   heuristic is that double-quoting is unnecessary unless the string
-   contains an apostrophe, a comma, or backslash (other than
-   backslash-backslash).  YYSTR is taken from yytname.  If YYRES is
-   null, do not copy; instead, return the length of what the result
-   would have been.  */
-static YYSIZE_T
-yytnamerr (char *yyres, const char *yystr)
-{
-  if (*yystr == '"')
-    {
-      YYSIZE_T yyn = 0;
-      char const *yyp = yystr;
-
-      for (;;)
-        switch (*++yyp)
-          {
-          case '\'':
-          case ',':
-            goto do_not_strip_quotes;
-
-          case '\\':
-            if (*++yyp != '\\')
-              goto do_not_strip_quotes;
-            /* Fall through.  */
-          default:
-            if (yyres)
-              yyres[yyn] = *yyp;
-            yyn++;
-            break;
-
-          case '"':
-            if (yyres)
-              yyres[yyn] = '\0';
-            return yyn;
-          }
-    do_not_strip_quotes: ;
-    }
-
-  if (! yyres)
-    return yystrlen (yystr);
-
-  return yystpcpy (yyres, yystr) - yyres;
-}
-# endif
-
-/* Copy into *YYMSG, which is of size *YYMSG_ALLOC, an error message
-   about the unexpected token YYTOKEN for the state stack whose top is
-   YYSSP.
-
-   Return 0 if *YYMSG was successfully written.  Return 1 if *YYMSG is
-   not large enough to hold the message.  In that case, also set
-   *YYMSG_ALLOC to the required number of bytes.  Return 2 if the
-   required number of bytes is too large to store.  */
-static int
-yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
-                yytype_int16 *yyssp, int yytoken)
-{
-  YYSIZE_T yysize0 = yytnamerr (YY_NULLPTR, yytname[yytoken]);
-  YYSIZE_T yysize = yysize0;
-  enum { YYERROR_VERBOSE_ARGS_MAXIMUM = 5 };
-  /* Internationalized format string. */
-  const char *yyformat = YY_NULLPTR;
-  /* Arguments of yyformat. */
-  char const *yyarg[YYERROR_VERBOSE_ARGS_MAXIMUM];
-  /* Number of reported tokens (one for the "unexpected", one per
-     "expected"). */
-  int yycount = 0;
-
-  /* There are many possibilities here to consider:
-     - If this state is a consistent state with a default action, then
-       the only way this function was invoked is if the default action
-       is an error action.  In that case, don't check for expected
-       tokens because there are none.
-     - The only way there can be no lookahead present (in yychar) is if
-       this state is a consistent state with a default action.  Thus,
-       detecting the absence of a lookahead is sufficient to determine
-       that there is no unexpected or expected token to report.  In that
-       case, just report a simple "syntax error".
-     - Don't assume there isn't a lookahead just because this state is a
-       consistent state with a default action.  There might have been a
-       previous inconsistent state, consistent state with a non-default
-       action, or user semantic action that manipulated yychar.
-     - Of course, the expected token list depends on states to have
-       correct lookahead information, and it depends on the parser not
-       to perform extra reductions after fetching a lookahead from the
-       scanner and before detecting a syntax error.  Thus, state merging
-       (from LALR or IELR) and default reductions corrupt the expected
-       token list.  However, the list is correct for canonical LR with
-       one exception: it will still contain any token that will not be
-       accepted due to an error action in a later state.
-  */
-  if (yytoken != YYEMPTY)
-    {
-      int yyn = yypact[*yyssp];
-      yyarg[yycount++] = yytname[yytoken];
-      if (!yypact_value_is_default (yyn))
-        {
-          /* Start YYX at -YYN if negative to avoid negative indexes in
-             YYCHECK.  In other words, skip the first -YYN actions for
-             this state because they are default actions.  */
-          int yyxbegin = yyn < 0 ? -yyn : 0;
-          /* Stay within bounds of both yycheck and yytname.  */
-          int yychecklim = YYLAST - yyn + 1;
-          int yyxend = yychecklim < YYNTOKENS ? yychecklim : YYNTOKENS;
-          int yyx;
-
-          for (yyx = yyxbegin; yyx < yyxend; ++yyx)
-            if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR
-                && !yytable_value_is_error (yytable[yyx + yyn]))
-              {
-                if (yycount == YYERROR_VERBOSE_ARGS_MAXIMUM)
-                  {
-                    yycount = 1;
-                    yysize = yysize0;
-                    break;
-                  }
-                yyarg[yycount++] = yytname[yyx];
-                {
-                  YYSIZE_T yysize1 = yysize + yytnamerr (YY_NULLPTR, yytname[yyx]);
-                  if (! (yysize <= yysize1
-                         && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
-                    return 2;
-                  yysize = yysize1;
-                }
-              }
-        }
-    }
-
-  switch (yycount)
-    {
-# define YYCASE_(N, S)                      \
-      case N:                               \
-        yyformat = S;                       \
-      break
-      YYCASE_(0, YY_("syntax error"));
-      YYCASE_(1, YY_("syntax error, unexpected %s"));
-      YYCASE_(2, YY_("syntax error, unexpected %s, expecting %s"));
-      YYCASE_(3, YY_("syntax error, unexpected %s, expecting %s or %s"));
-      YYCASE_(4, YY_("syntax error, unexpected %s, expecting %s or %s or %s"));
-      YYCASE_(5, YY_("syntax error, unexpected %s, expecting %s or %s or %s or %s"));
-# undef YYCASE_
-    }
-
-  {
-    YYSIZE_T yysize1 = yysize + yystrlen (yyformat);
-    if (! (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
-      return 2;
-    yysize = yysize1;
-  }
-
-  if (*yymsg_alloc < yysize)
-    {
-      *yymsg_alloc = 2 * yysize;
-      if (! (yysize <= *yymsg_alloc
-             && *yymsg_alloc <= YYSTACK_ALLOC_MAXIMUM))
-        *yymsg_alloc = YYSTACK_ALLOC_MAXIMUM;
-      return 1;
-    }
-
-  /* Avoid sprintf, as that infringes on the user's name space.
-     Don't have undefined behavior even if the translation
-     produced a string with the wrong number of "%s"s.  */
-  {
-    char *yyp = *yymsg;
-    int yyi = 0;
-    while ((*yyp = *yyformat) != '\0')
-      if (*yyp == '%' && yyformat[1] == 's' && yyi < yycount)
-        {
-          yyp += yytnamerr (yyp, yyarg[yyi++]);
-          yyformat += 2;
-        }
-      else
-        {
-          yyp++;
-          yyformat++;
-        }
-  }
-  return 0;
-}
-#endif /* YYERROR_VERBOSE */
 
 /*-----------------------------------------------.
 | Release the memory associated to this symbol.  |
 `-----------------------------------------------*/
 
 static void
-yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep, void *pSkel)
+yydestruct (const char *yymsg,
+            yysymbol_kind_t yykind, YYSTYPE *yyvaluep, void *pSkel)
 {
-  YYUSE (yyvaluep);
-  YYUSE (pSkel);
+  YY_USE (yyvaluep);
+  YY_USE (pSkel);
   if (!yymsg)
     yymsg = "Deleting";
-  YY_SYMBOL_PRINT (yymsg, yytype, yyvaluep, yylocationp);
+  YY_SYMBOL_PRINT (yymsg, yykind, yyvaluep, yylocationp);
 
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
-  YYUSE (yytype);
+  YY_USE (yykind);
   YY_IGNORE_MAYBE_UNINITIALIZED_END
 }
+
+
 
 
 
@@ -1788,7 +1894,7 @@ yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep, void *pSkel)
 int
 yyparse (void *pSkel)
 {
-/* The lookahead symbol.  */
+/* Lookahead token kind.  */
 int yychar;
 
 
@@ -1799,45 +1905,38 @@ YY_INITIAL_VALUE (static YYSTYPE yyval_default;)
 YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
 
     /* Number of syntax errors so far.  */
-    int yynerrs;
+    int yynerrs = 0;
 
-    int yystate;
+    yy_state_fast_t yystate = 0;
     /* Number of tokens to shift before error messages enabled.  */
-    int yyerrstatus;
+    int yyerrstatus = 0;
 
-    /* The stacks and their tools:
-       'yyss': related to states.
-       'yyvs': related to semantic values.
-
-       Refer to the stacks through separate pointers, to allow yyoverflow
+    /* Refer to the stacks through separate pointers, to allow yyoverflow
        to reallocate them elsewhere.  */
 
-    /* The state stack.  */
-    yytype_int16 yyssa[YYINITDEPTH];
-    yytype_int16 *yyss;
-    yytype_int16 *yyssp;
+    /* Their size.  */
+    YYPTRDIFF_T yystacksize = YYINITDEPTH;
 
-    /* The semantic value stack.  */
+    /* The state stack: array, bottom, top.  */
+    yy_state_t yyssa[YYINITDEPTH];
+    yy_state_t *yyss = yyssa;
+    yy_state_t *yyssp = yyss;
+
+    /* The semantic value stack: array, bottom, top.  */
     YYSTYPE yyvsa[YYINITDEPTH];
-    YYSTYPE *yyvs;
-    YYSTYPE *yyvsp;
-
-    YYSIZE_T yystacksize;
+    YYSTYPE *yyvs = yyvsa;
+    YYSTYPE *yyvsp = yyvs;
 
   int yyn;
+  /* The return value of yyparse.  */
   int yyresult;
-  /* Lookahead token as an internal (translated) token number.  */
-  int yytoken = 0;
+  /* Lookahead symbol kind.  */
+  yysymbol_kind_t yytoken = YYSYMBOL_YYEMPTY;
   /* The variables used to return semantic value and location from the
      action routines.  */
   YYSTYPE yyval;
 
-#if YYERROR_VERBOSE
-  /* Buffer for error messages, and its allocated size.  */
-  char yymsgbuf[128];
-  char *yymsg = yymsgbuf;
-  YYSIZE_T yymsg_alloc = sizeof yymsgbuf;
-#endif
+
 
 #define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N))
 
@@ -1845,71 +1944,75 @@ YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
      Keep to zero when no symbol should be popped.  */
   int yylen = 0;
 
-  yyssp = yyss = yyssa;
-  yyvsp = yyvs = yyvsa;
-  yystacksize = YYINITDEPTH;
-
   YYDPRINTF ((stderr, "Starting parse\n"));
 
-  yystate = 0;
-  yyerrstatus = 0;
-  yynerrs = 0;
   yychar = YYEMPTY; /* Cause a token to be read.  */
+
   goto yysetstate;
 
+
 /*------------------------------------------------------------.
-| yynewstate -- Push a new state, which is found in yystate.  |
+| yynewstate -- push a new state, which is found in yystate.  |
 `------------------------------------------------------------*/
- yynewstate:
+yynewstate:
   /* In all cases, when you get here, the value and location stacks
      have just been pushed.  So pushing a state here evens the stacks.  */
   yyssp++;
 
- yysetstate:
-  *yyssp = yystate;
+
+/*--------------------------------------------------------------------.
+| yysetstate -- set current state (the top of the stack) to yystate.  |
+`--------------------------------------------------------------------*/
+yysetstate:
+  YYDPRINTF ((stderr, "Entering state %d\n", yystate));
+  YY_ASSERT (0 <= yystate && yystate < YYNSTATES);
+  YY_IGNORE_USELESS_CAST_BEGIN
+  *yyssp = YY_CAST (yy_state_t, yystate);
+  YY_IGNORE_USELESS_CAST_END
+  YY_STACK_PRINT (yyss, yyssp);
 
   if (yyss + yystacksize - 1 <= yyssp)
+#if !defined yyoverflow && !defined YYSTACK_RELOCATE
+    YYNOMEM;
+#else
     {
       /* Get the current used size of the three stacks, in elements.  */
-      YYSIZE_T yysize = yyssp - yyss + 1;
+      YYPTRDIFF_T yysize = yyssp - yyss + 1;
 
-#ifdef yyoverflow
+# if defined yyoverflow
       {
         /* Give user a chance to reallocate the stack.  Use copies of
            these so that the &'s don't force the real ones into
            memory.  */
+        yy_state_t *yyss1 = yyss;
         YYSTYPE *yyvs1 = yyvs;
-        yytype_int16 *yyss1 = yyss;
 
         /* Each stack pointer address is followed by the size of the
            data in use in that stack, in bytes.  This used to be a
            conditional around just the two extra args, but that might
            be undefined if yyoverflow is a macro.  */
         yyoverflow (YY_("memory exhausted"),
-                    &yyss1, yysize * sizeof (*yyssp),
-                    &yyvs1, yysize * sizeof (*yyvsp),
+                    &yyss1, yysize * YYSIZEOF (*yyssp),
+                    &yyvs1, yysize * YYSIZEOF (*yyvsp),
                     &yystacksize);
-
         yyss = yyss1;
         yyvs = yyvs1;
       }
-#else /* no yyoverflow */
-# ifndef YYSTACK_RELOCATE
-      goto yyexhaustedlab;
-# else
+# else /* defined YYSTACK_RELOCATE */
       /* Extend the stack our own way.  */
       if (YYMAXDEPTH <= yystacksize)
-        goto yyexhaustedlab;
+        YYNOMEM;
       yystacksize *= 2;
       if (YYMAXDEPTH < yystacksize)
         yystacksize = YYMAXDEPTH;
 
       {
-        yytype_int16 *yyss1 = yyss;
+        yy_state_t *yyss1 = yyss;
         union yyalloc *yyptr =
-          (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
+          YY_CAST (union yyalloc *,
+                   YYSTACK_ALLOC (YY_CAST (YYSIZE_T, YYSTACK_BYTES (yystacksize))));
         if (! yyptr)
-          goto yyexhaustedlab;
+          YYNOMEM;
         YYSTACK_RELOCATE (yyss_alloc, yyss);
         YYSTACK_RELOCATE (yyvs_alloc, yyvs);
 #  undef YYSTACK_RELOCATE
@@ -1917,30 +2020,31 @@ YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
           YYSTACK_FREE (yyss1);
       }
 # endif
-#endif /* no yyoverflow */
 
       yyssp = yyss + yysize - 1;
       yyvsp = yyvs + yysize - 1;
 
-      YYDPRINTF ((stderr, "Stack size increased to %lu\n",
-                  (unsigned long int) yystacksize));
+      YY_IGNORE_USELESS_CAST_BEGIN
+      YYDPRINTF ((stderr, "Stack size increased to %ld\n",
+                  YY_CAST (long, yystacksize)));
+      YY_IGNORE_USELESS_CAST_END
 
       if (yyss + yystacksize - 1 <= yyssp)
         YYABORT;
     }
+#endif /* !defined yyoverflow && !defined YYSTACK_RELOCATE */
 
-  YYDPRINTF ((stderr, "Entering state %d\n", yystate));
 
   if (yystate == YYFINAL)
     YYACCEPT;
 
   goto yybackup;
 
+
 /*-----------.
 | yybackup.  |
 `-----------*/
 yybackup:
-
   /* Do appropriate processing given the current state.  Read a
      lookahead token if we need one and don't already have one.  */
 
@@ -1951,17 +2055,28 @@ yybackup:
 
   /* Not known => get a lookahead token if don't already have one.  */
 
-  /* YYCHAR is either YYEMPTY or YYEOF or a valid lookahead symbol.  */
+  /* YYCHAR is either empty, or end-of-input, or a valid lookahead.  */
   if (yychar == YYEMPTY)
     {
-      YYDPRINTF ((stderr, "Reading a token: "));
+      YYDPRINTF ((stderr, "Reading a token\n"));
       yychar = yylex (&yylval, pSkel);
     }
 
   if (yychar <= YYEOF)
     {
-      yychar = yytoken = YYEOF;
+      yychar = YYEOF;
+      yytoken = YYSYMBOL_YYEOF;
       YYDPRINTF ((stderr, "Now at end of input.\n"));
+    }
+  else if (yychar == YYerror)
+    {
+      /* The scanner already issued an error message, process directly
+         to error recovery.  But do not keep the error token as
+         lookahead, it is too special and may lead us to an endless
+         loop in error recovery. */
+      yychar = YYUNDEF;
+      yytoken = YYSYMBOL_YYerror;
+      goto yyerrlab1;
     }
   else
     {
@@ -1990,15 +2105,13 @@ yybackup:
 
   /* Shift the lookahead token.  */
   YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
-
-  /* Discard the shifted token.  */
-  yychar = YYEMPTY;
-
   yystate = yyn;
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
   *++yyvsp = yylval;
   YY_IGNORE_MAYBE_UNINITIALIZED_END
 
+  /* Discard the shifted token.  */
+  yychar = YYEMPTY;
   goto yynewstate;
 
 
@@ -2013,7 +2126,7 @@ yydefault:
 
 
 /*-----------------------------.
-| yyreduce -- Do a reduction.  |
+| yyreduce -- do a reduction.  |
 `-----------------------------*/
 yyreduce:
   /* yyn is the number of a rule to reduce with.  */
@@ -2033,393 +2146,393 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-        case 3:
-#line 221 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { if(SKEL->verifyHeader((yyvsp[0].stringVal)) == false) { YYABORT; } }
-#line 2040 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 3: /* headerStatement: TOK_HEADER  */
+#line 221 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { if(SKEL->verifyHeader((yyvsp[0].stringVal)) == false) { YYABORT; } }
+#line 2153 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 4:
-#line 222 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { if(SKEL->checkHeader() == true) { YYABORT; } }
-#line 2046 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 4: /* headerStatement: %empty  */
+#line 222 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { if(SKEL->checkHeader() == true) { YYABORT; } }
+#line 2159 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 5:
-#line 225 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->profileElement((yyvsp[0].stringVal)); }
-#line 2052 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 5: /* profileStatement: TOK_PROFILE profileNameId  */
+#line 225 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                              { SKEL->profileElement((yyvsp[0].stringVal)); }
+#line 2165 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 10:
-#line 239 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 10: /* componentStatement: TOK_COMPONENT componentNameId  */
+#line 239 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     { SKEL->componentElement((yyvsp[0].stringVal)); }
-#line 2058 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2171 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 15:
-#line 256 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 15: /* $@1: %empty  */
+#line 256 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     { SKEL->_tmpString1 = (yyvsp[0].stringVal); }
-#line 2064 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2177 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 16:
-#line 258 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 16: /* metaStatement: TOK_META metakey $@1 metavalue  */
+#line 258 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     { SKEL->metaElement(SKEL->_tmpString1.c_str(), (yyvsp[0].stringVal)); }
-#line 2070 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2183 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 26:
-#line 290 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = (yyvsp[0].stringVal); 
+  case 26: /* $@2: %empty  */
+#line 290 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                          { SKEL->_tmpString1 = (yyvsp[0].stringVal); 
                             SKEL->_tmpBitVector1 = 
                                 TypeTraits<BitVector>::BitsClear; }
-#line 2078 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2191 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 27:
-#line 293 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginNode(SKEL->_tmpString1.c_str(), 
+  case 27: /* $@3: %empty  */
+#line 293 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                          { SKEL->beginNode(SKEL->_tmpString1.c_str(), 
                                             0,
                                             SKEL->_tmpBitVector1     ); }
-#line 2086 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2199 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 29:
-#line 298 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = (yyvsp[0].stringVal); 
+  case 29: /* $@4: %empty  */
+#line 298 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                          { SKEL->_tmpString1 = (yyvsp[0].stringVal); 
                             SKEL->_tmpBitVector1 = 
                                 TypeTraits<BitVector>::BitsClear; }
-#line 2094 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2207 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 30:
-#line 301 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString2 = (yyvsp[0].stringVal); }
-#line 2100 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 30: /* $@5: %empty  */
+#line 301 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                          { SKEL->_tmpString2 = (yyvsp[0].stringVal); }
+#line 2213 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 31:
-#line 302 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginNode(SKEL->_tmpString2.c_str(), 
+  case 31: /* $@6: %empty  */
+#line 302 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                          { SKEL->beginNode(SKEL->_tmpString2.c_str(), 
                                             SKEL->_tmpString1.c_str(),
                                             SKEL->_tmpBitVector1     ); }
-#line 2108 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2221 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 33:
-#line 307 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->use((yyvsp[0].stringVal)); }
-#line 2114 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 33: /* nodeStatement: TOK_USE nodeNameId  */
+#line 307 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { SKEL->use((yyvsp[0].stringVal)); }
+#line 2227 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 38:
-#line 318 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpBitVector1 |= FCLocal::Cluster; }
-#line 2120 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 38: /* nodeOption: TOK_ClusterLocal  */
+#line 318 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                       { SKEL->_tmpBitVector1 |= FCLocal::Cluster; }
+#line 2233 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 39:
-#line 319 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpBitVector1 |= FCLocal::MT;      }
-#line 2126 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 39: /* nodeOption: TOK_ThreadLocal  */
+#line 319 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                       { SKEL->_tmpBitVector1 |= FCLocal::MT;      }
+#line 2239 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 42:
-#line 330 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginProto((yyvsp[0].stringVal)); }
-#line 2132 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 42: /* $@7: %empty  */
+#line 330 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                         { SKEL->beginProto((yyvsp[0].stringVal)); }
+#line 2245 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 43:
-#line 331 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endProtoInterface(); }
-#line 2138 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 43: /* $@8: %empty  */
+#line 331 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                                  { SKEL->endProtoInterface(); }
+#line 2251 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 44:
-#line 332 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endProto(); }
-#line 2144 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 44: /* proto: TOK_PROTO nodeTypeId $@7 '[' interfaceDeclarations ']' $@8 '{' statements '}'  */
+#line 332 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                       { SKEL->endProto(); }
+#line 2257 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 47:
-#line 340 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2150 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 47: /* $@9: %empty  */
+#line 340 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2263 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 48:
-#line 341 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginEventInDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->endEventDecl(); }
-#line 2156 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 48: /* interfaceDeclaration: TOK_eventIn fieldType $@9 eventInId  */
+#line 341 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->beginEventInDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->endEventDecl(); }
+#line 2269 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 49:
-#line 343 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2162 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 49: /* $@10: %empty  */
+#line 343 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2275 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 50:
-#line 344 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginEventOutDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->endEventDecl(); }
-#line 2168 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 50: /* interfaceDeclaration: TOK_eventOut fieldType $@10 eventOutId  */
+#line 344 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { SKEL->beginEventOutDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->endEventDecl(); }
+#line 2281 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 51:
-#line 346 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2174 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 51: /* $@11: %empty  */
+#line 346 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2287 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 52:
-#line 347 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->getLexer()->expectType((yyvsp[-2].intVal)); }
-#line 2180 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 52: /* $@12: %empty  */
+#line 347 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->beginFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->getLexer()->expectType((yyvsp[-2].intVal)); }
+#line 2293 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 53:
-#line 348 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endFieldDecl(); }
-#line 2186 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 53: /* interfaceDeclaration: TOK_field fieldType $@11 fieldId $@12 fieldValue  */
+#line 348 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { SKEL->endFieldDecl(); }
+#line 2299 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 54:
-#line 350 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2192 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 54: /* $@13: %empty  */
+#line 350 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2305 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 55:
-#line 351 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginExposedFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->getLexer()->expectType((yyvsp[-2].intVal)); }
-#line 2198 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 55: /* $@14: %empty  */
+#line 351 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->beginExposedFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->getLexer()->expectType((yyvsp[-2].intVal)); }
+#line 2311 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 56:
-#line 352 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endExposedFieldDecl(); }
-#line 2204 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 56: /* interfaceDeclaration: TOK_exposedField fieldType $@13 fieldId $@14 fieldValue  */
+#line 352 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { SKEL->endExposedFieldDecl(); }
+#line 2317 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 57:
-#line 355 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginExternProto((yyvsp[0].stringVal)); }
-#line 2210 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 57: /* $@15: %empty  */
+#line 355 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                               { SKEL->beginExternProto((yyvsp[0].stringVal)); }
+#line 2323 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 58:
-#line 356 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endExternProtoInterface(); }
-#line 2216 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 58: /* $@16: %empty  */
+#line 356 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                                        { SKEL->endExternProtoInterface(); }
+#line 2329 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 59:
-#line 357 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endExternProto(); }
-#line 2222 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 59: /* externproto: TOK_EXTERNPROTO nodeTypeId $@15 '[' externInterfaceDeclarations ']' $@16 URLList  */
+#line 357 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+            { SKEL->endExternProto(); }
+#line 2335 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 62:
-#line 365 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2228 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 62: /* $@17: %empty  */
+#line 365 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2341 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 63:
-#line 366 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->addExternEventInDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
-#line 2234 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 63: /* externInterfaceDeclaration: TOK_eventIn fieldType $@17 eventInId  */
+#line 366 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->addExternEventInDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
+#line 2347 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 64:
-#line 368 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2240 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 64: /* $@18: %empty  */
+#line 368 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2353 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 65:
-#line 369 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->addExternEventOutDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
-#line 2246 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 65: /* externInterfaceDeclaration: TOK_eventOut fieldType $@18 eventOutId  */
+#line 369 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { SKEL->addExternEventOutDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
+#line 2359 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 66:
-#line 371 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2252 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 66: /* $@19: %empty  */
+#line 371 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2365 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 67:
-#line 372 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->addExternFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
-#line 2258 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 67: /* externInterfaceDeclaration: TOK_field fieldType $@19 fieldId  */
+#line 372 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->addExternFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
+#line 2371 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 68:
-#line 374 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2264 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 68: /* $@20: %empty  */
+#line 374 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2377 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 69:
-#line 375 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->addExternExposedFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
-#line 2270 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 69: /* externInterfaceDeclaration: TOK_exposedField fieldType $@20 fieldId  */
+#line 375 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->addExternExposedFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
+#line 2383 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 70:
-#line 379 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = (yyvsp[0].stringVal); }
-#line 2276 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 70: /* $@21: %empty  */
+#line 379 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { SKEL->_tmpString1 = (yyvsp[0].stringVal); }
+#line 2389 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 71:
-#line 381 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString2 = (yyvsp[0].stringVal); }
-#line 2282 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 71: /* $@22: %empty  */
+#line 381 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { SKEL->_tmpString2 = (yyvsp[0].stringVal); }
+#line 2395 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 72:
-#line 383 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString3 = (yyvsp[0].stringVal); }
-#line 2288 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 72: /* $@23: %empty  */
+#line 383 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { SKEL->_tmpString3 = (yyvsp[0].stringVal); }
+#line 2401 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 73:
-#line 386 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 73: /* routeStatement: TOK_ROUTE nodeNameId $@21 '.' eventOutId $@22 TOK_TO nodeNameId $@23 '.' eventInId  */
+#line 386 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     { SKEL->addRoute(SKEL->_tmpString1.c_str(), SKEL->_tmpString2.c_str(), SKEL->_tmpString3.c_str(), (yyvsp[0].stringVal)); }
-#line 2294 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2407 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 74:
-#line 390 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = (yyvsp[0].stringVal); }
-#line 2300 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 74: /* $@24: %empty  */
+#line 390 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { SKEL->_tmpString1 = (yyvsp[0].stringVal); }
+#line 2413 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 75:
-#line 392 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString2 = (yyvsp[0].stringVal); }
-#line 2306 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 75: /* $@25: %empty  */
+#line 392 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { SKEL->_tmpString2 = (yyvsp[0].stringVal); }
+#line 2419 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 76:
-#line 394 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 76: /* importStatement: TOK_IMPORT nodeNameId $@24 '.' nodeNameId $@25 asStatement  */
+#line 394 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         if ((yyvsp[0].stringVal) != 0)
             SKEL->importElement(SKEL->_tmpString1.c_str(), SKEL->_tmpString2.c_str(), (yyvsp[0].stringVal));
         else
             SKEL->importElement(SKEL->_tmpString1.c_str(), SKEL->_tmpString2.c_str(), 0);
     }
-#line 2317 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2430 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 77:
-#line 403 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = (yyvsp[0].stringVal); }
-#line 2323 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 77: /* $@26: %empty  */
+#line 403 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { SKEL->_tmpString1 = (yyvsp[0].stringVal); }
+#line 2436 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 78:
-#line 405 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 78: /* exportStatement: TOK_EXPORT nodeNameId $@26 asStatement  */
+#line 405 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         if ((yyvsp[0].stringVal) != 0)
             SKEL->exportElement(SKEL->_tmpString1.c_str(), (yyvsp[0].stringVal));
         else
             SKEL->exportElement(SKEL->_tmpString1.c_str(), 0);
     }
-#line 2334 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2447 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 79:
-#line 414 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { (yyval.stringVal) = (yyvsp[0].stringVal); }
-#line 2340 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 79: /* asStatement: TOK_AS nodeNameId  */
+#line 414 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { (yyval.stringVal) = (yyvsp[0].stringVal); }
+#line 2453 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 80:
-#line 415 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { (yyval.stringVal) = 0; }
-#line 2346 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 80: /* asStatement: %empty  */
+#line 415 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                  { (yyval.stringVal) = 0; }
+#line 2459 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 82:
-#line 421 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endNode(); }
-#line 2352 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 82: /* node: '{' scriptBody '}'  */
+#line 421 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                       { SKEL->endNode(); }
+#line 2465 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 91:
-#line 437 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2358 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 91: /* $@27: %empty  */
+#line 437 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2471 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 92:
-#line 438 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginEventInDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
-#line 2364 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 92: /* $@28: %empty  */
+#line 438 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->beginEventInDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
+#line 2477 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 93:
-#line 439 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endEventDecl(); }
-#line 2370 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 93: /* eventInDeclaration: TOK_eventIn fieldType $@27 eventInId $@28 eventDeclarationEnd  */
+#line 439 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                        { SKEL->endEventDecl(); }
+#line 2483 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 94:
-#line 443 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2376 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 94: /* $@29: %empty  */
+#line 443 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2489 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 95:
-#line 444 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginEventOutDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
-#line 2382 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 95: /* $@30: %empty  */
+#line 444 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { SKEL->beginEventOutDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); }
+#line 2495 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 96:
-#line 445 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endEventDecl(); }
-#line 2388 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 96: /* eventOutDeclaration: TOK_eventOut fieldType $@29 eventOutId $@30 eventDeclarationEnd  */
+#line 445 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                        { SKEL->endEventDecl(); }
+#line 2501 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 98:
-#line 449 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->is((yyvsp[0].stringVal)); }
-#line 2394 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 98: /* eventDeclarationEnd: TOK_IS fieldId  */
+#line 449 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                     { SKEL->is((yyvsp[0].stringVal)); }
+#line 2507 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 99:
-#line 453 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2400 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 99: /* $@31: %empty  */
+#line 453 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2513 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 100:
-#line 454 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->getLexer()->expectType((yyvsp[-2].intVal)); }
-#line 2406 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 100: /* $@32: %empty  */
+#line 454 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+            { SKEL->beginFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->getLexer()->expectType((yyvsp[-2].intVal)); }
+#line 2519 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 101:
-#line 455 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endFieldDecl(); }
-#line 2412 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 101: /* fieldDeclaration: TOK_field fieldType $@31 fieldId $@32 fieldDeclarationEnd  */
+#line 455 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                        { SKEL->endFieldDecl(); }
+#line 2525 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 102:
-#line 457 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2418 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 102: /* $@33: %empty  */
+#line 457 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+             { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2531 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 103:
-#line 458 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { 
+  case 103: /* $@34: %empty  */
+#line 458 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+             { 
                SKEL->beginFieldDecl(SKEL->_tmpString1.c_str(), 0, (yyvsp[0].stringVal)); 
 
                Int32 iFieldTypeId = SKEL->getFieldType((yyvsp[0].stringVal));
@@ -2429,41 +2542,41 @@ yyreduce:
 
                SKEL->getLexer()->expectType(iFieldTypeId);
              }
-#line 2433 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2546 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 104:
-#line 468 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endFieldDecl(); }
-#line 2439 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 104: /* fieldDeclaration: TOK_field TOK_Id $@33 fieldId $@34 fieldDeclarationEnd  */
+#line 468 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                         { SKEL->endFieldDecl(); }
+#line 2552 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 105:
-#line 472 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
-#line 2445 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 105: /* $@35: %empty  */
+#line 472 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { SKEL->_tmpString1 = SKEL->getLexer()->YYText(); }
+#line 2558 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 106:
-#line 473 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginExposedFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->getLexer()->expectType((yyvsp[-2].intVal)); }
-#line 2451 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 106: /* $@36: %empty  */
+#line 473 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+            { SKEL->beginExposedFieldDecl(SKEL->_tmpString1.c_str(), (yyvsp[-2].intVal), (yyvsp[0].stringVal)); SKEL->getLexer()->expectType((yyvsp[-2].intVal)); }
+#line 2564 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 107:
-#line 474 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endExposedFieldDecl(); }
-#line 2457 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 107: /* exposedFieldDeclaration: TOK_exposedField fieldType $@35 fieldId $@36 fieldDeclarationEnd  */
+#line 474 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                        { SKEL->endExposedFieldDecl(); }
+#line 2570 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 109:
-#line 478 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->is((yyvsp[0].stringVal)); }
-#line 2463 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 109: /* fieldDeclarationEnd: fieldType TOK_IS fieldId  */
+#line 478 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                               { SKEL->is((yyvsp[0].stringVal)); }
+#line 2576 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 110:
-#line 482 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 110: /* $@37: %empty  */
+#line 482 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         Int32 iFieldTypeId = SKEL->getFieldType((yyvsp[0].stringVal));
         if (SKEL->getMapFieldTypes() == true)
@@ -2471,230 +2584,230 @@ yyreduce:
         SKEL->getLexer()->expectType(iFieldTypeId);
         SKEL->beginField((yyvsp[0].stringVal), iFieldTypeId);
     }
-#line 2475 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2588 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 111:
-#line 489 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->endField(); }
-#line 2481 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 111: /* nodeBodyElement: fieldId $@37 fieldEnd  */
+#line 489 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+             { SKEL->endField(); }
+#line 2594 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 117:
-#line 497 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->is((yyvsp[0].stringVal)); }
-#line 2487 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 117: /* fieldEnd: fieldType TOK_IS fieldId  */
+#line 497 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                               { SKEL->is((yyvsp[0].stringVal)); }
+#line 2600 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 232:
-#line 630 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { (yyval.intVal) = (yyvsp[0].intVal); }
-#line 2493 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 232: /* int32: TOK_hex  */
+#line 630 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+            { (yyval.intVal) = (yyvsp[0].intVal); }
+#line 2606 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 233:
-#line 631 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { (yyval.intVal) = (yyvsp[0].intVal); }
-#line 2499 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 233: /* int32: TOK_int32  */
+#line 631 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                { (yyval.intVal) = (yyvsp[0].intVal); }
+#line 2612 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 234:
-#line 634 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { (yyval.doubleVal) = (yyvsp[0].intVal); }
-#line 2505 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 234: /* double: TOK_int32  */
+#line 634 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { (yyval.doubleVal) = (yyvsp[0].intVal); }
+#line 2618 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 235:
-#line 635 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { (yyval.doubleVal) = (yyvsp[0].doubleVal); }
-#line 2511 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 235: /* double: TOK_double  */
+#line 635 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { (yyval.doubleVal) = (yyvsp[0].doubleVal); }
+#line 2624 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 236:
-#line 638 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { (yyval.floatVal) = static_cast<float>((yyvsp[0].intVal)); }
-#line 2517 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 236: /* float: TOK_int32  */
+#line 638 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+              { (yyval.floatVal) = static_cast<float>((yyvsp[0].intVal)); }
+#line 2630 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 237:
-#line 639 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { (yyval.floatVal) = static_cast<float>((yyvsp[0].doubleVal)); }
-#line 2523 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 237: /* float: TOK_double  */
+#line 639 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+                 { (yyval.floatVal) = static_cast<float>((yyvsp[0].doubleVal)); }
+#line 2636 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 238:
-#line 643 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 238: /* sfboolValue: TOK_bool  */
+#line 643 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->addBoolValue((yyvsp[0].boolVal));
     }
-#line 2531 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2644 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 239:
-#line 646 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->addFieldValue((yyvsp[0].stringVal)); }
-#line 2537 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 239: /* sfboolValue: TOK_Id  */
+#line 646 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+             { SKEL->addFieldValue((yyvsp[0].stringVal)); }
+#line 2650 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 240:
-#line 649 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 2543 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 240: /* $@38: %empty  */
+#line 649 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 2656 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 241:
-#line 650 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2549 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 241: /* $@39: %empty  */
+#line 650 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2662 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 242:
-#line 652 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 242: /* sfcolorValue: float $@38 float $@39 float  */
+#line 652 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addColorValue(Color3f((yyvsp[-4].floatVal), (yyvsp[-2].floatVal), (yyvsp[0].floatVal)));
     }
-#line 2558 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2671 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 243:
-#line 658 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 2564 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 243: /* $@40: %empty  */
+#line 658 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 2677 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 244:
-#line 659 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2570 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 244: /* $@41: %empty  */
+#line 659 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2683 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 245:
-#line 660 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2576 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 245: /* $@42: %empty  */
+#line 660 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2689 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 246:
-#line 662 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 246: /* sfcolorRGBAValue: float $@40 float $@41 float $@42 float  */
+#line 662 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addColorRGBAValue(Color4f((yyvsp[-6].floatVal), (yyvsp[-4].floatVal), (yyvsp[-2].floatVal), (yyvsp[0].floatVal)));
     }
-#line 2585 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2698 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 247:
-#line 669 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 247: /* sfdoubleValue: double  */
+#line 669 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->addDoubleValue((yyvsp[0].doubleVal));
     }
-#line 2593 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2706 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 248:
-#line 675 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 248: /* sffloatValue: float  */
+#line 675 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->addFloatValue((yyvsp[0].floatVal));
     }
-#line 2601 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2714 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 249:
-#line 680 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 2607 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 249: /* $@43: %empty  */
+#line 680 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 2720 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 250:
-#line 681 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2613 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 250: /* $@44: %empty  */
+#line 681 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2726 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 251:
-#line 683 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 251: /* $@45: %empty  */
+#line 683 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->beginImage((yyvsp[-4].intVal), (yyvsp[-2].intVal), (yyvsp[0].intVal));
     }
-#line 2622 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2735 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 252:
-#line 688 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 252: /* sfimageValue: int32 $@43 int32 $@44 int32 $@45 pixels TOK_ImageFinished  */
+#line 688 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->endImage();
     }
-#line 2630 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2743 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 253:
-#line 694 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 253: /* pixels: pixels int32  */
+#line 694 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->addImagePixel((yyvsp[0].intVal));
     }
-#line 2638 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2751 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 255:
-#line 701 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 255: /* sfint32Value: int32  */
+#line 701 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->addInt32Value((yyvsp[0].intVal));
     }
-#line 2646 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2759 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 256:
-#line 706 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 2652 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 256: /* $@46: %empty  */
+#line 706 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->beginValue(); }
+#line 2765 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 257:
-#line 707 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2658 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 257: /* $@47: %empty  */
+#line 707 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2771 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 258:
-#line 708 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2664 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 258: /* $@48: %empty  */
+#line 708 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2777 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 259:
-#line 709 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2670 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 259: /* $@49: %empty  */
+#line 709 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2783 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 260:
-#line 710 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2676 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 260: /* $@50: %empty  */
+#line 710 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2789 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 261:
-#line 711 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2682 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 261: /* $@51: %empty  */
+#line 711 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2795 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 262:
-#line 712 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2688 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 262: /* $@52: %empty  */
+#line 712 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2801 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 263:
-#line 713 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2694 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 263: /* $@53: %empty  */
+#line 713 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2807 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 264:
-#line 715 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 264: /* sfmatrix3dValue: double $@46 double $@47 double $@48 double $@49 double $@50 double $@51 double $@52 double $@53 double  */
+#line 715 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addMatrix3dValue(
@@ -2702,59 +2815,59 @@ yyreduce:
             (yyvsp[-14].doubleVal),  (yyvsp[-8].doubleVal), (yyvsp[-2].doubleVal),
             (yyvsp[-12].doubleVal), (yyvsp[-6].doubleVal), (yyvsp[0].doubleVal));
     }
-#line 2706 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2819 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 265:
-#line 724 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 2712 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 265: /* $@54: %empty  */
+#line 724 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 2825 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 266:
-#line 725 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2718 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 266: /* $@55: %empty  */
+#line 725 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2831 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 267:
-#line 726 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2724 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 267: /* $@56: %empty  */
+#line 726 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2837 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 268:
-#line 727 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2730 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 268: /* $@57: %empty  */
+#line 727 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2843 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 269:
-#line 728 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2736 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 269: /* $@58: %empty  */
+#line 728 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2849 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 270:
-#line 729 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2742 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 270: /* $@59: %empty  */
+#line 729 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2855 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 271:
-#line 730 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2748 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 271: /* $@60: %empty  */
+#line 730 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2861 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 272:
-#line 731 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2754 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 272: /* $@61: %empty  */
+#line 731 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2867 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 273:
-#line 733 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 273: /* sfmatrix3fValue: float $@54 float $@55 float $@56 float $@57 float $@58 float $@59 float $@60 float $@61 float  */
+#line 733 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addMatrix3fValue(
@@ -2762,101 +2875,101 @@ yyreduce:
             (yyvsp[-14].floatVal),  (yyvsp[-8].floatVal), (yyvsp[-2].floatVal),
             (yyvsp[-12].floatVal), (yyvsp[-6].floatVal), (yyvsp[0].floatVal));
     }
-#line 2766 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2879 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 274:
-#line 742 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 2772 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 274: /* $@62: %empty  */
+#line 742 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->beginValue(); }
+#line 2885 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 275:
-#line 743 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2778 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 275: /* $@63: %empty  */
+#line 743 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2891 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 276:
-#line 744 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2784 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 276: /* $@64: %empty  */
+#line 744 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2897 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 277:
-#line 745 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2790 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 277: /* $@65: %empty  */
+#line 745 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2903 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 278:
-#line 746 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2796 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 278: /* $@66: %empty  */
+#line 746 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2909 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 279:
-#line 747 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2802 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 279: /* $@67: %empty  */
+#line 747 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2915 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 280:
-#line 748 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2808 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 280: /* $@68: %empty  */
+#line 748 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2921 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 281:
-#line 749 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2814 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 281: /* $@69: %empty  */
+#line 749 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2927 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 282:
-#line 750 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2820 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 282: /* $@70: %empty  */
+#line 750 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2933 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 283:
-#line 751 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2826 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 283: /* $@71: %empty  */
+#line 751 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2939 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 284:
-#line 752 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2832 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 284: /* $@72: %empty  */
+#line 752 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2945 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 285:
-#line 753 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2838 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 285: /* $@73: %empty  */
+#line 753 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2951 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 286:
-#line 754 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2844 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 286: /* $@74: %empty  */
+#line 754 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2957 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 287:
-#line 755 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2850 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 287: /* $@75: %empty  */
+#line 755 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2963 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 288:
-#line 756 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2856 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 288: /* $@76: %empty  */
+#line 756 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 2969 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 289:
-#line 758 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 289: /* sfmatrix4dValue: double $@62 double $@63 double $@64 double $@65 double $@66 double $@67 double $@68 double $@69 double $@70 double $@71 double $@72 double $@73 double $@74 double $@75 double $@76 double  */
+#line 758 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addMatrix4dValue(Matrix4d(
@@ -2865,101 +2978,101 @@ yyreduce:
             (yyvsp[-26].doubleVal), (yyvsp[-18].doubleVal), (yyvsp[-10].doubleVal), (yyvsp[-2].doubleVal),
             (yyvsp[-24].doubleVal), (yyvsp[-16].doubleVal), (yyvsp[-8].doubleVal), (yyvsp[0].doubleVal)));
     }
-#line 2869 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 2982 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 290:
-#line 768 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 2875 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 290: /* $@77: %empty  */
+#line 768 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 2988 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 291:
-#line 769 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2881 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 291: /* $@78: %empty  */
+#line 769 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 2994 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 292:
-#line 770 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2887 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 292: /* $@79: %empty  */
+#line 770 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3000 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 293:
-#line 771 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2893 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 293: /* $@80: %empty  */
+#line 771 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3006 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 294:
-#line 772 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2899 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 294: /* $@81: %empty  */
+#line 772 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3012 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 295:
-#line 773 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2905 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 295: /* $@82: %empty  */
+#line 773 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3018 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 296:
-#line 774 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2911 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 296: /* $@83: %empty  */
+#line 774 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3024 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 297:
-#line 775 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2917 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 297: /* $@84: %empty  */
+#line 775 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3030 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 298:
-#line 776 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2923 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 298: /* $@85: %empty  */
+#line 776 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3036 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 299:
-#line 777 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2929 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 299: /* $@86: %empty  */
+#line 777 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3042 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 300:
-#line 778 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2935 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 300: /* $@87: %empty  */
+#line 778 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3048 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 301:
-#line 779 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2941 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 301: /* $@88: %empty  */
+#line 779 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3054 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 302:
-#line 780 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2947 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 302: /* $@89: %empty  */
+#line 780 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3060 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 303:
-#line 781 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2953 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 303: /* $@90: %empty  */
+#line 781 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3066 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 304:
-#line 782 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2959 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 304: /* $@91: %empty  */
+#line 782 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3072 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 305:
-#line 784 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 305: /* sfmatrix4fValue: float $@77 float $@78 float $@79 float $@80 float $@81 float $@82 float $@83 float $@84 float $@85 float $@86 float $@87 float $@88 float $@89 float $@90 float $@91 float  */
+#line 784 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addMatrix4fValue(Matrix4f(
@@ -2968,388 +3081,388 @@ yyreduce:
             (yyvsp[-26].floatVal), (yyvsp[-18].floatVal), (yyvsp[-10].floatVal), (yyvsp[-2].floatVal),
             (yyvsp[-24].floatVal), (yyvsp[-16].floatVal), (yyvsp[-8].floatVal), (yyvsp[0].floatVal)));
     }
-#line 2972 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3085 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 307:
-#line 795 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->nullNode(); }
-#line 2978 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 307: /* sfnodeValue: TOK_NULL  */
+#line 795 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+               { SKEL->nullNode(); }
+#line 3091 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 308:
-#line 798 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 2984 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 308: /* $@92: %empty  */
+#line 798 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3097 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 309:
-#line 799 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2990 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 309: /* $@93: %empty  */
+#line 799 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3103 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 310:
-#line 800 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 2996 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 310: /* $@94: %empty  */
+#line 800 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3109 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 311:
-#line 802 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 311: /* sfrotationValue: float $@92 float $@93 float $@94 float  */
+#line 802 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addRotationValue(Vec3f((yyvsp[-6].floatVal), (yyvsp[-4].floatVal), (yyvsp[-2].floatVal)), (yyvsp[0].floatVal));
     }
-#line 3005 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3118 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 312:
-#line 809 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 312: /* sfstringValue: TOK_string  */
+#line 809 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->addStringValue((yyvsp[0].stringVal));
     }
-#line 3013 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3126 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 313:
-#line 813 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 313: /* sfstringValue: TOK_Id  */
+#line 813 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     { /* Not VRML conformant */
         SKEL->addStringValue((yyvsp[0].stringVal));
     }
-#line 3021 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3134 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 314:
-#line 817 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 314: /* sfstringValue: TOK_hex  */
+#line 817 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     { /* Not VRML conformant */
         SKEL->addBufferAsStringValue();
     }
-#line 3029 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3142 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 315:
-#line 821 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 315: /* sfstringValue: TOK_int32  */
+#line 821 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     { /* Not VRML conformant */
         SKEL->addBufferAsStringValue();
     }
-#line 3037 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3150 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 316:
-#line 827 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 316: /* sftimeValue: double  */
+#line 827 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->addTimeValue((yyvsp[0].doubleVal));
     }
-#line 3045 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3158 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 317:
-#line 832 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3051 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 317: /* $@95: %empty  */
+#line 832 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->beginValue(); }
+#line 3164 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 318:
-#line 834 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 318: /* sfvec2dValue: double $@95 double  */
+#line 834 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addVec2dValue(Vec2d((yyvsp[-2].doubleVal), (yyvsp[0].doubleVal)));
     }
-#line 3060 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3173 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 319:
-#line 840 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3066 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 319: /* $@96: %empty  */
+#line 840 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3179 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 320:
-#line 842 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 320: /* sfvec2fValue: float $@96 float  */
+#line 842 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addVec2fValue(Vec2f((yyvsp[-2].floatVal), (yyvsp[0].floatVal)));
     }
-#line 3075 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3188 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 321:
-#line 848 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3081 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 321: /* $@97: %empty  */
+#line 848 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->beginValue(); }
+#line 3194 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 322:
-#line 849 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3087 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 322: /* $@98: %empty  */
+#line 849 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 3200 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 323:
-#line 850 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3093 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 323: /* $@99: %empty  */
+#line 850 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 3206 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 324:
-#line 851 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 324: /* sfvec3dValue: double $@97 double $@98 double $@99  */
+#line 851 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addVec3dValue(Vec3d((yyvsp[-5].doubleVal), (yyvsp[-3].doubleVal), (yyvsp[-1].doubleVal)));
     }
-#line 3102 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3215 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 325:
-#line 857 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3108 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 325: /* $@100: %empty  */
+#line 857 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3221 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 326:
-#line 858 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3114 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 326: /* $@101: %empty  */
+#line 858 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3227 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 327:
-#line 859 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3120 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 327: /* $@102: %empty  */
+#line 859 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3233 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 328:
-#line 860 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 328: /* sfvec3fValue: float $@100 float $@101 float $@102  */
+#line 860 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addVec3fValue(Vec3f((yyvsp[-5].floatVal), (yyvsp[-3].floatVal), (yyvsp[-1].floatVal)));
     }
-#line 3129 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3242 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 329:
-#line 866 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3135 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 329: /* $@103: %empty  */
+#line 866 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->beginValue(); }
+#line 3248 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 330:
-#line 867 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3141 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 330: /* $@104: %empty  */
+#line 867 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 3254 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 331:
-#line 868 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3147 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 331: /* $@105: %empty  */
+#line 868 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 3260 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 332:
-#line 869 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3153 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 332: /* $@106: %empty  */
+#line 869 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+           { SKEL->appendValue(); }
+#line 3266 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 333:
-#line 870 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 333: /* sfvec4dValue: double $@103 double $@104 double $@105 double $@106  */
+#line 870 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addVec4dValue(Vec4d((yyvsp[-7].doubleVal), (yyvsp[-5].doubleVal), (yyvsp[-3].doubleVal), (yyvsp[-1].doubleVal)));
     }
-#line 3162 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3275 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 334:
-#line 876 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3168 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 334: /* $@107: %empty  */
+#line 876 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3281 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 335:
-#line 877 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3174 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 335: /* $@108: %empty  */
+#line 877 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3287 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 336:
-#line 878 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3180 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 336: /* $@109: %empty  */
+#line 878 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3293 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 337:
-#line 879 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3186 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 337: /* $@110: %empty  */
+#line 879 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3299 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 338:
-#line 880 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 338: /* sfvec4fValue: float $@107 float $@108 float $@109 float $@110  */
+#line 880 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addVec4fValue(Vec4f((yyvsp[-7].floatVal), (yyvsp[-5].floatVal), (yyvsp[-3].floatVal), (yyvsp[-1].floatVal)));
     }
-#line 3195 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3308 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 423:
-#line 1056 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3201 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 423: /* $@111: %empty  */
+#line 1056 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3314 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 424:
-#line 1057 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3207 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 424: /* $@112: %empty  */
+#line 1057 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3320 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 425:
-#line 1058 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3213 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 425: /* $@113: %empty  */
+#line 1058 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3326 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 426:
-#line 1060 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 426: /* sfcolor4iValue: int32 $@111 int32 $@112 int32 $@113 int32  */
+#line 1060 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addColor4iValue(Color4ub(static_cast<UInt8>((yyvsp[-6].intVal)), static_cast<UInt8>((yyvsp[-4].intVal)),
                                        static_cast<UInt8>((yyvsp[-2].intVal)), static_cast<UInt8>((yyvsp[0].intVal))));
     }
-#line 3223 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3336 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 427:
-#line 1067 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3229 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 427: /* $@114: %empty  */
+#line 1067 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3342 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 428:
-#line 1069 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 428: /* sfpnt2fValue: float $@114 float  */
+#line 1069 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addPnt2fValue(Pnt2f((yyvsp[-2].floatVal), (yyvsp[0].floatVal)));
     }
-#line 3238 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3351 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 429:
-#line 1075 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3244 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 429: /* $@115: %empty  */
+#line 1075 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3357 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 430:
-#line 1076 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3250 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 430: /* $@116: %empty  */
+#line 1076 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3363 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 431:
-#line 1078 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 431: /* sfpnt3fValue: float $@115 float $@116 float  */
+#line 1078 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addPnt3fValue(Pnt3f((yyvsp[-4].floatVal), (yyvsp[-2].floatVal), (yyvsp[0].floatVal)));
     }
-#line 3259 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3372 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 432:
-#line 1084 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3265 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 432: /* $@117: %empty  */
+#line 1084 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3378 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 433:
-#line 1085 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3271 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 433: /* $@118: %empty  */
+#line 1085 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3384 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 434:
-#line 1086 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3277 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 434: /* $@119: %empty  */
+#line 1086 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3390 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 435:
-#line 1088 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 435: /* sfpnt4fValue: float $@117 float $@118 float $@119 float  */
+#line 1088 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addPnt4fValue(Pnt4f((yyvsp[-6].floatVal), (yyvsp[-4].floatVal), (yyvsp[-2].floatVal), (yyvsp[0].floatVal)));
     }
-#line 3286 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3399 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 436:
-#line 1094 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3292 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 436: /* $@120: %empty  */
+#line 1094 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3405 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 437:
-#line 1095 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3298 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 437: /* $@121: %empty  */
+#line 1095 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3411 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 438:
-#line 1096 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3304 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 438: /* $@122: %empty  */
+#line 1096 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3417 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 439:
-#line 1098 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 439: /* sfplaneValue: float $@120 float $@121 float $@122 float  */
+#line 1098 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addPlaneValue(Plane(Vec3f((yyvsp[-6].floatVal), (yyvsp[-4].floatVal), (yyvsp[-2].floatVal)), (yyvsp[0].floatVal)));
     }
-#line 3313 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3426 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 440:
-#line 1104 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue();  }
-#line 3319 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 440: /* $@123: %empty  */
+#line 1104 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue();  }
+#line 3432 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 441:
-#line 1105 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3325 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 441: /* $@124: %empty  */
+#line 1105 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3438 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 442:
-#line 1106 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3331 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 442: /* $@125: %empty  */
+#line 1106 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3444 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 443:
-#line 1107 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3337 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 443: /* $@126: %empty  */
+#line 1107 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3450 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 444:
-#line 1108 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3343 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 444: /* $@127: %empty  */
+#line 1108 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3456 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 445:
-#line 1109 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->appendValue(); }
-#line 3349 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 445: /* $@128: %empty  */
+#line 1109 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->appendValue(); }
+#line 3462 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 446:
-#line 1111 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 446: /* sfVolumeValue: int32 $@123 float $@124 float $@125 float $@126 float $@127 float $@128 float  */
+#line 1111 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         BoxVolume bv((yyvsp[-10].floatVal), (yyvsp[-8].floatVal), (yyvsp[-6].floatVal), (yyvsp[-4].floatVal), (yyvsp[-2].floatVal), (yyvsp[0].floatVal));
@@ -3358,49 +3471,50 @@ yyreduce:
 
         SKEL->addVolumeValue(bv);
     }
-#line 3362 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3475 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 447:
-#line 1121 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3368 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 447: /* $@129: %empty  */
+#line 1121 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3481 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 448:
-#line 1123 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 448: /* sfvec2iValue: int32 $@129 int32  */
+#line 1123 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addVec2iValue(Vec2i((yyvsp[-2].intVal), (yyvsp[0].intVal)));
     }
-#line 3377 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3490 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 449:
-#line 1129 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
-    { SKEL->beginValue(); }
-#line 3383 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+  case 449: /* $@130: %empty  */
+#line 1129 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
+          { SKEL->beginValue(); }
+#line 3496 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 450:
-#line 1131 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 450: /* $@131: %empty  */
+#line 1131 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
     }
-#line 3391 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3504 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
-  case 451:
-#line 1135 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1646  */
+  case 451: /* sfvec3iValue: int32 $@130 int32 $@131 int32  */
+#line 1135 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
     {
         SKEL->appendValue();
         SKEL->addVec3iValue(Vec3i((yyvsp[-4].intVal), (yyvsp[-2].intVal), (yyvsp[0].intVal)));
     }
-#line 3400 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3513 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
     break;
 
 
-#line 3404 "/home/gerrit/Projects/OpenSG/svn/OpenSG.build/Build/OSGSystem/OSGScanParseSkelParser.cpp" /* yacc.c:1646  */
+#line 3517 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/SenLin.build/Build/OSGSystem/OSGScanParseSkelParser.cpp"
+
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -3414,25 +3528,23 @@ yyreduce:
      case of YYERROR or YYBACKUP, subsequent parser actions might lead
      to an incorrect destructor call or verbose syntax error message
      before the lookahead is translated.  */
-  YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
+  YY_SYMBOL_PRINT ("-> $$ =", YY_CAST (yysymbol_kind_t, yyr1[yyn]), &yyval, &yyloc);
 
   YYPOPSTACK (yylen);
   yylen = 0;
-  YY_STACK_PRINT (yyss, yyssp);
 
   *++yyvsp = yyval;
 
   /* Now 'shift' the result of the reduction.  Determine what state
      that goes to, based on the state we popped back to and the rule
      number reduced by.  */
-
-  yyn = yyr1[yyn];
-
-  yystate = yypgoto[yyn - YYNTOKENS] + *yyssp;
-  if (0 <= yystate && yystate <= YYLAST && yycheck[yystate] == *yyssp)
-    yystate = yytable[yystate];
-  else
-    yystate = yydefgoto[yyn - YYNTOKENS];
+  {
+    const int yylhs = yyr1[yyn] - YYNTOKENS;
+    const int yyi = yypgoto[yylhs] + *yyssp;
+    yystate = (0 <= yyi && yyi <= YYLAST && yycheck[yyi] == *yyssp
+               ? yytable[yyi]
+               : yydefgoto[yylhs]);
+  }
 
   goto yynewstate;
 
@@ -3443,49 +3555,13 @@ yyreduce:
 yyerrlab:
   /* Make sure we have latest lookahead translation.  See comments at
      user semantic actions for why this is necessary.  */
-  yytoken = yychar == YYEMPTY ? YYEMPTY : YYTRANSLATE (yychar);
-
+  yytoken = yychar == YYEMPTY ? YYSYMBOL_YYEMPTY : YYTRANSLATE (yychar);
   /* If not already recovering from an error, report this error.  */
   if (!yyerrstatus)
     {
       ++yynerrs;
-#if ! YYERROR_VERBOSE
       yyerror (pSkel, YY_("syntax error"));
-#else
-# define YYSYNTAX_ERROR yysyntax_error (&yymsg_alloc, &yymsg, \
-                                        yyssp, yytoken)
-      {
-        char const *yymsgp = YY_("syntax error");
-        int yysyntax_error_status;
-        yysyntax_error_status = YYSYNTAX_ERROR;
-        if (yysyntax_error_status == 0)
-          yymsgp = yymsg;
-        else if (yysyntax_error_status == 1)
-          {
-            if (yymsg != yymsgbuf)
-              YYSTACK_FREE (yymsg);
-            yymsg = (char *) YYSTACK_ALLOC (yymsg_alloc);
-            if (!yymsg)
-              {
-                yymsg = yymsgbuf;
-                yymsg_alloc = sizeof yymsgbuf;
-                yysyntax_error_status = 2;
-              }
-            else
-              {
-                yysyntax_error_status = YYSYNTAX_ERROR;
-                yymsgp = yymsg;
-              }
-          }
-        yyerror (pSkel, yymsgp);
-        if (yysyntax_error_status == 2)
-          goto yyexhaustedlab;
-      }
-# undef YYSYNTAX_ERROR
-#endif
     }
-
-
 
   if (yyerrstatus == 3)
     {
@@ -3515,12 +3591,11 @@ yyerrlab:
 | yyerrorlab -- error raised explicitly by YYERROR.  |
 `---------------------------------------------------*/
 yyerrorlab:
-
-  /* Pacify compilers like GCC when the user code never invokes
-     YYERROR and the label yyerrorlab therefore never appears in user
-     code.  */
-  if (/*CONSTCOND*/ 0)
-     goto yyerrorlab;
+  /* Pacify compilers when the user code never invokes YYERROR and the
+     label yyerrorlab therefore never appears in user code.  */
+  if (0)
+    YYERROR;
+  ++yynerrs;
 
   /* Do not reclaim the symbols of the rule whose action triggered
      this YYERROR.  */
@@ -3537,13 +3612,14 @@ yyerrorlab:
 yyerrlab1:
   yyerrstatus = 3;      /* Each real token shifted decrements this.  */
 
+  /* Pop stack until we find a state that shifts the error token.  */
   for (;;)
     {
       yyn = yypact[yystate];
       if (!yypact_value_is_default (yyn))
         {
-          yyn += YYTERROR;
-          if (0 <= yyn && yyn <= YYLAST && yycheck[yyn] == YYTERROR)
+          yyn += YYSYMBOL_YYerror;
+          if (0 <= yyn && yyn <= YYLAST && yycheck[yyn] == YYSYMBOL_YYerror)
             {
               yyn = yytable[yyn];
               if (0 < yyn)
@@ -3557,7 +3633,7 @@ yyerrlab1:
 
 
       yydestruct ("Error: popping",
-                  yystos[yystate], yyvsp, pSkel);
+                  YY_ACCESSING_SYMBOL (yystate), yyvsp, pSkel);
       YYPOPSTACK (1);
       yystate = *yyssp;
       YY_STACK_PRINT (yyss, yyssp);
@@ -3569,7 +3645,7 @@ yyerrlab1:
 
 
   /* Shift the error token.  */
-  YY_SYMBOL_PRINT ("Shifting", yystos[yyn], yyvsp, yylsp);
+  YY_SYMBOL_PRINT ("Shifting", YY_ACCESSING_SYMBOL (yyn), yyvsp, yylsp);
 
   yystate = yyn;
   goto yynewstate;
@@ -3580,26 +3656,30 @@ yyerrlab1:
 `-------------------------------------*/
 yyacceptlab:
   yyresult = 0;
-  goto yyreturn;
+  goto yyreturnlab;
+
 
 /*-----------------------------------.
 | yyabortlab -- YYABORT comes here.  |
 `-----------------------------------*/
 yyabortlab:
   yyresult = 1;
-  goto yyreturn;
+  goto yyreturnlab;
 
-#if !defined yyoverflow || YYERROR_VERBOSE
-/*-------------------------------------------------.
-| yyexhaustedlab -- memory exhaustion comes here.  |
-`-------------------------------------------------*/
+
+/*-----------------------------------------------------------.
+| yyexhaustedlab -- YYNOMEM (memory exhaustion) comes here.  |
+`-----------------------------------------------------------*/
 yyexhaustedlab:
   yyerror (pSkel, YY_("memory exhausted"));
   yyresult = 2;
-  /* Fall through.  */
-#endif
+  goto yyreturnlab;
 
-yyreturn:
+
+/*----------------------------------------------------------.
+| yyreturnlab -- parsing is finished, clean up and return.  |
+`----------------------------------------------------------*/
+yyreturnlab:
   if (yychar != YYEMPTY)
     {
       /* Make sure we have latest lookahead translation.  See comments at
@@ -3615,20 +3695,18 @@ yyreturn:
   while (yyssp != yyss)
     {
       yydestruct ("Cleanup: popping",
-                  yystos[*yyssp], yyvsp, pSkel);
+                  YY_ACCESSING_SYMBOL (+*yyssp), yyvsp, pSkel);
       YYPOPSTACK (1);
     }
 #ifndef yyoverflow
   if (yyss != yyssa)
     YYSTACK_FREE (yyss);
 #endif
-#if YYERROR_VERBOSE
-  if (yymsg != yymsgbuf)
-    YYSTACK_FREE (yymsg);
-#endif
+
   return yyresult;
 }
-#line 1188 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy" /* yacc.c:1906  */
+
+#line 1188 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelParser.yy"
 
 
 int OSGScanParseSkel_lex(YYSTYPE *lvalp, void *pSkel)

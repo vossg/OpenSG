@@ -1,5 +1,5 @@
 
-#line 3 "<stdout>"
+#line 2 "<stdout>"
 
 #define  YY_INT_ALIGNED short int
 
@@ -7,8 +7,8 @@
 
 #define FLEX_SCANNER
 #define YY_FLEX_MAJOR_VERSION 2
-#define YY_FLEX_MINOR_VERSION 5
-#define YY_FLEX_SUBMINOR_VERSION 37
+#define YY_FLEX_MINOR_VERSION 6
+#define YY_FLEX_SUBMINOR_VERSION 4
 #if YY_FLEX_SUBMINOR_VERSION > 0
 #define FLEX_BETA
 #endif
@@ -20,6 +20,24 @@
      * altogether.
      */
     #define yyFlexLexer OSG2ScanParseSkel_FlexLexer
+
+#ifdef yyalloc
+#define OSG2ScanParseSkel_alloc_ALREADY_DEFINED
+#else
+#define yyalloc OSG2ScanParseSkel_alloc
+#endif
+
+#ifdef yyrealloc
+#define OSG2ScanParseSkel_realloc_ALREADY_DEFINED
+#else
+#define yyrealloc OSG2ScanParseSkel_realloc
+#endif
+
+#ifdef yyfree
+#define OSG2ScanParseSkel_free_ALREADY_DEFINED
+#else
+#define yyfree OSG2ScanParseSkel_free
+#endif
 
 /* First, we deal with  platform-specific or compiler-specific issues. */
 
@@ -87,73 +105,67 @@ typedef unsigned int flex_uint32_t;
 #define UINT32_MAX             (4294967295U)
 #endif
 
+#ifndef SIZE_MAX
+#define SIZE_MAX               (~(size_t)0)
+#endif
+
 #endif /* ! C99 */
 
 #endif /* ! FLEXINT_H */
 
 /* begin standard C++ headers. */
-#include <iostream> 
+#include <iostream>
 #include <errno.h>
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
 /* end standard C++ headers. */
 
-#ifdef __cplusplus
-
-/* The "const" storage-class-modifier is valid. */
-#define YY_USE_CONST
-
-#else	/* ! __cplusplus */
-
-/* C99 requires __STDC__ to be defined as 1. */
-#if defined (__STDC__)
-
-#define YY_USE_CONST
-
-#endif	/* defined (__STDC__) */
-#endif	/* ! __cplusplus */
-
-#ifdef YY_USE_CONST
+/* TODO: this is always defined, so inline it */
 #define yyconst const
+
+#if defined(__GNUC__) && __GNUC__ >= 3
+#define yynoreturn __attribute__((__noreturn__))
 #else
-#define yyconst
+#define yynoreturn
 #endif
 
 /* Returned upon end-of-file. */
 #define YY_NULL 0
 
-/* Promotes a possibly negative, possibly signed char to an unsigned
- * integer for use as an array index.  If the signed char is negative,
- * we want to instead treat it as an 8-bit unsigned char, hence the
- * double cast.
+/* Promotes a possibly negative, possibly signed char to an
+ *   integer in range [0..255] for use as an array index.
  */
-#define YY_SC_TO_UI(c) ((unsigned int) (unsigned char) c)
+#define YY_SC_TO_UI(c) ((YY_CHAR) (c))
 
 /* Enter a start condition.  This macro really ought to take a parameter,
  * but we do it the disgusting crufty way forced on us by the ()-less
  * definition of BEGIN.
  */
 #define BEGIN (yy_start) = 1 + 2 *
-
 /* Translate the current start state into a value that can be later handed
  * to BEGIN to return to the state.  The YYSTATE alias is for lex
  * compatibility.
  */
 #define YY_START (((yy_start) - 1) / 2)
 #define YYSTATE YY_START
-
 /* Action number for EOF rule of a given start state. */
 #define YY_STATE_EOF(state) (YY_END_OF_BUFFER + state + 1)
-
 /* Special action meaning "start processing a new file". */
 #define YY_NEW_FILE yyrestart( yyin  )
-
 #define YY_END_OF_BUFFER_CHAR 0
 
 /* Size of default input buffer. */
 #ifndef YY_BUF_SIZE
+#ifdef __ia64__
+/* On IA-64, the buffer size is 16k, not 8k.
+ * Moreover, YY_BUF_SIZE is 2*YY_READ_BUF_SIZE in the general case.
+ * Ditto for the __ia64__ case accordingly.
+ */
+#define YY_BUF_SIZE 32768
+#else
 #define YY_BUF_SIZE 16384
+#endif /* __ia64__ */
 #endif
 
 /* The state buf must be large enough to hold one state per character in the main buffer.
@@ -170,15 +182,15 @@ typedef struct yy_buffer_state *YY_BUFFER_STATE;
 typedef size_t yy_size_t;
 #endif
 
-extern yy_size_t yyleng;
+extern int yyleng;
 
 #define EOB_ACT_CONTINUE_SCAN 0
 #define EOB_ACT_END_OF_FILE 1
 #define EOB_ACT_LAST_MATCH 2
-
+    
     /* Note: We specifically omit the test for yy_rule_can_match_eol because it requires
      *       access to the local variable yy_act. Since yyless() is a macro, it would break
-     *       existing scanners that call yyless() from OUTSIDE yylex. 
+     *       existing scanners that call yyless() from OUTSIDE yylex.
      *       One obvious solution it to make yy_act a global. I tried that, and saw
      *       a 5% performance hit in a non-yylineno scanner, because yy_act is
      *       normally declared as a register variable-- so it is not worth it.
@@ -188,6 +200,13 @@ extern yy_size_t yyleng;
                 int yyl;\
                 for ( yyl = n; yyl < yyleng; ++yyl )\
                     if ( yytext[yyl] == '\n' )\
+                        --yylineno;\
+            }while(0)
+    #define YY_LINENO_REWIND_TO(dst) \
+            do {\
+                const char *p;\
+                for ( p = yy_cp-1; p >= (dst); --p)\
+                    if ( *p == '\n' )\
                         --yylineno;\
             }while(0)
     
@@ -204,7 +223,6 @@ extern yy_size_t yyleng;
 		YY_DO_BEFORE_ACTION; /* set up yytext again */ \
 		} \
 	while ( 0 )
-
 #define unput(c) yyunput( c, (yytext_ptr)  )
 
 #ifndef YY_STRUCT_YY_BUFFER_STATE
@@ -212,7 +230,7 @@ extern yy_size_t yyleng;
 struct yy_buffer_state
 	{
 
-	std::istream* yy_input_file;
+	std::streambuf* yy_input_file;
 
 	char *yy_ch_buf;		/* input buffer */
 	char *yy_buf_pos;		/* current position in input buffer */
@@ -220,12 +238,12 @@ struct yy_buffer_state
 	/* Size of input buffer in bytes, not including room for EOB
 	 * characters.
 	 */
-	yy_size_t yy_buf_size;
+	int yy_buf_size;
 
 	/* Number of characters read into yy_ch_buf, not including EOB
 	 * characters.
 	 */
-	yy_size_t yy_n_chars;
+	int yy_n_chars;
 
 	/* Whether we "own" the buffer - i.e., we know we created it,
 	 * and can realloc() it to grow it, and should free() it to
@@ -248,7 +266,7 @@ struct yy_buffer_state
 
     int yy_bs_lineno; /**< The line count. */
     int yy_bs_column; /**< The column count. */
-    
+
 	/* Whether to try to fill the input buffer when we reach the
 	 * end of it.
 	 */
@@ -282,18 +300,16 @@ struct yy_buffer_state
 #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
                           : NULL)
-
 /* Same as previous macro, but useful when we know that the buffer stack is not
  * NULL or when we need an lvalue. For internal use only.
  */
 #define YY_CURRENT_BUFFER_LVALUE (yy_buffer_stack)[(yy_buffer_stack_top)]
 
-void *OSG2ScanParseSkel_alloc (yy_size_t  );
-void *OSG2ScanParseSkel_realloc (void *,yy_size_t  );
-void OSG2ScanParseSkel_free (void *  );
+void *yyalloc ( yy_size_t  );
+void *yyrealloc ( void *, yy_size_t  );
+void yyfree ( void *  );
 
 #define yy_new_buffer yy_create_buffer
-
 #define yy_set_interactive(is_interactive) \
 	{ \
 	if ( ! YY_CURRENT_BUFFER ){ \
@@ -303,7 +319,6 @@ void OSG2ScanParseSkel_free (void *  );
 	} \
 	YY_CURRENT_BUFFER_LVALUE->yy_is_interactive = is_interactive; \
 	}
-
 #define yy_set_bol(at_bol) \
 	{ \
 	if ( ! YY_CURRENT_BUFFER ){\
@@ -313,24 +328,16 @@ void OSG2ScanParseSkel_free (void *  );
 	} \
 	YY_CURRENT_BUFFER_LVALUE->yy_at_bol = at_bol; \
 	}
-
 #define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_at_bol)
 
 /* Begin user sect3 */
 #define YY_SKIP_YYWRAP
-
-typedef unsigned char YY_CHAR;
+typedef flex_uint8_t YY_CHAR;
 
 #define yytext_ptr yytext
 #define YY_INTERACTIVE
 
-#include "OSGConfig.h"
-
-#ifdef OSG_PREBUILD_SCANPARSE
-#  include "OSGScanParseSkelScanner_FlexLexer.h"
-#else
-#  include "FlexLexer.h"
-#endif
+#include <OSGScanParseSkelScanner_FlexLexer.h>
 
 int yyFlexLexer::yywrap() { return 1; }
 int yyFlexLexer::yylex()
@@ -346,11 +353,10 @@ int yyFlexLexer::yylex()
  */
 #define YY_DO_BEFORE_ACTION \
 	(yytext_ptr) = yy_bp; \
-	yyleng = (size_t) (yy_cp - yy_bp); \
+	yyleng = (int) (yy_cp - yy_bp); \
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-
 #define YY_NUM_RULES 108
 #define YY_END_OF_BUFFER 109
 /* This struct is not used in this scanner,
@@ -360,7 +366,7 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[410] =
+static const flex_int16_t yy_accept[410] =
     {   0,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
       109,  107,    2,    2,   92,   93,    3,  107,  102,   87,
@@ -409,7 +415,7 @@ static yyconst flex_int16_t yy_accept[410] =
        92,   92,   22,   25,   21,   92,   92,   24,    0
     } ;
 
-static yyconst flex_int32_t yy_ec[256] =
+static const YY_CHAR yy_ec[256] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    2,    1,    1,    1,    1,    1,    1,    1,
@@ -441,7 +447,7 @@ static yyconst flex_int32_t yy_ec[256] =
         4,    4,    4,    4,    4
     } ;
 
-static yyconst flex_int32_t yy_meta[64] =
+static const YY_CHAR yy_meta[64] =
     {   0,
         1,    1,    2,    3,    1,    1,    3,    1,    1,    4,
         4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
@@ -452,7 +458,7 @@ static yyconst flex_int32_t yy_meta[64] =
         3,    3,    3
     } ;
 
-static yyconst flex_int16_t yy_base[415] =
+static const flex_int16_t yy_base[415] =
     {   0,
         0,    0,   62,   69,  465,  464,   61,   62,  523,  522,
       524,  529,   71,   76,    0,  529,    0,   71,   76,  124,
@@ -502,7 +508,7 @@ static yyconst flex_int16_t yy_base[415] =
       295,  297,  301,   65
     } ;
 
-static yyconst flex_int16_t yy_def[415] =
+static const flex_int16_t yy_def[415] =
     {   0,
       409,    1,    1,    1,    1,    1,  410,  410,  411,  411,
       409,  409,  409,  409,  412,  409,  413,  409,  409,  409,
@@ -552,7 +558,7 @@ static yyconst flex_int16_t yy_def[415] =
       409,  409,  409,  409
     } ;
 
-static yyconst flex_int16_t yy_nxt[593] =
+static const flex_int16_t yy_nxt[593] =
     {   0,
        12,   13,   14,   15,   16,   17,   18,   12,   19,   20,
        21,   21,   21,   21,   22,   15,   23,   24,   25,   26,
@@ -622,7 +628,7 @@ static yyconst flex_int16_t yy_nxt[593] =
 
     } ;
 
-static yyconst flex_int16_t yy_chk[593] =
+static const flex_int16_t yy_chk[593] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -693,7 +699,7 @@ static yyconst flex_int16_t yy_chk[593] =
     } ;
 
 /* Table of booleans, true if rule could match eol. */
-static yyconst flex_int32_t yy_rule_can_match_eol[109] =
+static const flex_int32_t yy_rule_can_match_eol[109] =
     {   0,
 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
@@ -709,7 +715,7 @@ static yyconst flex_int32_t yy_rule_can_match_eol[109] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 1 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 /*---------------------------------------------------------------------------*\
  *                                OpenSG                                     *
  *                                                                           *
@@ -748,7 +754,7 @@ static yyconst flex_int32_t yy_rule_can_match_eol[109] =
  *                                                                           *
 \*---------------------------------------------------------------------------*/
 /* Author: Patrick Daehne */
-#line 42 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 42 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 #if __GNUC__ >= 4 || __GNUC_MINOR__ >=3
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #endif
@@ -778,13 +784,12 @@ static yyconst flex_int32_t yy_rule_can_match_eol[109] =
 #pragma warning( disable : 193 810 177 279 111 )
 #endif
 
+#line 787 "<stdout>"
 
-
-
-
-/* Not VRML conformant */
-/* Not VRML conformant */
-#line 782 "<stdout>"
+#line 86 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+    /* Not VRML conformant */
+    /* Not VRML conformant */
+#line 792 "<stdout>"
 
 #define INITIAL 0
 #define NODE 1
@@ -805,11 +810,11 @@ static yyconst flex_int32_t yy_rule_can_match_eol[109] =
 #endif
 
 #ifndef yytext_ptr
-static void yy_flex_strncpy (char *,yyconst char *,int );
+static void yy_flex_strncpy ( char *, const char *, int );
 #endif
 
 #ifdef YY_NEED_STRLEN
-static int yy_flex_strlen (yyconst char * );
+static int yy_flex_strlen ( const char * );
 #endif
 
 #ifndef YY_NO_INPUT
@@ -818,7 +823,12 @@ static int yy_flex_strlen (yyconst char * );
 
 /* Amount of stuff to slurp up with each read. */
 #ifndef YY_READ_BUF_SIZE
+#ifdef __ia64__
+/* On IA-64, the buffer size is 16k, not 8k */
+#define YY_READ_BUF_SIZE 16384
+#else
 #define YY_READ_BUF_SIZE 8192
+#endif /* __ia64__ */
 #endif
 
 /* Copy whatever the last rule matched to the standard output. */
@@ -832,7 +842,7 @@ static int yy_flex_strlen (yyconst char * );
 #ifndef YY_INPUT
 #define YY_INPUT(buf,result,max_size) \
 \
-	if ( (result = LexerInput( (char *) buf, max_size )) < 0 ) \
+	if ( (int)(result = LexerInput( (char *) buf, max_size )) < 0 ) \
 		YY_FATAL_ERROR( "input in flex scanner failed" );
 
 #endif
@@ -874,7 +884,7 @@ static int yy_flex_strlen (yyconst char * );
 
 /* Code executed at the end of each rule. */
 #ifndef YY_BREAK
-#define YY_BREAK break;
+#define YY_BREAK /*LINTED*/break;
 #endif
 
 #define YY_RULE_SETUP \
@@ -884,24 +894,10 @@ static int yy_flex_strlen (yyconst char * );
  */
 YY_DECL
 {
-	register yy_state_type yy_current_state;
-	register char *yy_cp, *yy_bp;
-	register int yy_act;
+	yy_state_type yy_current_state;
+	char *yy_cp, *yy_bp;
+	int yy_act;
     
-#line 93 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
-
-
-
-    if (expectToken != 0)
-    {
-        int tmp = expectToken;
-        expectToken = 0;
-        return tmp;
-    }
-
-
-#line 898 "<stdout>"
-
 	if ( !(yy_init) )
 		{
 		(yy_init) = 1;
@@ -914,10 +910,10 @@ YY_DECL
 			(yy_start) = 1;	/* first start state */
 
 		if ( ! yyin )
-			yyin = & std::cin;
+			yyin.rdbuf(std::cin.rdbuf());
 
 		if ( ! yyout )
-			yyout = & std::cout;
+			yyout.rdbuf(std::cout.rdbuf());
 
 		if ( ! YY_CURRENT_BUFFER ) {
 			yyensure_buffer_stack ();
@@ -928,7 +924,22 @@ YY_DECL
 		yy_load_buffer_state(  );
 		}
 
-	while ( 1 )		/* loops until end-of-file is reached */
+	{
+#line 94 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+
+
+
+    if (expectToken != 0)
+    {
+        int tmp = expectToken;
+        expectToken = 0;
+        return tmp;
+    }
+
+
+#line 940 "<stdout>"
+
+	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
 		yy_cp = (yy_c_buf_p);
 
@@ -944,7 +955,7 @@ YY_DECL
 yy_match:
 		do
 			{
-			register YY_CHAR yy_c = yy_ec[YY_SC_TO_UI(*yy_cp)];
+			YY_CHAR yy_c = yy_ec[YY_SC_TO_UI(*yy_cp)] ;
 			if ( yy_accept[yy_current_state] )
 				{
 				(yy_last_accepting_state) = yy_current_state;
@@ -954,9 +965,9 @@ yy_match:
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
 				if ( yy_current_state >= 410 )
-					yy_c = yy_meta[(unsigned int) yy_c];
+					yy_c = yy_meta[yy_c];
 				}
-			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
+			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
 		while ( yy_base[yy_current_state] != 529 );
@@ -974,10 +985,10 @@ yy_find_action:
 
 		if ( yy_act != YY_END_OF_BUFFER && yy_rule_can_match_eol[yy_act] )
 			{
-			yy_size_t yyl;
+			int yyl;
 			for ( yyl = 0; yyl < yyleng; ++yyl )
 				if ( yytext[yyl] == '\n' )
-					   
+					
     yylineno++;
 ;
 			}
@@ -995,434 +1006,434 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 104 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 105 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(HEADER);
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 105 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 106 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(HEADER);
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 106 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 107 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->stringVal = yytext; return TOK_HEADER;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 108 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 109 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_PROFILE;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 109 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 110 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_COMPONENT;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 110 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 111 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_META;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 112 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 113 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_PROTO;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 113 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 114 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_EXTERNPROTO;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 114 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 115 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_IS;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 116 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 117 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_DEF;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 117 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 118 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_USE;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 119 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 120 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_ROUTE;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 120 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 121 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_TO;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 122 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 123 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_IMPORT;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 123 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 124 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_EXPORT;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 124 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 125 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_AS;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 126 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 127 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_eventIn;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 127 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 128 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_eventIn;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 128 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 129 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_eventOut;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 129 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 130 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_eventOut;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 130 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 131 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_exposedField;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 131 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 132 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_exposedField;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 132 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 133 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_field;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 133 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 134 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_field;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 134 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 135 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_ClusterLocal;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 135 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 136 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_ThreadLocal;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 137 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 138 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFBool; return TOK_MFBool;
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 138 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 139 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFColor; return TOK_MFColor;
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 139 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 140 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFColorRGBA; return TOK_MFColorRGBA;
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 140 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 141 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFDouble; return TOK_MFDouble;
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 141 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 142 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFFloat; return TOK_MFFloat;
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 142 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 143 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFImage; return TOK_MFImage;
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 143 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 144 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFInt32; return TOK_MFInt32;
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 144 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 145 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFMatrix3d; return TOK_MFMatrix3d;
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 145 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 146 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFMatrix3f; return TOK_MFMatrix3f;
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 146 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 147 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFMatrix4d; return TOK_MFMatrix4d;
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 147 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 148 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFMatrix4f; return TOK_MFMatrix4f;
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 148 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 149 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFNode; return TOK_MFNode;
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 149 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 150 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFRotation; return TOK_MFRotation;
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 150 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 151 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFString; return TOK_MFString;
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 151 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 152 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFTime; return TOK_MFTime;
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 152 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 153 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFVec2d; return TOK_MFVec2d;
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 153 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 154 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFVec2f; return TOK_MFVec2f;
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 154 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 155 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFVec3d; return TOK_MFVec3d;
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 155 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 156 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFVec3f; return TOK_MFVec3f;
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 156 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 157 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFVec4d; return TOK_MFVec4d;
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 157 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 158 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFVec4f; return TOK_MFVec4f;
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 158 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 159 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFBool; return TOK_SFBool;
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 159 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 160 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFColor; return TOK_SFColor;
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 160 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 161 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFColorRGBA; return TOK_SFColorRGBA;
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 161 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 162 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFDouble; return TOK_SFDouble;
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 162 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 163 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFFloat; return TOK_SFFloat;
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 163 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 164 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFImage; return TOK_SFImage;
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 164 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 165 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFInt32; return TOK_SFInt32;
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 165 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 166 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFMatrix3d; return TOK_SFMatrix3d;
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 166 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 167 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFMatrix3f; return TOK_SFMatrix3f;
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 167 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 168 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFMatrix4d; return TOK_SFMatrix4d;
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 168 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 169 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFMatrix4f; return TOK_SFMatrix4f;
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 169 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 170 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFNode; return TOK_SFNode;
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 170 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 171 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFRotation; return TOK_SFRotation;
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 171 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 172 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFString; return TOK_SFString;
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 172 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 173 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFTime; return TOK_SFTime;
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 173 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 174 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFVec2d; return TOK_SFVec2d;
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 174 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 175 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFVec2f; return TOK_SFVec2f;
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 175 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 176 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFVec3d; return TOK_SFVec3d;
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 176 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 177 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFVec3f; return TOK_SFVec3f;
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 177 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 178 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFVec4d; return TOK_SFVec4d;
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 178 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 179 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFVec4f; return TOK_SFVec4f;
 	YY_BREAK
 /* The following types are not VRML conformant */
 case 69:
 YY_RULE_SETUP
-#line 180 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 181 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFColorRGBA; return TOK_MFColorRGBA;
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 181 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 182 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFColor4i; return TOK_MFColor4i;
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 182 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 183 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFColor; return TOK_MFColor;
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 183 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 184 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFMatrix4f; return TOK_MFMatrix4f;
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 184 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 185 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFPnt2f; return TOK_MFPnt2f;
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 185 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 186 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFPnt3f; return TOK_MFPnt3f;
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 186 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 187 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFPnt4f; return TOK_MFPnt4f;
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 187 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 188 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_MFPlane; return TOK_MFPlane;
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 188 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 189 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFColorRGBA; return TOK_SFColorRGBA;
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 189 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 190 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFColor4i; return TOK_SFColor4i;
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 190 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 191 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFColor; return TOK_SFColor;
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 191 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 192 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFMatrix4f; return TOK_SFMatrix4f;
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 192 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 193 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFPnt2f; return TOK_SFPnt2f;
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 193 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 194 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFPnt3f; return TOK_SFPnt3f;
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 194 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 195 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFPnt4f; return TOK_SFPnt4f;
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 195 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 196 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFPlane; return TOK_SFPlane;
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
-#line 196 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 197 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->intVal = TOK_SFVolume; return TOK_SFVolume;
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
-#line 198 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 199 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 {
                          BEGIN(NODE);
                          lvalp->intVal = strtoul(yytext, 0, 0);
@@ -1437,7 +1448,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
-#line 209 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 210 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 {
                          BEGIN(NODE);
                          lvalp->intVal = strtoul(yytext, 0, 0);
@@ -1452,120 +1463,120 @@ YY_RULE_SETUP
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
-#line 220 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 221 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->doubleVal = strtod(yytext, 0); return TOK_double;
 	YY_BREAK
 /* Not VRML conformant */
 case 89:
 YY_RULE_SETUP
-#line 222 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 223 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->boolVal = true; return TOK_bool;
 	YY_BREAK
 /* Not VRML conformant */
 case 90:
 YY_RULE_SETUP
-#line 224 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 225 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->boolVal = false; return TOK_bool;
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
-#line 225 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 226 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_NULL;
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
-#line 226 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 227 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->stringVal = yytext; return TOK_Id;
 	YY_BREAK
 case 93:
 YY_RULE_SETUP
-#line 228 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 229 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 tmpStr.erase(); BEGIN STRING;
 	YY_BREAK
 case 94:
 YY_RULE_SETUP
-#line 229 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 230 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 tmpStr.append(1, '\\');
 	YY_BREAK
 case 95:
 YY_RULE_SETUP
-#line 230 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 231 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 tmpStr.append(1, '"');
 	YY_BREAK
 case 96:
 /* rule 96 can match eol */
 YY_RULE_SETUP
-#line 231 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 232 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 tmpStr.append(1, yytext[0]);
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
-#line 232 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 233 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); lvalp->stringVal = tmpStr.c_str(); return TOK_string;
 	YY_BREAK
 case YY_STATE_EOF(STRING):
-#line 233 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 234 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return TOK_Error;
 	YY_BREAK
 case 98:
 YY_RULE_SETUP
-#line 235 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 236 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return '{';
 	YY_BREAK
 case 99:
 YY_RULE_SETUP
-#line 236 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 237 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return '}';
 	YY_BREAK
 case 100:
 YY_RULE_SETUP
-#line 237 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 238 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return '[';
 	YY_BREAK
 case 101:
 YY_RULE_SETUP
-#line 238 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 239 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return ']';
 	YY_BREAK
 case 102:
 YY_RULE_SETUP
-#line 239 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 240 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE); return '.';
 	YY_BREAK
 /*":" BEGIN(NODE); return ':';*/
 case 103:
 YY_RULE_SETUP
-#line 242 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 243 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(COMMENT);
 	YY_BREAK
 case 104:
 YY_RULE_SETUP
-#line 243 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 244 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 
 	YY_BREAK
 case 105:
 /* rule 105 can match eol */
 YY_RULE_SETUP
-#line 244 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 245 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 BEGIN(NODE);
 	YY_BREAK
 case 106:
 /* rule 106 can match eol */
 YY_RULE_SETUP
-#line 246 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 247 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 
 	YY_BREAK
 case 107:
 YY_RULE_SETUP
-#line 248 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 249 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 return TOK_Error;
 	YY_BREAK
 case 108:
 YY_RULE_SETUP
-#line 250 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
+#line 251 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 ECHO;
 	YY_BREAK
-#line 1563 "<stdout>"
+#line 1579 "<stdout>"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(NODE):
 case YY_STATE_EOF(HEADER):
@@ -1593,7 +1604,7 @@ case YY_STATE_EOF(COMMENT):
 			 * back-up) that will match for the new input source.
 			 */
 			(yy_n_chars) = YY_CURRENT_BUFFER_LVALUE->yy_n_chars;
-			YY_CURRENT_BUFFER_LVALUE->yy_input_file = yyin;
+			YY_CURRENT_BUFFER_LVALUE->yy_input_file = yyin.rdbuf();
 			YY_CURRENT_BUFFER_LVALUE->yy_buffer_status = YY_BUFFER_NORMAL;
 			}
 
@@ -1699,14 +1710,33 @@ case YY_STATE_EOF(COMMENT):
 			"fatal flex scanner internal error--no action found" );
 	} /* end of action switch */
 		} /* end of scanning one token */
+	} /* end of user's declarations */
 } /* end of yylex */
 
 /* The contents of this function are C++ specific, so the () macro is not used.
+ * This constructor simply maintains backward compatibility.
+ * DEPRECATED
  */
-yyFlexLexer::yyFlexLexer( std::istream* arg_yyin, std::ostream* arg_yyout )
+yyFlexLexer::yyFlexLexer( std::istream* arg_yyin, std::ostream* arg_yyout ):
+	yyin(arg_yyin ? arg_yyin->rdbuf() : std::cin.rdbuf()),
+	yyout(arg_yyout ? arg_yyout->rdbuf() : std::cout.rdbuf())
 {
-	yyin = arg_yyin;
-	yyout = arg_yyout;
+	ctor_common();
+}
+
+/* The contents of this function are C++ specific, so the () macro is not used.
+ */
+yyFlexLexer::yyFlexLexer( std::istream& arg_yyin, std::ostream& arg_yyout ):
+	yyin(arg_yyin.rdbuf()),
+	yyout(arg_yyout.rdbuf())
+{
+	ctor_common();
+}
+
+/* The contents of this function are C++ specific, so the () macro is not used.
+ */
+void yyFlexLexer::ctor_common()
+{
 	yy_c_buf_p = 0;
 	yy_init = 0;
 	yy_start = 0;
@@ -1723,7 +1753,7 @@ yyFlexLexer::yyFlexLexer( std::istream* arg_yyin, std::ostream* arg_yyout )
 	yy_start_stack_ptr = yy_start_stack_depth = 0;
 	yy_start_stack = NULL;
 
-	yy_buffer_stack = 0;
+	yy_buffer_stack = NULL;
 	yy_buffer_stack_top = 0;
 	yy_buffer_stack_max = 0;
 
@@ -1736,23 +1766,36 @@ yyFlexLexer::yyFlexLexer( std::istream* arg_yyin, std::ostream* arg_yyout )
 yyFlexLexer::~yyFlexLexer()
 {
 	delete [] yy_state_buf;
-	OSG2ScanParseSkel_free(yy_start_stack  );
+	yyfree( yy_start_stack  );
 	yy_delete_buffer( YY_CURRENT_BUFFER );
-	OSG2ScanParseSkel_free(yy_buffer_stack  );
+	yyfree( yy_buffer_stack  );
+}
+
+/* The contents of this function are C++ specific, so the () macro is not used.
+ */
+void yyFlexLexer::switch_streams( std::istream& new_in, std::ostream& new_out )
+{
+	// was if( new_in )
+	yy_delete_buffer( YY_CURRENT_BUFFER );
+	yy_switch_to_buffer( yy_create_buffer( new_in, YY_BUF_SIZE  ) );
+
+	// was if( new_out )
+	yyout.rdbuf(new_out.rdbuf());
 }
 
 /* The contents of this function are C++ specific, so the () macro is not used.
  */
 void yyFlexLexer::switch_streams( std::istream* new_in, std::ostream* new_out )
 {
-	if ( new_in )
-		{
-		yy_delete_buffer( YY_CURRENT_BUFFER );
-		yy_switch_to_buffer( yy_create_buffer( new_in, YY_BUF_SIZE  ) );
-		}
+	if( ! new_in ) {
+		new_in = &yyin;
+	}
 
-	if ( new_out )
-		yyout = new_out;
+	if ( ! new_out ) {
+		new_out = &yyout;
+	}
+
+	switch_streams(*new_in, *new_out);
 }
 
 #ifdef YY_INTERACTIVE
@@ -1761,33 +1804,33 @@ int yyFlexLexer::LexerInput( char* buf, int /* max_size */ )
 int yyFlexLexer::LexerInput( char* buf, int max_size )
 #endif
 {
-	if ( yyin->eof() || yyin->fail() )
+	if ( yyin.eof() || yyin.fail() )
 		return 0;
 
 #ifdef YY_INTERACTIVE
-	yyin->get( buf[0] );
+	yyin.get( buf[0] );
 
-	if ( yyin->eof() )
+	if ( yyin.eof() )
 		return 0;
 
-	if ( yyin->bad() )
+	if ( yyin.bad() )
 		return -1;
 
 	return 1;
 
 #else
-	(void) yyin->read( buf, max_size );
+	(void) yyin.read( buf, max_size );
 
-	if ( yyin->bad() )
+	if ( yyin.bad() )
 		return -1;
 	else
-		return yyin->gcount();
+		return yyin.gcount();
 #endif
 }
 
 void yyFlexLexer::LexerOutput( const char* buf, int size )
 {
-	(void) yyout->write( buf, size );
+	(void) yyout.write( buf, size );
 }
 
 /* yy_get_next_buffer - try to read in a new buffer
@@ -1799,9 +1842,9 @@ void yyFlexLexer::LexerOutput( const char* buf, int size )
  */
 int yyFlexLexer::yy_get_next_buffer()
 {
-    	register char *dest = YY_CURRENT_BUFFER_LVALUE->yy_ch_buf;
-	register char *source = (yytext_ptr);
-	register int number_to_move, i;
+    	char *dest = YY_CURRENT_BUFFER_LVALUE->yy_ch_buf;
+	char *source = (yytext_ptr);
+	int number_to_move, i;
 	int ret_val;
 
 	if ( (yy_c_buf_p) > &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars) + 1] )
@@ -1830,7 +1873,7 @@ int yyFlexLexer::yy_get_next_buffer()
 	/* Try to read more data. */
 
 	/* First move last chars to start of buffer. */
-	number_to_move = (int) ((yy_c_buf_p) - (yytext_ptr)) - 1;
+	number_to_move = (int) ((yy_c_buf_p) - (yytext_ptr) - 1);
 
 	for ( i = 0; i < number_to_move; ++i )
 		*(dest++) = *(source++);
@@ -1843,7 +1886,7 @@ int yyFlexLexer::yy_get_next_buffer()
 
 	else
 		{
-			yy_size_t num_to_read =
+			int num_to_read =
 			YY_CURRENT_BUFFER_LVALUE->yy_buf_size - number_to_move - 1;
 
 		while ( num_to_read <= 0 )
@@ -1857,7 +1900,7 @@ int yyFlexLexer::yy_get_next_buffer()
 
 			if ( b->yy_is_our_buffer )
 				{
-				yy_size_t new_size = b->yy_buf_size * 2;
+				int new_size = b->yy_buf_size * 2;
 
 				if ( new_size <= 0 )
 					b->yy_buf_size += b->yy_buf_size / 8;
@@ -1866,11 +1909,12 @@ int yyFlexLexer::yy_get_next_buffer()
 
 				b->yy_ch_buf = (char *)
 					/* Include room in for 2 EOB chars. */
-					OSG2ScanParseSkel_realloc((void *) b->yy_ch_buf,b->yy_buf_size + 2  );
+					yyrealloc( (void *) b->yy_ch_buf,
+							 (yy_size_t) (b->yy_buf_size + 2)  );
 				}
 			else
 				/* Can't grow it, we don't own it. */
-				b->yy_ch_buf = 0;
+				b->yy_ch_buf = NULL;
 
 			if ( ! b->yy_ch_buf )
 				YY_FATAL_ERROR(
@@ -1912,12 +1956,15 @@ int yyFlexLexer::yy_get_next_buffer()
 	else
 		ret_val = EOB_ACT_CONTINUE_SCAN;
 
-	if ((yy_size_t) ((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
+	if (((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
 		/* Extend the array by 50%, plus the number we really need. */
-		yy_size_t new_size = (yy_n_chars) + number_to_move + ((yy_n_chars) >> 1);
-		YY_CURRENT_BUFFER_LVALUE->yy_ch_buf = (char *) OSG2ScanParseSkel_realloc((void *) YY_CURRENT_BUFFER_LVALUE->yy_ch_buf,new_size  );
+		int new_size = (yy_n_chars) + number_to_move + ((yy_n_chars) >> 1);
+		YY_CURRENT_BUFFER_LVALUE->yy_ch_buf = (char *) yyrealloc(
+			(void *) YY_CURRENT_BUFFER_LVALUE->yy_ch_buf, (yy_size_t) new_size  );
 		if ( ! YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
 			YY_FATAL_ERROR( "out of dynamic memory in yy_get_next_buffer()" );
+		/* "- 2" to take care of EOB's */
+		YY_CURRENT_BUFFER_LVALUE->yy_buf_size = (int) (new_size - 2);
 	}
 
 	(yy_n_chars) += number_to_move;
@@ -1933,14 +1980,14 @@ int yyFlexLexer::yy_get_next_buffer()
 
     yy_state_type yyFlexLexer::yy_get_previous_state()
 {
-	register yy_state_type yy_current_state;
-	register char *yy_cp;
+	yy_state_type yy_current_state;
+	char *yy_cp;
     
 	yy_current_state = (yy_start);
 
 	for ( yy_cp = (yytext_ptr) + YY_MORE_ADJ; yy_cp < (yy_c_buf_p); ++yy_cp )
 		{
-		register YY_CHAR yy_c = (*yy_cp ? yy_ec[YY_SC_TO_UI(*yy_cp)] : 1);
+		YY_CHAR yy_c = (*yy_cp ? yy_ec[YY_SC_TO_UI(*yy_cp)] : 1);
 		if ( yy_accept[yy_current_state] )
 			{
 			(yy_last_accepting_state) = yy_current_state;
@@ -1950,9 +1997,9 @@ int yyFlexLexer::yy_get_next_buffer()
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
 			if ( yy_current_state >= 410 )
-				yy_c = yy_meta[(unsigned int) yy_c];
+				yy_c = yy_meta[yy_c];
 			}
-		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
+		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 		}
 
 	return yy_current_state;
@@ -1965,10 +2012,10 @@ int yyFlexLexer::yy_get_next_buffer()
  */
     yy_state_type yyFlexLexer::yy_try_NUL_trans( yy_state_type yy_current_state )
 {
-	register int yy_is_jam;
-    	register char *yy_cp = (yy_c_buf_p);
+	int yy_is_jam;
+    	char *yy_cp = (yy_c_buf_p);
 
-	register YY_CHAR yy_c = 1;
+	YY_CHAR yy_c = 1;
 	if ( yy_accept[yy_current_state] )
 		{
 		(yy_last_accepting_state) = yy_current_state;
@@ -1978,17 +2025,18 @@ int yyFlexLexer::yy_get_next_buffer()
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
 		if ( yy_current_state >= 410 )
-			yy_c = yy_meta[(unsigned int) yy_c];
+			yy_c = yy_meta[yy_c];
 		}
-	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
+	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 	yy_is_jam = (yy_current_state == 409);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
 
-    void yyFlexLexer::yyunput( int c, register char* yy_bp)
+#ifndef YY_NO_UNPUT
+    void yyFlexLexer::yyunput( int c, char* yy_bp)
 {
-	register char *yy_cp;
+	char *yy_cp;
     
     yy_cp = (yy_c_buf_p);
 
@@ -1998,10 +2046,10 @@ int yyFlexLexer::yy_get_next_buffer()
 	if ( yy_cp < YY_CURRENT_BUFFER_LVALUE->yy_ch_buf + 2 )
 		{ /* need to shift things up to make room */
 		/* +2 for EOB chars. */
-		register yy_size_t number_to_move = (yy_n_chars) + 2;
-		register char *dest = &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[
+		int number_to_move = (yy_n_chars) + 2;
+		char *dest = &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[
 					YY_CURRENT_BUFFER_LVALUE->yy_buf_size + 2];
-		register char *source =
+		char *source =
 				&YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[number_to_move];
 
 		while ( source > YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
@@ -2010,7 +2058,7 @@ int yyFlexLexer::yy_get_next_buffer()
 		yy_cp += (int) (dest - source);
 		yy_bp += (int) (dest - source);
 		YY_CURRENT_BUFFER_LVALUE->yy_n_chars =
-			(yy_n_chars) = YY_CURRENT_BUFFER_LVALUE->yy_buf_size;
+			(yy_n_chars) = (int) YY_CURRENT_BUFFER_LVALUE->yy_buf_size;
 
 		if ( yy_cp < YY_CURRENT_BUFFER_LVALUE->yy_ch_buf + 2 )
 			YY_FATAL_ERROR( "flex scanner push-back overflow" );
@@ -2026,6 +2074,7 @@ int yyFlexLexer::yy_get_next_buffer()
 	(yy_hold_char) = *yy_cp;
 	(yy_c_buf_p) = yy_cp;
 }
+#endif
 
     int yyFlexLexer::yyinput()
 {
@@ -2045,7 +2094,7 @@ int yyFlexLexer::yy_get_next_buffer()
 
 		else
 			{ /* need more input */
-			yy_size_t offset = (yy_c_buf_p) - (yytext_ptr);
+			int offset = (int) ((yy_c_buf_p) - (yytext_ptr));
 			++(yy_c_buf_p);
 
 			switch ( yy_get_next_buffer(  ) )
@@ -2069,7 +2118,7 @@ int yyFlexLexer::yy_get_next_buffer()
 				case EOB_ACT_END_OF_FILE:
 					{
 					if ( yywrap(  ) )
-						return EOF;
+						return 0;
 
 					if ( ! (yy_did_buffer_switch_on_eof) )
 						YY_NEW_FILE;
@@ -2092,7 +2141,7 @@ int yyFlexLexer::yy_get_next_buffer()
 	(yy_hold_char) = *++(yy_c_buf_p);
 
 	if ( c == '\n' )
-		   
+		
     yylineno++;
 ;
 
@@ -2104,7 +2153,7 @@ int yyFlexLexer::yy_get_next_buffer()
  * 
  * @note This function does not reset the start condition to @c INITIAL .
  */
-    void yyFlexLexer::yyrestart( std::istream* input_file )
+    void yyFlexLexer::yyrestart( std::istream& input_file )
 {
     
 	if ( ! YY_CURRENT_BUFFER ){
@@ -2115,6 +2164,19 @@ int yyFlexLexer::yy_get_next_buffer()
 
 	yy_init_buffer( YY_CURRENT_BUFFER, input_file );
 	yy_load_buffer_state(  );
+}
+
+/** Delegate to the new version that takes an istream reference.
+ * @param input_file A readable stream.
+ * 
+ * @note This function does not reset the start condition to @c INITIAL .
+ */
+void yyFlexLexer::yyrestart( std::istream* input_file )
+{
+	if( ! input_file ) {
+		input_file = &yyin;
+	}
+	yyrestart( *input_file );
 }
 
 /** Switch to a different input buffer.
@@ -2156,7 +2218,7 @@ int yyFlexLexer::yy_get_next_buffer()
 {
     	(yy_n_chars) = YY_CURRENT_BUFFER_LVALUE->yy_n_chars;
 	(yytext_ptr) = (yy_c_buf_p) = YY_CURRENT_BUFFER_LVALUE->yy_buf_pos;
-	yyin = YY_CURRENT_BUFFER_LVALUE->yy_input_file;
+	yyin.rdbuf(YY_CURRENT_BUFFER_LVALUE->yy_input_file);
 	(yy_hold_char) = *(yy_c_buf_p);
 }
 
@@ -2166,11 +2228,11 @@ int yyFlexLexer::yy_get_next_buffer()
  * 
  * @return the allocated buffer state.
  */
-    YY_BUFFER_STATE yyFlexLexer::yy_create_buffer( std::istream* file, int size )
+    YY_BUFFER_STATE yyFlexLexer::yy_create_buffer( std::istream& file, int size )
 {
 	YY_BUFFER_STATE b;
     
-	b = (YY_BUFFER_STATE) OSG2ScanParseSkel_alloc(sizeof( struct yy_buffer_state )  );
+	b = (YY_BUFFER_STATE) yyalloc( sizeof( struct yy_buffer_state )  );
 	if ( ! b )
 		YY_FATAL_ERROR( "out of dynamic memory in yy_create_buffer()" );
 
@@ -2179,7 +2241,7 @@ int yyFlexLexer::yy_get_next_buffer()
 	/* yy_ch_buf has to be 2 characters longer than the size given because
 	 * we need to put in 2 end-of-buffer characters.
 	 */
-	b->yy_ch_buf = (char *) OSG2ScanParseSkel_alloc(b->yy_buf_size + 2  );
+	b->yy_ch_buf = (char *) yyalloc( (yy_size_t) (b->yy_buf_size + 2)  );
 	if ( ! b->yy_ch_buf )
 		YY_FATAL_ERROR( "out of dynamic memory in yy_create_buffer()" );
 
@@ -2188,6 +2250,17 @@ int yyFlexLexer::yy_get_next_buffer()
 	yy_init_buffer( b, file );
 
 	return b;
+}
+
+/** Delegate creation of buffers to the new version that takes an istream reference.
+ * @param file A readable stream.
+ * @param size The character buffer size in bytes. When in doubt, use @c YY_BUF_SIZE.
+ * 
+ * @return the allocated buffer state.
+ */
+	YY_BUFFER_STATE yyFlexLexer::yy_create_buffer( std::istream* file, int size )
+{
+	return yy_create_buffer( *file, size );
 }
 
 /** Destroy the buffer.
@@ -2204,23 +2277,23 @@ int yyFlexLexer::yy_get_next_buffer()
 		YY_CURRENT_BUFFER_LVALUE = (YY_BUFFER_STATE) 0;
 
 	if ( b->yy_is_our_buffer )
-		OSG2ScanParseSkel_free((void *) b->yy_ch_buf  );
+		yyfree( (void *) b->yy_ch_buf  );
 
-	OSG2ScanParseSkel_free((void *) b  );
+	yyfree( (void *) b  );
 }
 
 /* Initializes or reinitializes a buffer.
  * This function is sometimes called more than once on the same buffer,
  * such as during a yyrestart() or at EOF.
  */
-    void yyFlexLexer::yy_init_buffer( YY_BUFFER_STATE b, std::istream* file )
+    void yyFlexLexer::yy_init_buffer( YY_BUFFER_STATE b, std::istream& file )
 
 {
 	int oerrno = errno;
     
 	yy_flush_buffer( b );
 
-	b->yy_input_file = file;
+	b->yy_input_file = file.rdbuf();
 	b->yy_fill_buffer = 1;
 
     /* If b is the current buffer, then yy_init_buffer was _probably_
@@ -2328,15 +2401,15 @@ void yyFlexLexer::yyensure_buffer_stack(void)
 		 * scanner will even need a stack. We use 2 instead of 1 to avoid an
 		 * immediate realloc on the next call.
          */
-		num_to_alloc = 1;
-		(yy_buffer_stack) = (struct yy_buffer_state**)OSG2ScanParseSkel_alloc
+      num_to_alloc = 1; /* After all that talk, this was set to 1 anyways... */
+		(yy_buffer_stack) = (struct yy_buffer_state**)yyalloc
 								(num_to_alloc * sizeof(struct yy_buffer_state*)
 								);
 		if ( ! (yy_buffer_stack) )
 			YY_FATAL_ERROR( "out of dynamic memory in yyensure_buffer_stack()" );
-								  
+
 		memset((yy_buffer_stack), 0, num_to_alloc * sizeof(struct yy_buffer_state*));
-				
+
 		(yy_buffer_stack_max) = num_to_alloc;
 		(yy_buffer_stack_top) = 0;
 		return;
@@ -2345,10 +2418,10 @@ void yyFlexLexer::yyensure_buffer_stack(void)
 	if ((yy_buffer_stack_top) >= ((yy_buffer_stack_max)) - 1){
 
 		/* Increase the buffer to prepare for a possible push. */
-		int grow_size = 8 /* arbitrary grow size */;
+		yy_size_t grow_size = 8 /* arbitrary grow size */;
 
 		num_to_alloc = (yy_buffer_stack_max) + grow_size;
-		(yy_buffer_stack) = (struct yy_buffer_state**)OSG2ScanParseSkel_realloc
+		(yy_buffer_stack) = (struct yy_buffer_state**)yyrealloc
 								((yy_buffer_stack),
 								num_to_alloc * sizeof(struct yy_buffer_state*)
 								);
@@ -2361,20 +2434,21 @@ void yyFlexLexer::yyensure_buffer_stack(void)
 	}
 }
 
-    void yyFlexLexer::yy_push_state( int new_state )
+    void yyFlexLexer::yy_push_state( int _new_state )
 {
     	if ( (yy_start_stack_ptr) >= (yy_start_stack_depth) )
 		{
 		yy_size_t new_size;
 
 		(yy_start_stack_depth) += YY_START_STACK_INCR;
-		new_size = (yy_start_stack_depth) * sizeof( int );
+		new_size = (yy_size_t) (yy_start_stack_depth) * sizeof( int );
 
 		if ( ! (yy_start_stack) )
-			(yy_start_stack) = (int *) OSG2ScanParseSkel_alloc(new_size  );
+			(yy_start_stack) = (int *) yyalloc( new_size  );
 
 		else
-			(yy_start_stack) = (int *) OSG2ScanParseSkel_realloc((void *) (yy_start_stack),new_size  );
+			(yy_start_stack) = (int *) yyrealloc(
+					(void *) (yy_start_stack), new_size  );
 
 		if ( ! (yy_start_stack) )
 			YY_FATAL_ERROR( "out of memory expanding start-condition stack" );
@@ -2382,7 +2456,7 @@ void yyFlexLexer::yyensure_buffer_stack(void)
 
 	(yy_start_stack)[(yy_start_stack_ptr)++] = YY_START;
 
-	BEGIN(new_state);
+	BEGIN(_new_state);
 }
 
     void yyFlexLexer::yy_pop_state()
@@ -2402,7 +2476,7 @@ void yyFlexLexer::yyensure_buffer_stack(void)
 #define YY_EXIT_FAILURE 2
 #endif
 
-void yyFlexLexer::LexerError( yyconst char msg[] )
+void yyFlexLexer::LexerError( const char* msg )
 {
     	std::cerr << msg << std::endl;
 	exit( YY_EXIT_FAILURE );
@@ -2432,18 +2506,19 @@ void yyFlexLexer::LexerError( yyconst char msg[] )
  */
 
 #ifndef yytext_ptr
-static void yy_flex_strncpy (char* s1, yyconst char * s2, int n )
+static void yy_flex_strncpy (char* s1, const char * s2, int n )
 {
-	register int i;
+		
+	int i;
 	for ( i = 0; i < n; ++i )
 		s1[i] = s2[i];
 }
 #endif
 
 #ifdef YY_NEED_STRLEN
-static int yy_flex_strlen (yyconst char * s )
+static int yy_flex_strlen (const char * s )
 {
-	register int n;
+	int n;
 	for ( n = 0; s[n]; ++n )
 		;
 
@@ -2451,13 +2526,14 @@ static int yy_flex_strlen (yyconst char * s )
 }
 #endif
 
-void *OSG2ScanParseSkel_alloc (yy_size_t  size )
+void *yyalloc (yy_size_t  size )
 {
-	return (void *) malloc( size );
+			return malloc(size);
 }
 
-void *OSG2ScanParseSkel_realloc  (void * ptr, yy_size_t  size )
+void *yyrealloc  (void * ptr, yy_size_t  size )
 {
+		
 	/* The cast to (char *) in the following accommodates both
 	 * implementations that use char* generic pointers, and those
 	 * that use void* generic pointers.  It works with the latter
@@ -2465,18 +2541,17 @@ void *OSG2ScanParseSkel_realloc  (void * ptr, yy_size_t  size )
 	 * any pointer type to void*, and deal with argument conversions
 	 * as though doing an assignment.
 	 */
-	return (void *) realloc( (char *) ptr, size );
+	return realloc(ptr, size);
 }
 
-void OSG2ScanParseSkel_free (void * ptr )
+void yyfree (void * ptr )
 {
-	free( (char *) ptr );	/* see OSG2ScanParseSkel_realloc() for (char *) cast */
+			free( (char *) ptr );	/* see yyrealloc() for (char *) cast */
 }
 
 #define YYTABLES_NAME "yytables"
 
-#line 250 "/home/gerrit/Projects/OpenSG/svn/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
-
+#line 251 "/home/gerrit/Projects/OpenSG/SenLin.OpenSG/OpenSG/Source/System/FileIO/ScanParseSkel/OSGScanParseSkelScanner.ll"
 
 
 //OSG_END_NAMESPACE
