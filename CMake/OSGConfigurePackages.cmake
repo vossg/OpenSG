@@ -647,6 +647,12 @@ MACRO(OSG_CONFIGURE_BOOST)
 
     LIST(APPEND OSG_GLOBAL_DEP_DEFS "BOOST_ALL_NO_LIB")
 
+    IF(Boost_DIR AND NOT BOOST_ROOT)
+      CMAKE_PATH(SET BOOST_ROOT NORMALIZE ${Boost_DIR}/../../..)
+    ENDIF()
+
+    MESSAGE(STATUS "opensg using boost root : ${BOOST_ROOT} from ${Boost_DIR}")
+
 #    IF(APPLE AND IOS)
 #      FIND_PACKAGE(BoostIOS COMPONENTS filesystem system)
 #    ELSE()
@@ -684,11 +690,13 @@ MACRO(OSG_CONFIGURE_BOOST)
            CMAKE_BUILD_TYPE STREQUAL "DebugOpt")
 
           SET(OSG_BOOST_LIBS ${Boost_FILESYSTEM_LIBRARY_DEBUG} 
-                             ${Boost_SYSTEM_LIBRARY_DEBUG})
+                             ${Boost_SYSTEM_LIBRARY_DEBUG}
+                             ${Boost_ATOMIC_LIBRARY_DEBUG})
         ELSE()
 
           SET(OSG_BOOST_LIBS ${Boost_FILESYSTEM_LIBRARY_RELEASE} 
-                             ${Boost_SYSTEM_LIBRARY_RELEASE})
+                             ${Boost_SYSTEM_LIBRARY_RELEASE}
+                             ${Boost_ATOMIC_LIBRARY_RELEASE})
 
         ENDIF()
 

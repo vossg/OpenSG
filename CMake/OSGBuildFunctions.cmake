@@ -984,15 +984,14 @@ FUNCTION(OSG_SETUP_LIBRARY_BUILD PROJ_DEFINE)
 
             SET(FCDPath ${CMAKE_SOURCE_DIR}/Tools/fcd2code)
 
-            IF(NOT EXISTS ${FCDPath} AND OpenSG_DIR) #external setup
-
+            IF(NOT EXISTS FCDPath AND OpenSG_DIR) #external setup
               SET(FCDBaseDir ${OpenSG_DIR}/bin/fcd2code)
 
               SET(FCDCommand ${OpenSG_DIR}/bin/fcd2code/fcd2code)
 
               SET(FCDRoot "")
               SET(FCDTemp -t ${FCDBaseDir})
-            ENDIF(NOT EXISTS ${FCDPath} AND OpenSG_DIR)
+            ENDIF(NOT EXISTS FCDPath AND OpenSG_DIR)
 
             IF(NOT EXISTS ${FCDDir}/${FCDClassHdr} AND
                NOT EXISTS ${FCDDir}/${FCDClassCpp} AND
@@ -2760,7 +2759,7 @@ MACRO(OSG_BOOST_DEP_SETUP)
                                   "1.47.0"
                                   "1.47.0")
 
-    FIND_PACKAGE(Boost COMPONENTS filesystem system)
+    FIND_PACKAGE(Boost COMPONENTS filesystem system atomic)
 
     IF(Boost_FOUND)
 
@@ -2787,6 +2786,14 @@ MACRO(OSG_BOOST_DEP_SETUP)
                                        CACHE INTERNAL "")
         SET(Boost_SYSTEM_LIBRARY_RELEASE
            ${Boost_SYSTEM_LIBRARY_RELEASE}
+           CACHE INTERNAL "")
+
+        SET(Boost_ATOMIC_LIBRARY ${Boost_ATOMIC_LIBRARY}
+                                 CACHE INTERNAL "")
+        SET(Boost_ATOMIC_LIBRARY_DEBUG ${Boost_ATOMIC_LIBRARY_DEBUG}
+                                       CACHE INTERNAL "")
+        SET(Boost_ATOMIC_LIBRARY_RELEASE
+           ${Boost_ATOMIC_LIBRARY_RELEASE}
            CACHE INTERNAL "")
 
         SET(Boost_PYTHON_LIBRARY ${Boost_PYTHON_LIBRARY}
@@ -2822,6 +2829,7 @@ MACRO(OSG_BOOST_DEP_SETUP)
            CMAKE_BUILD_TYPE STREQUAL "DebugOpt")
 
           SET(OSG_BOOST_LIBS ${Boost_FILESYSTEM_LIBRARY_DEBUG} 
+                             ${Boost_ATOMIC_LIBRARY_DEBUG}
                              ${Boost_SYSTEM_LIBRARY_DEBUG})
 
           SET(OSG_BOOST_PYTHON_LIBS ${Boost_PYTHON_LIBRARY_DEBUG})
@@ -2829,6 +2837,7 @@ MACRO(OSG_BOOST_DEP_SETUP)
         ELSE()
 
           SET(OSG_BOOST_LIBS ${Boost_FILESYSTEM_LIBRARY_RELEASE} 
+                             ${Boost_ATOMIC_LIBRARY_RELEASE}
                              ${Boost_SYSTEM_LIBRARY_RELEASE})
 
           SET(OSG_BOOST_PYTHON_LIBS ${Boost_PYTHON_LIBRARY_RELEASE})
