@@ -552,9 +552,10 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
     SET(_OSG_ADD_HDR_LOOKUP)
     SET(_OSG_ADD_INL_LOOKUP)
     SET(_OSG_ADD_INS_LOOKUP)
-    SET(_OSG_ADD_LL_LOOKUP)
-    SET(_OSG_ADD_YY_LOOKUP)
+    SET(_OSG_ADD_LL_LOOKUP )
+    SET(_OSG_ADD_YY_LOOKUP )
     SET(_OSG_ADD_QTH_LOOKUP)
+    SET(_OSG_ADD_FCD_LOOKUP)
 
     IF(EXISTS "${CMAKE_SOURCE_DIR}/${DIRNAME}")
         SET(_OSG_CURR_DIRNAME "${CMAKE_SOURCE_DIR}/${DIRNAME}")
@@ -589,6 +590,10 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
           LIST(APPEND _OSG_ADD_QTH_LOOKUP "${CMAKE_SOURCE_DIR}/${DIRNAME}/${_OSG_FILE_PREFIX}*_qt.h")
         ENDFOREACH()
 
+        FOREACH(_OSG_FILE_PREFIX ${OSGPREFIX})
+          LIST(APPEND _OSG_ADD_FCD_LOOKUP "${CMAKE_SOURCE_DIR}/${DIRNAME}/${_OSG_FILE_PREFIX}*.fcd")
+        ENDFOREACH()
+
 
         FOREACH(_OSG_FILE_PATTERN ${${PROJECT_NAME}_SRC_PATTERNS})
           LIST(APPEND _OSG_ADD_SRC_LOOKUP "${CMAKE_SOURCE_DIR}/${DIRNAME}/${_OSG_FILE_PATTERN}")
@@ -617,8 +622,9 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
                                       ${_OSG_ADD_YY_LOOKUP}                   )
         FILE(GLOB LOCAL_MOC          #"${CMAKE_SOURCE_DIR}/${DIRNAME}/OSG*_qt.h"
                                       ${_OSG_ADD_QTH_LOOKUP}                  )
+        FILE(GLOB LOCAL_FCD          #"${CMAKE_SOURCE_DIR}/${DIRNAME}/OSG*.fcd"
+                                      ${_OSG_ADD_FCD_LOOKUP}                  )
 
-        FILE(GLOB LOCAL_FCD          "${CMAKE_SOURCE_DIR}/${DIRNAME}/OSG*.fcd")
         FILE(GLOB LOCAL_UNITTEST_SRC "${CMAKE_SOURCE_DIR}/${DIRNAME}/OSG*Test.cpp")
         FILE(GLOB LOCAL_TEST_SRC     "${CMAKE_SOURCE_DIR}/${DIRNAME}/test*.cpp"
                                      "${CMAKE_SOURCE_DIR}/${DIRNAME}/test*.mm")
@@ -656,6 +662,9 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
           LIST(APPEND _OSG_ADD_QTH_LOOKUP "${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/${_OSG_FILE_PREFIX}*_qt.h")
         ENDFOREACH()
 
+        FOREACH(_OSG_FILE_PREFIX ${OSGPREFIX})
+          LIST(APPEND _OSG_ADD_FCD_LOOKUP "${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/${_OSG_FILE_PREFIX}*.fcd")
+        ENDFOREACH()
 
         FOREACH(_OSG_FILE_PATTERN ${${PROJECT_NAME}_SRC_PATTERNS})
           LIST(APPEND _OSG_ADD_SRC_LOOKUP "${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/${_OSG_FILE_PATTERN}")
@@ -685,7 +694,8 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
         FILE(GLOB LOCAL_MOC          #"${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/OSG*_qt.h"
                                       ${_OSG_ADD_QTH_LOOKUP}                          )
 
-        FILE(GLOB LOCAL_FCD          "${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/OSG*.fcd")
+        FILE(GLOB LOCAL_FCD          #"${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/OSG*.fcd"
+                                      ${_OSG_ADD_FCD_LOOKUP}                           )
         FILE(GLOB LOCAL_UNITTEST_SRC "${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/OSG*Test.cpp")
         FILE(GLOB LOCAL_TEST_SRC     "${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/test*.cpp"
                                      "${CMAKE_CURRENT_SOURCE_DIR}/${DIRNAME}/test*.mm")
@@ -704,6 +714,8 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
             LIST(APPEND _OSG_ADD_INS_LOOKUP "${DIRNAME}/${_OSG_FILE_PREFIX}*.ins")
             LIST(APPEND _OSG_ADD_LL_LOOKUP  "${DIRNAME}/${_OSG_FILE_PREFIX}*.ll")
             LIST(APPEND _OSG_ADD_YY_LOOKUP  "${DIRNAME}/${_OSG_FILE_PREFIX}*.yy")
+            LIST(APPEND _OSG_ADD_FCD_LOOKUP "${DIRNAME}/${_OSG_FILE_PREFIX}*.fcd")
+
             LIST(APPEND _OSG_ADD_LPP_LOOKUP "${DIRNAME}/${_OSG_FILE_PREFIX}*.lpp")
             LIST(APPEND _OSG_ADD_Y_LOOKUP   "${DIRNAME}/${_OSG_FILE_PREFIX}*.y")
             LIST(APPEND _OSG_ADD_QTH_LOOKUP "${DIRNAME}/${_OSG_FILE_PREFIX}*_qt.h")
@@ -715,14 +727,15 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
         ELSE()
           LIST(APPEND _OSG_ADD_SRC_LOOKUP "${DIRNAME}/*.cpp"
                                           "${DIRNAME}/*.mm")
-          LIST(APPEND _OSG_ADD_HDR_LOOKUP "${DIRNAME}/*.h")
+          LIST(APPEND _OSG_ADD_HDR_LOOKUP "${DIRNAME}/*.h" )
  
-          LIST(APPEND _OSG_ADD_INL_LOOKUP "${DIRNAME}/*.inl")
-          LIST(APPEND _OSG_ADD_INS_LOOKUP "${DIRNAME}/*.ins")
-          LIST(APPEND _OSG_ADD_LL_LOOKUP  "${DIRNAME}/*.ll")
-          LIST(APPEND _OSG_ADD_YY_LOOKUP  "${DIRNAME}/*.yy")
-          LIST(APPEND _OSG_ADD_LPP_LOOKUP "${DIRNAME}/*.lpp")
-          LIST(APPEND _OSG_ADD_Y_LOOKUP   "${DIRNAME}/*.y")
+          LIST(APPEND _OSG_ADD_INL_LOOKUP "${DIRNAME}/*.inl" )
+          LIST(APPEND _OSG_ADD_INS_LOOKUP "${DIRNAME}/*.ins" )
+          LIST(APPEND _OSG_ADD_LL_LOOKUP  "${DIRNAME}/*.ll"  )
+          LIST(APPEND _OSG_ADD_YY_LOOKUP  "${DIRNAME}/*.yy"  )
+          LIST(APPEND _OSG_ADD_FCD_LOOKUP "${DIRNAME}/*.fcd" )
+          LIST(APPEND _OSG_ADD_LPP_LOOKUP "${DIRNAME}/*.lpp" )
+          LIST(APPEND _OSG_ADD_Y_LOOKUP   "${DIRNAME}/*.y"   )
           LIST(APPEND _OSG_ADD_QTH_LOOKUP "${DIRNAME}/*_qt.h")
 
           LIST(APPEND _OSG_ADD_SRC_LOOKUP "${DIRNAME}/${_OSG_FILE_PATTERN}")
@@ -745,8 +758,9 @@ FUNCTION(OSG_ADD_DIRECTORY DIRNAME)
                                       ${_OSG_ADD_YY_LOOKUP} )
         FILE(GLOB LOCAL_MOC          #"${DIRNAME}/OSG*_qt.h"
                                       ${_OSG_ADD_QTH_LOOKUP})
+        FILE(GLOB LOCAL_FCD          #"${DIRNAME}/OSG*.fcd"
+                                      ${_OSG_ADD_FCD_LOOKUP})
 
-        FILE(GLOB LOCAL_FCD          "${DIRNAME}/OSG*.fcd")
         FILE(GLOB LOCAL_UNITTEST_SRC "${DIRNAME}/OSG*Test.cpp")
         FILE(GLOB LOCAL_TEST_SRC     "${DIRNAME}/test*.cpp"
                                      "${DIRNAME}/test*.mm")
