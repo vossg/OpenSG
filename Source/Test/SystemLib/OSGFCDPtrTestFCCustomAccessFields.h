@@ -2,11 +2,11 @@
  *                                OpenSG                                     *
  *                                                                           *
  *                                                                           *
- *               Copyright (C) 2000-2006 by the OpenSG Forum                 *
+ *               Copyright (C) 2000-2013 by the OpenSG Forum                 *
  *                                                                           *
  *                            www.opensg.org                                 *
  *                                                                           *
- *   contact: dirk@opensg.org, gerrit.voss@vossg.org, jbehr@zgdv.de          *
+ * contact: dirk@opensg.org, gerrit.voss@vossg.org, carsten_neumann@gmx.net  *
  *                                                                           *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
@@ -83,7 +83,7 @@ struct FieldTraits<FCDPtrTestFCCustomAccess *, nsOSG> :
 
     typedef FieldTraits<FCDPtrTestFCCustomAccess *, nsOSG>  Self;
 
-    enum : UInt32               { Convertible = NotConvertible };
+    enum  : UInt32              { Convertible = NotConvertible };
 
     static OSG_SYSTEM_DLLMAPPING DataType &getType(void);
 
