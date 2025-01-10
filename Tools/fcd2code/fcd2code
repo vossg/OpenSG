@@ -163,6 +163,7 @@ class FCDProcess:
                 return;
             
             fieldContainer.setupFieldContainer();
+
             impBaseName = os.path.join(outPath,
                 self.m_filePrefix + fieldContainer["nsFilePrefix"] +
                   fieldContainer["Classname"] + "Base" + self.m_impFileSuffix);
@@ -175,7 +176,21 @@ class FCDProcess:
             fieldsBaseName = os.path.join(outPath,
                 self.m_filePrefix + fieldContainer["nsFilePrefix"] +
                   fieldContainer["Classname"] + "Fields" + self.m_decFileSuffix);
-            
+
+            if fieldContainer["filePrefix"] != "":
+                impBaseName = os.path.join(outPath,
+                  fieldContainer["filePrefix"] +
+                    fieldContainer["Classname"] + "Base" + self.m_impFileSuffix);
+                inlBaseName = os.path.join(outPath,
+                  fieldContainer["filePrefix"] +
+                    fieldContainer["Classname"] + "Base" + self.m_inlFileSuffix);
+                decBaseName = os.path.join(outPath,
+                  fieldContainer["filePrefix"] +
+                    fieldContainer["Classname"] + "Base" + self.m_decFileSuffix);
+                fieldsBaseName = os.path.join(outPath,
+                  fieldContainer["filePrefix"] +
+                    fieldContainer["Classname"] + "Fields" + self.m_decFileSuffix);
+
             self.m_log.info("filling '%s' template for file: %s", nameBaseCPP, impBaseName);
             outLines = TemplateFiller(tmplBaseCPP).fill(lookupDicts);
             TemplateWriter(impBaseName, outLines).write();
@@ -206,6 +221,20 @@ class FCDProcess:
                     "Base" + self.m_decFileSuffix);
                 fieldsBaseName = os.path.join(outPath,
                     self.m_filePrefix + fieldContainer["Classname"] +
+                    "Fields" + self.m_decFileSuffix);
+
+                if fieldContainer["filePrefix"] != "":
+                  impBaseName = os.path.join(outPath,
+                    fieldContainer["filePrefix"] + fieldContainer["Classname"] +
+                    "Base" + self.m_impFileSuffix);
+                  inlBaseName = os.path.join(outPath,
+                    fieldContainer["filePrefix"] + fieldContainer["Classname"] +
+                    "Base" + self.m_inlFileSuffix);
+                  decBaseName = os.path.join(outPath,
+                    fieldContainer["filePrefix"] + fieldContainer["Classname"] +
+                    "Base" + self.m_decFileSuffix);
+                  fieldsBaseName = os.path.join(outPath,
+                    fieldContainer["filePrefix"] + fieldContainer["Classname"] +
                     "Fields" + self.m_decFileSuffix);
                 
                 self.m_log.info("filling template for file: %s", impBaseName);
@@ -252,6 +281,14 @@ class FCDProcess:
                 self.m_filePrefix + fieldContainer["Classname"] + self.m_inlFileSuffix);
             decName = os.path.join(outPath,
                 self.m_filePrefix + fieldContainer["Classname"] + self.m_decFileSuffix);
+
+            if fieldContainer["filePrefix"] != "":
+              impName = os.path.join(outPath,
+                fieldContainer["filePrefix"] + fieldContainer["Classname"] + self.m_impFileSuffix);
+              inlName = os.path.join(outPath,
+                fieldContainer["filePrefix"] + fieldContainer["Classname"] + self.m_inlFileSuffix);
+              decName = os.path.join(outPath,
+                fieldContainer["filePrefix"] + fieldContainer["Classname"] + self.m_decFileSuffix);
             
             self.m_log.info("filling template for file: %s", impName);
             outLines = TemplateFiller(tmplCPP).fill(lookupDicts);

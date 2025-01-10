@@ -60,7 +60,7 @@
 
 #include "@!HeaderPrefix!@@!Package!@Config.h"
 @@if isInLibrary
-#include "OSG@!Libname!@Def.h"
+#include "@!Package!@@!Libname!@Def.h"
 @@endif
 
 #include "@!HeaderPrefix!@OSGFieldContainerFields.h"
@@ -81,6 +81,7 @@ OSG_GEN_CONTAINERPTR(@!Classname!@);
 OSG_BEGIN_NAMESPACE
 
 @!LIBNAMESPACE!@_IMPORT_NAMESPACE;
+
 @@endif
 @@if isInLibrary
 /*! \ingroup @!DocGroupBase!@FieldTraits
@@ -102,7 +103,7 @@ struct FieldTraits<@!Classname!@ *, @!nsConst!@> :
     enum  : UInt32              { Convertible = NotConvertible };
 
     @@if isInLibrary
-    static OSG_@!LIBNAME!@_DLLMAPPING DataType &getType(void);
+    static @!PACKAGE!@_@!LIBNAME!@_DLLMAPPING DataType &getType(void);
     @@else // isInLibrary
     static DataType &getType(void);
     @@endif // isInLibrary
@@ -190,7 +191,7 @@ struct FieldTraits<@!Classname!@ *, @!nsConst!@ + @!ChildNS!@> :
 @@if PointerField
 
     @@if isInLibrary
-    static OSG_@!LIBNAME!@_DLLMAPPING DataType &getType(void);
+    static @!PACKAGE!@_@!LIBNAME!@_DLLMAPPING DataType &getType(void);
     @@else // isInLibrary
     static DataType &getType(void);
     @@endif // isInLibrary
@@ -283,7 +284,7 @@ struct FieldTraits<@!Classname!@ *, @!nsConst!@ + @!ParentNS!@> :
 
     enum : UInt32    { Convertible = Self::NotConvertible };
     
-    static OSG_@!LIBNAME!@_DLLMAPPING
+    static @!PACKAGE!@_@!LIBNAME!@_DLLMAPPING
                  DataType &getType (void);
 
     static const Char8    *getSName(void) 

@@ -42,6 +42,6 @@
 //  Includes
 //---------------------------------------------------------------------------
 
-OSG_BEGIN_NAMESPACE
+@!LIBNAMESPACE!@_BEGIN_NAMESPACE
 
-OSG_END_NAMESPACE
+@!LIBNAMESPACE!@_END_NAMESPACE

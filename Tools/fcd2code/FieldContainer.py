@@ -50,6 +50,8 @@ class FieldContainer(FCDElement):
         self.setFCD("dynFCDerived",               "false",  True);
         self.setFCD("dynFCDerived",               "false",  True);
         self.setFCD("package",                    "OSG",    True);
+
+        self.setFCD("filePrefix",                 "",       True);
     #
     # Access fields
     
@@ -73,13 +75,15 @@ class FieldContainer(FCDElement):
 
     def hasAuthors(self):
         return len(self["authors"]) != 0;
-    
+
+ 
     def setupFieldContainer(self):
         self["Classname"]    = self.getFCD("name");
         self["CLASSNAME"]    = self.getFCD("name").upper();
         self["Parent"]       = self.getFCD("parent");
         self["isDecorator"]  = False;
         self["nsFilePrefix"] = "";
+        self["filePrefix"]   = self.getFCD("filePrefix");
 
         if (self.getFCD("libnamespace") != "" and \
             self.getFCD("libnamespace") != "OSG"):
@@ -94,6 +98,8 @@ class FieldContainer(FCDElement):
         else:
           if self.getFCD("parentnamespace") != "OSG":
             self["nsParentFilePrefix"] = self.getFCD("parentnamespace")
+
+        self["filePrefixSet"] = (self["filePrefix"] != "")
 
     def setupDecorator(self):
         self["Classname"]    = self.getFCD("name") + "Decorator";
@@ -151,6 +157,7 @@ class FieldContainer(FCDElement):
             self["Authors"] = "";
 
         self["Package"] = self.getFCD("package");
+        self["PACKAGE"] = self.getFCD("package").upper();
 
         #Create the Authors comment text
         self["AuthorsCommentText"] = "";
@@ -485,6 +492,10 @@ class FieldContainer(FCDElement):
             include = include.strip();
             if include != "":
                 self["AdditionalPriorityIncludes"].append(include);
+
+#        print("\n\nfoo " + self.getFCD("libnamespace") + "\n\n");
+#        print("\n\nfoo " + self["LibNamespace"] + "\n\n");
+#        print("\n\nfoo " + self["LIBNAMESPACE"] + "\n\n");
 
     def setFCDContents(self, fcdContents):
         self.setFCD("fcdFileLines", fcdContents, True);

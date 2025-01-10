@@ -81,8 +81,13 @@
  @@endif // field.needTypeInclude
 @@EndFieldLoop@@
 
+@@if filePrefixSet
+#include "@!filePrefix!@@!Classname!@Base.h"
+#include "@!filePrefix!@@!Classname!@.h"
+@@else
 #include "OSG@!nsFilePrefix!@@!Classname!@Base.h"
 #include "OSG@!nsFilePrefix!@@!Classname!@.h"
+@@endif
 
 #include <boost/bind/bind.hpp>
 

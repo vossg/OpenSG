@@ -55,8 +55,8 @@
 \*****************************************************************************/
 
 
-#ifndef _OSG@!CLASSNAME!@BASE_H_
-#define _OSG@!CLASSNAME!@BASE_H_
+#ifndef _@!LIBNAMESPACE!@@!CLASSNAME!@BASE_H_
+#define _@!LIBNAMESPACE!@@!CLASSNAME!@BASE_H_
 #ifdef __sgi
 #pragma once
 #endif
@@ -64,7 +64,7 @@
 
 #include "@!HeaderPrefix!@@!Package!@Config.h"
 @@if isInLibrary
-#include "OSG@!Libname!@Def.h"
+#include "@!Package!@@!Libname!@Def.h"
 @@endif // isInLibrary
 
 //#include "@!HeaderPrefix!@OSGBaseTypes.h"
@@ -81,7 +81,11 @@
 #include "OSG@!Parent!@Fields.h" // Decoratee type
 @@endif // !isDecorator
 
-#include "OSG@!nsFilePrefix!@@!Classname!@Fields.h"
+@@if filePrefixSet
+#include "@!filePrefix!@@!Classname!@Fields.h"
+@@else
+#include "@!Package!@@!nsFilePrefix!@@!Classname!@Fields.h"
+@@endif
 @@if hasMixinParent
 
 #include "@!MixinHeader!@"
@@ -96,13 +100,13 @@ class @!Classname!@;
 
 @@if hasMixinParent
   @@if isInLibrary
-class OSG_@!LIBNAME!@_DLLMAPPING @!Classname!@Base : public @!MixinParent!@
+class @!PACKAGE!@_@!LIBNAME!@_DLLMAPPING @!Classname!@Base : public @!MixinParent!@
   @@else // isInLibrary
 class @!Classname!@Base : public @!MixinParent!@
 @@endif // isInLibrary
 @@else // hasMixinParent
   @@if isInLibrary
-class OSG_@!LIBNAME!@_DLLMAPPING @!Classname!@Base : public @!Parent!@
+class @!PACKAGE!@_@!LIBNAME!@_DLLMAPPING @!Classname!@Base : public @!Parent!@
   @@else // isInLibrary
 class @!Classname!@Base : public @!Parent!@
   @@endif // isInLibrary
@@ -643,4 +647,4 @@ typedef CoredNodeMTRefPtr<@!Classname!@> @!Classname!@NodeMTRefPtr;
 
 @!LIBNAMESPACE!@_END_NAMESPACE
 
-#endif /* _OSG@!CLASSNAME!@BASE_H_ */
+#endif /* _@!LIBNAMESPACE!@@!CLASSNAME!@BASE_H_ */

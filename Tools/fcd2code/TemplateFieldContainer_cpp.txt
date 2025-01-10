@@ -56,9 +56,13 @@
 @@endif
 #include "@!HeaderPrefix!@@!Package!@Config.h"
 
+@@if filePrefixSet
+#include "@!filePrefix!@@!Classname!@.h"
+@@else
 #include "OSG@!Classname!@.h"
+@@endif
 
-OSG_BEGIN_NAMESPACE
+@!LIBNAMESPACE!@_BEGIN_NAMESPACE
 
 // Documentation for this class is emitted in the
 // OSG@!Classname!@Base.cpp file.
@@ -122,4 +126,4 @@ void @!Classname!@::dump(      UInt32    ,
     SLOG << "Dump @!Classname!@ NI" << std::endl;
 }
 
-OSG_END_NAMESPACE
+@!LIBNAMESPACE!@_END_NAMESPACE

@@ -40,15 +40,19 @@
  *                                                                           *
 \*---------------------------------------------------------------------------*/
 
-#ifndef _OSG@!CLASSNAME!@_H_
-#define _OSG@!CLASSNAME!@_H_
+#ifndef _@!LIBNAMESPACE!@@!CLASSNAME!@_H_
+#define _@!LIBNAMESPACE!@@!CLASSNAME!@_H_
 #ifdef __sgi
 #pragma once
 #endif
 
+@@if filePrefixSet
+#include "@!filePrefix!@@!Classname!@Base.h"
+@@else
 #include "OSG@!Classname!@Base.h"
+@@endif
 
-OSG_BEGIN_NAMESPACE
+@!LIBNAMESPACE!@_BEGIN_NAMESPACE
 
 /*! \brief @!Classname!@ class. See \ref
 @@if isInLibrary
@@ -59,7 +63,7 @@ OSG_BEGIN_NAMESPACE
 */
 
 @@if isInLibrary
-class OSG_@!LIBNAME!@_DLLMAPPING @!Classname!@ : public @!Classname!@Base
+class @!PACKAGE!@_@!LIBNAME!@_DLLMAPPING @!Classname!@ : public @!Classname!@Base
 @@else
 class @!Classname!@ : public @!Classname!@Base
 @@endif
@@ -131,9 +135,14 @@ class @!Classname!@ : public @!Classname!@Base
 
 typedef @!Classname!@ *@!Classname!@P;
 
-OSG_END_NAMESPACE
+@!LIBNAMESPACE!@_END_NAMESPACE
 
+@@if filePrefixSet
+#include "@!filePrefix!@@!Classname!@Base.inl"
+#include "@!filePrefix!@@!Classname!@.inl"
+@@else
 #include "OSG@!Classname!@Base.inl"
 #include "OSG@!Classname!@.inl"
+@@endif
 
-#endif /* _OSG@!CLASSNAME!@_H_ */
+#endif /* _@!LIBNAMESPACE!@@!CLASSNAME!@_H_ */
