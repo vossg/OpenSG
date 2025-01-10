@@ -55,9 +55,9 @@
 
 OSG_BEGIN_NAMESPACE
 
-OSG_SINGLETON_INST(FieldContainerFactoryBase, addPostFactoryExitFunction)
+template class OSG_BASE_DLLMAPPING SingletonHolder<FieldContainerFactoryBase>;
 
-template class SingletonHolder<FieldContainerFactoryBase>;
+OSG_SINGLETON_INST(FieldContainerFactoryBase, addPostFactoryExitFunction)
 
 OSG_END_NAMESPACE
 

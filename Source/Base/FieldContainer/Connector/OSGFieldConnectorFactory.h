@@ -160,7 +160,7 @@ class OSG_BASE_DLLMAPPING FieldConnectorFactoryBase : public FactoryBase
     void operator =(const FieldConnectorFactoryBase &source);
 };
 
-#if defined(WIN32)
+#if defined(WIN32) && !defined(OSG_COMPILEBASELIB)
 OSG_BASE_EXPIMP_TMPL
 template class OSG_BASE_DLLMAPPING SingletonHolder<FieldConnectorFactoryBase>;
 #endif

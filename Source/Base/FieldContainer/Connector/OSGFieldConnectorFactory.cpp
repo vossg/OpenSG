@@ -41,24 +41,25 @@
 
 #include "OSGConfig.h"
 #include "OSGFieldConnectorFactory.h"
+#include "OSGSingletonHolder.ins"
 #include "OSGFieldType.h"
 #include "OSGBaseFunctions.h"
 #include "OSGLog.h"
+
 #include "OSGFactoryController.h"
 
-#include "OSGSingletonHolder.ins"
+OSG_BEGIN_NAMESPACE
+
+template class OSG_BASE_DLLMAPPING SingletonHolder<FieldConnectorFactoryBase>;
+
+OSG_SINGLETON_INST(FieldConnectorFactoryBase, addPostFactoryExitFunction)
+
+OSG_END_NAMESPACE
 
 #include "OSGFieldContainer.h"
 
 #include "OSGVecSFields.h"
 
-OSG_BEGIN_NAMESPACE
-
-OSG_SINGLETON_INST(FieldConnectorFactoryBase, addPostFactoryExitFunction)
-
-template class SingletonHolder<FieldConnectorFactoryBase>;
-
-OSG_END_NAMESPACE
 
 OSG_BEGIN_NAMESPACE
 

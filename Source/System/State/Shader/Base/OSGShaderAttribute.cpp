@@ -50,9 +50,10 @@ DataType FieldTraits<ShaderAttribute>::_type("ShaderAttribute", "BaseType");
 OSG_FIELDTRAITS_GETTYPE (        ShaderAttribute)
 OSG_FIELD_DLLEXPORT_DEF1(MField, ShaderAttribute)
 
+template class OSG_SYSTEM_DLLMAPPING SingletonHolder<ShaderAttrIndexMapperBase>;
+
 OSG_SINGLETON_INST(ShaderAttrIndexMapperBase, addPostFactoryExitFunction)
 
-template class SingletonHolder<ShaderAttrIndexMapperBase>;
 
 ShaderAttrIndexMapperBase::ShaderAttrIndexMapperBase(void) :
     Inherited()

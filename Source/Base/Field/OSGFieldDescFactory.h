@@ -194,7 +194,7 @@ class OSG_BASE_DLLMAPPING FieldDescFactoryBase : public FactoryBase
     void operator =(const FieldDescFactoryBase &source);
 };
 
-#if defined(WIN32)
+#if defined(WIN32) && !defined(OSG_COMPILEBASELIB)
 OSG_BASE_EXPIMP_TMPL
 template class OSG_BASE_DLLMAPPING SingletonHolder<FieldDescFactoryBase>;
 #endif

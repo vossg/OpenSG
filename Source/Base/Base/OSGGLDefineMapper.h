@@ -150,7 +150,7 @@ class OSG_BASE_DLLMAPPING GLDefineMapperBase :
     friend class SingletonHolder;
 };
 
-#if defined(WIN32)
+#if defined(WIN32) && !defined(OSG_COMPILEBASELIB)
 OSG_BASE_EXPIMP_TMPL
 template class OSG_BASE_DLLMAPPING SingletonHolder<GLDefineMapperBase>;
 #endif

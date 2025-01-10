@@ -47,9 +47,9 @@
 
 OSG_BEGIN_NAMESPACE
 
-OSG_SINGLETON_INST(GraphOpFactoryBase, addPostFactoryExitFunction)
+template class OSG_SYSTEM_DLLMAPPING SingletonHolder<GraphOpFactoryBase>;
 
-template class SingletonHolder<GraphOpFactoryBase>;
+OSG_SINGLETON_INST(GraphOpFactoryBase, addPostFactoryExitFunction)
 
 /***************************************************************************\
  *                            Description                                  *

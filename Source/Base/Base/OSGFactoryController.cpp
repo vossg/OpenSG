@@ -65,9 +65,9 @@ OSG_BEGIN_NAMESPACE
 //  Class
 //---------------------------------------------------------------------------
 
-OSG_SINGLETON_INST(FactoryControllerBase, addPostFactoryExitFunction)
+template class OSG_BASE_DLLMAPPING SingletonHolder<FactoryControllerBase>;
 
-template OSG_DLL_EXPORT class SingletonHolder<FactoryControllerBase>;
+OSG_SINGLETON_INST(FactoryControllerBase, addPostFactoryExitFunction)
 
 /***************************************************************************\
  *                               Types                                     *

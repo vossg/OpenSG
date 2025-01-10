@@ -70,9 +70,9 @@
 
 OSG_BEGIN_NAMESPACE
 
-OSG_SINGLETON_INST(SceneFileHandlerBase, addPostFactoryExitFunction)
+template class OSG_SYSTEM_DLLMAPPING SingletonHolder<SceneFileHandlerBase>;
 
-template class SingletonHolder<SceneFileHandlerBase>;
+OSG_SINGLETON_INST(SceneFileHandlerBase, addPostFactoryExitFunction)
 
 GraphOpSeq       *SceneFileHandlerBase::_defaultgraphOpSeq = NULL;
 

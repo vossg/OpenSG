@@ -230,7 +230,7 @@ class OSG_BASE_DLLMAPPING TypeFactoryBase : public FactoryBase
     void writeTypeGraph(const Char8    *szFilename);
 };
 
-#if defined(WIN32)
+#if defined(WIN32) && !defined(OSG_COMPILEBASELIB)
 OSG_BASE_EXPIMP_TMPL 
 template class OSG_BASE_DLLMAPPING SingletonHolder<TypeFactoryBase>;
 #endif

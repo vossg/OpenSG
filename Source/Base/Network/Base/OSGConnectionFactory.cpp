@@ -58,9 +58,9 @@ OSG_USING_NAMESPACE
 
 OSG_BEGIN_NAMESPACE
 
-OSG_SINGLETON_INST(ConnectionFactoryBase, addPostFactoryExitFunction)
+template class OSG_BASE_DLLMAPPING SingletonHolder<ConnectionFactoryBase>;
 
-template class SingletonHolder<ConnectionFactoryBase>;
+OSG_SINGLETON_INST(ConnectionFactoryBase, addPostFactoryExitFunction)
 
 
 /** \class OSG::ConnectionFactoryBase

@@ -129,7 +129,7 @@ class OSG_SYSTEM_DLLMAPPING ShaderAttrIndexMapperBase :
     friend class SingletonHolder;
 };
 
-#if defined(WIN32)
+#if defined(WIN32) && !defined(OSG_COMPILESYSTEMLIB)
 OSG_SYSTEM_EXPIMP_TMPL
 template class OSG_SYSTEM_DLLMAPPING SingletonHolder<ShaderAttrIndexMapperBase>;
 #endif

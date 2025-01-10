@@ -208,7 +208,7 @@ class OSG_BASE_DLLMAPPING FactoryControllerBase
     bool         initializePendingElements(void                           );
 };
 
-#if defined(WIN32) 
+#if defined(WIN32) && !defined(OSG_COMPILEBASELIB)
 OSG_BASE_EXPIMP_TMPL 
 template class OSG_BASE_DLLMAPPING SingletonHolder<FactoryControllerBase>;
 #endif

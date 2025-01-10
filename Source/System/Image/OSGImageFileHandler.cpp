@@ -72,9 +72,9 @@ OSG_BEGIN_NAMESPACE
  *   Types
  *****************************/
 
-OSG_SINGLETON_INST(ImageFileHandlerBase, addPostFactoryExitFunction)
+template class OSG_SYSTEM_DLLMAPPING SingletonHolder<ImageFileHandlerBase>;
 
-template class SingletonHolder<ImageFileHandlerBase>;
+OSG_SINGLETON_INST(ImageFileHandlerBase, addPostFactoryExitFunction)
 
 /*****************************
  *   Classvariables
