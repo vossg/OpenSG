@@ -1,6 +1,7 @@
 
 import logging;
-from sys import platform as _platform
+from sys import platform     as _platform
+from sys import version_info as _vInfo
 
 openMode = "w"
 
@@ -33,8 +34,12 @@ class TemplateWriter:
         fileObj = open(self.m_fileName, openMode);
         
         self.m_log.debug("write: writing template.");
-#        fileObj.writelines(map(lambda (x): x.encode("UTF-8"), self.m_filledTemplate));
-        fileObj.writelines(self.m_filledTemplate);
+
+        if _vInfo.major >= 3:
+          fileObj.writelines(self.m_filledTemplate);
+        else:
+          fileObj.writelines(map(lambda x: x.encode("utf-8"), self.m_filledTemplate));
+
         self.m_log.debug("write: closing file.");
         fileObj.close();
     
