@@ -22,6 +22,14 @@
 
 #cmakedefine OSG_WITH_GLUT 1
 
+#cmakedefine OSG_WITH_GLFW 1
+
+#cmakedefine OSG_WITH_GLFW3 1
+
+#if !defined(OSG_WITH_GLFW) && defined(OSG_WITH_GLFW3)
+# define OSG_WITH_GLFW 1
+#endif
+
 #cmakedefine OSG_ENABLE_MEMORY_DEBUGGING 1
 
 #cmakedefine OSG_ENABLE_DOUBLE_MATRIX_STACK 1

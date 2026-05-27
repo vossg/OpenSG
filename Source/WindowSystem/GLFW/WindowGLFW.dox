@@ -1,0 +1,13 @@
+#include "OSGConfig.h"
+
+using namespace OSG;
+
+/*!
+
+   \if separate
+     \page PageWindowGLFW Window GLFW Documentation
+   \else
+     \page PageWindowGLFW Window GLFW
+   \endif
+
+ */

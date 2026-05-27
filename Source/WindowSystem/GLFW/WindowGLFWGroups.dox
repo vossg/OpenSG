@@ -1,0 +1,32 @@
+#include "OSGConfig.h"
+
+using namespace OSG;
+
+/*! \defgroup GrpLibOSGWindowGLFW libOSGWindowGLFW
+    \ingroup GrpByLib
+ */
+
+/*! \defgroup GrpWindowGLFW OpenSG Window GLFW Library
+
+    \brief Contains Window GLFW classes
+
+    See \ref PageWindowGLFW for details.
+ */
+
+//*******************************************************************
+// GLFW
+//*******************************************************************
+
+/*! \defgroup GrpWindowGLFWObj Window
+    \ingroup GrpWindowGLFW
+ */
+
+/*! \defgroup GrpWindowGLFWFieldTraits Field Traits
+    \ingroup GrpWindowGLFW
+ */
+/*! \defgroup GrpWindowGLFWFieldSFields Single-Field
+    \ingroup GrpWindowGLFW
+ */
+/*! \defgroup GrpWindowGLFWFieldMFields Multi-Fields
+    \ingroup GrpWindowGLFW
+ */
