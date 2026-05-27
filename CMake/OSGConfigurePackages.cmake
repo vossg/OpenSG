@@ -614,23 +614,13 @@ ENDMACRO(OSG_CONFIGURE_OPENNURBS)
 
 MACRO(OSG_CONFIGURE_BOOST)
 
-  SET(Boost_NO_BOOST_CMAKE TRUE CACHE INTERNAL "" FORCE)
-  SET(Boost_ADDITIONAL_VERSIONS "1.54.0" 
-                                "1.54"
-                                "1.53.0" 
-                                "1.53"
-                                "1.52.0" 
-                                "1.52"
-                                "1.51.0" 
-                                "1.51"
-                                "1.50.0"
-                                "1.50"
-                                "1.49.0" 
-                                "1.49"
-                                "1.48.0"
-                                "1.48"
-                                "1.47.0"
-                                "1.47.0")
+#  SET(Boost_NO_BOOST_CMAKE TRUE CACHE INTERNAL "" FORCE)
+  SET(Boost_ADDITIONAL_VERSIONS "1.88.0"
+                                "1.88"
+                                "1.90.0"
+                                "1.90"
+                                "1.92.0"
+                                "1.92"  )
 
     IF(APPLE AND IOS)
       set (CMAKE_FIND_ROOT_PATH_MODE_PROGRAM FIRST)
@@ -654,9 +644,9 @@ MACRO(OSG_CONFIGURE_BOOST)
     MESSAGE(STATUS "opensg using boost root : ${BOOST_ROOT} from ${Boost_DIR}")
 
 #    IF(APPLE AND IOS)
-#      FIND_PACKAGE(BoostIOS COMPONENTS filesystem system)
+#      FIND_PACKAGE(BoostIOS COMPONENTS filesystem)
 #    ELSE()
-      FIND_PACKAGE(Boost COMPONENTS filesystem system)
+      FIND_PACKAGE(Boost COMPONENTS filesystem)
 #    ENDIF()
 
     IF(Boost_FOUND)
@@ -690,12 +680,10 @@ MACRO(OSG_CONFIGURE_BOOST)
            CMAKE_BUILD_TYPE STREQUAL "DebugOpt")
 
           SET(OSG_BOOST_LIBS ${Boost_FILESYSTEM_LIBRARY_DEBUG} 
-                             ${Boost_SYSTEM_LIBRARY_DEBUG}
                              ${Boost_ATOMIC_LIBRARY_DEBUG})
         ELSE()
 
           SET(OSG_BOOST_LIBS ${Boost_FILESYSTEM_LIBRARY_RELEASE} 
-                             ${Boost_SYSTEM_LIBRARY_RELEASE}
                              ${Boost_ATOMIC_LIBRARY_RELEASE})
 
         ENDIF()
@@ -709,7 +697,6 @@ MACRO(OSG_CONFIGURE_BOOST)
           SET(OSG_BOOST_TARGETS )
 
           OSG_ADD_IMPORT_LIB(OSG_BOOST_TARGETS Boost_FILESYSTEM_LIBRARY)
-          OSG_ADD_IMPORT_LIB(OSG_BOOST_TARGETS Boost_SYSTEM_LIBRARY)
 
           SET(OSG_BOOST_LIBS ${OSG_BOOST_TARGETS})
 
@@ -719,19 +706,19 @@ MACRO(OSG_CONFIGURE_BOOST)
 #            IF(IOS)
 #              FIND_PACKAGE(BoostIOS COMPONENTS system)
 #            ELSE()
-              FIND_PACKAGE(Boost COMPONENTS system)
+#              FIND_PACKAGE(Boost COMPONENTS system)
 #            ENDIF()
 
-            IF(CMAKE_BUILD_TYPE STREQUAL "Debug" OR 
-               CMAKE_BUILD_TYPE STREQUAL "DebugOpt")
+#            IF(CMAKE_BUILD_TYPE STREQUAL "Debug" OR 
+#               CMAKE_BUILD_TYPE STREQUAL "DebugOpt")
 
-              SET(OSG_BOOST_LIBS ${OSG_BOOST_LIBS} ${Boost_SYSTEM_LIBRARY_DEBUG})
+#              SET(OSG_BOOST_LIBS ${OSG_BOOST_LIBS} ${Boost_SYSTEM_LIBRARY_DEBUG})
 
-            ELSE()
+#            ELSE()
 
-              SET(OSG_BOOST_LIBS ${OSG_BOOST_LIBS} ${Boost_SYSTEM_LIBRARY_RELEASE})
+#              SET(OSG_BOOST_LIBS ${OSG_BOOST_LIBS} ${Boost_SYSTEM_LIBRARY_RELEASE})
 
-            ENDIF()
+#            ENDIF()
 
         ENDIF(APPLE)
 

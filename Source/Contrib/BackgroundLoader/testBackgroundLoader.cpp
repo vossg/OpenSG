@@ -15,9 +15,7 @@
 #include "OSGFieldContainerFactory.h"
 
 #include <boost/bind/bind.hpp>
-#include <boost/filesystem/operations.hpp>
-#include <boost/filesystem/fstream.hpp>
-#include <boost/filesystem/convenience.hpp>
+#include <boost/filesystem.hpp>
 namespace fs = boost::filesystem;
 
 #include "OSGBackgroundLoader.h"
